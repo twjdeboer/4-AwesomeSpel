@@ -35,4 +35,6 @@ Thumbs.db
 # WORD generated #
 # ============== #
 
-~$*s
+~$*
+*.aux
+*.synctex.gz
