@@ -3,9 +3,12 @@ using System.Collections;
 
 public class Player : MonoBehaviour
 {
-
     public float walkSpeed;
     public float rotateSpeed;
+    public float accelerator;
+    private float intSpeed;
+
+
 
     /**
      * Rotates player in walking direction
@@ -17,7 +20,7 @@ public class Player : MonoBehaviour
         {
             
             Quaternion newRotation = Quaternion.LookRotation(moveDirection);
-            transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, rotateSpeed * Time.deltaTime);
+            rigidbody.rotation = Quaternion.Slerp(transform.rotation, newRotation, rotateSpeed * Time.deltaTime);
         }
     }
 
@@ -33,17 +36,31 @@ public class Player : MonoBehaviour
         RotateInWalkDirection(rotateSpeed, moveHorizontal, moveVertical);
     }
 
+    /**
+     * Makes the player sprint when a certain button is pressed.
+     * */
+    void Sprint(float accelerator)
+    {
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+            this.walkSpeed = this.intSpeed*accelerator;
+        }
+        else
+            this.walkSpeed = this.intSpeed;
+    }
+
     // Use this for initialization
     void Start()
     {
-
+        intSpeed = walkSpeed;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-
         Walk(walkSpeed, rotateSpeed);
-
+        Sprint(accelerator);
+        ResourceManager.playerPosition = transform.position;
     }
 }
