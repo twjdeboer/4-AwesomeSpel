@@ -3,11 +3,12 @@ using System.Collections;
 
 public class Player : MonoBehaviour
 {
-
     public float walkSpeed;
     public float rotateSpeed;
     public float accelerator;
     private float intSpeed;
+
+
 
     /**
      * Rotates player in walking direction
@@ -60,5 +61,6 @@ public class Player : MonoBehaviour
     {
         Walk(walkSpeed, rotateSpeed);
         Sprint(accelerator);
+        ResourceManager.playerPosition = transform.position;
     }
 }
