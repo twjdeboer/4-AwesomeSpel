@@ -5,9 +5,9 @@ public class Player : MonoBehaviour
 {
     public float walkSpeed;
     public float rotateSpeed;
-    public float runSpeed;
+    public float accelerator;
     private float intSpeed;
-    private Vector3 direction;
+
 
 
     /**
@@ -17,7 +17,8 @@ public class Player : MonoBehaviour
     {
         Vector3 moveDirection = new Vector3(horizontal, 0, vertical);
         if (moveDirection != (new Vector3(0, 0, 0)))
-        {           
+        {
+            
             Quaternion newRotation = Quaternion.LookRotation(moveDirection);
             rigidbody.rotation = Quaternion.Slerp(transform.rotation, newRotation, rotateSpeed * Time.deltaTime);
         }
@@ -28,26 +29,22 @@ public class Player : MonoBehaviour
      **/
     void Walk(float walkSpeed,float rotateSpeed)
     {
-        float moveHorizontal = Input.GetAxisRaw("Horizontal");
-        float moveVertical = Input.GetAxisRaw("Vertical") ;
-        direction = ResourceManager.cam.TransformDirection(moveHorizontal, 0.0f, moveVertical);
-        direction.y = 0;
-        direction = direction.normalized;
-        Vector3 speed = (direction *  walkSpeed) ;
+        float moveHorizontal = Input.GetAxis("Horizontal");
+        float moveVertical = Input.GetAxis("Vertical");
+        Vector3 speed = new Vector3(moveHorizontal, 0.0f, moveVertical) * walkSpeed ;
         rigidbody.MovePosition(rigidbody.position + speed * Time.deltaTime);
-        RotateInWalkDirection(rotateSpeed, direction.x, direction.z);
-
+        RotateInWalkDirection(rotateSpeed, moveHorizontal, moveVertical);
     }
 
     /**
      * Makes the player sprint when a certain button is pressed.
      * */
-    void Sprint(float runSpeed)
+    void Sprint(float accelerator)
     {
 
         if (Input.GetKey(KeyCode.Space))
         {
-            this.walkSpeed = this.intSpeed*runSpeed;
+            this.walkSpeed = this.intSpeed*accelerator;
         }
         else
             this.walkSpeed = this.intSpeed;
@@ -57,14 +54,13 @@ public class Player : MonoBehaviour
     void Start()
     {
         intSpeed = walkSpeed;
-
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
         Walk(walkSpeed, rotateSpeed);
-        Sprint(runSpeed);
+        Sprint(accelerator);
         ResourceManager.playerPosition = transform.position;
     }
 }

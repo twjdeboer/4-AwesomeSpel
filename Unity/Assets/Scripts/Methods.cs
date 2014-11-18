@@ -8,7 +8,7 @@ public static class Methods {
         Color color = go.renderer.material.color;
         color.a = alpha;
         go.renderer.material.color = color;
-    }
 
+    }
 
 }
