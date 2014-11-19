@@ -10,6 +10,7 @@ public class CamaraBehaviour : MonoBehaviour {
 	void Start () {
 
         this.offset = transform.position;
+        ResourceManager.cam = transform;
 	}
 
     void FollowPlayer()
