@@ -3,6 +3,7 @@ using System.Collections;
 
 public class BuildingFader : MonoBehaviour {
 
+    //Actions
 	
     void OnTriggerEnter(Collider other)
     {
@@ -17,13 +18,4 @@ public class BuildingFader : MonoBehaviour {
             Methods.SetAlpha(other.gameObject, 1);
     }
     
-    // Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }

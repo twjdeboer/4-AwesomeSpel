@@ -3,12 +3,15 @@ using System.Collections;
 
 public class Player : MonoBehaviour
 {
+
+    //Attributes
     public float walkSpeed;
     public float rotateSpeed;
     public float runSpeed;
     private float intSpeed;
     private Vector3 direction;
 
+    //Methods
 
     /**
      * Rotates player in walking direction
@@ -53,14 +56,14 @@ public class Player : MonoBehaviour
             this.walkSpeed = this.intSpeed;
     }
 
-    // Use this for initialization
+    //Actions
+
     void Start()
     {
         intSpeed = walkSpeed;
 
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         Walk(walkSpeed, rotateSpeed);
