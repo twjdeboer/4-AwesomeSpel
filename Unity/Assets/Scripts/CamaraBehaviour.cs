@@ -29,6 +29,7 @@ public class CamaraBehaviour : MonoBehaviour {
     
     }
 
+
     //Actions
 
     void Start () {
@@ -42,6 +43,5 @@ public class CamaraBehaviour : MonoBehaviour {
 	void FixedUpdate () {
 
         FollowPlayer();
-	
 	}
 }

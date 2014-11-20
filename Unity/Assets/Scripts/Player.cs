@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     public float walkSpeed;
     public float rotateSpeed;
     public float runSpeed;
+
     private float intSpeed;
     private Vector3 direction;
 
@@ -39,7 +40,6 @@ public class Player : MonoBehaviour
         Vector3 speed = (direction *  walkSpeed) ;
         rigidbody.MovePosition(rigidbody.position + speed * Time.deltaTime);
         RotateInWalkDirection(rotateSpeed, direction.x, direction.z);
-
     }
 
     /**
