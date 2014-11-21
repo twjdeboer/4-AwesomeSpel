@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class Test_proceduralhouse : MonoBehaviour {
+	public GameObject world;
 	private ProceduralHouse[] newHouse;
 	private GameObject[] Houses;
 	void Start() {
@@ -11,12 +12,13 @@ public class Test_proceduralhouse : MonoBehaviour {
 
 		Houses = GameObject.FindGameObjectsWithTag ("Prebuilding");
 		newHouse = new ProceduralHouse[Houses.Length];
-		print (Houses.Length);
+
 		for (int i=0; i < Houses.Length; i++) {
-			newHouse[i]= new ProceduralHouse(Houses[i]);
+			newHouse[i]= new ProceduralHouse(Houses[i],world);
 		}
 		for (int i=0; i < Houses.Length; i++) {
-			newHouse[i].randomHouse();
+			newHouse[i].BuildHouse();
+			newHouse[i].empty.transform.parent =world.transform;
 		}
 
 		
