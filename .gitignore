@@ -43,3 +43,9 @@ Thumbs.db
 
 *.aux
 *.synctex.gz
+
+# ================= #
+# Blender generated #
+# ================= #
+
+*.blend1
