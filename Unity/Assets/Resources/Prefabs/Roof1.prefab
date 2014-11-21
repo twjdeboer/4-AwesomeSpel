@@ -27,7 +27,7 @@ GameObject:
   - 4: {fileID: 400002}
   - 95: {fileID: 9500000}
   m_Layer: 0
-  m_Name: Roof2
+  m_Name: Roof1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
