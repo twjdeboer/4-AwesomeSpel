@@ -24,5 +24,13 @@ public static class Methods {
         camera.transform.position = intPos + camera.transform.TransformDirection(new Vector3(amplitude.x * Mathf.Sin(shakeSpeed.x * t), amplitude.y * Mathf.Sin(shakeSpeed.y * t), amplitude.z * Mathf.Sin(shakeSpeed.z * t)));
     }
 
+    public static bool ReachedPosWithBuffer(Vector3 pos, Vector3 targetPos, Vector3 bufferRadius)
+   {
+       return (pos.x < targetPos.x + bufferRadius.x && pos.x > targetPos.x - bufferRadius.x
+           && pos.y < targetPos.y + bufferRadius.y && pos.y > targetPos.y - bufferRadius.y
+           && pos.z < targetPos.z + bufferRadius.z && pos.z > targetPos.z - bufferRadius.z);
+
+   }
+
 
 }
