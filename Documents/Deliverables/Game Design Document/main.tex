@@ -10,7 +10,7 @@
 
 
 \begin{document}
-	\fontencoding{T1}\fontfamily{cmss}\fontseries{m}\selectfont
+	\fontencoding{T1}\fontfamily{lmss}\fontseries{m}\selectfont
 
 	\allsectionsfont{\fontfamily{lmss}\selectfont}
 
@@ -56,22 +56,49 @@
 
 
 \section{Platform \& Controls}
-	The game is developed for PC, with mac as a possible addition. We use the mouse and keyboard as control devices, because the mouse has the ability to precisely point at objects. This gives the player more control over the game.
+	The game is developed for PC, with mac as a possible addition. We use the mouse and keyboard as control devices, because the mouse has the ability to precisely point at objects. This gives the player more control over the game. If there were more time, we believe creating the game for mobile platforms, such as Android, iOS and Windows Phone, would appeal to a large crowd of casual mobile players, who are willing to buy this type of games. This is however not something that is within the scope of our project at the moment.
 
 \section{Story, Characters and setting of the game}
-
+	\subsection{Setting}
+		The story is set in a american metropolis in the early 50's. We want to emphasize brown brick houses, the darkness of the bad neighbourhoods in the city and the large amount of crime. 
+	\subsection{Story and Main Characters}
+		The game is based around a single story of a murder case. 
+		\begin{quote}
+			You are a businessman with a workaholic attitude, but a dark past. This is the day your past catches up to you. There is someone in your apartment. You try to run and escape from the madness that is now your reality. But it is to no avail.
+		\end{quote}
+		The story is told through different perpectives, each with their own destinctive gameplay and design. 
+		\begin{quote}
+			You are George Carter. A policeman, as clean as they come these days. There’s been a suicide, probably another overworked and coked up businessman again. It’s happening more often these days, since the economy went mad. It’s not been a happy couple of years, with your wife leaving and these suicides taking away all the joy. You go to the apartment. It’s a shabby old place, but nothing too bad. You’ve seen worse, much worse. The moment you get in something seems off. There is something that’s not as it seems.
+		\end{quote}
+		It's told three times in total, each time giving more information about the murder. 
+		\begin{quote}
+			You are a young, upcoming journalist for a tabloid newspaper. You’ve been trying to get the good stuff. Corruption in Politics, Hardship on the streets and Murder in the Underworld, . All they’ve given you so far is the record for biggest pizza and a dog beauty pageant. It’s not always easy to start at the bottom. Your boss comes to your desk. He looks glum. “I’ve got a real assignment for you.” It’s a look like suicide, but the police say otherwise. It’s supposed to be a big piece in tomorrow’s newspaper. You go investigate.
+		\end{quote}
+		There are three roles: Detective, Journalist, and an undetermined family member.\\ \\
+		\noindent
+		The game concludes in a finale, where, depending on the choices of the player, the killer is apprehended. The game is a sort of 'third person investigation' and is played by walking around in the scene with the arrow keys and collecting evidence by clicking on different objects to investigate them. In the end it will become clear who the killer is, if the player has gathered enough evidence. Who the killer is will remain a secret, even for our supervisors ;). The characters will converge, but too little evidence may leave a character behind. We let the player play a short while with each character to make sure he knows everyone again. One central location, where everything is revealed and a final twist is given. \\ \\
+		\noindent
+		The Story is a pretty large part of our game, however we have given it a \textbf{low priority}, because it is not one of the programming components that will influence the technical difficulty, and therefor the grade. We are currently working with an 'smaller' version of the initial story, where only the detective is playable. We have eliminated some of our original side characters and put less time into elaborating the original story. If we have time left, we could make the decision to elaborate a bit more, but programming has a higher priority.
+	\subsection*{Non Player Characters}
+		We will use a number of anonymous NPCs, such as police men, hotel personnel and pedestrians, these are mainly for atmosphere. Besides these characters, we have a small number of unique NPCs, such as the Police Chief, a Priest and relatives of the victim, that can be interrogated. This could give the player more information about the story.
 \section{Artificial Intelligence}
-	We use A* to enable our Non Player Characters to wander around the city. 
+	We use A* to enable our Non Player Characters to wander around the city. These include Pedestrians and we could add cars, given enough time is at hand. A* will enable our pedestrians to follow a path and is ideal for use in 2D street maps, without tunnels or bridges.\\
+	We will use a Neural Network to determine the outcome of the game, with the evidence collected as an input and one of several diffent endings as the ouput. If this does not work as expected, we will explore the possibilities of a different AI technique or just revert to a score based system.
 
 \section{Level \& Environment Design}
 	There are two basic level types in this game. The city and individual rooms.
 	\subsection{City}
-		We have a single city we can walk through and find hidden clues. The city is basically one large map with roads and buildings. On this map there are several landmarks, a church in a small park, the police station, a hotel and a hospital. The player is free to roam this city. The city is procedurally generated. The camera is fixed to the player in a classic orthographic configuration
+		We have a single city we can walk through and find hidden clues. The city is basically one large map with roads and buildings. On this map there are several landmarks, a church in a small park, the police station, a hotel and a hospital. These landmarks are always in the same location. The street plan is also premade. The buildings are procedurally generated on the startup of the game. The houses will be around 3 to 7 stories. There are street lights that will be placed automatically. We could also add procedurally placed clutter models, such as trash bags/cans and other junk. This will result in a better atmosphere.\\
+		The player is free to roam this city. The city should feel big, but not so big that it becomes a chore to walk from A to B. If there is time we can allow the player to use automobiles to get around to circumvent this problem. We want Pedestrians to walk and Cars to drive around, so it gives the impression of a busy city.\\
+		The camera is fixed to the player in a classic orthographic configuration, buildings become transparent if they are between the player and the camera, to allow the player better vision.
 	\subsection{Indoors}
-		These are individual rooms where the player can go to via the landmarks or events. We will create several rooms, such as: The murder scene, a hotel room, the police chiefs office, the inside of the church etc. In these rooms there are clues to be found. The player can walk and click objects that may be clues.
+		These are individual rooms where the player can go to via the landmarks or events. These represent the indoor area of certain buildings. We will create several rooms, such as: The murder scene, a hotel room, the police chiefs office, the inside of the church etc. In these rooms there are clues to be found. The player can walk and click objects that may be clues. The atmosphere will rely heavily on the type of room. The police office will be clean and have the characteristic window blinds and a wooden desk. The crime scene will be darker, a bedroom, with a bed and more clutter. Stuff on the ground etc.
 
 \section{Gameplay \& Mechanics}
-
+		There are several ways to gain evidence. These can be seen as minigames.
+		\begin{itemize}
+			\item Interrogation
+		\end{itemize}
 \section{Art}
 	\subsection{Atmosphere}
 		The game has a dark and gritty atmosphere.
