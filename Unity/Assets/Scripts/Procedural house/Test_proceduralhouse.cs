@@ -14,7 +14,7 @@ public class Test_proceduralhouse : MonoBehaviour {
 		newHouse = new ProceduralHouse[Houses.Length];
 		
 		for (int i=0; i < Houses.Length; i++) {
-			newHouse[i]= new ProceduralHouse(Houses[i]);
+			newHouse[i]= new ProceduralHouse(Houses[i],false," ");
 		}
 		for (int i=0; i < Houses.Length; i++) {
 			newHouse[i].BuildHouse();

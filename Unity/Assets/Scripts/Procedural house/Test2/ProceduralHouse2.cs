@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ProceduralHouse{
+public class ProceduralHouse2{
 	
 	public GameObject empty;
 	private GameObject House;
@@ -42,7 +42,7 @@ public class ProceduralHouse{
 	private bool houseatback;
 	private string leftorright;
 	
-	public ProceduralHouse(GameObject House,bool Houseatback,string Leftorright){
+	public ProceduralHouse2(GameObject House,bool Houseatback,string Leftorright){
 		houseatback = Houseatback;
 		leftorright = Leftorright;
 		empty = new GameObject ("HouseBox"+staticnumber);
@@ -97,8 +97,8 @@ public class ProceduralHouse{
 		temp.y += (float)0.5*scale.y;	//0.5 anders in de grond
 		newhouse.transform.position = temp;
 		newhouse.transform.localScale = scale;
-
-		newhouse.renderer.material =(Material)Resources.Load ("Materials/"+"House"+"/"+Random.Range (1, 5), typeof(Material));
+		
+		randomMaterial(newhouse,"House",1,5);
 		//newhouse.renderer.material =(Material)Resources.Load ("Materials/House/"+Random.Range (0, 5), typeof(Material));
 	}
 	
@@ -124,7 +124,8 @@ public class ProceduralHouse{
 		}
 		tempscale.y = tempscale.y / 2f;
 		roof.transform.localScale = tempscale;
-	
+		
+		//randomMaterial(roofchild,"Roof",1,4);
 		setrooftexture ();
 	}
 	
@@ -155,13 +156,17 @@ public class ProceduralHouse{
 		temp.y += (float)0.5*dooryscale;	//grond niveau
 		temp.x += (float)0.5*scale.x;		//rand blokje
 		
-		temp.z += (float)Random.Range ((float)-0.40 * scale.z, (float)0.40 * scale.z);
+		temp.z += (float)Random.Range ((float)-0.42 * scale.z, (float)0.42 * scale.z);
 		doorypos = temp.y;
 		doorzpos = temp.z;
 		door.transform.position = temp;
-
-		doorWindow.renderer.material =(Material)Resources.Load ("Materials/"+"Door"+"/"+Random.Range (1, 5), typeof(Material));
-
+		
+		randomMaterial(doorWindow,"Door",1,5);
+		
+		randomMaterial(doorBottom,"Omlijsting",omlijsting);
+		randomMaterial(doorTop,"Omlijsting",omlijsting);
+		randomMaterial(doorLeft,"Omlijsting",omlijsting);
+		randomMaterial(doorRight,"Omlijsting",omlijsting);
 	}
 	
 	
@@ -187,7 +192,8 @@ public class ProceduralHouse{
 			windowTop[i]=GameObject.Find ("/Window"+prefabwindow+"(Clone)/Top");
 			windowLeft[i]=GameObject.Find ("/Window"+prefabwindow+"(Clone)/Left");
 			windowRight[i]=GameObject.Find ("/Window"+prefabwindow+"(Clone)/Right");
-
+			
+			//randomMaterial(windowWindow[i],"Windows",windowtexture);
 			
 			//windowBottom[i].renderer.material =(Material)Resources.Load ("Materials/"+"Omlijsting"+"/"+omlijsting, typeof(Material));
 			//windowTop[i].renderer.material =(Material)Resources.Load ("Materials/"+"Omlijsting"+"/"+omlijsting, typeof(Material));
@@ -227,7 +233,7 @@ public class ProceduralHouse{
 		while (a==0) {
 			a=Random.Range(-1,2);
 		}
-		
+
 		bool validplace = true;
 		Vector3 temp = pos;
 		
@@ -238,17 +244,17 @@ public class ProceduralHouse{
 		//temp.z += (float)Random.Range ((float)-0.5 * scale.z + 2, (float)0.5 * scale.z - 2);
 		temp.z += (int)Random.Range (Mathf.Floor(-0.220f * scale.z), Mathf.Floor(-0.220f * scale.z)*-1)*2;
 		bool build = false;
-		
-		
+
+
 		temp = sidewindow (temp,a,out build,out validplace,out a);
 		if (build) {
 			window [i].transform.rotation = Quaternion.Euler (0, 90, 0);
 		}
-		
+
 		if ((houseatback)&(a==-1)) {
 			validplace=false;
 		}
-		
+
 		if ((a == 1)&(!build)) {
 			//MonoBehaviour.print ((((temp.z + zscale) > doorzpos) & ((temp.z - zscale) < doorzpos))+" doorcheck ");
 			
@@ -276,7 +282,7 @@ public class ProceduralHouse{
 			}
 		}
 		window [i].transform.position = temp;
-		
+
 		xposa [i] = a;
 		zpos [i] = temp.z;
 		ypos [i] = temp.y;
@@ -288,12 +294,12 @@ public class ProceduralHouse{
 		}
 		return validplace;
 	}
-	
+
 	private Vector3 sidewindow (Vector3 temp,int b,out bool build,out bool validplace,out int a){
 		validplace=true;
 		build = false;
 		a = b;
-		
+
 		if((leftorright.Equals("l"))&&(Random.Range (0, 4)==2)){
 			build=true;
 			temp.z = pos.z + (float)0.5 * scale.z*-1;		//rand blokje
@@ -310,11 +316,11 @@ public class ProceduralHouse{
 		}
 		return temp;
 	}
-	
-	
-	
-	
-	
+
+
+
+
+
 	private void randomDim(){
 		int n = 5;
 		xscale=(float)Random.Range (1,n
@@ -328,7 +334,14 @@ public class ProceduralHouse{
 		House.transform.localScale = new Vector3(x,y,z);
 		scale = new Vector3 (x, y, z);
 	}
-
+	
+	private void randomMaterial(GameObject self,string materialname,int min,int max){
+		self.renderer.material =(Material)Resources.Load ("Materials/"+materialname+"/"+Random.Range (min, max+1), typeof(Material));
+	}
+	
+	private void randomMaterial(GameObject self,string materialname,int nummer){
+		self.renderer.material =(Material)Resources.Load ("Materials/"+materialname+"/"+nummer, typeof(Material));		
+	}
 	
 	private void Changepos(){
 		//MonoBehaviour.print(pos.z+" "+pos.x+" Before");

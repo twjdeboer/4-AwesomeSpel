@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ProceduralHouseblok{
+public class ProceduralHouseblok2{
 	
 	private GameObject houseblok;
 	private Vector3 scale;
@@ -13,7 +13,7 @@ public class ProceduralHouseblok{
 	private bool blockback;
 	
 	
-	public ProceduralHouseblok(GameObject Houseblok){
+	public ProceduralHouseblok2(GameObject Houseblok){
 		this.houseblok = Houseblok;
 		scale = houseblok.transform.localScale;
 		pos = houseblok.transform.position;
@@ -43,8 +43,8 @@ public class ProceduralHouseblok{
 			newrighthouse = MonoBehaviour.Instantiate(Resources.Load ("Prefabs/House", typeof(GameObject))) as GameObject;
 			newlefthouse.transform.tag="Prebuildingl"+addtag;
 			newrighthouse.transform.tag="Prebuildingr"+addtag;
-			
-			
+
+
 			stemp1.z = (float)rand;
 			stemp2.z = (float)rand;
 			if(rotation==false){
@@ -100,7 +100,7 @@ public class ProceduralHouseblok{
 				ptemp1.x = pos.x + (scale.z/4f - (float)rand/2f)*-1;
 				ptemp2.x = pos.x + (scale.z/4f + (float)rand/2f);	
 			}
-			
+
 			
 			//MonoBehaviour.print(scale.z+" "+stemp1.z+" "+stemp2.z);
 			//MonoBehaviour.print(pos.z+" "+ptemp1.z+" "+ptemp2.z);
