@@ -39,6 +39,9 @@
 \section{Introduction}
 	Awesome Spel is a game that is based around the old Film Noir movie genre, but with a modern twist. The game will be in color, albeit a bit grimey. The player should solve a hideous murder, while playing as a detective, George Carter. There are several ways to collect evidence, by searching for clues, interrogation and exploration.
 
+	\subsection{How and Why?}
+		This game is being developed as part of an assignment for the TU Delft in the Netherlands. We are required to use Unity 4.6 and Blender as development tools. Other tools we use are Crazybump, for creating bump maps, audacity as a audio suite and LaTeX for Deliverables. The teams for the assignment were put together based on experience in different fields. We don't have any team members with a design background, so this is a small hurdle. We try to overcome this by working on the models with a large part of the team.
+
 	\subsection{Inspiration}
 		Our Inspiration was games such as LA noire, Ace Attorney and The Walking Dead, story based exploration games, where the outcome changes depending on the choices made by the player.\\
 		The orthographic platform styled level design was inspired by bastion and similar games.\\
@@ -106,10 +109,46 @@
 \newpage
 \section{Art}
 	
+	\subsection{Models}
+		We use the MoSCow system for prioritizing the models.
+	\begin{itemize}
+		\item Humanoid models (M) - These are very important for the player and npc models. At least one male and one female model should be made, we can always scale these.
+		\item Evidence models (M) - We need enough evidence to keep the player busy. Sigarette buds, weapons and the occasional red herring.
+		\item Landmark models (M) - The church etc. These landmarks play a large part in the game.
+		\item Building parts (M) - Windows, doors, fire escapes etc. for building generation.
+		\item Furniture (M) - Beds, chairs, cupboards, tables etc. These will be used indoors to provide a proper setting for putting evidence in place.
+		\item Park models (S) - We want to give the park a proper park feeling, with a couple of trees and bushes, but a green plain as underground could also work.
+		\item Street Lights (S) - We will use these to give more atmosphere at night.
+		\item Character Clothing items (S) -  - It is important to be able to discern the player from other characters, and the other characters from each other. These help and give a proper feeling for the time period at the same time.
+		\item Clutter models (C) - Tin cans, trash, cars, all non essential models on the street. These will give much more life to the city.
+
+	\end{itemize}
+
+	\subsection{Textures}
+		\begin{itemize}
+			\item Several different humanoid textures (M) - To be able to discern between characters.
+			\item Textures for models we made (M) - Most models need a texture to be recognizable.
+			\item Roads (M) - The roads need textures to be recognizable.
+			\item Road specular and bump maps (C) - These give much more depth and feeling to the streets.
+			\item Dirt texture overlays (C) - Overlaying dirt over the buildings and roads makes them less repetitive.
+		\end{itemize}
+
+
+	\newpage
+	We are aiming for a dark gritty retro city. Late 40's, early 50's style. Film Noire style. This includes a film grain and a lot of brown and greyscale textures. And of course hats.
+	\begin{figure}[ht!]
+		\centering
+		\centerline{\includegraphics[width=120mm]{images/collage.png}}
+	\end{figure}
+	\newpage
+
 
 \section{Sound of Music}
-			Music will be sourced from websites that share music under a Creative Commons licence. The authors will be credited in the game. SoundFX could be recorded by us as a strech goal. Otherwise we will use effects under CC licence as well.
+	Music will be sourced from websites that share music under a Creative Commons licence. The authors will be credited in the game. We are looking for music that is not too happy or glum, to convey the atmosphere better. We want to use 2 to 3 songs in the main game to make sure it doesn't get too repetitive. The songs should match as good as possible.\\
+	SoundFX could be recorded by us as a strech goal. Otherwise we will use effects under CC licence as well. We need sounds for footsteps over different types of terrain. Picking up objects of different materials. etc.
 
 \section{User interface \& Game controls}
+	The player uses mouse and keyboard to operate the game. The WASD or arrow keys can be used to walk around. The mouse cursor is used to point at items or characters and we can left click for interaction with these objects.\\
+	The game has the usual interface options, pauze/play menu, start menu. We want to have as few UI overlays in game as possible, to prevent breaking the immersion. The game is controlled with the mouse, so the cursor needs to be visible. We could create a custom mouse pointer. Inside the minigames we will use UI options to show time, character patience or other relevant information. When an item is found we will give a small popup box. The item is then placed in the inventory, where we can get an overview of all acquired items and the information associated with them.
 
 \end{document}
