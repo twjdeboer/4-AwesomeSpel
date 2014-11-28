@@ -6,13 +6,19 @@ public class Node : MonoBehaviour{
     public bool accesable = true;
     public int xPos;
     public int yPos;
-    public GameObject parentNode;
-    public int G;
-    public int H;
-    public int F;
-    public bool startNode = false;
-    public bool endNode = false;
+    public GameObject[] parentNode;
+    public int[] G;
+    public int[] H;
+    public int[] F;
 
+
+    void Start()
+    {
+        G = new int[ResourceManager.numberOfChilds];
+        H = new int[ResourceManager.numberOfChilds];
+        F = new int[ResourceManager.numberOfChilds];
+        parentNode = new GameObject[ResourceManager.numberOfChilds];
+    }
 
     void OnTriggerEnter(Collider other)
     {
@@ -21,6 +27,11 @@ public class Node : MonoBehaviour{
             this.accesable = false;
 
         }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        this.accesable = true;
     }
 
 

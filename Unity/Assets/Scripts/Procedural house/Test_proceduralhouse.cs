@@ -9,20 +9,19 @@ public class Test_proceduralhouse : MonoBehaviour {
 		//GameObject House = GameObject.FindGameObjectWithTag ("Prebuilding");
 		//ProceduralHouse pr = new ProceduralHouse (House);
 		//pr.randomHouse ();
-
+		
 		Houses = GameObject.FindGameObjectsWithTag ("Prebuilding");
 		newHouse = new ProceduralHouse[Houses.Length];
-
+		
 		for (int i=0; i < Houses.Length; i++) {
 			newHouse[i]= new ProceduralHouse(Houses[i]);
 		}
 		for (int i=0; i < Houses.Length; i++) {
-			newHouse[i].BuildrandomHouse();
+			newHouse[i].BuildHouse();
+			//newHouse[i].BuildrandomHouse();
 			newHouse[i].empty.transform.parent =world.transform;
-		}
-
+		}		
 		
-
 	}
 	
 }
