@@ -11,6 +11,15 @@ TagManager:
   - Huisblok
   - Huisblok2
   - B1
+  - Roof
+  - Huisblokback
+  - Ground Walk
+  - Prebuildingl
+  - Prebuildingr
+  - Prebuildingrback
+  - Prebuildinglback
+  - Prebuildingback
+  - Destroy
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX

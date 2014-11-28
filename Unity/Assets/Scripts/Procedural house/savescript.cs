@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 
-public class Test_Procedurallyhouseblock : MonoBehaviour {
+public class savescript : MonoBehaviour {
 	public GameObject world;
 	private GameObject[] Houseblok;
 	private ProceduralHouseblok newHouseBlok;
@@ -17,10 +17,10 @@ public class Test_Procedurallyhouseblock : MonoBehaviour {
 	private bool[] boolean=new bool[6];
 	private string[] leftrightstring=new string[6];
 	private string[] searchtag=new string[6];
-
+	
 	private bool[] Housebloks = new bool[2];
 	private bool preHouses;
-
+	
 	void Start() {
 		j = 0;
 		n = 0;
@@ -44,12 +44,12 @@ public class Test_Procedurallyhouseblock : MonoBehaviour {
 		createHouses ("Prebuildinglback",true,"l");
 		createHouses ("Prebuildingrback",true,"r");
 		*/
-
+		
 		
 	}
 	void Update(){
-
-
+		
+		
 		if(Housebloks[0]){
 			createPrebuilding("Huisblok","Prebuilding",false,j);
 			if(j==Houseblok.Length-1){
@@ -76,12 +76,12 @@ public class Test_Procedurallyhouseblock : MonoBehaviour {
 				preHouses=true;
 				Houses = GameObject.FindGameObjectsWithTag ("Prebuilding");
 				newHouse = new ProceduralHouse[Houses.Length];
-				}
+			}
 		}
-
+		
 		if(preHouses){
 			if((j==Houses.Length)|(Houses.Length==0)){
-
+				
 				n++;
 				if(n>5){
 					preHouses=false;
@@ -92,31 +92,23 @@ public class Test_Procedurallyhouseblock : MonoBehaviour {
 					//print (Houses.Length+" Houses.length");
 					newHouse = new ProceduralHouse[Houses.Length];
 				}
-
+				
 			}
 			if((Houses.Length!=0)&preHouses){
 				createHouses (boolean[n],leftrightstring[n],j);	
 			}
 		}
-	
+		
 		//print (j+" j+n "+n);
-
+		
 		j++;
 		if(!preHouses& !Housebloks[0] & !Housebloks[1] ){
 			print ("Done");
-			Component other =world.GetComponent("Test_Procedurallyhouseblock");
-			GameObject[] destroying = GameObject.FindGameObjectsWithTag("Destroy");
-			if(other != null)
-			{
-				Destroy(other);
-			}
-			for(int i=0;i<destroying.Length;i++){
-				Destroy(destroying[i]);
-			}
+			world.GetComponent("Script");
 		}
 	}
-
-
+	
+	
 	public void createPrebuilding(string search,string settag,bool back,int j){
 		createGrassfloor(j);
 		
@@ -144,19 +136,18 @@ public class Test_Procedurallyhouseblock : MonoBehaviour {
 			
 		}
 		//print("Done " + i);
-
+		
 		//createHouses (settag,back," ");
 	}
 	
 	public void createHouses(bool back,string leftright,int i){
-
 		newHouse[i]= new ProceduralHouse(Houses[i],back,leftright);
 		newHouse[i].BuildrandomHouse();
-		print ("Next house ");
+		//print ("Next house ");
 		//newHouse[i].BuildrandomHouse();
 		newHouse[i].empty.transform.parent =world.transform;
 	}
-
+	
 	public void createGrassfloor(int j){
 		GrassFloor[j] = MonoBehaviour.Instantiate(Resources.Load ("Prefabs/GrassFloor", typeof(GameObject))) as GameObject;
 		GrassFloor[j].transform.position=Houseblok[j].transform.position;
@@ -167,8 +158,8 @@ public class Test_Procedurallyhouseblock : MonoBehaviour {
 		GrassFloor[j].transform.rotation=Houseblok[j].transform.rotation;
 		GrassFloor[j].transform.parent = world.transform;
 	}
-
-
+	
+	
 	public void createarray(){
 		boolean=new bool[]{false,false,false,true,true,true};
 		searchtag=new string[]{"Prebuilding","Prebuildingl","Prebuildingr","Prebuildingback","Prebuildinglback","Prebuildingrback"};
