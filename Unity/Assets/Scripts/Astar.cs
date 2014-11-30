@@ -14,6 +14,8 @@ public class Astar : MonoBehaviour{
     public Vector3 startPos;
     public Vector3 endPos;
     public NodeNetwork nodes;
+    public int NPCNumber;
+    private float time = 0;
 
     //Walking
     public float moveSpeed;
@@ -24,7 +26,6 @@ public class Astar : MonoBehaviour{
     void Start()
     {
         useAstar = true;
-        nodes = new NodeNetwork(startPos, GridSize(startPos, endPos));
     }
     /**
      * Set the parameters for algorithm and excute it.
@@ -33,8 +34,6 @@ public class Astar : MonoBehaviour{
     {
         this.endNode = nodes.Closest(endPos);
         this.startNode = nodes.Closest(startPos);
-        endNode.GetComponent<Node>().endNode = true;
-        startNode.GetComponent<Node>().startNode = true;
         ReachableNodes(startNode, null);
         GameObject previousNode = startNode;
         GameObject CurrentNode;
@@ -58,27 +57,30 @@ public class Astar : MonoBehaviour{
         {
             for(int j = -1; j <= 1; j++)
             {
-                GameObject CheckNode = nodes.getNode((int)nodePos.x +i, (int)nodePos.y+j);
-                if(!closedList.Contains(CheckNode) && !openList.Contains(CheckNode) && CheckNode.GetComponent<Node>().accesable)
+                if (nodes.IsNodeInNetwork((int)nodePos.x + i, (int)nodePos.y + j))
                 {
-                    CheckNode.GetComponent<Node>().parentNode = parentNode;
-                    CheckNode.GetComponent<Node>().G = G(parentNode, CheckNode);
-                    CheckNode.GetComponent<Node>().H = H(CheckNode);
-                    CheckNode.GetComponent<Node>().F = G(parentNode, CheckNode) + H(CheckNode);
-                    openList.Add(CheckNode);
-                    
-                }
-                else if (openList.Contains(CheckNode))
-                {
-                    
-                    if(G(parentNode,CheckNode) < CheckNode.GetComponent<Node>().G)
+                    GameObject CheckNode = nodes.getNode((int)nodePos.x + i, (int)nodePos.y + j);
+                    if (!closedList.Contains(CheckNode) && !openList.Contains(CheckNode) && CheckNode.GetComponent<Node>().accesable)
                     {
-                        int index = openList.IndexOf(CheckNode);
-                        CheckNode.GetComponent<Node>().G = G(parentNode, CheckNode);
-                        CheckNode.GetComponent<Node>().H = H(CheckNode);
-                        CheckNode.GetComponent<Node>().F = G(parentNode, CheckNode) + H(CheckNode);
-                        openList[index]= CheckNode;
-                        
+                        CheckNode.GetComponent<Node>().parentNode[NPCNumber] = parentNode;
+                        CheckNode.GetComponent<Node>().G[NPCNumber] = G(parentNode, CheckNode);
+                        CheckNode.GetComponent<Node>().H[NPCNumber] = H(CheckNode);
+                        CheckNode.GetComponent<Node>().F[NPCNumber] = G(parentNode, CheckNode) + H(CheckNode);
+                        openList.Add(CheckNode);
+
+                    }
+                    else if (openList.Contains(CheckNode))
+                    {
+
+                        if (G(parentNode, CheckNode) < CheckNode.GetComponent<Node>().G[NPCNumber])
+                        {
+                            int index = openList.IndexOf(CheckNode);
+                            CheckNode.GetComponent<Node>().G[NPCNumber] = G(parentNode, CheckNode);
+                            CheckNode.GetComponent<Node>().H[NPCNumber] = H(CheckNode);
+                            CheckNode.GetComponent<Node>().F[NPCNumber] = G(parentNode, CheckNode) + H(CheckNode);
+                            openList[index] = CheckNode;
+
+                        }
                     }
                 }
             }
@@ -99,7 +101,7 @@ public class Astar : MonoBehaviour{
      * */
     int G(GameObject thisOne, GameObject other)
     {
-        int GthisOne = thisOne.GetComponent<Node>().G;
+        int GthisOne = thisOne.GetComponent<Node>().G[NPCNumber];
         Vector3 thisPos = new Vector3(thisOne.transform.position.x, 0, thisOne.transform.position.z);
         Vector3 otherPos = new Vector3(other.transform.position.x, 0, other.transform.position.z); 
         return Mathf.RoundToInt(Mathf.Abs(Vector3.Distance(thisPos, otherPos) * 10)+ GthisOne);
@@ -119,12 +121,12 @@ public class Astar : MonoBehaviour{
     GameObject LowestCost(List<GameObject> openList)
     {
         GameObject BestNode = openList[0];
-        int bestCost = BestNode.GetComponent<Node>().F;
+        int bestCost = BestNode.GetComponent<Node>().F[NPCNumber];
         for (int i = 1; i < openList.Count; i++)
         {
-            if(openList[i].GetComponent<Node>().F < bestCost)
+            if (openList[i].GetComponent<Node>().F[NPCNumber] < bestCost)
             {
-                bestCost = openList[i].GetComponent<Node>().F;
+                bestCost = openList[i].GetComponent<Node>().F[NPCNumber];
                 BestNode = openList[i];
             }
         }
@@ -138,12 +140,12 @@ public class Astar : MonoBehaviour{
     {
         List<GameObject> path = new List<GameObject>();
         path.Add(endNode);
-        GameObject parentNode = endNode.GetComponent<Node>().parentNode;
+        GameObject parentNode = endNode.GetComponent<Node>().parentNode[NPCNumber];
         path.Add(parentNode);
         int i = 2;
         while(!parentNode.Equals(startNode))
-        {         
-            path.Add(parentNode.GetComponent<Node>().parentNode);
+        {
+            path.Add(parentNode.GetComponent<Node>().parentNode[NPCNumber]);
             parentNode = path[i];
             i++;
         }
@@ -163,12 +165,21 @@ public class Astar : MonoBehaviour{
         rigidbody.MovePosition(rigidbody.position + step);
     }
 
+    bool Timer()
+    {
+        time += Time.deltaTime;
+        return time > Random.Range(0, 20);
+    }
+
 
     //Use Astar to find a path.
     void WalkWithAStar(float moveSpeed, float rotateSpeed)
     {
-        if (useAstar)
+        if (useAstar && ResourceManager.networkReady)
         {
+            nodes = GameObject.Find("NodeNetwork").GetComponent<CreateNodeNetwork>().nodes;
+            startPos = transform.position;
+            endPos = PickRandomEndPos();
             path = MakePad(startPos, endPos);
             useAstar = false;
         }
@@ -181,6 +192,19 @@ public class Astar : MonoBehaviour{
             else
                 index++;      
         }
+        else if (index == path.Count)
+        {
+            if (Timer())
+            {
+                time = 0;
+                useAstar = true;
+                this.index = 1;
+                path.Clear();
+                openList.Clear();
+                closedList.Clear();
+                nodes.ClearCosts(NPCNumber);
+            }
+        }
         
     }
 
@@ -192,6 +216,24 @@ public class Astar : MonoBehaviour{
         float size = Mathf.Max(x, y);
         return new Vector2(size, size);
 
+    }
+
+    Vector3 PickRandomEndPos()
+    {
+        float xPos = Random.Range(nodes.NetworkRange().x, nodes.NetworkRange().y);
+        float zPos = Random.Range(nodes.NetworkRange().z, nodes.NetworkRange().w);
+        Vector3 pos = new Vector3(xPos, 0, zPos);
+        GameObject endNode = nodes.Closest(pos);        
+
+        while (!endNode.GetComponent<Node>().accesable)
+        {
+            xPos = Random.Range(nodes.NetworkRange().x, nodes.NetworkRange().y);
+            zPos = Random.Range(nodes.NetworkRange().z, nodes.NetworkRange().w);
+            pos = new Vector3(xPos, 0, zPos);
+            endNode = nodes.Closest(pos);
+        }
+       
+        return pos;
     }
 
     // Update is called once per frame

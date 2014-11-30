@@ -6,7 +6,7 @@ public class NodeNetwork {
     private Vector3 pos;
     private Vector2 numberOfNodes;
     private GameObject[,] network;
-    public GameObject Nodes = new GameObject("Nodes");
+ 
 
     public NodeNetwork(Vector3 pos, Vector2 numberOfNodes)
     {
@@ -41,7 +41,7 @@ public class NodeNetwork {
         primitive.rigidbody.isKinematic = true;
         primitive.rigidbody.constraints = RigidbodyConstraints.FreezeAll;
         primitive.transform.localScale = new Vector3(0.75f, 0.75f, 0.75f);
-        primitive.transform.parent = Nodes.transform;
+        primitive.transform.parent = GameObject.Find("NodeNetwork").transform;
         primitive.gameObject.name = "Node(" + i + "," + j + ")";
         primitive.AddComponent("Node");
         primitive.GetComponent<Node>().xPos = i;
@@ -90,4 +90,42 @@ public class NodeNetwork {
         return new Vector2(node.GetComponent<Node>().xPos, node.GetComponent<Node>().yPos);
     }
 
+    public bool IsPosInNetwork(Vector3 pos)
+    {
+        float xMin = network[0, 0].transform.position.x;
+        float xMax = network[(int)numberOfNodes.x-1, 0].transform.position.x;
+        float yMin = network[0, 0].transform.position.y;
+        float yMax = network[0, (int)numberOfNodes.y-1].transform.position.y;
+
+        return pos.x > xMin && pos.x < xMax && pos.z > yMin && pos.z < yMax;
+    }
+
+    public Vector4 NetworkRange()
+    {
+        float xMin = network[0, 0].transform.position.x;
+        float xMax = network[(int)numberOfNodes.x-1, 0].transform.position.x;
+        float yMin = network[0, 0].transform.position.z;
+        float yMax = network[0, (int)numberOfNodes.y-1].transform.position.z;
+
+        return new Vector4(xMin, xMax, yMin, yMax);
+    }
+
+    public bool IsNodeInNetwork(int i, int j)
+    {
+        return i >= 0 && i < numberOfNodes.x && j >= 0 && j < numberOfNodes.y;
+    }
+
+    public void ClearCosts(int NPCNumber)
+    {
+        for(int i = 0; i< numberOfNodes.x; i++)
+        {
+            for(int j = 0; j< numberOfNodes.y; j++)
+            {
+                network[i, j].GetComponent<Node>().G[NPCNumber] = 0;
+                network[i, j].GetComponent<Node>().H[NPCNumber] = 0;
+                network[i, j].GetComponent<Node>().F[NPCNumber] = 0;
+                network[i, j].GetComponent<Node>().parentNode[NPCNumber] = null;
+            }
+        }
+    }
 }
