@@ -7,7 +7,9 @@ public class NodeNetwork {
     private Vector2 numberOfNodes;
     private GameObject[,] network;
  
-
+    /**
+     * Create a network of gameObjects with a node-component.
+     * */
     public NodeNetwork(Vector3 pos, Vector2 numberOfNodes)
     {
         
@@ -31,6 +33,9 @@ public class NodeNetwork {
         }
     }
 
+    /**
+     * Method for initializing the node.
+     * */
     GameObject node(float xPos, float zPos, int i, int j)
     {
         GameObject primitive = GameObject.CreatePrimitive(PrimitiveType.Sphere);
@@ -72,24 +77,34 @@ public class NodeNetwork {
          return Vector2Node(bestNode);
     }
 
+    /**
+     * Return node at the given index.
+     * */
     public GameObject getNode(int i, int j)
     {
         return network[i, j];
     }
 
     /**
-     * Converts a Vector2 to a node.
+     * Converts a Vector2 node notation to a node GameObject.
      * */
     public GameObject Vector2Node(Vector2 vector)
     {
         return this.network[(int)vector.x, (int)vector.y];
     }
 
+
+    /**
+     * Converts node GameObject to its vector2 notation.
+     * */
     public static Vector2 Node2Vector(GameObject node)
     {
         return new Vector2(node.GetComponent<Node>().xPos, node.GetComponent<Node>().yPos);
     }
 
+    /**
+     * Checks whether or the given position is in the NodeNetwork.
+     * */
     public bool IsPosInNetwork(Vector3 pos)
     {
         float xMin = network[0, 0].transform.position.x;
@@ -100,6 +115,9 @@ public class NodeNetwork {
         return pos.x > xMin && pos.x < xMax && pos.z > yMin && pos.z < yMax;
     }
 
+    /**
+     * Returns range of the network in a Vector4(XMIN, XMAX, YMIN, YMAX) notation.
+     * */
     public Vector4 NetworkRange()
     {
         float xMin = network[0, 0].transform.position.x;
@@ -110,11 +128,17 @@ public class NodeNetwork {
         return new Vector4(xMin, xMax, yMin, yMax);
     }
 
+    /**
+     * Checks if indicated index is in the node network.
+     * */
     public bool IsNodeInNetwork(int i, int j)
     {
         return i >= 0 && i < numberOfNodes.x && j >= 0 && j < numberOfNodes.y;
     }
 
+    /**
+     * Set the costs of a certain NPC to zero.
+     * **/
     public void ClearCosts(int NPCNumber)
     {
         for(int i = 0; i< numberOfNodes.x; i++)

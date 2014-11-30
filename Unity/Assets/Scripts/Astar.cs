@@ -22,11 +22,9 @@ public class Astar : MonoBehaviour{
     public float rotateSpeed;
 
     private int index = 1;
+
+    //Methods
     
-    void Start()
-    {
-        useAstar = true;
-    }
     /**
      * Set the parameters for algorithm and excute it.
      * */
@@ -46,13 +44,15 @@ public class Astar : MonoBehaviour{
     }
 
     /**
-     * Checks whether the near by nodes are accesable and removes previous.
+     * Checks whether the adjacent by nodes are accesable and update their costs.
      * */
     void ReachableNodes(GameObject parentNode, GameObject previousNode)
     {
         closedList.Add(parentNode);
         openList.Remove(parentNode);
         Vector2 nodePos = NodeNetwork.Node2Vector(parentNode);
+
+        //Checking adjacent nodes
         for (int i = -1; i <= 1; i++)
         {
             for(int j = -1; j <= 1; j++)
@@ -60,6 +60,8 @@ public class Astar : MonoBehaviour{
                 if (nodes.IsNodeInNetwork((int)nodePos.x + i, (int)nodePos.y + j))
                 {
                     GameObject CheckNode = nodes.getNode((int)nodePos.x + i, (int)nodePos.y + j);
+
+                    //set costs if node is accesable and not on open/closed list.
                     if (!closedList.Contains(CheckNode) && !openList.Contains(CheckNode) && CheckNode.GetComponent<Node>().accesable)
                     {
                         CheckNode.GetComponent<Node>().parentNode[NPCNumber] = parentNode;
@@ -69,6 +71,8 @@ public class Astar : MonoBehaviour{
                         openList.Add(CheckNode);
 
                     }
+
+                        //update G if node in open list and G lower for new parent.
                     else if (openList.Contains(CheckNode))
                     {
 
@@ -108,7 +112,7 @@ public class Astar : MonoBehaviour{
     }
 
     /**
-     * Estimated movement cost
+     * Estimated movement cost. The Heuristic part.
      * */
     int H(GameObject thisNode)
     {
@@ -134,14 +138,17 @@ public class Astar : MonoBehaviour{
     }
 
     /**
-     * Constructs path out of the closed list.
+     * Constructs path out of the closed list by taking parent nodes.
      * */
     List<GameObject> ConstructPath(List<GameObject> closedList)
     {
+        //Set first and second node in path: the node at the target position and its parent.
         List<GameObject> path = new List<GameObject>();
         path.Add(endNode);
         GameObject parentNode = endNode.GetComponent<Node>().parentNode[NPCNumber];
         path.Add(parentNode);
+
+        //Taking parent of previous node.
         int i = 2;
         while(!parentNode.Equals(startNode))
         {
@@ -149,6 +156,8 @@ public class Astar : MonoBehaviour{
             parentNode = path[i];
             i++;
         }
+
+        //Path begin at end node. So it needs to be reversed.
         path.Reverse();
         return path;
     }
@@ -165,6 +174,9 @@ public class Astar : MonoBehaviour{
         rigidbody.MovePosition(rigidbody.position + step);
     }
 
+    /**
+     * Timer for pausing the player.
+     * */
     bool Timer()
     {
         time += Time.deltaTime;
@@ -172,18 +184,22 @@ public class Astar : MonoBehaviour{
     }
 
 
-    //Use Astar to find a path.
+    /**
+     * Makes the NPC walk with Astar.
+     * */
     void WalkWithAStar(float moveSpeed, float rotateSpeed)
     {
+        //Makes a pad for NPC if nodenetwork is made and it is indicated Astar needs to make a new path.
         if (useAstar && ResourceManager.networkReady)
         {
             nodes = GameObject.Find("NodeNetwork").GetComponent<CreateNodeNetwork>().nodes;
             startPos = transform.position;
-            endPos = PickRandomEndPos();
+            endPos = PickRandomEndPos(nodes.NetworkRange());
             path = MakePad(startPos, endPos);
             useAstar = false;
         }
 
+        //Walks to next node.
         if (path.Count > 0 && index < path.Count)
         {
             if (!Methods.ReachedPosWithBuffer(transform.position, path[index].transform.position, new Vector3(0.5f,9999999,0.5f)))
@@ -192,6 +208,8 @@ public class Astar : MonoBehaviour{
             else
                 index++;      
         }
+
+        //Makes a new path id end reached.
         else if (index == path.Count)
         {
             if (Timer())
@@ -208,20 +226,13 @@ public class Astar : MonoBehaviour{
         
     }
 
-    Vector2 GridSize(Vector3 startPos, Vector3 endPos)
+    /**
+     * Generate a new target position within the NodeNetwork and with an accesable node. 
+     * */
+    Vector3 PickRandomEndPos(Vector4 range)
     {
-        Vector3 distance = endPos - startPos;
-        float x = Mathf.Round( Mathf.Abs(distance.x)*2 + 10);
-        float y = Mathf.Round(Mathf.Abs(distance.z)*2 + 10);
-        float size = Mathf.Max(x, y);
-        return new Vector2(size, size);
-
-    }
-
-    Vector3 PickRandomEndPos()
-    {
-        float xPos = Random.Range(nodes.NetworkRange().x, nodes.NetworkRange().y);
-        float zPos = Random.Range(nodes.NetworkRange().z, nodes.NetworkRange().w);
+        float xPos = Random.Range(range.x, range.y);
+        float zPos = Random.Range(range.z, range.w);
         Vector3 pos = new Vector3(xPos, 0, zPos);
         GameObject endNode = nodes.Closest(pos);        
 
@@ -234,6 +245,13 @@ public class Astar : MonoBehaviour{
         }
        
         return pos;
+    }
+
+    //Actions
+
+    void Start()
+    {
+        useAstar = true;
     }
 
     // Update is called once per frame
