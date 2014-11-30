@@ -11,8 +11,7 @@ public class CreateNodeNetwork : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-        nodes = new NodeNetwork(pos, numberOfNodes);
-        ResourceManager.networkReady = true;
+        nodes = new NodeNetwork(pos, numberOfNodes);      
         ResourceManager.numberOfChilds = GameObject.Find("NPCs").transform.childCount;
         NPCNumbering();
 	}
@@ -23,8 +22,14 @@ public class CreateNodeNetwork : MonoBehaviour {
         {
             GameObject.Find("NPCs").transform.GetChild(i).gameObject.GetComponent<Astar>().NPCNumber = i;
         }
+    }
 
-
+    void Update()
+    {
+        if(!nodes.Equals(null))
+        {
+            ResourceManager.networkReady = true;
+        }
     }
 
 

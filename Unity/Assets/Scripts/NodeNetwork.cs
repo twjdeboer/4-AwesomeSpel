@@ -104,8 +104,8 @@ public class NodeNetwork {
     {
         float xMin = network[0, 0].transform.position.x;
         float xMax = network[(int)numberOfNodes.x-1, 0].transform.position.x;
-        float yMin = network[0, 0].transform.position.y;
-        float yMax = network[0, (int)numberOfNodes.y-1].transform.position.y;
+        float yMin = network[0, 0].transform.position.z;
+        float yMax = network[0, (int)numberOfNodes.y-1].transform.position.z;
 
         return new Vector4(xMin, xMax, yMin, yMax);
     }

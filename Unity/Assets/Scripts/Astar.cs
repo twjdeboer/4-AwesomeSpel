@@ -15,6 +15,7 @@ public class Astar : MonoBehaviour{
     public Vector3 endPos;
     public NodeNetwork nodes;
     public int NPCNumber;
+    private float time = 0;
 
     //Walking
     public float moveSpeed;
@@ -25,14 +26,12 @@ public class Astar : MonoBehaviour{
     void Start()
     {
         useAstar = true;
-        startPos = transform.position;
     }
     /**
      * Set the parameters for algorithm and excute it.
      * */
     List<GameObject> MakePad(Vector3 startPos, Vector3 endPos)
     {
-        nodes = GameObject.Find("NodeNetwork").GetComponent<CreateNodeNetwork>().nodes;
         this.endNode = nodes.Closest(endPos);
         this.startNode = nodes.Closest(startPos);
         ReachableNodes(startNode, null);
@@ -166,12 +165,21 @@ public class Astar : MonoBehaviour{
         rigidbody.MovePosition(rigidbody.position + step);
     }
 
+    bool Timer()
+    {
+        time += Time.deltaTime;
+        return time > Random.Range(0, 20);
+    }
+
 
     //Use Astar to find a path.
     void WalkWithAStar(float moveSpeed, float rotateSpeed)
     {
-        if (useAstar)
+        if (useAstar && ResourceManager.networkReady)
         {
+            nodes = GameObject.Find("NodeNetwork").GetComponent<CreateNodeNetwork>().nodes;
+            startPos = transform.position;
+            endPos = PickRandomEndPos();
             path = MakePad(startPos, endPos);
             useAstar = false;
         }
@@ -186,14 +194,16 @@ public class Astar : MonoBehaviour{
         }
         else if (index == path.Count)
         {
-            useAstar = true;
-            this.index = 1;
-            path.Clear();
-            openList.Clear();
-            closedList.Clear();
-            nodes.ClearCosts(NPCNumber);
-            startPos = transform.position;
-            endPos = PickRandomEndPos();
+            if (Timer())
+            {
+                time = 0;
+                useAstar = true;
+                this.index = 1;
+                path.Clear();
+                openList.Clear();
+                closedList.Clear();
+                nodes.ClearCosts(NPCNumber);
+            }
         }
         
     }
@@ -213,8 +223,7 @@ public class Astar : MonoBehaviour{
         float xPos = Random.Range(nodes.NetworkRange().x, nodes.NetworkRange().y);
         float zPos = Random.Range(nodes.NetworkRange().z, nodes.NetworkRange().w);
         Vector3 pos = new Vector3(xPos, 0, zPos);
-        GameObject endNode = nodes.Closest(pos);
-    
+        GameObject endNode = nodes.Closest(pos);        
 
         while (!endNode.GetComponent<Node>().accesable)
         {
@@ -223,6 +232,7 @@ public class Astar : MonoBehaviour{
             pos = new Vector3(xPos, 0, zPos);
             endNode = nodes.Closest(pos);
         }
+       
         return pos;
     }
 
