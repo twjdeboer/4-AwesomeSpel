@@ -20,6 +20,7 @@ public class Astar : MonoBehaviour{
     //Walking
     public float moveSpeed;
     public float rotateSpeed;
+    public bool stopWalking = false;
 
     private int index = 1;
 
@@ -200,7 +201,7 @@ public class Astar : MonoBehaviour{
         }
 
         //Walks to next node.
-        if (path.Count > 0 && index < path.Count)
+        if (path.Count > 0 && index < path.Count && !stopWalking)
         {
             if (!Methods.ReachedPosWithBuffer(transform.position, path[index].transform.position, new Vector3(0.5f,9999999,0.5f)))
                 NPCWalk(moveSpeed, rotateSpeed, path[index].transform.position);
@@ -210,7 +211,7 @@ public class Astar : MonoBehaviour{
         }
 
         //Makes a new path id end reached.
-        else if (index == path.Count)
+        else if (index == path.Count && !stopWalking)
         {
             if (Timer())
             {
