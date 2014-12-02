@@ -56,6 +56,18 @@ public class Player : MonoBehaviour
             this.walkSpeed = this.intSpeed;
     }
 
+    void RotateToNPC()
+    {
+        if (ResourceManager.stopWalking)
+        {
+            Transform target = ResourceManager.conversationWith;
+            Vector3 targetDir = target.position - transform.position;
+            float step = rotateSpeed * Time.deltaTime;
+            Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0F);
+            transform.rotation = Quaternion.LookRotation(newDir);
+        }
+    }
+
     //Actions
 
     void Start()
@@ -72,5 +84,6 @@ public class Player : MonoBehaviour
             Sprint(runSpeed);
             ResourceManager.playerPosition = transform.position;
         }
+        RotateToNPC();
     }
 }

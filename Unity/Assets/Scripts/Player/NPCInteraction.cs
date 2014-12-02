@@ -32,6 +32,7 @@ public class NPCInteraction : MonoBehaviour {
         conversationInterface.gameObject.SetActive(true);
         runTime = true;
         gameObject.GetComponent<Astar>().stopWalking = true;
+        ResourceManager.conversationWith = transform;
         ResourceManager.stopWalking = true;
     }
     
@@ -45,7 +46,18 @@ public class NPCInteraction : MonoBehaviour {
         intTime = timeToWait;
 	}
 
-
+    void RotateToPlayer()
+    {
+        if (!stopWalking)
+        {
+            float speed = gameObject.GetComponent<Astar>().rotateSpeed;
+            Transform target = GameObject.Find("Player").transform;
+            Vector3 targetDir = target.position - transform.position;
+            float step = speed * Time.deltaTime;
+            Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0F);
+            transform.rotation = Quaternion.LookRotation(newDir);
+        }
+    }
 
 
 
@@ -141,5 +153,7 @@ public class NPCInteraction : MonoBehaviour {
 
         DisplayWordForWord("Hello World! This is a great test. We can see if the text is wrapped automatically. Does it works? Apparently it works."+
             "Now we have to work on line numbering. If the max number of lines is reached the box have to be cleared and te text should go on when we press te mouse or space. Does it work?");
-	}
+        RotateToPlayer();
+
+    }
 }
