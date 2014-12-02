@@ -66,8 +66,11 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
-        Walk(walkSpeed, rotateSpeed);
-        Sprint(runSpeed);
-        ResourceManager.playerPosition = transform.position;
+        if (!ResourceManager.stopWalking)
+        {
+            Walk(walkSpeed, rotateSpeed);
+            Sprint(runSpeed);
+            ResourceManager.playerPosition = transform.position;
+        }
     }
 }

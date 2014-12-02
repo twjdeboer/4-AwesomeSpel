@@ -20,7 +20,7 @@ public class Astar : MonoBehaviour{
     //Walking
     public float moveSpeed;
     public float rotateSpeed;
-    public bool stopWalking = false;
+    public bool stopWalking;
 
     private int index = 1;
 
@@ -199,7 +199,6 @@ public class Astar : MonoBehaviour{
             path = MakePad(startPos, endPos);
             useAstar = false;
         }
-
         //Walks to next node.
         if (path.Count > 0 && index < path.Count && !stopWalking)
         {

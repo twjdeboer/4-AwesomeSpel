@@ -1,26 +1,30 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Linq;
+using System.Collections.Generic;
 using UnityEngine.UI;
 
 public class NPCInteraction : MonoBehaviour {
 
-    public Canvas conversationInterface;
-    public Text conversationText;
-    public Text nameText;
+    private Canvas conversationInterface;
+    private Text conversationText;
+    private Text nameText;
+    private TextGenerator genText;
 
     public string NPCName;
     public float timeToWait;
-    public int maxNumberOfChar;
     public int maxNumberOfLines;
-    public int lineWidth;
+    public bool stopWalking = false;
 
-    private int lineNumber = 1;
+
+    private int lineNumber;
+    private float intTime;
     private float timer = 0;
     private int index = 0;
     private string textToDisplay;
     private bool runTime = false;
-    private int[] previousLineLength;
+    private bool pauseForNextLine = false;
+    private bool endOfText = false;
 
     
     void OnMouseUp()
@@ -28,17 +32,17 @@ public class NPCInteraction : MonoBehaviour {
         conversationInterface.gameObject.SetActive(true);
         runTime = true;
         gameObject.GetComponent<Astar>().stopWalking = true;
+        ResourceManager.stopWalking = true;
     }
     
     // Use this for initialization
 	void Start () 
     {
-        previousLineLength = new int[4]{ 0, 0, 0, 0};
         conversationInterface = GameObject.Find("Conversation Interface").GetComponent<Canvas>();
         conversationText = GameObject.Find("Conversation Text").GetComponent<Text>();
         nameText = GameObject.Find("Name Text").GetComponent<Text>();
-        nameText.text = NPCName;       
         conversationInterface.gameObject.SetActive(false);
+        intTime = timeToWait;
 	}
 
 
@@ -48,9 +52,11 @@ public class NPCInteraction : MonoBehaviour {
     void DisplayWordForWord(string text)
     {
         char[] splittedText = text.ToCharArray();
+        int maxNumberOfChar = splittedText.Length;
 
         if (index == 0)
         {
+            nameText.text = NPCName;
             textToDisplay = splittedText[0].ToString();
             index++;
         }
@@ -58,29 +64,82 @@ public class NPCInteraction : MonoBehaviour {
         if (runTime)
             timer += Time.deltaTime;
 
-        if(timer > timeToWait && index < splittedText.Length )
+        if(timer > timeToWait && !endOfText)
         {
-            WriteNextWord(textToDisplay, maxNumberOfChar, splittedText[index].ToString());
-            index++;
+            WriteNextWord(textToDisplay, maxNumberOfChar, splittedText[index]);
             timer = 0;
+        }
+
+        if(endOfText)
+        {
+            if (Input.GetKeyUp(KeyCode.Mouse0) || Input.GetKeyUp(KeyCode.Space))
+            {
+                conversationInterface.gameObject.SetActive(false);
+                gameObject.GetComponent<Astar>().stopWalking = false;
+                ResourceManager.stopWalking = false;
+                index = 0;
+                runTime = false;
+                textToDisplay = "";
+                conversationText.text = "";
+                nameText.text = "";
+                endOfText = false;
+            }
         }
 
         conversationText.text = textToDisplay;
             
     }
 
-    void WriteNextWord(string currentText, int maxNumberOfChar, string nextWord )
+    void WriteNextWord(string currentText, int maxNumberOfChar, char nextLetter)
     {
-        string temp = textToDisplay;
-        textToDisplay += "" + nextWord;
+        lineNumber = conversationText.cachedTextGenerator.lineCount;
+        if (lineNumber > maxNumberOfLines)
+        {
+            BoxEnd(currentText);
+            pauseForNextLine = true;            
+        }
+        if (pauseForNextLine)
+        {
+            if (Input.GetKeyUp(KeyCode.Mouse0) || Input.GetKeyUp(KeyCode.Space))
+            {
+                conversationText.text = "";
+                textToDisplay = "";
+                lineNumber = 1;
+                pauseForNextLine = false;
+            }
+        }
+
+        if (lineNumber <= maxNumberOfLines && !pauseForNextLine)
+        {
+            textToDisplay += "" + nextLetter.ToString();
+            index++;
+        }
+
+        if (index >= maxNumberOfChar)
+        {
+            endOfText = true;
+        }
     }
 
+    void BoxEnd(string text)
+    {
+        if (!pauseForNextLine)
+        {
+            List<string> splittedText = text.Split(' ').ToList<string>();
+            splittedText.RemoveAt(splittedText.Count - 1);
+            string newText = Methods.MakeStringOutArray(splittedText);
+            index = newText.Length;
+            textToDisplay = newText;
+        }
+    }
+
+
+    
 	
 	// Update is called once per frame
 	void Update () {
 
         DisplayWordForWord("Hello World! This is a great test. We can see if the text is wrapped automatically. Does it works? Apparently it works."+
             "Now we have to work on line numbering. If the max number of lines is reached the box have to be cleared and te text should go on when we press te mouse or space. Does it work?");
-	
 	}
 }

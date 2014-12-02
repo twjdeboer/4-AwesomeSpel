@@ -16,4 +16,6 @@ public static class ResourceManager{
 
     public static int numberOfChilds { get; set; }
 
+    public static bool stopWalking { get; set; }
+
 }

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public static class Methods {
 
@@ -35,5 +36,15 @@ public static class Methods {
 
    }
 
+    public static string MakeStringOutArray(List<string> stringArray)
+    {
+        string res = "";
+
+        for(int i = 0; i < stringArray.Count; i++)
+        {
+            res += stringArray[i] + " ";
+        }
+        return res;
+    }
 
 }
