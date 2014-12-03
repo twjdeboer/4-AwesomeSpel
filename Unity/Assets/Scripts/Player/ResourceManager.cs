@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public static class ResourceManager{
 
@@ -18,5 +19,6 @@ public static class ResourceManager{
 
     public static bool stopWalking { get; set; }
     public static Transform conversationWith { get; set; }
+
 
 }
