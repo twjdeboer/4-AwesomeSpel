@@ -92,7 +92,7 @@ public class ProceduralHouse{
 	
 	private void MakeBlok(){
 		Vector3 temp = pos;
-		newhouse = MonoBehaviour.Instantiate(Resources.Load ("Prefabs/House2", typeof(GameObject))) as GameObject;
+		newhouse = MonoBehaviour.Instantiate(Resources.Load ("Prefabs/ProceduralHouse/House2", typeof(GameObject))) as GameObject;
 		newhouse.transform.parent = empty.transform;
 		temp.y += (float)0.5*scale.y;	//0.5 anders in de grond
 		newhouse.transform.position = temp;
@@ -105,7 +105,7 @@ public class ProceduralHouse{
 	private void MakeRoof(){
 		int roofnr = Random.Range (1, 3);	//nummer of roofs
 		Vector3 temp = pos;
-		roof = MonoBehaviour.Instantiate(Resources.Load ("Prefabs/Roof"+roofnr, typeof(GameObject))) as GameObject;
+		roof = MonoBehaviour.Instantiate(Resources.Load ("Prefabs/ProceduralHouse/Roof"+roofnr, typeof(GameObject))) as GameObject;
 		roof.transform.parent = empty.transform;
 		temp.y += (float)1*scale.y;		//1 zodat boven het huisblokje
 		
@@ -133,14 +133,14 @@ public class ProceduralHouse{
 		GameObject[] Windowcolor = GameObject.FindGameObjectsWithTag ("Roof");
 		for (int i=0; i<Windowcolor.Length; i++) {
 			Windowcolor[i].renderer.material = (Material)Resources.Load ("Materials/"+"Roof"+"/"+rooftexture, typeof(Material));
-			Windowcolor[i].tag="Untagged";
+			Windowcolor[i].tag="Building";
 		}
 	}
 	
 	
 	
 	public void MakeDoor(){
-		door = MonoBehaviour.Instantiate(Resources.Load ("Prefabs/Door", typeof(GameObject))) as GameObject;
+		door = MonoBehaviour.Instantiate(Resources.Load ("Prefabs/ProceduralHouse/Door", typeof(GameObject))) as GameObject;
 		door.transform.parent = empty.transform;
 		
 		GameObject doorWindow=GameObject.Find ("/HouseBox"+mynumber+"/Door(Clone)/Window");
@@ -161,6 +161,7 @@ public class ProceduralHouse{
 		door.transform.position = temp;
 
 		doorWindow.renderer.material =(Material)Resources.Load ("Materials/"+"Door"+"/"+Random.Range (1, 5), typeof(Material));
+		doorWindow.transform.tag = "Building";
 
 	}
 	
@@ -181,7 +182,7 @@ public class ProceduralHouse{
 		
 		for (int i=0; i<windownr; i++) {
 			int prefabwindow=(int)Random.Range(1,2);
-			window[i] = MonoBehaviour.Instantiate (Resources.Load ("Prefabs/Window"+prefabwindow, typeof(GameObject))) as GameObject;
+			window[i] = MonoBehaviour.Instantiate (Resources.Load ("Prefabs/ProceduralHouse/Window"+prefabwindow, typeof(GameObject))) as GameObject;
 			windowWindow[i]=GameObject.Find ("/Window"+prefabwindow+"(Clone)/Window");
 			windowBottom[i]=GameObject.Find ("/Window"+prefabwindow+"(Clone)/Bottom");
 			windowTop[i]=GameObject.Find ("/Window"+prefabwindow+"(Clone)/Top");
@@ -213,11 +214,11 @@ public class ProceduralHouse{
 		GameObject[] Windowcolor = GameObject.FindGameObjectsWithTag ("Window");
 		for (int i=0; i<Omlijstingcolor.Length; i++) {
 			Omlijstingcolor[i].renderer.material = (Material)Resources.Load ("Materials/"+"Omlijsting"+"/"+omlijsting, typeof(Material));
-			Omlijstingcolor[i].tag="Untagged";
+			Omlijstingcolor[i].tag="Building";
 		}
 		for (int i=0; i<Windowcolor.Length; i++) {
 			Windowcolor[i].renderer.material = (Material)Resources.Load ("Materials/"+"Windows"+"/"+windowtexture, typeof(Material));
-			Windowcolor[i].tag="Untagged";
+			Windowcolor[i].tag="Building";
 		}
 	}
 	
@@ -332,10 +333,14 @@ public class ProceduralHouse{
 	
 	private void Changepos(){
 		//MonoBehaviour.print(pos.z+" "+pos.x+" Before");
-		if ( ((rot.eulerAngles.y > 0f)&(rot.eulerAngles.y<180f)) | ((rot.eulerAngles.y > 180f)&(rot.eulerAngles.y<360f)) ) {
-			pos.z +=0.5f*xscale;
+		int rotater = 1;
+		if (rot.eulerAngles.y > 179) {
+			rotater=-1;
+		}
+		if ( ((rot.eulerAngles.y > 0f)&(rot.eulerAngles.y<179f)) | ((rot.eulerAngles.y > 181f)&(rot.eulerAngles.y<360f)) ) {
+			pos.z +=0.5f*xscale*rotater;
 		} else {
-			pos.x -=0.5f*xscale;
+			pos.x -=0.5f*xscale*rotater;
 		}
 		//MonoBehaviour.print(pos.z+" "+pos.x+" After");
 		empty.transform.position = pos;
