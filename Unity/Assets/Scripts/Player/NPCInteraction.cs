@@ -22,7 +22,7 @@ public class NPCInteraction : MonoBehaviour {
     public OptionList options;
     public List<string> names;
     public List<GameObject> objects;
-
+    public int choiceOfPlayer;
 
     private int lineNumber;
     private float intTime;
@@ -41,6 +41,7 @@ public class NPCInteraction : MonoBehaviour {
     void OnMouseUp()
     {
         conversationInterface.gameObject.SetActive(true);
+        conversation.gameObject.SetActive(true);
         nameText.text = NPCName;
         runTime = true;
         gameObject.GetComponent<Astar>().stopWalking = true;
@@ -60,11 +61,12 @@ public class NPCInteraction : MonoBehaviour {
         twoButtons.SetActive(false);
         threeButtons.SetActive(false);
         fourButtons.SetActive(false);
+        conversation.SetActive(false);
         conversationInterface.gameObject.SetActive(false);
         options = new OptionList("Hallo");
-        options.Add(new Option("Yolo"));
-        options.Add(new Option("hi"));
-        options.Add(new Option("323"));
+        options.Add(new Option("Yolo", "Gaat het wel goed met alleen text"));
+        options.Add(new Option("hi", "2YPJAKHDAKSJHDKAHDKAHDKHKJSD"));
+        options.Add(new Option("323", "3 ljaaksjdfhkasdhfhsadkjhfksdlhf"));
 	}
 
     /**
@@ -106,7 +108,6 @@ public class NPCInteraction : MonoBehaviour {
         // Reset everything after conversation ended.
         if(endOfText)
         {
-            PlayerTalk();
             if (Input.GetKeyUp(KeyCode.Mouse0) || Input.GetKeyUp(KeyCode.Space))
             {
                 conversationInterface.gameObject.SetActive(false);
@@ -119,10 +120,16 @@ public class NPCInteraction : MonoBehaviour {
                 nameText.text = "";
                 endOfText = false;
             }
+
         }
 
         conversationText.text = textToDisplay;
             
+    }
+
+    void NPCTalk(string text)
+    {
+        DisplayWordForWord(text);
     }
 
     /**
@@ -178,10 +185,36 @@ public class NPCInteraction : MonoBehaviour {
         }
     }
 
+
     void PlayerTalk()
     {
-        ActivateUI();
-        FillUI();
+        choiceOfPlayer = ResourceManager.choiceOfPlayer;
+        conversationInterface.gameObject.SetActive(true);
+        if (choiceOfPlayer == 0)
+        {
+            ActivateUI();
+            FillUI();
+        }
+        PlayerAnswer();
+    }
+
+    void PlayerAnswer()
+    {
+        string playerText = null;
+        if(choiceOfPlayer != 0)
+        {
+            Active.gameObject.SetActive(false);
+            nameText.text = "Player";
+            playerText = options[choiceOfPlayer - 1].reaction;
+        }
+        if (playerText != null)
+        {
+            conversation.gameObject.SetActive(true);
+            runTime = true;
+            Debug.Log(playerText);
+            Debug.Log(index);
+            DisplayWordForWord(playerText);
+        }
     }
 
     void ActivateUI()
@@ -202,6 +235,7 @@ public class NPCInteraction : MonoBehaviour {
     }
 
 
+
     void FillUI()
     {
         GameObject.Find("Question Text").GetComponent<Text>().text = options.question;
@@ -214,9 +248,9 @@ public class NPCInteraction : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        DisplayWordForWord("Hello World! This is a great test. We can see if the text is wrapped automatically. Does it works? Apparently it works."+
-            "Now we have to work on line numbering. If the max number of lines is reached the box have to be cleared and te text should go on when we press te mouse or space. Does it work?");
         RotateToPlayer();
+        PlayerTalk();
+
 
     }
 }

@@ -20,5 +20,8 @@ public static class ResourceManager{
     public static bool stopWalking { get; set; }
     public static Transform conversationWith { get; set; }
 
+    private static int intChoice = 0;
+    public static int choiceOfPlayer { get { return intChoice; } set { intChoice = value; } }
+
 
 }
