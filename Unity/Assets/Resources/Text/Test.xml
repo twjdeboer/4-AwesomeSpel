@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<conversation>
+  <NPC>Hello World! We now test our xml input, first we have to make sure a NPC can talk back to the player using a xml file.</NPC>
+</conversation>

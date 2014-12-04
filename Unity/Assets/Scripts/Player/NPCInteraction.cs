@@ -3,6 +3,9 @@ using System.Collections;
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using System.Xml;
+using System.Text;
+using System.IO;
 
 public class NPCInteraction : MonoBehaviour {
 
@@ -23,6 +26,7 @@ public class NPCInteraction : MonoBehaviour {
     public List<string> names;
     public List<GameObject> objects;
     public int choiceOfPlayer;
+
 
     private int lineNumber;
     private float intTime;
@@ -234,7 +238,12 @@ public class NPCInteraction : MonoBehaviour {
         }
     }
 
-
+    void XMLReader(string fileName)
+    {
+        XmlDocument xmlDoc = new XmlDocument();
+        xmlDoc.LoadXml(fileName);
+        XmlReader xml = new XmlNodeReader(xmlDoc);
+    }
 
     void FillUI()
     {
