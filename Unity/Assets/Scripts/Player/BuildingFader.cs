@@ -8,9 +8,9 @@ public class BuildingFader : MonoBehaviour {
     void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Building")
-           Methods.SetAlpha(other.gameObject, 0.2f);
+           Methods.SetAlpha(other.gameObject, 0.5f);
 		if(other.gameObject.tag == "Building2")
-			Methods.SetAlpha(other.gameObject, 0.5f);
+			Methods.SetAlpha(other.gameObject, 0.1f);
     }
 
     void OnTriggerExit(Collider other)
