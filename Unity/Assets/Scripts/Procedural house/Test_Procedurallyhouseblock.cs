@@ -5,7 +5,9 @@ using System.Collections.Generic;
 
 public class Test_Procedurallyhouseblock : MonoBehaviour {
 	public GameObject world;
+	public bool buildhouse;
 	private GameObject[] Houseblok;
+
 	private ProceduralHouseblok newHouseBlok;
 	private GameObject devidehouse;
 	
@@ -29,6 +31,20 @@ public class Test_Procedurallyhouseblock : MonoBehaviour {
 		Houseblok = GameObject.FindGameObjectsWithTag ("Huisblok");
 		GrassFloor = new GameObject[Houseblok.Length];
 		createarray ();
+
+		print (Houseblok.Length+" houseblok length");
+		if (Houseblok.Length == 0) {
+			Housebloks[0]=false;
+			Housebloks[1]=true;
+			Houseblok = GameObject.FindGameObjectsWithTag ("Huisblokback");
+			GrassFloor = new GameObject[Houseblok.Length];
+			print (Houseblok.Length+" blokback length");
+			if(Houseblok.Length==0){
+				Houses = GameObject.FindGameObjectsWithTag ("Prebuilding");
+				preHouses=true;
+				Housebloks[1]=false;
+			}
+		}
 		/*
 		createPrebuilding ("Huisblok","Prebuilding",false);
 		createPrebuilding ("Huisblokback","Prebuildingback",true);
@@ -51,7 +67,7 @@ public class Test_Procedurallyhouseblock : MonoBehaviour {
 
 
 		if(Housebloks[0]){
-			createPrebuilding("Huisblok","Prebuilding",false,j);
+			createPrebuilding("Prebuilding",false,j);
 			if(j==Houseblok.Length-1){
 				Houseblok = GameObject.FindGameObjectsWithTag ("Huisblokback");
 				if(Houseblok.Length>0){
@@ -61,7 +77,7 @@ public class Test_Procedurallyhouseblock : MonoBehaviour {
 					Housebloks[1]=true;
 				}else{
 					Housebloks[0]=false;
-					preHouses=true;
+					preHouses=buildhouse;
 					j=0;
 					Houses = GameObject.FindGameObjectsWithTag ("Prebuilding");
 					newHouse = new ProceduralHouse[Houses.Length];
@@ -69,11 +85,11 @@ public class Test_Procedurallyhouseblock : MonoBehaviour {
 			}
 		}
 		if(Housebloks[1]){
-			createPrebuilding ("Huisblokback","Prebuildingback",true,j);
+			createPrebuilding ("Prebuildingback",true,j);
 			if(j==Houseblok.Length-1){
 				j=0;
 				Housebloks[1]=false;
-				preHouses=true;
+				preHouses=buildhouse;
 				Houses = GameObject.FindGameObjectsWithTag ("Prebuilding");
 				newHouse = new ProceduralHouse[Houses.Length];
 				}
@@ -117,7 +133,7 @@ public class Test_Procedurallyhouseblock : MonoBehaviour {
 	}
 
 
-	public void createPrebuilding(string search,string settag,bool back,int j){
+	public void createPrebuilding(string settag,bool back,int j){
 		createGrassfloor(j);
 		
 		newHouseBlok = new ProceduralHouseblok (Houseblok[j]);
@@ -158,7 +174,7 @@ public class Test_Procedurallyhouseblock : MonoBehaviour {
 	}
 
 	public void createGrassfloor(int j){
-		GrassFloor[j] = MonoBehaviour.Instantiate(Resources.Load ("Prefabs/GrassFloor", typeof(GameObject))) as GameObject;
+		GrassFloor[j] = MonoBehaviour.Instantiate(Resources.Load ("Prefabs/ProceduralHouse/GrassFloor", typeof(GameObject))) as GameObject;
 		GrassFloor[j].transform.position=Houseblok[j].transform.position;
 		Vector3 temp=GrassFloor[j].transform.localScale;
 		temp.x=Houseblok[j].transform.localScale.x;

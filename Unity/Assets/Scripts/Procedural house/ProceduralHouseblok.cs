@@ -18,7 +18,7 @@ public class ProceduralHouseblok{
 		scale = houseblok.transform.localScale;
 		pos = houseblok.transform.position;
 		rot = houseblok.transform.rotation;
-		if ( ((rot.eulerAngles.y > 0f)&(rot.eulerAngles.y<180f)) | ((rot.eulerAngles.y > 180f)&(rot.eulerAngles.y<360f)) ) {
+		if ( ((rot.eulerAngles.y > 0f)&(rot.eulerAngles.y<179f)) || ((rot.eulerAngles.y > 181f)&(rot.eulerAngles.y<359f)) ) {
 			rotation = true;
 		} else {
 			rotation = false;
@@ -41,9 +41,13 @@ public class ProceduralHouseblok{
 			int rand = (int)Random.Range(4,8);
 			newlefthouse = MonoBehaviour.Instantiate(Resources.Load ("Prefabs/House", typeof(GameObject))) as GameObject;
 			newrighthouse = MonoBehaviour.Instantiate(Resources.Load ("Prefabs/House", typeof(GameObject))) as GameObject;
+			if(rot.eulerAngles.y<179){
 			newlefthouse.transform.tag="Prebuildingl"+addtag;
 			newrighthouse.transform.tag="Prebuildingr"+addtag;
-			
+			}else if(rot.eulerAngles.y>179){
+				newlefthouse.transform.tag="Prebuildingr"+addtag;
+				newrighthouse.transform.tag="Prebuildingl"+addtag;
+			}
 			
 			stemp1.z = (float)rand;
 			stemp2.z = (float)rand;
@@ -53,6 +57,7 @@ public class ProceduralHouseblok{
 			}else{
 				ptemp1.x = pos.x + (scale.z/2f - (float)rand/2f)*-1;
 				ptemp2.x = pos.x + (scale.z/2f - (float)rand/2f);	
+				MonoBehaviour.print("rotatie");
 			}
 			scale.z-=(float)rand*2;
 			//MonoBehaviour.print(scale.z+" "+stemp1.z+" "+stemp2.z);
