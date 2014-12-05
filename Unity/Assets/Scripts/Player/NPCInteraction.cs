@@ -22,12 +22,14 @@ public class NPCInteraction : MonoBehaviour {
     public float timeToWait;
     public int maxNumberOfLines;
     public bool stopWalking = false;
-    public OptionList options;
+    public List<OptionList> options = new List<OptionList>();
     public List<string> names;
     public List<GameObject> objects;
+    public List<Action> actionList = new List<Action>();
     public int choiceOfPlayer;
+    public string fileName;
 
-
+    private int actionIndex = 0;
     private int lineNumber;
     private float intTime;
     private float timer = 0;
@@ -38,6 +40,7 @@ public class NPCInteraction : MonoBehaviour {
     private bool pauseForNextLine = false;
     private bool endOfText = false;
     private GameObject Active;
+    private bool Go = false;
 
     /**
      * Start conversation if clicked on NPC
@@ -45,12 +48,12 @@ public class NPCInteraction : MonoBehaviour {
     void OnMouseUp()
     {
         conversationInterface.gameObject.SetActive(true);
-        conversation.gameObject.SetActive(true);
-        nameText.text = NPCName;
         runTime = true;
         gameObject.GetComponent<Astar>().stopWalking = true;
         ResourceManager.conversationWith = transform;
         ResourceManager.stopWalking = true;
+        XMLReader(fileName);
+        Go = true;
     }
     
 	void Start () 
@@ -67,10 +70,6 @@ public class NPCInteraction : MonoBehaviour {
         fourButtons.SetActive(false);
         conversation.SetActive(false);
         conversationInterface.gameObject.SetActive(false);
-        options = new OptionList("Hallo");
-        options.Add(new Option("Yolo", "Gaat het wel goed met alleen text"));
-        options.Add(new Option("hi", "2YPJAKHDAKSJHDKAHDKAHDKHKJSD"));
-        options.Add(new Option("323", "3 ljaaksjdfhkasdhfhsadkjhfksdlhf"));
 	}
 
     /**
@@ -115,14 +114,13 @@ public class NPCInteraction : MonoBehaviour {
             if (Input.GetKeyUp(KeyCode.Mouse0) || Input.GetKeyUp(KeyCode.Space))
             {
                 conversationInterface.gameObject.SetActive(false);
-                gameObject.GetComponent<Astar>().stopWalking = false;
-                ResourceManager.stopWalking = false;
                 index = 0;
                 runTime = false;
                 textToDisplay = "";
                 conversationText.text = "";
                 nameText.text = "";
                 endOfText = false;
+                actionIndex++;
             }
 
         }
@@ -133,6 +131,8 @@ public class NPCInteraction : MonoBehaviour {
 
     void NPCTalk(string text)
     {
+        conversation.gameObject.SetActive(true);
+        nameText.text = NPCName;
         DisplayWordForWord(text);
     }
 
@@ -190,42 +190,40 @@ public class NPCInteraction : MonoBehaviour {
     }
 
 
-    void PlayerTalk()
+    void PlayerTalk(OptionList list)
     {
         choiceOfPlayer = ResourceManager.choiceOfPlayer;
         conversationInterface.gameObject.SetActive(true);
         if (choiceOfPlayer == 0)
         {
-            ActivateUI();
-            FillUI();
+            ActivateUI(list);
+            FillUI(list);
         }
-        PlayerAnswer();
+        PlayerAnswer(list);
     }
 
-    void PlayerAnswer()
+    void PlayerAnswer(OptionList list)
     {
         string playerText = null;
         if(choiceOfPlayer != 0)
         {
             Active.gameObject.SetActive(false);
             nameText.text = "Player";
-            playerText = options[choiceOfPlayer - 1].reaction;
+            playerText = list[choiceOfPlayer - 1].reaction;
         }
         if (playerText != null)
         {
             conversation.gameObject.SetActive(true);
             runTime = true;
-            Debug.Log(playerText);
-            Debug.Log(index);
             DisplayWordForWord(playerText);
         }
     }
 
-    void ActivateUI()
+    void ActivateUI(OptionList list)
     {
         if (!Activated)
         {
-            int numberOfOptions = options.Count;
+            int numberOfOptions = list.Count;
             if (numberOfOptions == 2)
                 Active = twoButtons;
             if (numberOfOptions == 3)
@@ -240,26 +238,72 @@ public class NPCInteraction : MonoBehaviour {
 
     void XMLReader(string fileName)
     {
-        XmlDocument xmlDoc = new XmlDocument();
-        xmlDoc.LoadXml(fileName);
-        XmlReader xml = new XmlNodeReader(xmlDoc);
+        XmlTextReader reader = new XmlTextReader("Assets\\Resources\\Text\\" + fileName);
+        while (reader.Read())
+        {
+            switch (reader.NodeType)
+            {
+                case XmlNodeType.Element:
+                    if (reader.Name.Equals("NPC"))
+                    {
+                        actionList.Add(new Action(1, reader.ReadInnerXml()));
+                    }
+                    if (reader.Name.Equals("PLAYER"))
+                    {
+                        reader.ReadToDescendant("QUESTION");
+                        string listIndex = reader.GetAttribute(0);
+                        options.Add(new OptionList(reader.ReadInnerXml()));
+                        while(reader.ReadToFollowing("OPTION"))
+                        {
+                            string optionText = "";
+                            string reactionText = "";
+                            reader.ReadToDescendant("TEXT");
+                            optionText = reader.ReadInnerXml();
+                            reader.ReadToNextSibling("REACTION");
+                            reactionText = reader.ReadInnerXml();
+                            options[int.Parse(listIndex) - 1].Add(new Option(optionText, reactionText));                      
+                        }
+                        actionList.Add(new Action(2, listIndex));
+                    }
+                    break;
+            }
+        }
     }
 
-    void FillUI()
+    void Action()
     {
-        GameObject.Find("Question Text").GetComponent<Text>().text = options.question;
+        if (Go)
+        {
+            if (actionIndex < actionList.Count)
+            {
+                if (actionList[actionIndex].actionNumber == 1)
+                    NPCTalk(actionList[actionIndex].actionText);
+                else if (actionList[actionIndex].actionNumber == 2)
+                {
+                    PlayerTalk(options[int.Parse(actionList[actionIndex].actionText) - 1]);
+                }
+            }
+            else
+            {
+                gameObject.GetComponent<Astar>().stopWalking = false;
+                ResourceManager.stopWalking = false;
+                Go = false;
+            }
+        }
+    }
+    void FillUI(OptionList list)
+    {
+        GameObject.Find("Question Text").GetComponent<Text>().text = list.question;
         for (int i = 1; i < options.Count +1; i++ )
         {
-            GameObject.Find("Option " + i + " Text").GetComponent<Text>().text = options[i - 1].text;
+            GameObject.Find("Option " + i + " Text").GetComponent<Text>().text = list[i - 1].text;
         }
     }
 	
 	// Update is called once per frame
 	void Update () {
-
+        Action();
         RotateToPlayer();
-        PlayerTalk();
-
 
     }
 }

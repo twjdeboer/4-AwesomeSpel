@@ -316,6 +316,7 @@ MonoBehaviour:
   names: []
   objects: []
   choiceOfPlayer: 0
+  fileName: Test.xml
 --- !u!1 &48393606
 GameObject:
   m_ObjectHideFlags: 0
