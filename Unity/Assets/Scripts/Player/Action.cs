@@ -19,5 +19,8 @@ public class Action{
         this.optionListNumber = optionListNumber;
     }
 
-
+    public string ToString()
+    {
+        return "Action[" + actionNumber + ", " + actionText + optionListNumber + "]"; 
+    }
 }

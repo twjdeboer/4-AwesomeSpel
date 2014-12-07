@@ -23,8 +23,6 @@ public class NPCInteraction : MonoBehaviour {
     public int maxNumberOfLines;
     public bool stopWalking = false;
     public List<OptionList> options = new List<OptionList>();
-    public List<string> names;
-    public List<GameObject> objects;
     public List<Action> actionList = new List<Action>();
     public int choiceOfPlayer;
     public string fileName;
@@ -50,7 +48,6 @@ public class NPCInteraction : MonoBehaviour {
     void OnMouseUp()
     {
         conversationInterface.gameObject.SetActive(true);
-        runTime = true;
         gameObject.GetComponent<Astar>().stopWalking = true;
         ResourceManager.conversationWith = transform;
         ResourceManager.stopWalking = true;
@@ -98,6 +95,8 @@ public class NPCInteraction : MonoBehaviour {
         //makes char array with text.
         char[] splittedText = text.ToCharArray();
         int maxNumberOfChar = splittedText.Length;
+        if(index == 0)
+            runTime = true;
 
         //makes timer run.
         if (runTime)
@@ -115,19 +114,27 @@ public class NPCInteraction : MonoBehaviour {
         {
             if (Input.GetKeyUp(KeyCode.Mouse0) || Input.GetKeyUp(KeyCode.Space))
             {
-                conversationInterface.gameObject.SetActive(false);
+                conversationInterface.gameObject.SetActive(false);             
                 index = 0;
                 runTime = false;
                 textToDisplay = "";
                 conversationText.text = "";
                 nameText.text = "";
                 endOfText = false;
-                actionIndex++;
+                if(!NPCHasToAnswer && !NPCAnswer)
+                    actionIndex++;
                 if (NPCHasToAnswer)
+                {
                     NPCAnswer = true;
-                if (NPCAnswer)
-                    NPCHasToAnswer = false;
-
+                    Active.SetActive(false);
+                }
+                else if (NPCAnswer)
+                {
+                    ResourceManager.choiceOfPlayer = 0;
+                    actionIndex++;
+                    NPCAnswer = false;
+                    Activated = false;
+                }
             }
 
         }
@@ -138,6 +145,7 @@ public class NPCInteraction : MonoBehaviour {
 
     void NPCTalk(string text)
     {
+        conversationInterface.gameObject.SetActive(true);
         conversation.gameObject.SetActive(true);
         nameText.text = NPCName;
         DisplayWordForWord(text);
@@ -221,15 +229,15 @@ public class NPCInteraction : MonoBehaviour {
             nameText.text = "Player";
             playerText = list[choiceOfPlayer - 1].text;
         }
-        if (playerText != null)
+        if (playerText != null && !NPCAnswer)
         {
             conversation.gameObject.SetActive(true);
-            runTime = true;
             NPCHasToAnswer = true;
             DisplayWordForWord(playerText);
         }
         if (NPCAnswer)
         {
+            NPCHasToAnswer = false;
             NPCText = list[choiceOfPlayer - 1].reaction;
             NPCTalk(NPCText);
         }
@@ -318,7 +326,9 @@ public class NPCInteraction : MonoBehaviour {
             if (actionIndex < actionList.Count)
             {
                 if (actionList[actionIndex].actionNumber == 1)
+                {
                     NPCTalk(actionList[actionIndex].actionText);
+                }
                 else if (actionList[actionIndex].actionNumber == 2)
                 {
                     PlayerTalk(options[actionList[actionIndex].optionListNumber - 1]);
@@ -326,9 +336,13 @@ public class NPCInteraction : MonoBehaviour {
             }
             else
             {
+                
                 gameObject.GetComponent<Astar>().stopWalking = false;
                 ResourceManager.stopWalking = false;
+                actionList.Clear();
                 Go = false;
+                actionIndex = 0;
+                options.Clear();
             }
         }
     }
@@ -345,6 +359,5 @@ public class NPCInteraction : MonoBehaviour {
 	void Update () {
         Action();
         RotateToPlayer();
-
     }
 }

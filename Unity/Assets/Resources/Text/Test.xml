@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <conversation>
-  <NPC>Hello World! We now test our xml input, first we have to make sure a NPC can talk back to the player using a xml file.</NPC>
+  <NPC>Hello World! We now test our xml input, first we have to make sure a NPC can talk back to the player using a xml file. asjkdfhalkjsdhfakjsdsjhfjfsahjfshfshjfsfsffdfdshfhffa.</NPC>
   <PLAYER>
     <QUESTION TEXT ="VRAAG NUMMER 1">
       <OPTION>
@@ -10,6 +10,35 @@
       <OPTION>
         <TEXT>Optie 2</TEXT>
         <REACTION>Antwoord 2</REACTION>
+      </OPTION>
+      <OPTION>
+        <TEXT>Optie 3</TEXT>
+        <REACTION>Antwoord 3</REACTION>
+      </OPTION>
+      <OPTION>
+        <TEXT>Optie 4</TEXT>
+        <REACTION>Antwoord 4. fdjakfskjahsfdhksahfhsalkfhsaldkhfhsdahfakhlsdhflahfdlajkfjlkhjdhfahlfdjahsdlfhlasdlfhsjdhlashalfhashfhkashdjfhashdfkhdhfsadhflashaljdfh.</REACTION>
+      </OPTION>
+    </QUESTION>  
+  </PLAYER>
+<NPC>Hello World! We now test our xml input, first we have to make sure a NPC can talk back to the player using a xml file. asjkdfhalkjsdhfakjsdsjhfjfsahjfshfshjfsfsffdfdshfhffa.</NPC>
+  <PLAYER>
+    <QUESTION TEXT ="VRAAG NUMMER 1">
+      <OPTION>
+        <TEXT>Optie 1</TEXT>
+        <REACTION>Antwoord 1</REACTION>
+      </OPTION>
+      <OPTION>
+        <TEXT>Optie 2</TEXT>
+        <REACTION>Antwoord 2</REACTION>
+      </OPTION>
+      <OPTION>
+        <TEXT>Optie 3</TEXT>
+        <REACTION>Antwoord 3</REACTION>
+      </OPTION>
+      <OPTION>
+        <TEXT>Optie 4</TEXT>
+        <REACTION>Antwoord 4. fdjakfskjahsfdhksahfhsalkfhsaldkhfhsdahfakhlsdhflahfdlajkfjlkhjdhfahlfdjahsdlfhlasdlfhsjdhlashalfhashfhkashdjfhashdfkhdhfsadhflashaljdfh.</REACTION>
       </OPTION>
     </QUESTION>  
   </PLAYER>
