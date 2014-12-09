@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class EvidenceBehviour : MonoBehaviour {
 
@@ -13,27 +14,51 @@ public class EvidenceBehviour : MonoBehaviour {
     private Text evidenceNameText;
     private Quaternion intRotation;
     private Vector3 intPosition;
+    private Vector3 intScale;
+    private bool mouseEntered = false;
+    private bool onGround = false;
+    private bool rotated = false;
 
     void OnMouseOver()
     {
-        intRotation = transform.rotation;
-        intPosition = transform.position;
+    
+        SetStartRotAndPos();
+        mouseEntered = true;
         ActivateAndFillUI();
         InterfacePosition();
-        ScaleAndRotate();
     }
 
+    void SetStartRotAndPos()
+    {
+        if(onGround && !mouseEntered)
+        {
+            intRotation = transform.rotation;
+            intPosition = transform.position;
+            transform.rotation = Quaternion.Euler(new Vector3(270, transform.rotation.y, 0));
+            transform.position += new Vector3(0, 1, 0);
+            rotated = true;
+        }
+    }
 
     void ScaleAndRotate()
     {
-        rigidbody.isKinematic = true;
-        transform.rotation = Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y, 0));
-
+        if (mouseEntered && rotated)
+        {   
+            rigidbody.isKinematic = true;
+            transform.localScale = intScale * 1.2f;
+            transform.RotateAround(transform.position, Vector3.up, 20 * Time.deltaTime);
+        }
     }
 
     void OnMouseExit()
     {
+        collider.isTrigger = false;
         DeactivateUI();
+        transform.rotation = intRotation;
+        rigidbody.isKinematic = false;
+        mouseEntered = false;
+        transform.localScale = intScale;
+        rotated = false;
     }
 
     void InterfacePosition()
@@ -55,6 +80,23 @@ public class EvidenceBehviour : MonoBehaviour {
         evidenceInterface.SetActive(false);
     }
 
+    void OnCollisionEnter(Collision other)
+    {
+        onGround = true;
+    }
+
+    void OnCollisionExit(Collision other)
+    {
+        onGround = false;
+    }
+
+    void OnMouseUpAsButton()
+    {
+        ResourceManager.evidenceList.Add(this.gameObject);
+        Destroy(gameObject);
+    }
+
+
 	// Use this for initialization
 	void Start () {
 
@@ -63,10 +105,12 @@ public class EvidenceBehviour : MonoBehaviour {
         descriptionText = GameObject.Find("Description").GetComponent<Text>();
         evidenceNameText = GameObject.Find("EvidenceName").GetComponent<Text>();
         evidenceInterface.SetActive(false);
+        intScale = transform.localScale;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+
+        ScaleAndRotate();
 	}
 }
