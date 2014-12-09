@@ -100,7 +100,7 @@ Transform:
   m_GameObject: {fileID: 62711712}
   m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106829}
   m_LocalPosition: {x: -112.5, y: 0, z: -172.5}
-  m_LocalScale: {x: 33, y: 1, z: 213}
+  m_LocalScale: {x: 33, y: 10, z: 213}
   m_Children: []
   m_Father: {fileID: 1681569437}
   m_RootOrder: 25
@@ -172,7 +172,7 @@ Transform:
   m_GameObject: {fileID: 80864895}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -249, y: 0, z: 99}
-  m_LocalScale: {x: 36, y: 1, z: 186}
+  m_LocalScale: {x: 36, y: 10, z: 186}
   m_Children: []
   m_Father: {fileID: 1681569437}
   m_RootOrder: 31
@@ -243,8 +243,8 @@ Transform:
   m_PrefabInternal: {fileID: 1745417597}
   m_GameObject: {fileID: 96325785}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -87, y: 0, z: -33}
-  m_LocalScale: {x: 54, y: 1, z: 54}
+  m_LocalPosition: {x: -87, y: 0, z: -32.9900017}
+  m_LocalScale: {x: 54, y: 10, z: 54}
   m_Children: []
   m_Father: {fileID: 1681569437}
   m_RootOrder: 4
@@ -428,7 +428,7 @@ Transform:
   m_GameObject: {fileID: 273121203}
   m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106829}
   m_LocalPosition: {x: -90, y: 0, z: 120}
-  m_LocalScale: {x: 48, y: 1, z: 168}
+  m_LocalScale: {x: 48, y: 10, z: 168}
   m_Children: []
   m_Father: {fileID: 1681569437}
   m_RootOrder: 16
@@ -631,7 +631,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: ce2e5e8f68171034bbe2cad589bad69c, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ce2e5e8f68171034bbe2cad589bad69c, type: 2}
@@ -871,7 +871,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 553e51826f0ff0b4784847de4752d628, type: 2}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 553e51826f0ff0b4784847de4752d628, type: 2}
@@ -947,7 +947,7 @@ GameObject:
   - 23: {fileID: 476723221}
   m_Layer: 0
   m_Name: HouseBlok
-  m_TagString: Huisblokback
+  m_TagString: Huisblok
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -960,7 +960,7 @@ Transform:
   m_GameObject: {fileID: 476723219}
   m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106829}
   m_LocalPosition: {x: -60, y: 0, z: -72}
-  m_LocalScale: {x: 24, y: 1, z: 108}
+  m_LocalScale: {x: 24, y: 10, z: 108}
   m_Children: []
   m_Father: {fileID: 1681569437}
   m_RootOrder: 3
@@ -1104,7 +1104,7 @@ Transform:
   m_GameObject: {fileID: 597863232}
   m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106829}
   m_LocalPosition: {x: 217.5, y: 0, z: 174}
-  m_LocalScale: {x: 36, y: 1, z: 123}
+  m_LocalScale: {x: 36, y: 10, z: 123}
   m_Children: []
   m_Father: {fileID: 1681569437}
   m_RootOrder: 18
@@ -1176,7 +1176,7 @@ Transform:
   m_GameObject: {fileID: 599328640}
   m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106829}
   m_LocalPosition: {x: 286.5, y: 0, z: -15}
-  m_LocalScale: {x: 18, y: 1, z: 81}
+  m_LocalScale: {x: 18, y: 10, z: 81}
   m_Children: []
   m_Father: {fileID: 1681569437}
   m_RootOrder: 21
@@ -1248,7 +1248,7 @@ Transform:
   m_GameObject: {fileID: 656170126}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 309, y: 0, z: 99}
-  m_LocalScale: {x: 36, y: 1, z: 186}
+  m_LocalScale: {x: 36, y: 10, z: 186}
   m_Children: []
   m_Father: {fileID: 1681569437}
   m_RootOrder: 20
@@ -1432,7 +1432,7 @@ Transform:
   m_GameObject: {fileID: 684785403}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -48, y: 0, z: -213}
-  m_LocalScale: {x: 84, y: 1, z: 48}
+  m_LocalScale: {x: 84, y: 10, z: 48}
   m_Children: []
   m_Father: {fileID: 1681569437}
   m_RootOrder: 27
@@ -1493,7 +1493,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &701093850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1545,7 +1545,7 @@ Transform:
   m_GameObject: {fileID: 708170227}
   m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106829}
   m_LocalPosition: {x: -60, y: 0, z: 72}
-  m_LocalScale: {x: 24, y: 1, z: 108}
+  m_LocalScale: {x: 24, y: 10, z: 108}
   m_Children: []
   m_Father: {fileID: 1681569437}
   m_RootOrder: 6
@@ -1659,7 +1659,7 @@ Transform:
   m_GameObject: {fileID: 773279263}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -202.5, y: 0, z: 75}
-  m_LocalScale: {x: 33, y: 1, z: 138}
+  m_LocalScale: {x: 33, y: 10, z: 138}
   m_Children: []
   m_Father: {fileID: 1681569437}
   m_RootOrder: 30
@@ -1857,7 +1857,7 @@ Transform:
   m_GameObject: {fileID: 819406488}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 210, y: 0, z: 51}
-  m_LocalScale: {x: 48, y: 1, z: 90}
+  m_LocalScale: {x: 48, y: 10, z: 90}
   m_Children: []
   m_Father: {fileID: 1681569437}
   m_RootOrder: 9
@@ -1954,6 +1954,10 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 553e51826f0ff0b4784847de4752d628, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 553e51826f0ff0b4784847de4752d628, type: 2}
   m_RootGameObject: {fileID: 1381831027}
@@ -2008,7 +2012,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 553e51826f0ff0b4784847de4752d628, type: 2}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 553e51826f0ff0b4784847de4752d628, type: 2}
+      propertyPath: m_TagString
+      value: Huisblok
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 553e51826f0ff0b4784847de4752d628, type: 2}
@@ -2097,7 +2105,7 @@ Transform:
   m_GameObject: {fileID: 1002118639}
   m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106829}
   m_LocalPosition: {x: -90, y: 0, z: -120}
-  m_LocalScale: {x: 48, y: 1, z: 168}
+  m_LocalScale: {x: 48, y: 10, z: 168}
   m_Children: []
   m_Father: {fileID: 1681569437}
   m_RootOrder: 13
@@ -2156,7 +2164,7 @@ GameObject:
   - 23: {fileID: 1022190731}
   m_Layer: 0
   m_Name: HouseBlok
-  m_TagString: Huisblokback
+  m_TagString: Huisblok
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2169,7 +2177,7 @@ Transform:
   m_GameObject: {fileID: 1022190729}
   m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106829}
   m_LocalPosition: {x: 45, y: 0, z: 72}
-  m_LocalScale: {x: 24, y: 1, z: 78}
+  m_LocalScale: {x: 24, y: 10, z: 78}
   m_Children: []
   m_Father: {fileID: 1681569437}
   m_RootOrder: 0
@@ -2266,6 +2274,10 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 553e51826f0ff0b4784847de4752d628, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 553e51826f0ff0b4784847de4752d628, type: 2}
   m_RootGameObject: {fileID: 708170227}
@@ -2297,7 +2309,7 @@ Transform:
   m_GameObject: {fileID: 1052621087}
   m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106829}
   m_LocalPosition: {x: 45, y: 0, z: -120}
-  m_LocalScale: {x: 48, y: 1, z: 78}
+  m_LocalScale: {x: 48, y: 10, z: 78}
   m_Children: []
   m_Father: {fileID: 1681569437}
   m_RootOrder: 12
@@ -2513,7 +2525,7 @@ Transform:
   m_GameObject: {fileID: 1100994894}
   m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106829}
   m_LocalPosition: {x: -175.5, y: 0, z: -219}
-  m_LocalScale: {x: 36, y: 1, z: 111}
+  m_LocalScale: {x: 36, y: 10, z: 111}
   m_Children: []
   m_Father: {fileID: 1681569437}
   m_RootOrder: 28
@@ -2585,7 +2597,7 @@ Transform:
   m_GameObject: {fileID: 1104889394}
   m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106829}
   m_LocalPosition: {x: 120, y: 0, z: -172.5}
-  m_LocalScale: {x: 33, y: 1, z: 228}
+  m_LocalScale: {x: 33, y: 10, z: 228}
   m_Children: []
   m_Father: {fileID: 1681569437}
   m_RootOrder: 23
@@ -2657,7 +2669,7 @@ Transform:
   m_GameObject: {fileID: 1182874578}
   m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106829}
   m_LocalPosition: {x: 165, y: 0, z: -120}
-  m_LocalScale: {x: 48, y: 1, z: 138}
+  m_LocalScale: {x: 48, y: 10, z: 138}
   m_Children: []
   m_Father: {fileID: 1681569437}
   m_RootOrder: 11
@@ -2729,7 +2741,7 @@ Transform:
   m_GameObject: {fileID: 1215337423}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 262.5, y: 0, z: 75}
-  m_LocalScale: {x: 33, y: 1, z: 138}
+  m_LocalScale: {x: 33, y: 10, z: 138}
   m_Children: []
   m_Father: {fileID: 1681569437}
   m_RootOrder: 19
@@ -2992,7 +3004,7 @@ Transform:
   m_GameObject: {fileID: 1265096221}
   m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106829}
   m_LocalPosition: {x: 75, y: 0, z: 120}
-  m_LocalScale: {x: 48, y: 1, z: 138}
+  m_LocalScale: {x: 48, y: 10, z: 138}
   m_Children: []
   m_Father: {fileID: 1681569437}
   m_RootOrder: 7
@@ -3064,7 +3076,7 @@ Transform:
   m_GameObject: {fileID: 1268238082}
   m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106829}
   m_LocalPosition: {x: 75, y: 0, z: 174}
-  m_LocalScale: {x: 36, y: 1, z: 138}
+  m_LocalScale: {x: 36, y: 10, z: 138}
   m_Children: []
   m_Father: {fileID: 1681569437}
   m_RootOrder: 17
@@ -3192,7 +3204,7 @@ Transform:
   m_GameObject: {fileID: 1381831027}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -87, y: 0, z: 33}
-  m_LocalScale: {x: 54, y: 1, z: 54}
+  m_LocalScale: {x: 54, y: 10, z: 54}
   m_Children: []
   m_Father: {fileID: 1681569437}
   m_RootOrder: 5
@@ -3264,7 +3276,7 @@ Transform:
   m_GameObject: {fileID: 1398957618}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -202.5, y: 0, z: 174}
-  m_LocalScale: {x: 33, y: 1, z: 36}
+  m_LocalScale: {x: 33, y: 10, z: 36}
   m_Children: []
   m_Father: {fileID: 1681569437}
   m_RootOrder: 32
@@ -3336,7 +3348,7 @@ Transform:
   m_GameObject: {fileID: 1411519090}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 210, y: 0, z: -45}
-  m_LocalScale: {x: 48, y: 1, z: 78}
+  m_LocalScale: {x: 48, y: 10, z: 78}
   m_Children: []
   m_Father: {fileID: 1681569437}
   m_RootOrder: 10
@@ -3537,7 +3549,7 @@ Transform:
   m_GameObject: {fileID: 1483677650}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -202.5, y: 0, z: -126}
-  m_LocalScale: {x: 33, y: 1, z: 60}
+  m_LocalScale: {x: 33, y: 10, z: 60}
   m_Children: []
   m_Father: {fileID: 1681569437}
   m_RootOrder: 26
@@ -3832,6 +3844,14 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 553e51826f0ff0b4784847de4752d628, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 553e51826f0ff0b4784847de4752d628, type: 2}
+      propertyPath: m_TagString
+      value: Huisblok
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 553e51826f0ff0b4784847de4752d628, type: 2}
   m_RootGameObject: {fileID: 476723219}
@@ -3850,7 +3870,7 @@ GameObject:
   - 23: {fileID: 1599574050}
   m_Layer: 0
   m_Name: HouseBlok
-  m_TagString: Huisblokback
+  m_TagString: Huisblok
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3863,7 +3883,7 @@ Transform:
   m_GameObject: {fileID: 1599574048}
   m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106829}
   m_LocalPosition: {x: 90, y: 0, z: -72}
-  m_LocalScale: {x: 24, y: 1, z: 168}
+  m_LocalScale: {x: 24, y: 10, z: 168}
   m_Children: []
   m_Father: {fileID: 1681569437}
   m_RootOrder: 2
@@ -3928,7 +3948,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1645209166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4372,7 +4392,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 553e51826f0ff0b4784847de4752d628, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -33
+      value: -32.9900017
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 553e51826f0ff0b4784847de4752d628, type: 2}
       propertyPath: m_LocalRotation.x
@@ -4406,6 +4426,10 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 553e51826f0ff0b4784847de4752d628, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 553e51826f0ff0b4784847de4752d628, type: 2}
   m_RootGameObject: {fileID: 96325785}
@@ -4437,7 +4461,7 @@ Transform:
   m_GameObject: {fileID: 1752049589}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 262.5, y: 0, z: -90}
-  m_LocalScale: {x: 33, y: 1, z: 108}
+  m_LocalScale: {x: 33, y: 10, z: 108}
   m_Children: []
   m_Father: {fileID: 1681569437}
   m_RootOrder: 22
@@ -4565,7 +4589,7 @@ Transform:
   m_GameObject: {fileID: 1881153408}
   m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106829}
   m_LocalPosition: {x: 195, y: 0, z: 120}
-  m_LocalScale: {x: 48, y: 1, z: 78}
+  m_LocalScale: {x: 48, y: 10, z: 78}
   m_Children: []
   m_Father: {fileID: 1681569437}
   m_RootOrder: 8
@@ -4637,7 +4661,7 @@ Transform:
   m_GameObject: {fileID: 1884251696}
   m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106829}
   m_LocalPosition: {x: 135, y: 0, z: 72}
-  m_LocalScale: {x: 24, y: 1, z: 78}
+  m_LocalScale: {x: 24, y: 10, z: 78}
   m_Children: []
   m_Father: {fileID: 1681569437}
   m_RootOrder: 1
@@ -4709,7 +4733,7 @@ Transform:
   m_GameObject: {fileID: 1889478569}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -150, y: 0, z: -45}
-  m_LocalScale: {x: 48, y: 1, z: 78}
+  m_LocalScale: {x: 48, y: 10, z: 78}
   m_Children: []
   m_Father: {fileID: 1681569437}
   m_RootOrder: 14
@@ -4806,6 +4830,14 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 553e51826f0ff0b4784847de4752d628, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 553e51826f0ff0b4784847de4752d628, type: 2}
+      propertyPath: m_TagString
+      value: Huisblok
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 553e51826f0ff0b4784847de4752d628, type: 2}
   m_RootGameObject: {fileID: 1599574048}
@@ -4837,7 +4869,7 @@ Transform:
   m_GameObject: {fileID: 1956776956}
   m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106829}
   m_LocalPosition: {x: -90, y: 0, z: 174}
-  m_LocalScale: {x: 36, y: 1, z: 168}
+  m_LocalScale: {x: 36, y: 10, z: 168}
   m_Children: []
   m_Father: {fileID: 1681569437}
   m_RootOrder: 33
@@ -5093,7 +5125,7 @@ Transform:
   m_GameObject: {fileID: 2020815114}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -249, y: 0, z: -148.5}
-  m_LocalScale: {x: 36, y: 1, z: 105}
+  m_LocalScale: {x: 36, y: 10, z: 105}
   m_Children: []
   m_Father: {fileID: 1681569437}
   m_RootOrder: 29
@@ -5165,7 +5197,7 @@ Transform:
   m_GameObject: {fileID: 2030840651}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -150, y: 0, z: 45}
-  m_LocalScale: {x: 48, y: 1, z: 78}
+  m_LocalScale: {x: 48, y: 10, z: 78}
   m_Children: []
   m_Father: {fileID: 1681569437}
   m_RootOrder: 15
@@ -5349,7 +5381,7 @@ Transform:
   m_GameObject: {fileID: 2090727823}
   m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106829}
   m_LocalPosition: {x: 166.5, y: 0, z: -219}
-  m_LocalScale: {x: 36, y: 1, z: 321}
+  m_LocalScale: {x: 36, y: 10, z: 321}
   m_Children: []
   m_Father: {fileID: 1681569437}
   m_RootOrder: 24
@@ -5414,7 +5446,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2126805563
 Transform:
   m_ObjectHideFlags: 0

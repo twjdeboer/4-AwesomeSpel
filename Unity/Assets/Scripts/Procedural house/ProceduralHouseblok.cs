@@ -55,7 +55,6 @@ public class ProceduralHouseblok{
 			}else{
 				ptemp1.x = pos.x + (scale.z/2f - (float)rand/2f)*-1;
 				ptemp2.x = pos.x + (scale.z/2f - (float)rand/2f);	
-				MonoBehaviour.print("rotatie");
 			}
 			scale.z-=(float)rand*2;
 

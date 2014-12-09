@@ -137,10 +137,10 @@ public class proceduralhousecomments : MonoBehaviour {
 	//gives roof random texture (must because multiple kind of roofs)
 	private void setrooftexture(){
 		int rooftexture = (int)Random.Range (1, 5);
-		GameObject[] Windowcolor = GameObject.FindGameObjectsWithTag ("Roof");
-		for (int i=0; i<Windowcolor.Length; i++) {
-			Windowcolor[i].renderer.material = (Material)Resources.Load ("Materials/"+"Roof"+"/"+rooftexture, typeof(Material));
-			Windowcolor[i].tag="Building";	
+		GameObject[] roofcolor = GameObject.FindGameObjectsWithTag ("Roof");
+		for (int i=0; i<roofcolor.Length; i++) {
+			roofcolor[i].renderer.material = (Material)Resources.Load ("Materials/"+"Roof"+"/"+rooftexture, typeof(Material));
+			roofcolor[i].tag="Building2";
 		}
 	}
 	
@@ -284,9 +284,9 @@ public class proceduralhousecomments : MonoBehaviour {
 		build = false;
 		a = b;
 		
-		if((leftorright.Equals("l"))&&(Random.Range (0, 4)==2)){
+		if((leftorright.Equals("l"))&&(Random.Range (0, 4)==2)){//als l tag=true en random tussen 0 en 3 =2
 			build=true;
-			temp.z = pos.z + (float)0.5 * scale.z*-1;		//rand blokje
+			temp.z = pos.z + (float)0.5 * scale.z*-1;		//offset edge
 			
 			temp.x =pos.x + (int)Random.Range (Mathf.Floor(-0.220f * scale.x), Mathf.Floor(-0.220f * scale.x)*-1)*2;
 			a=3;
@@ -304,22 +304,27 @@ public class proceduralhousecomments : MonoBehaviour {
 	
 	
 	
-	
+	/**
+	 * geeft random x en y dim aan blokje
+	 * 
+	 **/
 	private void randomDim(){
 		int n = 5;
-		xscale=(float)Random.Range (1,n
-		                            );
+		xscale=(float)Random.Range (1,n);	//opslaan vanwege changepos
 		
 		float x = (float)scale.x - xscale;
 		
-		float y = (float)scale.y + (float)Random.Range (-4, 6);
+		float y = (float)scale.y + (float)Random.Range (-4, 6);	//y-dim eigen dim tussen -4 en +6
 		float z = (float)scale.z; 
 		
 		House.transform.localScale = new Vector3(x,y,z);
 		scale = new Vector3 (x, y, z);
 	}
 	
-	
+	/*
+	 * veranderd po
+	 * 
+	 */
 	private void Changepos(){
 		
 		int rotater = 1;
