@@ -25,7 +25,6 @@ public class EvidenceBehviour : MonoBehaviour {
         SetStartRotAndPos();
         mouseEntered = true;
         ActivateAndFillUI();
-        InterfacePosition();
     }
 
     void SetStartRotAndPos()
@@ -35,10 +34,11 @@ public class EvidenceBehviour : MonoBehaviour {
             intRotation = transform.rotation;
             intPosition = transform.position;
             transform.rotation = Quaternion.Euler(new Vector3(270, transform.rotation.y, 0));
-            transform.position += new Vector3(0, 1, 0);
+            transform.position = intPosition + new Vector3(0, 1, 0);
             rotated = true;
         }
     }
+
 
     void ScaleAndRotate()
     {
@@ -50,21 +50,7 @@ public class EvidenceBehviour : MonoBehaviour {
         }
     }
 
-    void OnMouseExit()
-    {
-        collider.isTrigger = false;
-        DeactivateUI();
-        transform.rotation = intRotation;
-        rigidbody.isKinematic = false;
-        mouseEntered = false;
-        transform.localScale = intScale;
-        rotated = false;
-    }
 
-    void InterfacePosition()
-    {
-        evidenceInterface.GetComponent<RectTransform>().position = Input.mousePosition + new Vector3(0,45,0);
-    }
 
     void ActivateAndFillUI()
     {
@@ -96,6 +82,30 @@ public class EvidenceBehviour : MonoBehaviour {
         Destroy(gameObject);
     }
 
+    void MouseLeft()
+    {
+        float minX = ResourceManager.cam.camera.WorldToScreenPoint(renderer.bounds.min).x * 0.9f;
+        float maxX = ResourceManager.cam.camera.WorldToScreenPoint(renderer.bounds.max).x * 1.1f;
+        float minY = ResourceManager.cam.camera.WorldToScreenPoint(renderer.bounds.min).y * 0.9f;
+        float maxY = ResourceManager.cam.camera.WorldToScreenPoint(renderer.bounds.max).y * 1.1f;
+
+       if(( Input.mousePosition.x < minX ||
+           Input.mousePosition.x > maxX ||
+           Input.mousePosition.y < minY ||
+           Input.mousePosition.y > maxY) && mouseEntered)
+       {
+           collider.isTrigger = false;
+           DeactivateUI();
+           transform.rotation = intRotation;
+           rigidbody.isKinematic = false;
+           mouseEntered = false;
+           transform.localScale = intScale;
+           rotated = false;
+       }
+
+    }
+
+
 
 	// Use this for initialization
 	void Start () {
@@ -111,6 +121,7 @@ public class EvidenceBehviour : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+        MouseLeft();
         ScaleAndRotate();
 	}
 }
