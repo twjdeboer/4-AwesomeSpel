@@ -24,6 +24,7 @@ public class Test_Procedurallyhouseblock : MonoBehaviour {
 	private bool preHouses;
 	private int loadsize;
 	private int loadprogress;
+	private float Timer=0;
 
 	void Start() {
 		j = 0;
@@ -104,7 +105,9 @@ public class Test_Procedurallyhouseblock : MonoBehaviour {
 				loadprogress++;
 			}
 		}
-		print(loadprogress+" "+loadsize);
+		Timer += Time.deltaTime;
+		print(Timer+" "+loadprogress+" "+loadsize);
+		//print (Time.deltaTime);
 		j++;
 		if(!preHouses& !Housebloks[0] & !Housebloks[1] ){
 			print ("Done");
@@ -175,8 +178,8 @@ public class Test_Procedurallyhouseblock : MonoBehaviour {
 	
 	public void createarray(){
 		boolean=new bool[]{false,false,false,true,true,true};
-		searchtag=new string[]{"Prebuilding","Prebuildingl","Prebuildingr","Prebuildingback","Prebuildinglback","Prebuildingrback"};
-		leftrightstring=new string[]{" ","l","r"," ","l","r"};
+		searchtag=new string[]{"Prebuilding","Prebuildingback","Prebuildingr","Prebuildingl","Prebuildinglback","Prebuildingrback"};
+		leftrightstring=new string[]{" "," ","r","l","l","r"};
 	}
 	
 }

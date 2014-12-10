@@ -8,11 +8,12 @@ public class ProceduralHouse{
 	private GameObject roof;
 	private GameObject newhouse;
 	private GameObject door;
-	private GameObject[] window;
-	private GameObject[] windowWindow;
+	private GameObject window;
+	private GameObject windowWindow;
 
-	private int windownr = 40;
+	private int windownr;
 	private int windowtexture = Random.Range (1, 5);
+	private int truewindow=0;
 	
 	private float xscale;
 	private Vector3 originscale;
@@ -20,10 +21,10 @@ public class ProceduralHouse{
 	private Vector3 pos;
 	private Quaternion rot;
 	
-	private static int staticnumber=0; //eigenlijk niet meer nodig maar wel handig
+	private static int staticnumber=0; 
 	private int mynumber;
 	
-	private int omlijsting;	//door/windows
+	private int omlijsting;	
 	
 	private float doorzpos;
 	private float doorypos;
@@ -31,7 +32,7 @@ public class ProceduralHouse{
 	private float dooryscale;
 	
 	private	int[] xposa;
-	private float[] zpos; // windows
+	private float[] zpos; 
 	private float[] zscale;
 	private float[] ypos;
 	private float[] yscale;
@@ -39,6 +40,7 @@ public class ProceduralHouse{
 	private string leftorright;
 	
 	public ProceduralHouse(GameObject House,bool Houseatback,string Leftorright){
+
 		houseatback = Houseatback;
 		leftorright = Leftorright;
 		empty = new GameObject ("HouseBox"+staticnumber);
@@ -47,7 +49,13 @@ public class ProceduralHouse{
 		this.House = House;
 		scale = House.transform.localScale;
 		originscale = House.transform.localScale;
+		windownr = (int)Mathf.Floor((scale.z+scale.y)/1.5f);
+		// (houseatback)
+		//	windownr = (int)Mathf.Floor(windownr / 1f);
+		if(leftorright!=" ")
+			windownr+=25;
 
+		//MonoBehaviour.print (mynumber +" "+ windownr+" "+scale.z);
 		pos = House.transform.position;
 		rot = House.transform.rotation;
 
@@ -83,6 +91,7 @@ public class ProceduralHouse{
 		House.transform.tag="Untagged";
 		MonoBehaviour.Destroy(House);
 		setwindowtexture ();
+		//MonoBehaviour.print (mynumber +" "+truewindow+" "+scale.z+" "+scale.y);
 		
 		
 	}
@@ -123,10 +132,10 @@ public class ProceduralHouse{
 	
 	private void setrooftexture(){
 		int rooftexture = (int)Random.Range (1, 5);
-		GameObject[] Windowcolor = GameObject.FindGameObjectsWithTag ("Roof");
-		for (int i=0; i<Windowcolor.Length; i++) {
-			Windowcolor[i].renderer.material = (Material)Resources.Load ("Materials/"+"Roof"+"/"+rooftexture, typeof(Material));
-			Windowcolor[i].tag="Building2";
+		GameObject[] roofcolor = GameObject.FindGameObjectsWithTag ("Roof");
+		for (int i=0; i<roofcolor.Length; i++) {
+			roofcolor[i].renderer.material = (Material)Resources.Load ("Materials/"+"Roof"+"/"+rooftexture, typeof(Material));
+			roofcolor[i].tag="Building2";
 		}
 	}
 	
@@ -157,29 +166,27 @@ public class ProceduralHouse{
 	
 	private void MakeWindows(){
 		
-		window = new GameObject[windownr];
+		//window = new GameObject[windownr];
 		zpos = new float[windownr];
 		ypos = new float[windownr];
 		xposa = new int[windownr];
 		zscale = new float[windownr];
 		yscale = new float[windownr];
-		windowWindow = new GameObject[windownr];
+
 
 		for (int i=0; i<windownr; i++) {
 			int prefabwindow=(int)Random.Range(1,2);
-			window[i] = MonoBehaviour.Instantiate (Resources.Load ("Prefabs/ProceduralHouse/Window"+prefabwindow, typeof(GameObject))) as GameObject;
-			windowWindow[i]=GameObject.Find ("/Window"+prefabwindow+"(Clone)/Window");
+			window = MonoBehaviour.Instantiate (Resources.Load ("Prefabs/ProceduralHouse/Window"+prefabwindow, typeof(GameObject))) as GameObject;
+			windowWindow=GameObject.Find ("/Window"+prefabwindow+"(Clone)/Window");
 
-			zscale[i]=windowWindow[i].transform.localScale.z+0.1f;
-			yscale[i]=windowWindow[i].transform.localScale.y+0.1f;
+			zscale[i]=windowWindow.transform.localScale.z+0.6f;
+			yscale[i]=windowWindow.transform.localScale.y+0.6f;
 			
 			bool validplace = windowsetter(i);
 			if(validplace){
-				window [i].transform.parent = empty.transform;
-				
-			}
-			//MonoBehaviour.print("valid "+validplace);
-			
+				window.transform.parent = empty.transform;
+				truewindow++;
+			}			
 		}
 		
 	}
@@ -217,7 +224,7 @@ public class ProceduralHouse{
 
 		temp = sidewindow (temp,a,out build,out validplace,out a);
 		if (build) {
-			window [i].transform.rotation = Quaternion.Euler (0, 90, 0);
+			window.transform.rotation = Quaternion.Euler (0, 90, 0);
 		}
 		
 		if ((houseatback)&(a==-1)) {
@@ -245,7 +252,7 @@ public class ProceduralHouse{
 				}
 			}
 		}
-		window [i].transform.position = temp;
+		window.transform.position = temp;
 		
 		xposa [i] = a;
 		zpos [i] = temp.z;
@@ -254,7 +261,7 @@ public class ProceduralHouse{
 			xposa[i]=100;
 			zpos[i]=100;
 			ypos[i]=100;
-			MonoBehaviour.Destroy(window[i]);
+			MonoBehaviour.Destroy(window);
 		}
 		return validplace;
 	}
@@ -286,9 +293,8 @@ public class ProceduralHouse{
 	
 	
 	private void randomDim(){
-		int n = 5;
-		xscale=(float)Random.Range (1,n
-		                            );
+		int n = (int)Mathf.Floor(originscale.x/3);
+		xscale=(float)Random.Range (2,n);
 
 		float x = (float)scale.x - xscale;
 		

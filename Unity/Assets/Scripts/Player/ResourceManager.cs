@@ -23,7 +23,7 @@ public static class ResourceManager{
     private static int intChoice = 0;
     public static int choiceOfPlayer { get { return intChoice; } set { intChoice = value; } }
 
-    public static List<GameObject> evidenceList { get; set; }
+    public static List<GameObject> evidenceList = new List<GameObject>();
 
 
 }
