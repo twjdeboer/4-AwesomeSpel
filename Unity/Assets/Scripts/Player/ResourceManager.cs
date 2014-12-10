@@ -25,5 +25,7 @@ public static class ResourceManager{
 
     public static List<GameObject> evidenceList = new List<GameObject>();
 
+    private static bool _levelLoaded;
+    public static bool levelLoaded { get { return _levelLoaded; } set { _levelLoaded = value; } }
 
 }
