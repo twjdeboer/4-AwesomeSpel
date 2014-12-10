@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     public float rotateSpeed;
     public float runSpeed;
 
+	private Animator anim;
     private float intSpeed;
     private Vector3 direction;
 
@@ -40,6 +41,7 @@ public class Player : MonoBehaviour
         Vector3 speed = (direction *  walkSpeed) ;
         rigidbody.MovePosition(rigidbody.position + speed * Time.deltaTime);
         RotateInWalkDirection(rotateSpeed, direction.x, direction.z);
+
     }
 
     /**
@@ -73,11 +75,15 @@ public class Player : MonoBehaviour
     void Start()
     {
         intSpeed = walkSpeed;
+		anim = GetComponent<Animator>();
+		animation.wrapMode = WrapMode.Loop;
 
     }
 
     void FixedUpdate()
     {
+		anim.SetFloat("speed", rigidbody.velocity.magnitude);
+		Debug.Log (rigidbody.velocity.magnitude);
         if (!ResourceManager.stopWalking)
         {
             Walk(walkSpeed, rotateSpeed);
