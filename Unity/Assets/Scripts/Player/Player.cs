@@ -76,7 +76,7 @@ public class Player : MonoBehaviour
     {
         intSpeed = walkSpeed;
 		anim = GetComponent<Animator>();
-		animation.wrapMode = WrapMode.Loop;
+		//animation.wrapMode = WrapMode.Loop;
 
     }
 
