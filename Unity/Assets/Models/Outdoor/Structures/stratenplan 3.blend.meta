@@ -214,6 +214,38 @@ ModelImporter:
     4300076: river
     4300078: sidewalk
     4300080: kruispunt
+    6400000: 1-horiz-left
+    6400002: 1-horiz-right
+    6400004: 1-vert-left
+    6400006: 1-vert-right
+    6400008: 2-horiz-left
+    6400010: 2-horiz-right
+    6400012: 2-vert-left
+    6400014: 2-vert-right
+    6400016: 3-horiz-left
+    6400018: 3-horiz-right
+    6400020: 3-vert-left
+    6400022: 3-vert-right
+    6400024: 4-horiz-left
+    6400026: 4-horiz-right
+    6400028: 4-vert-left
+    6400030: 4-vert-right
+    6400032: 5-horiz-left
+    6400034: 5-horiz-right
+    6400036: 5-vert-left
+    6400038: 5-vert-right
+    6400040: 6-horiz-left
+    6400042: 6-horiz-right
+    6400044: 7-horiz-left
+    6400046: 7-horiz-right
+    6400048: central_park_MeshPart0
+    6400050: central_park_MeshPart1
+    6400052: central_park_MeshPart2
+    6400054: doodlopend_einde
+    6400056: kruispunt
+    6400058: park_side
+    6400060: river
+    6400062: sidewalk
     7400000: Default Take
     9500000: //RootNode
   materials:
@@ -237,7 +269,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 3
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
