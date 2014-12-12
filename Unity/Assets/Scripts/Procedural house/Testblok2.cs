@@ -1,17 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
 
-
-public class Test_Procedurallyhouseblock : MonoBehaviour {
-	public GameObject world;
+public class Testblok2 : MonoBehaviour {
+	public GameObject HouseContainer;
 	public bool buildhouse;
 	private GameObject[] Houseblok;
-
+	
 	private ProceduralHouseblok newHouseBlok;
 	private GameObject devidehouse;
-
-	private ProceduralHouse[] newHouse;
+	
+	private GameObject loadScene;
+	private ProceduralHouse newHouse;
 	private GameObject[] Houses;
 	private GameObject[] GrassFloor;
 	private int j;
@@ -19,16 +18,23 @@ public class Test_Procedurallyhouseblock : MonoBehaviour {
 	private bool[] boolean=new bool[6];
 	private string[] leftrightstring=new string[6];
 	private string[] searchtag=new string[6];
-
+	
 	private bool[] Housebloks = new bool[2];
 	private bool preHouses;
 	private int loadsize;
 	private int loadprogress;
 	private float Timer=0;
-
-
+	private GameObject[] housboxes;
+	
+	void Awake()
+	{
+		//loadScene = GameObject.Find("Loaded");
+		//loadScene.SetActive(false);
+	}
+	
 	void Start() {
-        
+		HouseContainer.SetActive (false);
+		newHouse = new ProceduralHouse();
 		j = 0;
 		n = 0;
 		Housebloks [0] = true;
@@ -43,17 +49,17 @@ public class Test_Procedurallyhouseblock : MonoBehaviour {
 			Housebloks[1]=true;
 			Houseblok = GameObject.FindGameObjectsWithTag ("Huisblokback");
 			GrassFloor = new GameObject[Houseblok.Length];
-
+			
 			if(Houseblok.Length==0){
 				Houses = GameObject.FindGameObjectsWithTag ("Prebuilding");
 				preHouses=true;
 				Housebloks[1]=false;
 			}
 		}
-				
+		
 	}
 	void Update(){
-
+		
 		if(Housebloks[0]){
 			createPrebuilding("Prebuilding",false,j);
 			loadprogress++;
@@ -70,7 +76,7 @@ public class Test_Procedurallyhouseblock : MonoBehaviour {
 					j=0;
 					Houses = GameObject.FindGameObjectsWithTag ("Prebuilding");
 					getloadsize();
-					newHouse = new ProceduralHouse[Houses.Length];
+					//newHouse = new ProceduralHouse[Houses.Length];
 				}
 			}
 		}
@@ -83,13 +89,13 @@ public class Test_Procedurallyhouseblock : MonoBehaviour {
 				preHouses=buildhouse;
 				getloadsize();
 				Houses = GameObject.FindGameObjectsWithTag ("Prebuilding");
-				newHouse = new ProceduralHouse[Houses.Length];
-				}
+				//newHouse = new ProceduralHouse[Houses.Length];
+			}
 		}
-
+		
 		if(preHouses){
 			if((j==Houses.Length)|(Houses.Length==0)){
-
+				
 				n++;
 				if(n>5){
 					preHouses=false;
@@ -98,9 +104,9 @@ public class Test_Procedurallyhouseblock : MonoBehaviour {
 					j=0;
 					Houses = GameObject.FindGameObjectsWithTag (searchtag[n]);
 					//print (Houses.Length+" Houses.length");
-					newHouse = new ProceduralHouse[Houses.Length];
+					//newHouse = new ProceduralHouse[Houses.Length];
 				}
-
+				
 			}
 			if((Houses.Length!=0)&preHouses){
 				createHouses (boolean[n],leftrightstring[n],j);	
@@ -108,26 +114,30 @@ public class Test_Procedurallyhouseblock : MonoBehaviour {
 			}
 		}
 		Timer += Time.deltaTime;
-		print(Timer+" "+loadprogress+" "+loadsize);
+		print(Timer+" -- "+Time.deltaTime+" "+loadprogress+" "+loadsize);
 		//print (Time.deltaTime);
 		j++;
+		print (!preHouses+"  "+!Housebloks[0]+"  "+!Housebloks[1]);
 		if(!preHouses& !Housebloks[0] & !Housebloks[1] ){
-			print ("Done");
-            ResourceManager.levelLoaded = true;
-            
-			Component other =world.GetComponent("Test_Procedurallyhouseblock");
+
+			//loadScene.SetActive(true);
+			ResourceManager.World = GameObject.Find("HouseContainer");
+
 			GameObject[] destroying = GameObject.FindGameObjectsWithTag("Destroy");
-			if(other != null)
-			{
-				Destroy(other);
-			}
+
 			for(int i=0;i<destroying.Length;i++){
 				Destroy(destroying[i]);
 			}
+			DontDestroyOnLoad(HouseContainer.transform.gameObject);
+		
+			setactive2 ();
+			print ("Done");
+
+			Destroy(GameObject.Find("Worldloader"));
 		}
 	}
-
-
+	
+	
 	public void createPrebuilding(string settag,bool back,int j){
 		createGrassfloor(j);
 		
@@ -146,7 +156,7 @@ public class Test_Procedurallyhouseblock : MonoBehaviour {
 				devidehouse.transform.tag = "Huisblok";
 				Destroy (devidehouse);
 			}
-			
+					
 			devidehouse = GameObject.FindGameObjectWithTag ("Huisblok2");
 			i++;
 			if (i > 1000) {
@@ -156,12 +166,12 @@ public class Test_Procedurallyhouseblock : MonoBehaviour {
 	}
 	
 	public void createHouses(bool back,string leftright,int i){
-
-		newHouse[i]= new ProceduralHouse(Houses[i],back,leftright);
-		newHouse[i].BuildrandomHouse();
-		newHouse[i].empty.transform.parent =world.transform;
+		
+		newHouse.UpdateInternal(Houses[i],back,leftright);
+		newHouse.BuildrandomHouse();
+		newHouse.empty.transform.parent =HouseContainer.transform;
 	}
-
+	
 	public void createGrassfloor(int j){
 		GrassFloor[j] = MonoBehaviour.Instantiate(Resources.Load ("Prefabs/ProceduralHouse/GrassFloor", typeof(GameObject))) as GameObject;
 		GrassFloor[j].transform.position=Houseblok[j].transform.position;
@@ -170,7 +180,7 @@ public class Test_Procedurallyhouseblock : MonoBehaviour {
 		temp.z=Houseblok[j].transform.localScale.z;
 		GrassFloor[j].transform.localScale=temp;
 		GrassFloor[j].transform.rotation=Houseblok[j].transform.rotation;
-		GrassFloor[j].transform.parent = world.transform;
+		GrassFloor[j].transform.parent = HouseContainer.transform;
 	}
 	private void getloadsize(){
 		loadsize= GameObject.FindGameObjectsWithTag ("Prebuilding").Length + GameObject.FindGameObjectsWithTag ("Prebuildingl").Length
@@ -181,9 +191,22 @@ public class Test_Procedurallyhouseblock : MonoBehaviour {
 	}
 	
 	public void createarray(){
-		boolean=new bool[]{false,false,false,true,true,true};
+		boolean=new bool[]{false,true,false,false,true,true};
 		searchtag=new string[]{"Prebuilding","Prebuildingback","Prebuildingr","Prebuildingl","Prebuildinglback","Prebuildingrback"};
 		leftrightstring=new string[]{" "," ","r","l","l","r"};
+	}
+
+	public void setactive2(){
+		HouseContainer.SetActive (true);
+	}
+
+	public void setactive(){
+		housboxes = GameObject.FindGameObjectsWithTag("Setactive");
+		print(housboxes.Length);
+		for(int i=0;i<housboxes.Length;i++){
+			housboxes[i].SetActive(true);
+			housboxes[i].transform.tag="Untagged";
+		}
 	}
 	
 }

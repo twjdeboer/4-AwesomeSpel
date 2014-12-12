@@ -36,7 +36,7 @@ public class ProceduralHouseblok{
 			Vector3 stemp2 = scale;
 			Vector3 ptemp1 = pos;
 			Vector3 ptemp2 = pos;
-			int rand = (int)Random.Range(4,8);
+			int rand = (int)Random.Range(5,8);
 			newlefthouse = MonoBehaviour.Instantiate(Resources.Load ("Prefabs/House", typeof(GameObject))) as GameObject;
 			newrighthouse = MonoBehaviour.Instantiate(Resources.Load ("Prefabs/House", typeof(GameObject))) as GameObject;
 			if(rot.eulerAngles.y<179){
