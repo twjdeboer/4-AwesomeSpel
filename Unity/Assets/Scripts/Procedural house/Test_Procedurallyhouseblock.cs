@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -11,7 +11,6 @@ public class Test_Procedurallyhouseblock : MonoBehaviour {
 	private ProceduralHouseblok newHouseBlok;
 	private GameObject devidehouse;
 
-    private GameObject loadScene;
 	private ProceduralHouse[] newHouse;
 	private GameObject[] Houses;
 	private GameObject[] GrassFloor;
@@ -27,11 +26,6 @@ public class Test_Procedurallyhouseblock : MonoBehaviour {
 	private int loadprogress;
 	private float Timer=0;
 
-    void Awake()
-    {
-        loadScene = GameObject.Find("Loaded");
-        loadScene.SetActive(false);
-    }
 
 	void Start() {
         
@@ -119,8 +113,8 @@ public class Test_Procedurallyhouseblock : MonoBehaviour {
 		j++;
 		if(!preHouses& !Housebloks[0] & !Housebloks[1] ){
 			print ("Done");
-            loadScene.SetActive(true);
-			ResourceManager.World = GameObject.Find("HouseContainer");
+            ResourceManager.levelLoaded = true;
+            
 			Component other =world.GetComponent("Test_Procedurallyhouseblock");
 			GameObject[] destroying = GameObject.FindGameObjectsWithTag("Destroy");
 			if(other != null)
@@ -130,7 +124,6 @@ public class Test_Procedurallyhouseblock : MonoBehaviour {
 			for(int i=0;i<destroying.Length;i++){
 				Destroy(destroying[i]);
 			}
-			DontDestroyOnLoad(world.transform.gameObject);
 		}
 	}
 
@@ -188,7 +181,7 @@ public class Test_Procedurallyhouseblock : MonoBehaviour {
 	}
 	
 	public void createarray(){
-		boolean=new bool[]{false,true,false,false,true,true};
+		boolean=new bool[]{false,false,false,true,true,true};
 		searchtag=new string[]{"Prebuilding","Prebuildingback","Prebuildingr","Prebuildingl","Prebuildinglback","Prebuildingrback"};
 		leftrightstring=new string[]{" "," ","r","l","l","r"};
 	}

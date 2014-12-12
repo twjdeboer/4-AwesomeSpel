@@ -8,7 +8,6 @@ public class EvidenceBehviour : MonoBehaviour {
     public string description;
     public string name;
 
-    private GameObject canvas;
     private GameObject evidenceInterface;
     private Text descriptionText;
     private Text evidenceNameText;
@@ -54,7 +53,6 @@ public class EvidenceBehviour : MonoBehaviour {
 
     void ActivateAndFillUI()
     {
-        canvas.SetActive(true);
         evidenceInterface.SetActive(true);
         descriptionText.text = description;
         evidenceNameText.text = name;
@@ -62,7 +60,6 @@ public class EvidenceBehviour : MonoBehaviour {
 
     void DeactivateUI()
     {
-        canvas.SetActive(false);
         evidenceInterface.SetActive(false);
     }
 
@@ -80,6 +77,7 @@ public class EvidenceBehviour : MonoBehaviour {
     {
         ResourceManager.evidenceList.Add(this.gameObject);
         Destroy(gameObject);
+        evidenceInterface.SetActive(false);
     }
 
     void MouseLeft()
@@ -110,7 +108,6 @@ public class EvidenceBehviour : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-        canvas = GameObject.Find("Conversation Interface");
         evidenceInterface = GameObject.Find("Evidence");
         descriptionText = GameObject.Find("Description").GetComponent<Text>();
         evidenceNameText = GameObject.Find("EvidenceName").GetComponent<Text>();

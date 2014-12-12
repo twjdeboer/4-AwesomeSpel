@@ -9,7 +9,6 @@ using System.IO;
 
 public class NPCInteraction : MonoBehaviour {
 
-    private Canvas conversationInterface;
     private Text conversationText;
     private Text nameText;
     private TextGenerator genText;
@@ -47,7 +46,6 @@ public class NPCInteraction : MonoBehaviour {
      * */
     void OnMouseUp()
     {
-        conversationInterface.gameObject.SetActive(true);
         gameObject.GetComponent<Astar>().stopWalking = true;
         ResourceManager.conversationWith = transform;
         ResourceManager.stopWalking = true;
@@ -58,7 +56,6 @@ public class NPCInteraction : MonoBehaviour {
 	void Start () 
     {
         conversation = GameObject.Find("Conversation");
-        conversationInterface = GameObject.Find("Conversation Interface").GetComponent<Canvas>();
         conversationText = GameObject.Find("Conversation Text").GetComponent<Text>();
         nameText = GameObject.Find("Name Text").GetComponent<Text>();
         twoButtons = GameObject.Find("2Buttons");
@@ -68,7 +65,6 @@ public class NPCInteraction : MonoBehaviour {
         threeButtons.SetActive(false);
         fourButtons.SetActive(false);
         conversation.SetActive(false);
-        conversationInterface.gameObject.SetActive(false);
 	}
 
     /**
@@ -113,8 +109,7 @@ public class NPCInteraction : MonoBehaviour {
         if(endOfText)
         {
             if (Input.GetKeyUp(KeyCode.Mouse0) || Input.GetKeyUp(KeyCode.Space))
-            {
-                conversationInterface.gameObject.SetActive(false);             
+            {           
                 index = 0;
                 runTime = false;
                 textToDisplay = "";
@@ -145,7 +140,6 @@ public class NPCInteraction : MonoBehaviour {
 
     void NPCTalk(string text)
     {
-        conversationInterface.gameObject.SetActive(true);
         conversation.gameObject.SetActive(true);
         nameText.text = NPCName;
         DisplayWordForWord(text);
@@ -208,7 +202,6 @@ public class NPCInteraction : MonoBehaviour {
     void PlayerTalk(OptionList list)
     {
         choiceOfPlayer = ResourceManager.choiceOfPlayer;
-        conversationInterface.gameObject.SetActive(true);
         if (choiceOfPlayer == 0)
         {
             ActivateUI(list);
@@ -336,7 +329,7 @@ public class NPCInteraction : MonoBehaviour {
             }
             else
             {
-                
+                conversation.SetActive(false);
                 gameObject.GetComponent<Astar>().stopWalking = false;
                 ResourceManager.stopWalking = false;
                 actionList.Clear();
