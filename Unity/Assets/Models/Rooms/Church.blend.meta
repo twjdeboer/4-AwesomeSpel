@@ -4,10 +4,34 @@ ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Floor
+    100004: Walls
+    100006: Walls_001
+    100008: Cube
+    100010: Sunblock
     400000: //RootNode
+    400002: Floor
+    400004: Walls
+    400006: Walls_001
+    400008: Cube
+    400010: Sunblock
     2300000: //RootNode
+    2300002: Floor
+    2300004: Walls
+    2300006: Walls_001
+    2300008: Cube
+    2300010: Sunblock
     3300000: //RootNode
+    3300002: Floor
+    3300004: Walls
+    3300006: Walls_001
+    3300008: Cube
+    3300010: Sunblock
     4300000: Floor
+    4300002: Walls
+    4300004: Walls_001
+    4300006: Cube
+    4300008: Sunblock
     7400000: Default Take
     9500000: //RootNode
   materials:
@@ -34,7 +58,7 @@ ModelImporter:
     addColliders: 0
     importBlendShapes: 1
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     optimizeMeshForGPU: 1
     weldVertices: 1

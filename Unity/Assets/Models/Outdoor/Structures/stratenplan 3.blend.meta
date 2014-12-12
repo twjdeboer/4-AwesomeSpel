@@ -12,6 +12,41 @@ ModelImporter:
     100012: Plane_004_MeshPart1
     100014: Plane_004_MeshPart2
     100016: //RootNode
+    100018: Plane_005
+    100020: 1-horiz-left
+    100022: 1-horiz-right
+    100024: 1-vert-left
+    100026: 1-vert-right
+    100028: 2-horiz-left
+    100030: 2-horiz-right
+    100032: 2-vert-left
+    100034: 2-vert-right
+    100036: 3-horiz-left
+    100038: 3-horiz-right
+    100040: 3-vert-left
+    100042: 3-vert-right
+    100044: 4-horiz-left
+    100046: 4-horiz-right
+    100048: 4-vert-left
+    100050: 4-vert-right
+    100052: 5-horiz-left
+    100054: 5-horiz-right
+    100056: 5-vert-left
+    100058: 5-vert-right
+    100060: 6-horiz-left
+    100062: 6-horiz-right
+    100064: 7-horiz-left
+    100066: 7-horiz-right
+    100068: Plane_012
+    100070: central_park
+    100072: central_park_MeshPart0
+    100074: central_park_MeshPart1
+    100076: central_park_MeshPart2
+    100078: doodlopend_einde
+    100080: kruispunt
+    100082: park_side
+    100084: river
+    100086: sidewalk
     400000: Plane
     400002: Plane_001
     400004: Plane_002
@@ -21,6 +56,41 @@ ModelImporter:
     400012: Plane_004_MeshPart1
     400014: Plane_004_MeshPart2
     400016: //RootNode
+    400018: Plane_005
+    400020: 1-horiz-left
+    400022: 1-horiz-right
+    400024: 1-vert-left
+    400026: 1-vert-right
+    400028: 2-horiz-left
+    400030: 2-horiz-right
+    400032: 2-vert-left
+    400034: 2-vert-right
+    400036: 3-horiz-left
+    400038: 3-horiz-right
+    400040: 3-vert-left
+    400042: 3-vert-right
+    400044: 4-horiz-left
+    400046: 4-horiz-right
+    400048: 4-vert-left
+    400050: 4-vert-right
+    400052: 5-horiz-left
+    400054: 5-horiz-right
+    400056: 5-vert-left
+    400058: 5-vert-right
+    400060: 6-horiz-left
+    400062: 6-horiz-right
+    400064: 7-horiz-left
+    400066: 7-horiz-right
+    400068: Plane_012
+    400070: central_park
+    400072: central_park_MeshPart0
+    400074: central_park_MeshPart1
+    400076: central_park_MeshPart2
+    400078: doodlopend_einde
+    400080: kruispunt
+    400082: park_side
+    400084: river
+    400086: sidewalk
     2300000: Plane
     2300002: Plane_001
     2300004: Plane_002
@@ -28,6 +98,40 @@ ModelImporter:
     2300008: Plane_004_MeshPart0
     2300010: Plane_004_MeshPart1
     2300012: Plane_004_MeshPart2
+    2300014: Plane_005
+    2300016: 1-horiz-left
+    2300018: 1-horiz-right
+    2300020: 1-vert-left
+    2300022: 1-vert-right
+    2300024: 2-horiz-left
+    2300026: 2-horiz-right
+    2300028: 2-vert-left
+    2300030: 2-vert-right
+    2300032: 3-horiz-left
+    2300034: 3-horiz-right
+    2300036: 3-vert-left
+    2300038: 3-vert-right
+    2300040: 4-horiz-left
+    2300042: 4-horiz-right
+    2300044: 4-vert-left
+    2300046: 4-vert-right
+    2300048: 5-horiz-left
+    2300050: 5-horiz-right
+    2300052: 5-vert-left
+    2300054: 5-vert-right
+    2300056: 6-horiz-left
+    2300058: 6-horiz-right
+    2300060: 7-horiz-left
+    2300062: 7-horiz-right
+    2300064: Plane_012
+    2300066: central_park_MeshPart0
+    2300068: central_park_MeshPart1
+    2300070: central_park_MeshPart2
+    2300072: doodlopend_einde
+    2300074: kruispunt
+    2300076: park_side
+    2300078: river
+    2300080: sidewalk
     3300000: Plane
     3300002: Plane_001
     3300004: Plane_002
@@ -35,6 +139,40 @@ ModelImporter:
     3300008: Plane_004_MeshPart0
     3300010: Plane_004_MeshPart1
     3300012: Plane_004_MeshPart2
+    3300014: Plane_005
+    3300016: 1-horiz-left
+    3300018: 1-horiz-right
+    3300020: 1-vert-left
+    3300022: 1-vert-right
+    3300024: 2-horiz-left
+    3300026: 2-horiz-right
+    3300028: 2-vert-left
+    3300030: 2-vert-right
+    3300032: 3-horiz-left
+    3300034: 3-horiz-right
+    3300036: 3-vert-left
+    3300038: 3-vert-right
+    3300040: 4-horiz-left
+    3300042: 4-horiz-right
+    3300044: 4-vert-left
+    3300046: 4-vert-right
+    3300048: 5-horiz-left
+    3300050: 5-horiz-right
+    3300052: 5-vert-left
+    3300054: 5-vert-right
+    3300056: 6-horiz-left
+    3300058: 6-horiz-right
+    3300060: 7-horiz-left
+    3300062: 7-horiz-right
+    3300064: Plane_012
+    3300066: central_park_MeshPart0
+    3300068: central_park_MeshPart1
+    3300070: central_park_MeshPart2
+    3300072: doodlopend_einde
+    3300074: kruispunt
+    3300076: park_side
+    3300078: river
+    3300080: sidewalk
     4300000: Plane_001
     4300002: Plane_004_MeshPart0
     4300004: Plane_004_MeshPart1
@@ -42,6 +180,40 @@ ModelImporter:
     4300008: Plane_003
     4300010: Plane_002
     4300012: Plane
+    4300014: Plane_005
+    4300016: 7-horiz-right
+    4300018: 7-horiz-left
+    4300020: 6-horiz-right
+    4300022: 6-horiz-left
+    4300024: 5-horiz-right
+    4300026: 5-horiz-left
+    4300028: 4-horiz-right
+    4300030: 4-horiz-left
+    4300032: Plane_012
+    4300034: 3-horiz-right
+    4300036: 3-horiz-left
+    4300038: 2-horiz-left
+    4300040: 2-horiz-right
+    4300042: 1-horiz-left
+    4300044: 1-horiz-right
+    4300046: 5-vert-left
+    4300048: 5-vert-right
+    4300050: 4-vert-left
+    4300052: 4-vert-right
+    4300054: 3-vert-left
+    4300056: 3-vert-right
+    4300058: 2-vert-left
+    4300060: 2-vert-right
+    4300062: 1-vert-left
+    4300064: 1-vert-right
+    4300066: doodlopend_einde
+    4300068: park_side
+    4300070: central_park_MeshPart0
+    4300072: central_park_MeshPart1
+    4300074: central_park_MeshPart2
+    4300076: river
+    4300078: sidewalk
+    4300080: kruispunt
     7400000: Default Take
     9500000: //RootNode
   materials:
@@ -63,7 +235,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 3
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
