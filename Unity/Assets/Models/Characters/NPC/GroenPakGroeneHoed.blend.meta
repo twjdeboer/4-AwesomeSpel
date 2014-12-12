@@ -829,6 +829,7 @@ ModelImporter:
     4300170: WGT-foot_fk_L
     4300190: LijfMetKleren
     7400000: Default Take
+    7400002: rigAction
     9500000: //RootNode
     13700000: LijfMetKleren
   materials:
