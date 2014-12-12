@@ -28,4 +28,5 @@ public static class ResourceManager{
     private static bool _levelLoaded;
     public static bool levelLoaded { get { return _levelLoaded; } set { _levelLoaded = value; } }
 
+	public static GameObject World { get; set;}
 }

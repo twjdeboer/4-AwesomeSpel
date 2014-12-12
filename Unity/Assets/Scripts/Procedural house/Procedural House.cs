@@ -38,29 +38,62 @@ public class ProceduralHouse{
 	private float[] yscale;
 	private bool houseatback;
 	private string leftorright;
-	
+
+	public ProceduralHouse(){
+
+	}
+
 	public ProceduralHouse(GameObject House,bool Houseatback,string Leftorright){
 
 		houseatback = Houseatback;
 		leftorright = Leftorright;
 		empty = new GameObject ("HouseBox"+staticnumber);
+		empty.transform.tag = "";
 		mynumber = staticnumber;
 		staticnumber++;
 		this.House = House;
 		scale = House.transform.localScale;
 		originscale = House.transform.localScale;
 		windownr = (int)Mathf.Floor((scale.z+scale.y)/1.5f);
-		// (houseatback)
-		//	windownr = (int)Mathf.Floor(windownr / 1f);
+
+		if(houseatback)
+			windownr = (int)Mathf.Floor(windownr / 1.7f);
 		if(leftorright!=" ")
 			windownr+=25;
 
-		//MonoBehaviour.print (mynumber +" "+ windownr+" "+scale.z);
 		pos = House.transform.position;
 		rot = House.transform.rotation;
 
 		empty.transform.position = pos;
 		omlijsting = Random.Range (1, 5);
+	}
+
+	public void UpdateInternal(GameObject House,bool Houseatback,string Leftorright){
+		
+		houseatback = Houseatback;
+		leftorright = Leftorright;
+		empty = new GameObject ("HouseBox"+staticnumber);
+
+		mynumber = staticnumber;
+		staticnumber++;
+		this.House = House;
+		scale = House.transform.localScale;
+		originscale = House.transform.localScale;
+		windownr = (int)Mathf.Floor((scale.z+scale.y)/1.5f);
+		windownr = 10;
+		MonoBehaviour.print (windownr + " " + scale.z + " " + scale.y);
+
+		if(!houseatback)
+			windownr = (int)Mathf.Floor(windownr * 1.5f);
+		if(leftorright!=" ")
+			windownr+=25;
+		//MonoBehaviour.print (mynumber +" "+ windownr+" "+scale.z);
+		pos = House.transform.position;
+		rot = House.transform.rotation;
+		
+		empty.transform.position = pos;
+		omlijsting = Random.Range (1, 5);
+
 	}
 	
 	
@@ -271,14 +304,14 @@ public class ProceduralHouse{
 		build = false;
 		a = b;
 		
-		if((leftorright.Equals("l"))&&(Random.Range (0, 4)==2)){
+		if((leftorright.Equals("l"))&&(Random.Range (0, 10)>2)){
 			build=true;
 			temp.z = pos.z + (float)0.5 * scale.z*-1;		//rand blokje
 
 			temp.x =pos.x + (int)Random.Range (Mathf.Floor(-0.220f * scale.x), Mathf.Floor(-0.220f * scale.x)*-1)*2;
 			a=3;
 		}
-		else if((leftorright.Equals("r"))&&(Random.Range (0, 4)==2)){
+		else if((leftorright.Equals("r"))&&(Random.Range (0, 10)>2)){
 			build=true;
 			temp.z = pos.z + (float)0.5 * scale.z*1;		//rand blokje
 
@@ -294,7 +327,7 @@ public class ProceduralHouse{
 	
 	private void randomDim(){
 		int n = (int)Mathf.Floor(originscale.x/3);
-		xscale=(float)Random.Range (2,n);
+		xscale=(float)Random.Range (3,n);
 
 		float x = (float)scale.x - xscale;
 		
