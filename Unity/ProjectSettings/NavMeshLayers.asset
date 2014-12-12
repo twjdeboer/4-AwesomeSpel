@@ -16,8 +16,8 @@ NavMeshLayers:
     cost: 2
     editType: 2
   User Layer 0:
-    name: doodlopend end
-    cost: 20
+    name: 
+    cost: 0
     editType: 3
   User Layer 1:
     name: 
