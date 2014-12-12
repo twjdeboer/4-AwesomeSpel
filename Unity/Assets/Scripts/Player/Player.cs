@@ -38,6 +38,11 @@ public class Player : MonoBehaviour
         direction = ResourceManager.cam.TransformDirection(moveHorizontal, 0.0f, moveVertical);
         direction.y = 0;
         direction = direction.normalized;
+        if (moveHorizontal != 0 || moveVertical != 0) {
+						anim.SetFloat ("Speed", 1);
+				} else {
+						anim.SetFloat ("Speed", 0);
+				}
         Vector3 speed = (direction *  walkSpeed) ;
         rigidbody.MovePosition(rigidbody.position + speed * Time.deltaTime);
         RotateInWalkDirection(rotateSpeed, direction.x, direction.z);
@@ -76,14 +81,10 @@ public class Player : MonoBehaviour
     {
         intSpeed = walkSpeed;
 		anim = GetComponent<Animator>();
-		animation.wrapMode = WrapMode.Loop;
-
     }
 
     void FixedUpdate()
     {
-		anim.SetFloat("speed", rigidbody.velocity.magnitude);
-		Debug.Log (rigidbody.velocity.magnitude);
         if (!ResourceManager.stopWalking)
         {
             Walk(walkSpeed, rotateSpeed);
