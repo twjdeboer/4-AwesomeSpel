@@ -134,6 +134,8 @@ public class Testblok2 : MonoBehaviour {
 			print ("Done");
 
 			Destroy(GameObject.Find("Worldloader"));
+			Application.LoadLevel("World final second scene");
+
 		}
 	}
 	

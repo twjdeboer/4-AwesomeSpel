@@ -2,14 +2,18 @@
 using System.Collections;
 
 public class Loadnextscene : MonoBehaviour {
-	GameObject[] housboxes;
+	public string nextscene;
+	public bool activeworld;
 
-	// Update is called once per frame
-	void Update () {
-		if (Input.GetKeyDown ("space")) {
-			ResourceManager.World.SetActive(false);
-			Application.LoadLevel("test inside");
-		}
+	void start(){
+		bool activeworl = false;
+		string nextsc ="test inside";
+		ResourceManager.World.SetActive(!activeworld);
+	}
 
+
+	void OnTriggerEnter(Collider other) {
+		ResourceManager.World.SetActive(activeworld);
+		Application.LoadLevel(nextscene);
 	}
 }
