@@ -14623,7 +14623,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1525710704
 Transform:
   m_ObjectHideFlags: 0
@@ -15496,7 +15496,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 180285af13def0c40b747ba420f5c856, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 2
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
 --- !u!54 &1566468681
@@ -15540,7 +15540,7 @@ CapsuleCollider:
   m_Radius: .573822021
   m_Height: 3.07158256
   m_Direction: 1
-  m_Center: {x: 0, y: 1.29999995, z: 0}
+  m_Center: {x: 0, y: 1.39999998, z: 0}
 --- !u!1 &1573455352
 GameObject:
   m_ObjectHideFlags: 0
