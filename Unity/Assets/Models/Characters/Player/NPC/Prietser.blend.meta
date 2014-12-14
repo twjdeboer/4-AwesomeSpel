@@ -1,56 +1,8 @@
 fileFormatVersion: 2
-guid: abc67060fb0a0364b892486dc5a37312
+guid: db779796f778cde45a7e2c4516d82cd7
 ModelImporter:
   serializedVersion: 16
-  fileIDToRecycleName:
-    100000: beta86_001
-    100002: beta86_001_MeshPart0
-    100004: beta86_001_MeshPart1
-    100006: Lijf
-    100008: Lijf_MeshPart0
-    100010: Lijf_MeshPart1
-    100012: Mijter
-    100014: //RootNode
-    100016: Sphere
-    100018: Staf
-    100020: Tabbert
-    400000: beta86_001
-    400002: beta86_001_MeshPart0
-    400004: beta86_001_MeshPart1
-    400006: Lijf
-    400008: Lijf_MeshPart0
-    400010: Lijf_MeshPart1
-    400012: Mijter
-    400014: //RootNode
-    400016: Sphere
-    400018: Staf
-    400020: Tabbert
-    2300000: beta86_001_MeshPart0
-    2300002: beta86_001_MeshPart1
-    2300004: Lijf_MeshPart0
-    2300006: Lijf_MeshPart1
-    2300008: Mijter
-    2300010: Sphere
-    2300012: Staf
-    2300014: Tabbert
-    3300000: beta86_001_MeshPart0
-    3300002: beta86_001_MeshPart1
-    3300004: Lijf_MeshPart0
-    3300006: Lijf_MeshPart1
-    3300008: Mijter
-    3300010: Sphere
-    3300012: Staf
-    3300014: Tabbert
-    4300000: Mijter
-    4300002: Staf
-    4300004: Lijf_MeshPart0
-    4300006: Lijf_MeshPart1
-    4300008: Tabbert
-    4300010: Sphere
-    4300012: beta86_001_MeshPart0
-    4300014: beta86_001_MeshPart1
-    7400000: Default Take
-    9500000: //RootNode
+  fileIDToRecycleName: {}
   materials:
     importMaterials: 1
     materialName: 0
