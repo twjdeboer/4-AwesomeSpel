@@ -16,103 +16,103 @@ NavMeshLayers:
     cost: 2
     editType: 2
   User Layer 0:
-    name: 
-    cost: 0
+    name: '1-horiz-left '
+    cost: 1
     editType: 3
   User Layer 1:
-    name: 
+    name: 1-horiz-right
     cost: 1
     editType: 3
   User Layer 2:
-    name: 
+    name: 1-vert-left
     cost: 1
     editType: 3
   User Layer 3:
-    name: 
+    name: 1-vert-right
     cost: 1
     editType: 3
   User Layer 4:
-    name: 
+    name: 2-horiz-left
     cost: 1
     editType: 3
   User Layer 5:
-    name: 
+    name: 2-horiz-right
     cost: 1
     editType: 3
   User Layer 6:
-    name: 
+    name: 2-vert-left
     cost: 1
     editType: 3
   User Layer 7:
-    name: 
+    name: 2-vert-right
     cost: 1
     editType: 3
   User Layer 8:
-    name: 
+    name: 3-horiz-left
     cost: 1
     editType: 3
   User Layer 9:
-    name: 
+    name: 3-horiz-right
     cost: 1
     editType: 3
   User Layer 10:
-    name: 
+    name: 3-vert-left
     cost: 1
     editType: 3
   User Layer 11:
-    name: 
+    name: 3-vert-right
     cost: 1
     editType: 3
   User Layer 12:
-    name: 
+    name: 4-horiz-left
     cost: 1
     editType: 3
   User Layer 13:
-    name: 
+    name: 4-horiz-right
     cost: 1
     editType: 3
   User Layer 14:
-    name: 
+    name: 4-vert-left
     cost: 1
     editType: 3
   User Layer 15:
-    name: 
+    name: 4-vert-right
     cost: 1
     editType: 3
   User Layer 16:
-    name: 
+    name: 5-horiz-left
     cost: 1
     editType: 3
   User Layer 17:
-    name: 
+    name: 5-horiz-right
     cost: 1
     editType: 3
   User Layer 18:
-    name: 
+    name: 5-vert-left
     cost: 1
     editType: 3
   User Layer 19:
-    name: 
+    name: 5-vert-right
     cost: 1
     editType: 3
   User Layer 20:
-    name: 
+    name: 6-horiz-left
     cost: 1
     editType: 3
   User Layer 21:
-    name: 
+    name: 6-horiz-right
     cost: 1
     editType: 3
   User Layer 22:
-    name: 
+    name: 7-horiz-left
     cost: 1
     editType: 3
   User Layer 23:
-    name: 
+    name: 7-horiz-right
     cost: 1
     editType: 3
   User Layer 24:
-    name: 
+    name: kruizpunt
     cost: 1
     editType: 3
   User Layer 25:

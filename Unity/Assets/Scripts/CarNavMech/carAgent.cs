@@ -11,6 +11,8 @@ public class carAgent : MonoBehaviour {
 	void Start () {
 		agent = gameObject.GetComponent<NavMeshAgent> ();
 
+		transform.eulerAngles = new Vector3(270.0f, 90.0f, 0.0f);
+
 		agent.SetDestination (destination.position);
 	
 	}
