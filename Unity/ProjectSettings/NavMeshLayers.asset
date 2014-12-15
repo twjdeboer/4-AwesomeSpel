@@ -104,19 +104,19 @@ NavMeshLayers:
     cost: 1
     editType: 3
   User Layer 22:
-    name: 7-horiz-left
+    name: kruispunt
     cost: 1
     editType: 3
   User Layer 23:
-    name: 7-horiz-right
+    name: 
     cost: 1
     editType: 3
   User Layer 24:
-    name: kruizpunt
+    name: 7-horiz-left
     cost: 1
     editType: 3
   User Layer 25:
-    name: 
+    name: 7-horiz-right
     cost: 1
     editType: 3
   User Layer 26:
