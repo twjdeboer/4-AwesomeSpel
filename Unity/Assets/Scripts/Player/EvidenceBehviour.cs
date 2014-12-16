@@ -53,14 +53,14 @@ public class EvidenceBehviour : MonoBehaviour {
 
     void ActivateAndFillUI()
     {
-        evidenceInterface.SetActive(true);
+        evidenceInterface.GetComponent<CanvasGroup>().alpha = 1;
         descriptionText.text = description;
         evidenceNameText.text = name;
     }
 
     void DeactivateUI()
     {
-        evidenceInterface.SetActive(false);
+        evidenceInterface.GetComponent<CanvasGroup>().alpha = 0;
     }
 
     void OnCollisionEnter(Collision other)
@@ -77,7 +77,7 @@ public class EvidenceBehviour : MonoBehaviour {
     {
         ResourceManager.evidenceList.Add(this.gameObject);
         Destroy(gameObject);
-        evidenceInterface.SetActive(false);
+        evidenceInterface.GetComponent<CanvasGroup>().alpha = 0;
     }
 
     void MouseLeft()
@@ -111,7 +111,7 @@ public class EvidenceBehviour : MonoBehaviour {
         evidenceInterface = GameObject.Find("Evidence");
         descriptionText = GameObject.Find("Description").GetComponent<Text>();
         evidenceNameText = GameObject.Find("EvidenceName").GetComponent<Text>();
-        evidenceInterface.SetActive(false);
+        evidenceInterface.GetComponent<CanvasGroup>().alpha = 0;
         intScale = transform.localScale;
 	}
 	
