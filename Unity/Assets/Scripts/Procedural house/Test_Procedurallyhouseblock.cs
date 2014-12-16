@@ -11,7 +11,6 @@ public class Test_Procedurallyhouseblock : MonoBehaviour {
 	private ProceduralHouseblok newHouseBlok;
 	private GameObject devidehouse;
 
-    private GameObject loadScene;
 	private ProceduralHouse[] newHouse;
 	private GameObject[] Houses;
 	private GameObject[] GrassFloor;
@@ -27,11 +26,6 @@ public class Test_Procedurallyhouseblock : MonoBehaviour {
 	private int loadprogress;
 	private float Timer=0;
 
-    void Awake()
-    {
-        loadScene = GameObject.Find("Loaded");
-        loadScene.SetActive(false);
-    }
 
 	void Start() {
         
@@ -119,7 +113,7 @@ public class Test_Procedurallyhouseblock : MonoBehaviour {
 		j++;
 		if(!preHouses& !Housebloks[0] & !Housebloks[1] ){
 			print ("Done");
-            loadScene.SetActive(true);
+            ResourceManager.levelLoaded = true;
             
 			Component other =world.GetComponent("Test_Procedurallyhouseblock");
 			GameObject[] destroying = GameObject.FindGameObjectsWithTag("Destroy");

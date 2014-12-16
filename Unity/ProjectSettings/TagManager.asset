@@ -10,7 +10,7 @@ TagManager:
   - Omlijsting
   - Huisblok
   - Huisblok2
-  - B1
+  - Setactive
   - Roof
   - Huisblokback
   - Ground Walk
@@ -22,6 +22,7 @@ TagManager:
   - Destroy
   - Building2
   - UI
+  - Car
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX

@@ -1,44 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <conversation>
-  <NPC>Hello World! We now test our xml input, first we have to make sure a NPC can talk back to the player using a xml file. asjkdfhalkjsdhfakjsdsjhfjfsahjfshfshjfsfsffdfdshfhffa.</NPC>
+  <NPC>Hello! Great day isn't it? How do you feel right now?</NPC>
   <PLAYER>
-    <QUESTION TEXT ="VRAAG NUMMER 1">
+    <QUESTION TEXT ="How do you feel?">
       <OPTION>
-        <TEXT>Optie 1</TEXT>
-        <REACTION>Antwoord 1</REACTION>
+        <TEXT>Good.</TEXT>
+        <REACTION>That's nice! Sure you're doing some important stuff what makes you feel good?</REACTION>
       </OPTION>
       <OPTION>
-        <TEXT>Optie 2</TEXT>
-        <REACTION>Antwoord 2</REACTION>
-      </OPTION>
-      <OPTION>
-        <TEXT>Optie 3</TEXT>
-        <REACTION>Antwoord 3</REACTION>
-      </OPTION>
-      <OPTION>
-        <TEXT>Optie 4</TEXT>
-        <REACTION>Antwoord 4. fdjakfskjahsfdhksahfhsalkfhsaldkhfhsdahfakhlsdhflahfdlajkfjlkhjdhfahlfdjahsdlfhlasdlfhsjdhlashalfhashfhkashdjfhashdfkhdhfsadhflashaljdfh.</REACTION>
+        <TEXT>Bad. </TEXT>
+        <REACTION>I'm sorry. Something important what did go wrong?</REACTION>
       </OPTION>
     </QUESTION>  
   </PLAYER>
-<NPC>Hello World! We now test our xml input, first we have to make sure a NPC can talk back to the player using a xml file. asjkdfhalkjsdhfakjsdsjhfjfsahjfshfshjfsfsffdfdshfhffa.</NPC>
   <PLAYER>
-    <QUESTION TEXT ="VRAAG NUMMER 1">
+    <QUESTION TEXT ="What did you do?">
       <OPTION>
-        <TEXT>Optie 1</TEXT>
-        <REACTION>Antwoord 1</REACTION>
+        <TEXT>Nothing</TEXT>
+        <REACTION>That's boring. Let me do something to cheer our day! *Makes funny faces*</REACTION>
       </OPTION>
       <OPTION>
-        <TEXT>Optie 2</TEXT>
-        <REACTION>Antwoord 2</REACTION>
+        <TEXT>Solving Murder Case</TEXT>
+        <REACTION>Aii, I didn't knew something was mudered. I should read the newspaper now! *Leaves to buy a newspaper*</REACTION>
       </OPTION>
       <OPTION>
-        <TEXT>Optie 3</TEXT>
-        <REACTION>Antwoord 3</REACTION>
-      </OPTION>
-      <OPTION>
-        <TEXT>Optie 4</TEXT>
-        <REACTION>Antwoord 4. fdjakfskjahsfdhksahfhsalkfhsaldkhfhsdahfakhlsdhflahfdlajkfjlkhjdhfahlfdjahsdlfhlasdlfhsjdhlashalfhashfhkashdjfhashdfkhdhfsadhflashaljdfh.</REACTION>
+        <TEXT>Beat you up</TEXT>
+        <REACTION>AHHHHHHH! *Runs away fast *</REACTION>
       </OPTION>
     </QUESTION>  
   </PLAYER>
