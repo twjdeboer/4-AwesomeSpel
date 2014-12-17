@@ -174,7 +174,6 @@ public class EvidenceBehviour : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-
         MouseLeft();
         ScaleAndRotate();
         PickUpEvidence();
