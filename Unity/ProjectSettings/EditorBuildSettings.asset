@@ -6,8 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Resources/Scenes/World final.unity
+    path: Assets/Resources/Scenes/World final2.unity
   - enabled: 1
-    path: Assets/Resources/Scenes/World final second scene.unity
+    path: Assets/Resources/Scenes/Nextscenetest.unity
+  - enabled: 1
+    path: Assets/Resources/Scenes/test inside2.unity
   - enabled: 1
     path: Assets/Resources/Scenes/test inside.unity
+  - enabled: 1
+    path: Assets/Resources/Scenes/Nextscenetest2.unity
