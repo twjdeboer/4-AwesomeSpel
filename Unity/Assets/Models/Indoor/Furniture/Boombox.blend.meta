@@ -1,62 +1,49 @@
 fileFormatVersion: 2
-guid: db779796f778cde45a7e2c4516d82cd7
+guid: 35a3b794df20ff84d8959e7a48d19bfc
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
-    100000: beta86_001
-    100002: beta86_001_MeshPart0
-    100004: beta86_001_MeshPart1
-    100006: Lijf
-    100008: Lijf_MeshPart0
-    100010: Lijf_MeshPart1
-    100012: Mijter
-    100014: //RootNode
-    100016: Sphere
-    100018: Staf
-    100020: Tabbert
-    400000: beta86_001
-    400002: beta86_001_MeshPart0
-    400004: beta86_001_MeshPart1
-    400006: Lijf
-    400008: Lijf_MeshPart0
-    400010: Lijf_MeshPart1
-    400012: Mijter
-    400014: //RootNode
-    400016: Sphere
-    400018: Staf
-    400020: Tabbert
-    2300000: beta86_001_MeshPart0
-    2300002: beta86_001_MeshPart1
-    2300004: Lijf_MeshPart0
-    2300006: Lijf_MeshPart1
-    2300008: Mijter
-    2300010: Sphere
-    2300012: Staf
-    2300014: Tabbert
-    2300016: Lijf
-    3300000: beta86_001_MeshPart0
-    3300002: beta86_001_MeshPart1
-    3300004: Lijf_MeshPart0
-    3300006: Lijf_MeshPart1
-    3300008: Mijter
-    3300010: Sphere
-    3300012: Staf
-    3300014: Tabbert
-    3300016: Lijf
-    4300000: Mijter
-    4300002: Staf
-    4300004: Lijf_MeshPart0
-    4300006: Lijf_MeshPart1
-    4300008: Tabbert
-    4300010: Sphere
-    4300012: beta86_001_MeshPart0
-    4300014: beta86_001_MeshPart1
-    4300016: Lijf
-    6400000: Lijf
-    6400002: Mijter
-    6400004: Sphere
-    6400006: Staf
-    6400008: Tabbert
+    100000: //RootNode
+    100002: Cube
+    100004: Cube_001
+    100006: Cube_002
+    100008: Cube_007
+    100010: Sphere_001
+    100012: Torus_001
+    400000: //RootNode
+    400002: Cube
+    400004: Cube_001
+    400006: Cube_002
+    400008: Cube_007
+    400010: Sphere_001
+    400012: Torus_001
+    2300000: Cube
+    2300002: Cube_001
+    2300004: Cube_002
+    2300006: Cube_007
+    2300008: Sphere_001
+    2300010: Torus_001
+    2300012: //RootNode
+    3300000: Cube
+    3300002: Cube_001
+    3300004: Cube_002
+    3300006: Cube_007
+    3300008: Sphere_001
+    3300010: Torus_001
+    3300012: //RootNode
+    4300000: Cube_007
+    4300002: Cube_002
+    4300004: Cube_001
+    4300006: Torus_001
+    4300008: Sphere_001
+    4300010: Cube
+    6400000: Cube
+    6400002: Cube_001
+    6400004: Cube_002
+    6400006: Cube_007
+    6400008: Sphere_001
+    6400010: Torus_001
+    6400012: //RootNode
     7400000: Default Take
     9500000: //RootNode
   materials:
@@ -80,10 +67,10 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importBlendShapes: 1
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
     weldVertices: 1
