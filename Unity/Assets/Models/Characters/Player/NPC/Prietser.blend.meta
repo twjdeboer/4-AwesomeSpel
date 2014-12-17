@@ -33,7 +33,10 @@ ModelImporter:
     2300010: Sphere
     2300012: Staf
     2300014: Tabbert
+<<<<<<< HEAD
     2300016: Lijf
+=======
+>>>>>>> bae0f0f2378b8fff8e060b14fbc2a3491155553b
     3300000: beta86_001_MeshPart0
     3300002: beta86_001_MeshPart1
     3300004: Lijf_MeshPart0
@@ -42,7 +45,10 @@ ModelImporter:
     3300010: Sphere
     3300012: Staf
     3300014: Tabbert
+<<<<<<< HEAD
     3300016: Lijf
+=======
+>>>>>>> bae0f0f2378b8fff8e060b14fbc2a3491155553b
     4300000: Mijter
     4300002: Staf
     4300004: Lijf_MeshPart0
@@ -51,12 +57,15 @@ ModelImporter:
     4300010: Sphere
     4300012: beta86_001_MeshPart0
     4300014: beta86_001_MeshPart1
+<<<<<<< HEAD
     4300016: Lijf
     6400000: Lijf
     6400002: Mijter
     6400004: Sphere
     6400006: Staf
     6400008: Tabbert
+=======
+>>>>>>> bae0f0f2378b8fff8e060b14fbc2a3491155553b
     7400000: Default Take
     9500000: //RootNode
   materials:

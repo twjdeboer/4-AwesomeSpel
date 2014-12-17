@@ -4,6 +4,8 @@ using System.Collections;
 public class Testblok2 : MonoBehaviour {
 	public GameObject HouseContainer;
 	public bool buildhouse;
+	public string nextscene;
+
 	private GameObject[] Houseblok;
 	
 	private ProceduralHouseblok newHouseBlok;
@@ -58,7 +60,7 @@ public class Testblok2 : MonoBehaviour {
 		}
 		
 	}
-	void Update(){
+	void FixedUpdate(){
 		
 		if(Housebloks[0]){
 			createPrebuilding("Prebuilding",false,j);
@@ -134,7 +136,7 @@ public class Testblok2 : MonoBehaviour {
 			print ("Done");
 
 			Destroy(GameObject.Find("Worldloader"));
-			Application.LoadLevel("World final second scene");
+			Application.LoadLevel(nextscene);
 
 		}
 	}
