@@ -7,7 +7,8 @@ using System.Collections.Generic;
 public class ShowEvidence : MonoBehaviour
 {
     private List<GameObject> evidenceList = new List<GameObject>();
-    
+    private int index = 0;
+
     // Use this for initialization
     void Start()
     {
@@ -16,7 +17,7 @@ public class ShowEvidence : MonoBehaviour
 
     void ViewList()
     {
-        if(Input.GetKey(KeyCode.E))
+        if (Input.GetKey(KeyCode.E))
         {
             gameObject.GetComponent<CanvasGroup>().alpha = 1;
         }
@@ -33,10 +34,19 @@ public class ShowEvidence : MonoBehaviour
 
     void FillList()
     {
-        for(int i = 0; i < evidenceList.Count; i++)
+        if (index < evidenceList.Count)
         {
-            GameObject textElement = Instantiate(Resources.Load("/Prefabs/EvidenceElement")) as GameObject;
-            textElement.name = "EvidenceText " + i;
+
+            GameObject textElement = Instantiate(Resources.Load("Prefabs/EvidenceElement")) as GameObject;
+            textElement.name = "EvidenceText " + index;
+            textElement.transform.SetParent(transform, false);
+            Text evidenceName = textElement.transform.Find("EvidenceName").GetComponent<Text>();
+            Text evidenceDiscription = textElement.transform.Find("EvidenceDescription").GetComponent<Text>();
+            evidenceName.GetComponent<RectTransform>().anchoredPosition = new Vector2(-250, 160 - (30 * (float)index));
+            evidenceDiscription.GetComponent<RectTransform>().anchoredPosition = new Vector2(150, 160 - (30 * (float)index));
+            evidenceName.text = evidenceList[index].GetComponent<EvidenceBehviour>().name;
+            evidenceDiscription.text = evidenceList[index].GetComponent<EvidenceBehviour>().description;
+            index++;
         }
     }
 
@@ -45,5 +55,6 @@ public class ShowEvidence : MonoBehaviour
     {
         ViewList();
         GetEvidence();
+        FillList();
     }
 }

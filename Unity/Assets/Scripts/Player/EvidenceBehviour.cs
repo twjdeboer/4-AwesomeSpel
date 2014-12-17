@@ -106,8 +106,8 @@ public class EvidenceBehviour : MonoBehaviour {
      * */
     void OnMouseUpAsButton()
     {
-        if(canBePickedUp && mouseEntered)
-        pickedUp = true;   
+        if (canBePickedUp && mouseEntered)
+         pickedUp = true;    
 
     }
 
@@ -174,7 +174,6 @@ public class EvidenceBehviour : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-
         MouseLeft();
         ScaleAndRotate();
         PickUpEvidence();

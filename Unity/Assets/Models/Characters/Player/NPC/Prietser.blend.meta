@@ -3,52 +3,33 @@ guid: db779796f778cde45a7e2c4516d82cd7
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
-    100000: beta86_001
-    100002: beta86_001_MeshPart0
-    100004: beta86_001_MeshPart1
-    100006: Lijf
-    100008: Lijf_MeshPart0
-    100010: Lijf_MeshPart1
-    100012: Mijter
-    100014: //RootNode
-    100016: Sphere
-    100018: Staf
-    100020: Tabbert
-    400000: beta86_001
-    400002: beta86_001_MeshPart0
-    400004: beta86_001_MeshPart1
-    400006: Lijf
-    400008: Lijf_MeshPart0
-    400010: Lijf_MeshPart1
-    400012: Mijter
-    400014: //RootNode
-    400016: Sphere
-    400018: Staf
-    400020: Tabbert
-    2300000: beta86_001_MeshPart0
-    2300002: beta86_001_MeshPart1
-    2300004: Lijf_MeshPart0
-    2300006: Lijf_MeshPart1
-    2300008: Mijter
-    2300010: Sphere
-    2300012: Staf
-    2300014: Tabbert
-    3300000: beta86_001_MeshPart0
-    3300002: beta86_001_MeshPart1
-    3300004: Lijf_MeshPart0
-    3300006: Lijf_MeshPart1
-    3300008: Mijter
-    3300010: Sphere
-    3300012: Staf
-    3300014: Tabbert
+    100000: Lijf
+    100002: Mijter
+    100004: //RootNode
+    100006: Sphere
+    100008: Staf
+    100010: Tabbert
+    400000: Lijf
+    400002: Mijter
+    400004: //RootNode
+    400006: Sphere
+    400008: Staf
+    400010: Tabbert
+    2300000: Lijf
+    2300002: Mijter
+    2300004: Sphere
+    2300006: Staf
+    2300008: Tabbert
+    3300000: Lijf
+    3300002: Mijter
+    3300004: Sphere
+    3300006: Staf
+    3300008: Tabbert
     4300000: Mijter
     4300002: Staf
-    4300004: Lijf_MeshPart0
-    4300006: Lijf_MeshPart1
-    4300008: Tabbert
-    4300010: Sphere
-    4300012: beta86_001_MeshPart0
-    4300014: beta86_001_MeshPart1
+    4300004: Lijf
+    4300006: Tabbert
+    4300008: Sphere
     7400000: Default Take
     9500000: //RootNode
   materials:

@@ -4,10 +4,22 @@ ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Lampenkap
+    100004: Voet
     400000: //RootNode
+    400002: Lampenkap
+    400004: Voet
     2300000: //RootNode
+    2300002: Lampenkap
+    2300004: Voet
     3300000: //RootNode
+    3300002: Lampenkap
+    3300004: Voet
     4300000: Cylinder
+    4300002: Lampenkap
+    4300004: Voet
+    6400000: Lampenkap
+    6400002: Voet
     7400000: Default Take
     9500000: //RootNode
   materials:
@@ -31,7 +43,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
