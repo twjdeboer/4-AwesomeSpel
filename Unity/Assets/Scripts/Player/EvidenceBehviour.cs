@@ -106,8 +106,8 @@ public class EvidenceBehviour : MonoBehaviour {
      * */
     void OnMouseUpAsButton()
     {
-        if(canBePickedUp && mouseEntered)
-        pickedUp = true;   
+        if (canBePickedUp && mouseEntered)
+         pickedUp = true;    
 
     }
 
