@@ -7,6 +7,9 @@ public class CamaraBehaviour : MonoBehaviour {
 
     private Vector3 offset;
     private GameObject prefab;
+    public RaycastHit rayinfo;
+    private Ray ray;
+    private Collider reset;
 
     //Methods
 
@@ -17,16 +20,45 @@ public class CamaraBehaviour : MonoBehaviour {
     {
         transform.position = ResourceManager.playerPosition + this.offset;
     }
-	
-    /**
-     * Creates object which follow the player and makes transparent buildings.
-     * */
-    void CreateViewLine(GameObject prefab)
-    {
-        GameObject viewLine = Instantiate(prefab, this.offset * 0.5f, Quaternion.Euler(0, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z)) as GameObject;
-        viewLine.transform.parent = transform;
-        viewLine.transform.localScale = new Vector3(5, this.offset.y,this.offset.z);
-    
+
+
+    void CheckRay()
+    {   
+
+        if(Physics.Linecast(transform.position, ResourceManager.playerPosition, out rayinfo))
+        {
+            Collider other = rayinfo.collider;
+            if (other.gameObject.tag == "Building")
+            {
+                Methods.SetAlpha(other.gameObject, 0.5f);
+                reset = other;
+            }
+            else if (other.gameObject.tag == "Building2")
+            {
+                reset = other;
+                Methods.SetAlpha(other.gameObject, 0.1f);
+            }
+            else if (other.gameObject.tag.Contains("Transparent"))
+            {
+                Methods.SetAlpha(other.gameObject, 0.5f);
+                reset = other;
+            }
+            else
+            {
+                if (reset != null)
+                {
+                    other = reset;
+                    if (other.gameObject.tag == "Building")
+                        Methods.SetAlpha(other.gameObject, 1);
+                    if (other.gameObject.tag == "Building")
+                        Methods.SetAlpha(other.gameObject, 1);
+                    if (other.gameObject.tag.Contains("Transparent"))
+                        Methods.SetAlpha(other.gameObject, 1);
+                }
+            }
+        }
+
+
     }
 
 
@@ -34,14 +66,15 @@ public class CamaraBehaviour : MonoBehaviour {
 
     void Start () {
 
+        reset = null;
         this.offset = transform.position - ResourceManager.playerPosition;
         ResourceManager.cam = transform;
         prefab = Resources.Load("Prefabs/viewLine") as GameObject;
-        CreateViewLine(prefab);
+
 	}
 
 	void FixedUpdate () {
-
+        CheckRay();
         FollowPlayer();
 	}
 }
