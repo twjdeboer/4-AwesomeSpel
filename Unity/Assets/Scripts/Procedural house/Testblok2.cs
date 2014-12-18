@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Testblok2 : MonoBehaviour {
 	public GameObject HouseContainer;
 	public bool buildhouse;
 	public string nextscene;
+	public Text text;
 
 	private GameObject[] Houseblok;
 	
@@ -27,6 +29,8 @@ public class Testblok2 : MonoBehaviour {
 	private int loadprogress;
 	private float Timer=0;
 	private GameObject[] housboxes;
+	private string currentload;
+	private GameObject loader;
 	
 	void Awake()
 	{
@@ -46,6 +50,7 @@ public class Testblok2 : MonoBehaviour {
 		createarray ();
 		loadsize = GameObject.FindGameObjectsWithTag ("Huisblok").Length + GameObject.FindGameObjectsWithTag ("Huisblokback").Length;
 		loadprogress = 0;
+		currentload = "Generating Cubes";
 		if (Houseblok.Length == 0) {
 			Housebloks[0]=false;
 			Housebloks[1]=true;
@@ -53,6 +58,7 @@ public class Testblok2 : MonoBehaviour {
 			GrassFloor = new GameObject[Houseblok.Length];
 			
 			if(Houseblok.Length==0){
+				currentload = "Generating Buildings";
 				Houses = GameObject.FindGameObjectsWithTag ("Prebuilding");
 				preHouses=true;
 				Housebloks[1]=false;
@@ -78,6 +84,7 @@ public class Testblok2 : MonoBehaviour {
 					j=0;
 					Houses = GameObject.FindGameObjectsWithTag ("Prebuilding");
 					getloadsize();
+					currentload = "Generating Buildings";
 					//newHouse = new ProceduralHouse[Houses.Length];
 				}
 			}
@@ -91,6 +98,7 @@ public class Testblok2 : MonoBehaviour {
 				preHouses=buildhouse;
 				getloadsize();
 				Houses = GameObject.FindGameObjectsWithTag ("Prebuilding");
+				currentload = "Generating Buildings";
 				//newHouse = new ProceduralHouse[Houses.Length];
 			}
 		}
@@ -115,13 +123,14 @@ public class Testblok2 : MonoBehaviour {
 				loadprogress++;
 			}
 		}
-		Timer += Time.deltaTime;
-		print(Timer+" -- "+Time.deltaTime+" "+loadprogress+" "+loadsize);
+		//Timer += Time.deltaTime;
+		print(loadprogress+" "+loadsize);
 		//print (Time.deltaTime);
 		j++;
-		print (!preHouses+"  "+!Housebloks[0]+"  "+!Housebloks[1]);
+		text.text = currentload + ": " + loadprogress + " of "+loadsize;
+		//print (!preHouses+"  "+!Housebloks[0]+"  "+!Housebloks[1]);
 		if(!preHouses& !Housebloks[0] & !Housebloks[1] ){
-
+			text.text = "Generating done";
 			//loadScene.SetActive(true);
 			ResourceManager.World = GameObject.Find("HouseContainer");
 
@@ -134,13 +143,20 @@ public class Testblok2 : MonoBehaviour {
 		
 			setactive2 ();
 			print ("Done");
-
+			text.text = "World visability done";
 			Destroy(GameObject.Find("Worldloader"));
 			Application.LoadLevel(nextscene);
 
 		}
 	}
-	
+
+	//.............................................................................end update
+
+
+
+
+
+
 	
 	public void createPrebuilding(string settag,bool back,int j){
 		createGrassfloor(j);

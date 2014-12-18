@@ -33,12 +33,12 @@ public class CamaraBehaviour : MonoBehaviour {
                 Methods.SetAlpha(other.gameObject, 0.5f);
                 reset = other;
             }
-            if (other.gameObject.tag == "Building2")
+            else if (other.gameObject.tag == "Building2")
             {
                 reset = other;
                 Methods.SetAlpha(other.gameObject, 0.1f);
             }
-            if (other.gameObject.tag.Contains("Transparent"))
+            else if (other.gameObject.tag.Contains("Transparent"))
             {
                 Methods.SetAlpha(other.gameObject, 0.5f);
                 reset = other;
@@ -48,7 +48,6 @@ public class CamaraBehaviour : MonoBehaviour {
                 if (reset != null)
                 {
                     other = reset;
-                    Debug.Log(other);
                     if (other.gameObject.tag == "Building")
                         Methods.SetAlpha(other.gameObject, 1);
                     if (other.gameObject.tag == "Building")
@@ -75,7 +74,6 @@ public class CamaraBehaviour : MonoBehaviour {
 	}
 
 	void FixedUpdate () {
-        Debug.Log(reset);
         CheckRay();
         FollowPlayer();
 	}

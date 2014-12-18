@@ -4,6 +4,7 @@ using System.Collections;
 public class Loadnextscene : MonoBehaviour {
 	public string nextscene;
 	public bool activeworld;
+	public string returned;
 
 	void start(){
 		bool activeworl = false;
