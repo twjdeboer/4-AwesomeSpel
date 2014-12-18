@@ -662,6 +662,67 @@ ModelImporter:
     4300256: 44
     4300258: 42
     4300260: 41
+    6400000: 1-horiz-left
+    6400002: 1-horiz-right
+    6400004: 1-vert-left
+    6400006: 1-vert-right
+    6400008: 10
+    6400010: 12
+    6400012: 13
+    6400014: 15
+    6400016: 18
+    6400018: 19
+    6400020: 2-horiz-left
+    6400022: 2-horiz-right
+    6400024: 2-vert-left
+    6400026: 2-vert-right
+    6400028: 20
+    6400030: 21
+    6400032: 22
+    6400034: 23
+    6400036: 25
+    6400038: 26
+    6400040: 27
+    6400042: 3-horiz-left
+    6400044: 3-horiz-right
+    6400046: 3-vert-left
+    6400048: 3-vert-right
+    6400050: 30
+    6400052: 31
+    6400054: 32
+    6400056: 34
+    6400058: 35
+    6400060: 36
+    6400062: 37
+    6400064: 38
+    6400066: 4
+    6400068: 4-horiz-left
+    6400070: 4-horiz-right
+    6400072: 4-vert-left
+    6400074: 4-vert-right
+    6400076: 41
+    6400078: 42
+    6400080: 44
+    6400082: 45
+    6400084: 47
+    6400086: 48
+    6400088: 5-horiz-left
+    6400090: 5-horiz-right
+    6400092: 5-vert-left
+    6400094: 5-vert-right
+    6400096: 6-horiz-left
+    6400098: 6-horiz-right
+    6400100: 7
+    6400102: 7-horiz-left
+    6400104: 7-horiz_right
+    6400106: dead_end
+    6400108: lines
+    6400110: Plane_001
+    6400112: Plane_002
+    6400114: Plane_003
+    6400116: Plane_004_MeshPart0
+    6400118: Plane_004_MeshPart1
+    6400120: Plane_004_MeshPart2
     7400000: Default Take
     9500000: //RootNode
   materials:
@@ -685,7 +746,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 3
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0

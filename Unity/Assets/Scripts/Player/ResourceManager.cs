@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public static class ResourceManager{
+public class ResourceManager{
 
     public static Vector3 playerPosition { get; set; }
     public static Transform cam { get; set; }
@@ -29,4 +29,6 @@ public static class ResourceManager{
     public static bool levelLoaded { get { return _levelLoaded; } set { _levelLoaded = value; } }
 
 	public static GameObject World { get; set;}
+
+	public static Vector3 newplayerpos{ get; set; }
 }
