@@ -10,6 +10,7 @@ public class CamaraBehaviour : MonoBehaviour {
     public RaycastHit rayinfo;
     private Ray ray;
     private Collider reset;
+    private bool setOffset = true;
 
     //Methods
 
@@ -67,14 +68,25 @@ public class CamaraBehaviour : MonoBehaviour {
     void Start () {
 
         reset = null;
-        this.offset = transform.position - ResourceManager.playerPosition;
         ResourceManager.cam = transform;
         prefab = Resources.Load("Prefabs/viewLine") as GameObject;
 
 	}
 
+    void SetOffset()
+    {
+        if (setOffset)
+        {
+            this.offset = transform.position - ResourceManager.playerPosition;
+            setOffset = false;
+        }
+    }
+
+
 	void FixedUpdate () {
         CheckRay();
         FollowPlayer();
+        Debug.Log(offset);
+        SetOffset();
 	}
 }
