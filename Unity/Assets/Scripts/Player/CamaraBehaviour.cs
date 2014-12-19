@@ -19,6 +19,7 @@ public class CamaraBehaviour : MonoBehaviour {
      * */
     void FollowPlayer()
     {
+        if(!setOffset)
         transform.position = ResourceManager.playerPosition + this.offset;
     }
 
@@ -69,8 +70,6 @@ public class CamaraBehaviour : MonoBehaviour {
 
         reset = null;
         ResourceManager.cam = transform;
-        prefab = Resources.Load("Prefabs/viewLine") as GameObject;
-
 	}
 
     void SetOffset()
@@ -78,6 +77,7 @@ public class CamaraBehaviour : MonoBehaviour {
         if (setOffset)
         {
             this.offset = transform.position - ResourceManager.playerPosition;
+            Debug.Log(transform.position - ResourceManager.playerPosition);
             setOffset = false;
         }
     }
@@ -86,7 +86,6 @@ public class CamaraBehaviour : MonoBehaviour {
 	void FixedUpdate () {
         CheckRay();
         FollowPlayer();
-        Debug.Log(offset);
         SetOffset();
 	}
 }

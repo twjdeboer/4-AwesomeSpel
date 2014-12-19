@@ -46,7 +46,10 @@ public class NPCInteraction : MonoBehaviour {
      * */
     void OnMouseUp()
     {
-        gameObject.GetComponent<Astar>().stopWalking = true;
+        if (gameObject.GetComponent<Astar>() != null)
+        {
+            gameObject.GetComponent<Astar>().stopWalking = true;
+        }
         ResourceManager.conversationWith = transform;
         ResourceManager.stopWalking = true;
         XMLReader(fileName);
@@ -72,14 +75,17 @@ public class NPCInteraction : MonoBehaviour {
      * */
     void RotateToPlayer()
     {
-        if (!stopWalking)
+        if (gameObject.GetComponent<Astar>() != null)
         {
-            float speed = gameObject.GetComponent<Astar>().rotateSpeed;
-            Transform target = GameObject.Find("Player").transform;
-            Vector3 targetDir = target.position - transform.position;
-            float step = speed * Time.deltaTime;
-            Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0F);
-            transform.rotation = Quaternion.LookRotation(newDir);
+            if (!stopWalking)
+            {
+                float speed = gameObject.GetComponent<Astar>().rotateSpeed;
+                Transform target = GameObject.Find("Player").transform;
+                Vector3 targetDir = target.position - transform.position;
+                float step = speed * Time.deltaTime;
+                Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0F);
+                transform.rotation = Quaternion.LookRotation(newDir);
+            }
         }
     }
 

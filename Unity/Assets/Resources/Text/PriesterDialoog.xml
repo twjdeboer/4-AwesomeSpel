@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<conversation>
+  <NPC>Hello! Great day isn't it? How do you feel right now?</NPC>
+  <PLAYER>
+    <QUESTION TEXT ="How do you feel?">
+      <OPTION>
+        <TEXT>Good.</TEXT>
+        <REACTION>That's nice! Sure you're doing some important stuff what makes you feel good?</REACTION>
+      </OPTION>
+      <OPTION>
+        <TEXT>Bad. </TEXT>
+        <REACTION>I'm sorry. Something important what did go wrong?</REACTION>
+      </OPTION>
+    </QUESTION>  
+  </PLAYER>
+  <PLAYER>
+    <QUESTION TEXT ="What did you do?">
+      <OPTION>
+        <TEXT>Nothing</TEXT>
+        <REACTION>That's boring. Let me do something to cheer our day! *Makes funny faces*</REACTION>
+      </OPTION>
+      <OPTION>
+        <TEXT>Solving Murder Case</TEXT>
+        <REACTION>Aii, I didn't knew something was mudered. I should read the newspaper now! *Leaves to buy a newspaper*</REACTION>
+      </OPTION>
+      <OPTION>
+        <TEXT>Beat you up</TEXT>
+        <REACTION>AHHHHHHH! *Runs away fast *</REACTION>
+      </OPTION>
+    </QUESTION>  
+  </PLAYER>
+</conversation>
