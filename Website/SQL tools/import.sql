@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.6.22, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.6.21, for Win64 (x86_64)
 --
 -- Host: localhost    Database: ewi3620tu4
 -- ------------------------------------------------------
--- Server version	5.6.22-log
+-- Server version	5.6.21-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -16,30 +16,29 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `playdata`
+-- Table structure for table `itemdata`
 --
 
-DROP TABLE IF EXISTS `playdata`;
+DROP TABLE IF EXISTS `itemdata`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `playdata` (
+CREATE TABLE `itemdata` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `type` varchar(255) NOT NULL,
-  `name` varchar(255) DEFAULT NULL,
-  `value` int(11) DEFAULT NULL,
+  `name` varchar(255) NOT NULL,
+  `userId` int(11) NOT NULL,
   `CreationDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `playdata`
+-- Dumping data for table `itemdata`
 --
 
-LOCK TABLES `playdata` WRITE;
-/*!40000 ALTER TABLE `playdata` DISABLE KEYS */;
-INSERT INTO `playdata` VALUES (8,'door',NULL,NULL,'2014-12-18 11:34:14'),(9,'pickup object',NULL,NULL,'2014-12-18 11:34:55'),(10,'pickup object','gun',NULL,'2014-12-18 11:37:06'),(11,'pickup object','gun',NULL,'2014-12-18 11:37:07'),(12,'pickup object','gun',NULL,'2014-12-18 11:37:07');
-/*!40000 ALTER TABLE `playdata` ENABLE KEYS */;
+LOCK TABLES `itemdata` WRITE;
+/*!40000 ALTER TABLE `itemdata` DISABLE KEYS */;
+INSERT INTO `itemdata` VALUES (8,'',0,'2014-12-18 11:34:14'),(9,'',0,'2014-12-18 11:34:55'),(10,'',0,'2014-12-18 11:37:06'),(11,'',0,'2014-12-18 11:37:07'),(12,'',0,'2014-12-18 11:37:07');
+/*!40000 ALTER TABLE `itemdata` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -51,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-12-18 12:37:32
+-- Dump completed on 2014-12-19 14:09:28
