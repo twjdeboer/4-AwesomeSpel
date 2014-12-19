@@ -87,7 +87,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d0ee472e5534b1f4791225d7487de79d, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: .579999983
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d0ee472e5534b1f4791225d7487de79d, type: 2}
       propertyPath: m_LocalPosition.z
@@ -670,6 +670,7 @@ GameObject:
   - 33: {fileID: 36117020}
   - 23: {fileID: 36117019}
   - 65: {fileID: 36117018}
+  - 64: {fileID: 36117021}
   m_Layer: 0
   m_Name: 13
   m_TagString: Untagged
@@ -731,6 +732,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 110445445}
   m_GameObject: {fileID: 36117016}
   m_Mesh: {fileID: 4300230, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
+--- !u!64 &36117021
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 36117016}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
+  m_Mesh: {fileID: 4300230, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
 --- !u!1 &37659501
 GameObject:
   m_ObjectHideFlags: 0
@@ -742,6 +756,7 @@ GameObject:
   - 33: {fileID: 37659505}
   - 23: {fileID: 37659504}
   - 65: {fileID: 37659503}
+  - 64: {fileID: 37659506}
   m_Layer: 0
   m_Name: 22
   m_TagString: Untagged
@@ -802,6 +817,19 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 110445445}
   m_GameObject: {fileID: 37659501}
+  m_Mesh: {fileID: 4300236, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
+--- !u!64 &37659506
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 37659501}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
   m_Mesh: {fileID: 4300236, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
 --- !u!1 &39766958
 GameObject:
@@ -1159,7 +1187,7 @@ Transform:
   m_PrefabInternal: {fileID: 740464}
   m_GameObject: {fileID: 63530904}
   m_LocalRotation: {x: -.198527277, y: .206500128, z: -.629583538, w: .722197592}
-  m_LocalPosition: {x: -53.2999992, y: 0, z: 44.5}
+  m_LocalPosition: {x: -53.2999992, y: .579999983, z: 44.5}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 876400920}
@@ -1725,6 +1753,7 @@ GameObject:
   - 33: {fileID: 94956314}
   - 23: {fileID: 94956313}
   - 65: {fileID: 94956312}
+  - 64: {fileID: 94956315}
   m_Layer: 0
   m_Name: 21
   m_TagString: Untagged
@@ -1785,6 +1814,19 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 110445445}
   m_GameObject: {fileID: 94956310}
+  m_Mesh: {fileID: 4300228, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
+--- !u!64 &94956315
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 94956310}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
   m_Mesh: {fileID: 4300228, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
 --- !u!1 &99784631
 GameObject:
@@ -1946,6 +1988,18 @@ Prefab:
     - target: {fileID: 400004, guid: f1ef468062ff6294996b3fb74eac0b3e, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100116, guid: f1ef468062ff6294996b3fb74eac0b3e, type: 2}
+      propertyPath: m_TagString
+      value: Ground Walk
+      objectReference: {fileID: 0}
+    - target: {fileID: 100122, guid: f1ef468062ff6294996b3fb74eac0b3e, type: 2}
+      propertyPath: m_TagString
+      value: Ground Walk
+      objectReference: {fileID: 0}
+    - target: {fileID: 100014, guid: f1ef468062ff6294996b3fb74eac0b3e, type: 2}
+      propertyPath: m_TagString
+      value: Ground Walk
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f1ef468062ff6294996b3fb74eac0b3e, type: 2}
@@ -3022,6 +3076,7 @@ GameObject:
   - 33: {fileID: 181422456}
   - 23: {fileID: 181422455}
   - 65: {fileID: 181422454}
+  - 64: {fileID: 181422457}
   m_Layer: 0
   m_Name: 42
   m_TagString: Untagged
@@ -3082,6 +3137,19 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 110445445}
   m_GameObject: {fileID: 181422452}
+  m_Mesh: {fileID: 4300258, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
+--- !u!64 &181422457
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 181422452}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
   m_Mesh: {fileID: 4300258, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
 --- !u!1 &182636084
 GameObject:
@@ -3147,9 +3215,10 @@ GameObject:
   - 4: {fileID: 188818671}
   - 33: {fileID: 188818673}
   - 23: {fileID: 188818672}
+  - 64: {fileID: 188818674}
   m_Layer: 0
   m_Name: Plane_004_MeshPart1
-  m_TagString: Untagged
+  m_TagString: Ground Walk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3194,6 +3263,19 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 110445445}
   m_GameObject: {fileID: 188818670}
+  m_Mesh: {fileID: 4300004, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
+--- !u!64 &188818674
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 188818670}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
   m_Mesh: {fileID: 4300004, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
 --- !u!1 &191920728
 GameObject:
@@ -4225,6 +4307,7 @@ GameObject:
   - 114: {fileID: 233147619}
   - 65: {fileID: 233147618}
   - 54: {fileID: 233147617}
+  - 65: {fileID: 233147621}
   m_Layer: 0
   m_Name: car objet
   m_TagString: Car
@@ -4254,7 +4337,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 251529480}
   m_GameObject: {fileID: 233147615}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 500
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 0
@@ -4308,6 +4391,18 @@ NavMeshAgent:
   m_BaseOffset: -.300000012
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &233147621
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 233147615}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 3.5999999}
+  m_Center: {x: 0, y: 1.5, z: -1}
 --- !u!1 &240402777
 GameObject:
   m_ObjectHideFlags: 0
@@ -4320,6 +4415,7 @@ GameObject:
   - 114: {fileID: 240402781}
   - 65: {fileID: 240402780}
   - 54: {fileID: 240402779}
+  - 65: {fileID: 240402783}
   m_Layer: 0
   m_Name: car objet
   m_TagString: Car
@@ -4349,7 +4445,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 251529480}
   m_GameObject: {fileID: 240402777}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 500
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 0
@@ -4403,6 +4499,18 @@ NavMeshAgent:
   m_BaseOffset: -.300000012
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &240402783
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 240402777}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 3.5999999}
+  m_Center: {x: 0, y: 1.5, z: -1}
 --- !u!1 &241211842
 GameObject:
   m_ObjectHideFlags: 0
@@ -4754,6 +4862,230 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5400050, guid: cd83b7474c304aa48981aeed76cc9edd, type: 2}
+      propertyPath: m_Mass
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400036, guid: cd83b7474c304aa48981aeed76cc9edd, type: 2}
+      propertyPath: m_Mass
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400006, guid: cd83b7474c304aa48981aeed76cc9edd, type: 2}
+      propertyPath: m_Mass
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400020, guid: cd83b7474c304aa48981aeed76cc9edd, type: 2}
+      propertyPath: m_Mass
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400034, guid: cd83b7474c304aa48981aeed76cc9edd, type: 2}
+      propertyPath: m_Mass
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400046, guid: cd83b7474c304aa48981aeed76cc9edd, type: 2}
+      propertyPath: m_Mass
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400000, guid: cd83b7474c304aa48981aeed76cc9edd, type: 2}
+      propertyPath: m_Mass
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400054, guid: cd83b7474c304aa48981aeed76cc9edd, type: 2}
+      propertyPath: m_Mass
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400044, guid: cd83b7474c304aa48981aeed76cc9edd, type: 2}
+      propertyPath: m_Mass
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400018, guid: cd83b7474c304aa48981aeed76cc9edd, type: 2}
+      propertyPath: m_Mass
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400042, guid: cd83b7474c304aa48981aeed76cc9edd, type: 2}
+      propertyPath: m_Mass
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400040, guid: cd83b7474c304aa48981aeed76cc9edd, type: 2}
+      propertyPath: m_Mass
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400052, guid: cd83b7474c304aa48981aeed76cc9edd, type: 2}
+      propertyPath: m_Mass
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400002, guid: cd83b7474c304aa48981aeed76cc9edd, type: 2}
+      propertyPath: m_Mass
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400004, guid: cd83b7474c304aa48981aeed76cc9edd, type: 2}
+      propertyPath: m_Mass
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400008, guid: cd83b7474c304aa48981aeed76cc9edd, type: 2}
+      propertyPath: m_Mass
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400024, guid: cd83b7474c304aa48981aeed76cc9edd, type: 2}
+      propertyPath: m_Mass
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400010, guid: cd83b7474c304aa48981aeed76cc9edd, type: 2}
+      propertyPath: m_Mass
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400030, guid: cd83b7474c304aa48981aeed76cc9edd, type: 2}
+      propertyPath: m_Mass
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400048, guid: cd83b7474c304aa48981aeed76cc9edd, type: 2}
+      propertyPath: m_Mass
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400032, guid: cd83b7474c304aa48981aeed76cc9edd, type: 2}
+      propertyPath: m_Mass
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400016, guid: cd83b7474c304aa48981aeed76cc9edd, type: 2}
+      propertyPath: m_Mass
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400014, guid: cd83b7474c304aa48981aeed76cc9edd, type: 2}
+      propertyPath: m_Mass
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400012, guid: cd83b7474c304aa48981aeed76cc9edd, type: 2}
+      propertyPath: m_Mass
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400028, guid: cd83b7474c304aa48981aeed76cc9edd, type: 2}
+      propertyPath: m_Mass
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400038, guid: cd83b7474c304aa48981aeed76cc9edd, type: 2}
+      propertyPath: m_Mass
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400026, guid: cd83b7474c304aa48981aeed76cc9edd, type: 2}
+      propertyPath: m_Mass
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400022, guid: cd83b7474c304aa48981aeed76cc9edd, type: 2}
+      propertyPath: m_Mass
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400050, guid: cd83b7474c304aa48981aeed76cc9edd, type: 2}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400036, guid: cd83b7474c304aa48981aeed76cc9edd, type: 2}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400006, guid: cd83b7474c304aa48981aeed76cc9edd, type: 2}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400020, guid: cd83b7474c304aa48981aeed76cc9edd, type: 2}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400034, guid: cd83b7474c304aa48981aeed76cc9edd, type: 2}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400046, guid: cd83b7474c304aa48981aeed76cc9edd, type: 2}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400000, guid: cd83b7474c304aa48981aeed76cc9edd, type: 2}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400054, guid: cd83b7474c304aa48981aeed76cc9edd, type: 2}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400044, guid: cd83b7474c304aa48981aeed76cc9edd, type: 2}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400018, guid: cd83b7474c304aa48981aeed76cc9edd, type: 2}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400042, guid: cd83b7474c304aa48981aeed76cc9edd, type: 2}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400040, guid: cd83b7474c304aa48981aeed76cc9edd, type: 2}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400052, guid: cd83b7474c304aa48981aeed76cc9edd, type: 2}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400002, guid: cd83b7474c304aa48981aeed76cc9edd, type: 2}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400004, guid: cd83b7474c304aa48981aeed76cc9edd, type: 2}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400008, guid: cd83b7474c304aa48981aeed76cc9edd, type: 2}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400024, guid: cd83b7474c304aa48981aeed76cc9edd, type: 2}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400010, guid: cd83b7474c304aa48981aeed76cc9edd, type: 2}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400030, guid: cd83b7474c304aa48981aeed76cc9edd, type: 2}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400048, guid: cd83b7474c304aa48981aeed76cc9edd, type: 2}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400032, guid: cd83b7474c304aa48981aeed76cc9edd, type: 2}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400016, guid: cd83b7474c304aa48981aeed76cc9edd, type: 2}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400014, guid: cd83b7474c304aa48981aeed76cc9edd, type: 2}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400012, guid: cd83b7474c304aa48981aeed76cc9edd, type: 2}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400028, guid: cd83b7474c304aa48981aeed76cc9edd, type: 2}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400038, guid: cd83b7474c304aa48981aeed76cc9edd, type: 2}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400026, guid: cd83b7474c304aa48981aeed76cc9edd, type: 2}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400022, guid: cd83b7474c304aa48981aeed76cc9edd, type: 2}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cd83b7474c304aa48981aeed76cc9edd, type: 2}
   m_RootGameObject: {fileID: 1461129785}
@@ -4770,6 +5102,7 @@ GameObject:
   - 33: {fileID: 254063088}
   - 23: {fileID: 254063087}
   - 65: {fileID: 254063086}
+  - 64: {fileID: 254063089}
   m_Layer: 0
   m_Name: 19
   m_TagString: Untagged
@@ -4830,6 +5163,19 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 110445445}
   m_GameObject: {fileID: 254063084}
+  m_Mesh: {fileID: 4300220, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
+--- !u!64 &254063089
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 254063084}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
   m_Mesh: {fileID: 4300220, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
 --- !u!1 &258744413
 GameObject:
@@ -5450,6 +5796,7 @@ GameObject:
   - 114: {fileID: 302313170}
   - 65: {fileID: 302313169}
   - 54: {fileID: 302313168}
+  - 65: {fileID: 302313172}
   m_Layer: 0
   m_Name: car objet
   m_TagString: Car
@@ -5479,7 +5826,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 251529480}
   m_GameObject: {fileID: 302313166}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 500
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 0
@@ -5533,6 +5880,18 @@ NavMeshAgent:
   m_BaseOffset: -.300000012
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &302313172
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 302313166}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 3.5999999}
+  m_Center: {x: 0, y: 1.5, z: -1}
 --- !u!1 &304630292
 GameObject:
   m_ObjectHideFlags: 0
@@ -6002,6 +6361,7 @@ GameObject:
   - 4: {fileID: 340555570}
   - 33: {fileID: 340555572}
   - 23: {fileID: 340555571}
+  - 64: {fileID: 340555573}
   m_Layer: 0
   m_Name: lines
   m_TagString: Untagged
@@ -6049,6 +6409,19 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 110445445}
   m_GameObject: {fileID: 340555569}
+  m_Mesh: {fileID: 4300202, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
+--- !u!64 &340555573
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 340555569}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
   m_Mesh: {fileID: 4300202, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
 --- !u!1 &341680625
 GameObject:
@@ -6984,6 +7357,7 @@ GameObject:
   - 114: {fileID: 393348005}
   - 65: {fileID: 393348004}
   - 54: {fileID: 393348003}
+  - 65: {fileID: 393348007}
   m_Layer: 0
   m_Name: car objet
   m_TagString: Car
@@ -7013,7 +7387,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 251529480}
   m_GameObject: {fileID: 393348001}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 500
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 0
@@ -7067,6 +7441,18 @@ NavMeshAgent:
   m_BaseOffset: -.300000012
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &393348007
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 393348001}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 3.5999999}
+  m_Center: {x: 0, y: 1.5, z: -1}
 --- !u!1 &394939237
 GameObject:
   m_ObjectHideFlags: 0
@@ -7078,6 +7464,7 @@ GameObject:
   - 33: {fileID: 394939241}
   - 23: {fileID: 394939240}
   - 65: {fileID: 394939239}
+  - 64: {fileID: 394939242}
   m_Layer: 0
   m_Name: 25
   m_TagString: Untagged
@@ -7138,6 +7525,19 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 110445445}
   m_GameObject: {fileID: 394939237}
+  m_Mesh: {fileID: 4300212, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
+--- !u!64 &394939242
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 394939237}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
   m_Mesh: {fileID: 4300212, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
 --- !u!1 &397152494
 GameObject:
@@ -9016,6 +9416,7 @@ GameObject:
   - 33: {fileID: 506612959}
   - 23: {fileID: 506612958}
   - 65: {fileID: 506612957}
+  - 64: {fileID: 506612960}
   m_Layer: 0
   m_Name: 38
   m_TagString: Untagged
@@ -9076,6 +9477,19 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 110445445}
   m_GameObject: {fileID: 506612955}
+  m_Mesh: {fileID: 4300248, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
+--- !u!64 &506612960
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 506612955}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
   m_Mesh: {fileID: 4300248, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
 --- !u!1 &507450047
 GameObject:
@@ -11230,6 +11644,7 @@ GameObject:
   - 33: {fileID: 662830084}
   - 23: {fileID: 662830083}
   - 65: {fileID: 662830082}
+  - 64: {fileID: 662830085}
   m_Layer: 0
   m_Name: 35
   m_TagString: Untagged
@@ -11290,6 +11705,19 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 110445445}
   m_GameObject: {fileID: 662830080}
+  m_Mesh: {fileID: 4300208, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
+--- !u!64 &662830085
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 662830080}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
   m_Mesh: {fileID: 4300208, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
 --- !u!1 &663269054
 GameObject:
@@ -12944,6 +13372,7 @@ GameObject:
   - 4: {fileID: 723550175}
   - 33: {fileID: 723550177}
   - 23: {fileID: 723550176}
+  - 64: {fileID: 723550178}
   m_Layer: 0
   m_Name: dead_end
   m_TagString: Untagged
@@ -12991,6 +13420,19 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 110445445}
   m_GameObject: {fileID: 723550174}
+  m_Mesh: {fileID: 4300204, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
+--- !u!64 &723550178
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 723550174}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
   m_Mesh: {fileID: 4300204, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
 --- !u!1 &726271432
 GameObject:
@@ -13797,6 +14239,7 @@ GameObject:
   - 33: {fileID: 764746583}
   - 23: {fileID: 764746582}
   - 65: {fileID: 764746581}
+  - 64: {fileID: 764746584}
   m_Layer: 0
   m_Name: 34
   m_TagString: Untagged
@@ -13857,6 +14300,19 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 110445445}
   m_GameObject: {fileID: 764746579}
+  m_Mesh: {fileID: 4300210, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
+--- !u!64 &764746584
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 764746579}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
   m_Mesh: {fileID: 4300210, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
 --- !u!1 &769335563
 GameObject:
@@ -13922,9 +14378,10 @@ GameObject:
   - 4: {fileID: 773538245}
   - 33: {fileID: 773538247}
   - 23: {fileID: 773538246}
+  - 64: {fileID: 773538248}
   m_Layer: 0
   m_Name: Plane_004_MeshPart0
-  m_TagString: Untagged
+  m_TagString: Ground Walk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13969,6 +14426,19 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 110445445}
   m_GameObject: {fileID: 773538244}
+  m_Mesh: {fileID: 4300002, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
+--- !u!64 &773538248
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 773538244}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
   m_Mesh: {fileID: 4300002, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
 --- !u!1 &773730421
 GameObject:
@@ -14097,6 +14567,7 @@ GameObject:
   - 114: {fileID: 790577035}
   - 65: {fileID: 790577034}
   - 54: {fileID: 790577033}
+  - 65: {fileID: 790577037}
   m_Layer: 0
   m_Name: car objet
   m_TagString: Car
@@ -14126,7 +14597,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 251529480}
   m_GameObject: {fileID: 790577031}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 500
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 0
@@ -14180,6 +14651,18 @@ NavMeshAgent:
   m_BaseOffset: -.300000012
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &790577037
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 790577031}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 3.5999999}
+  m_Center: {x: 0, y: 1.5, z: -1}
 --- !u!1 &790887020
 GameObject:
   m_ObjectHideFlags: 0
@@ -14509,6 +14992,7 @@ GameObject:
   - 136: {fileID: 806587580}
   - 114: {fileID: 806587579}
   - 54: {fileID: 806587578}
+  - 208: {fileID: 806587582}
   m_Layer: 0
   m_Name: PlayerModel
   m_TagString: Untagged
@@ -14686,6 +15170,17 @@ Animator:
   m_ApplyRootMotion: 0
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!208 &806587582
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 806587576}
+  m_Enabled: 1
+  m_Radius: 1
+  m_Height: 3
+  m_MoveThreshold: 0
+  m_Carve: 0
 --- !u!1 &807368868
 GameObject:
   m_ObjectHideFlags: 0
@@ -14964,6 +15459,7 @@ GameObject:
   - 33: {fileID: 826751090}
   - 23: {fileID: 826751089}
   - 65: {fileID: 826751088}
+  - 64: {fileID: 826751091}
   m_Layer: 0
   m_Name: 37
   m_TagString: Untagged
@@ -15024,6 +15520,19 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 110445445}
   m_GameObject: {fileID: 826751086}
+  m_Mesh: {fileID: 4300246, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
+--- !u!64 &826751091
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 826751086}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
   m_Mesh: {fileID: 4300246, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
 --- !u!1 &829890165
 GameObject:
@@ -15341,6 +15850,7 @@ GameObject:
   - 114: {fileID: 848605304}
   - 65: {fileID: 848605303}
   - 54: {fileID: 848605302}
+  - 65: {fileID: 848605306}
   m_Layer: 0
   m_Name: car objet
   m_TagString: Car
@@ -15370,7 +15880,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 251529480}
   m_GameObject: {fileID: 848605300}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 500
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 0
@@ -15424,6 +15934,18 @@ NavMeshAgent:
   m_BaseOffset: -.300000012
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &848605306
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 848605300}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 3.5999999}
+  m_Center: {x: 0, y: 1.5, z: -1}
 --- !u!1 &849992673
 GameObject:
   m_ObjectHideFlags: 0
@@ -15571,6 +16093,7 @@ GameObject:
   - 33: {fileID: 865467195}
   - 23: {fileID: 865467194}
   - 65: {fileID: 865467193}
+  - 64: {fileID: 865467196}
   m_Layer: 0
   m_Name: 45
   m_TagString: Untagged
@@ -15632,6 +16155,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 110445445}
   m_GameObject: {fileID: 865467191}
   m_Mesh: {fileID: 4300254, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
+--- !u!64 &865467196
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 865467191}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
+  m_Mesh: {fileID: 4300254, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
 --- !u!1 &865616851
 GameObject:
   m_ObjectHideFlags: 0
@@ -15671,6 +16207,7 @@ GameObject:
   - 114: {fileID: 867116780}
   - 65: {fileID: 867116779}
   - 54: {fileID: 867116778}
+  - 65: {fileID: 867116782}
   m_Layer: 0
   m_Name: car objet
   m_TagString: Car
@@ -15700,7 +16237,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 251529480}
   m_GameObject: {fileID: 867116776}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 500
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 0
@@ -15754,6 +16291,18 @@ NavMeshAgent:
   m_BaseOffset: -.300000012
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &867116782
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 867116776}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 3.5999999}
+  m_Center: {x: 0, y: 1.5, z: -1}
 --- !u!1 &867364654
 GameObject:
   m_ObjectHideFlags: 0
@@ -15766,6 +16315,7 @@ GameObject:
   - 114: {fileID: 867364658}
   - 65: {fileID: 867364657}
   - 54: {fileID: 867364656}
+  - 65: {fileID: 867364660}
   m_Layer: 0
   m_Name: car objet
   m_TagString: Car
@@ -15795,7 +16345,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 251529480}
   m_GameObject: {fileID: 867364654}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 500
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 0
@@ -15849,6 +16399,18 @@ NavMeshAgent:
   m_BaseOffset: -.300000012
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &867364660
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 867364654}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 3.5999999}
+  m_Center: {x: 0, y: 1.5, z: -1}
 --- !u!1 &868788079
 GameObject:
   m_ObjectHideFlags: 0
@@ -16493,6 +17055,7 @@ GameObject:
   - 114: {fileID: 903253801}
   - 65: {fileID: 903253800}
   - 54: {fileID: 903253799}
+  - 65: {fileID: 903253803}
   m_Layer: 0
   m_Name: car objet
   m_TagString: Car
@@ -16522,7 +17085,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 251529480}
   m_GameObject: {fileID: 903253797}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 500
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 0
@@ -16576,6 +17139,18 @@ NavMeshAgent:
   m_BaseOffset: -.300000012
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &903253803
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 903253797}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 3.5999999}
+  m_Center: {x: 0, y: 1.5, z: -1}
 --- !u!1 &904393473
 GameObject:
   m_ObjectHideFlags: 0
@@ -17117,6 +17692,7 @@ GameObject:
   - 33: {fileID: 929920778}
   - 23: {fileID: 929920777}
   - 65: {fileID: 929920776}
+  - 64: {fileID: 929920779}
   m_Layer: 0
   m_Name: 18
   m_TagString: Untagged
@@ -17178,6 +17754,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 110445445}
   m_GameObject: {fileID: 929920774}
   m_Mesh: {fileID: 4300218, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
+--- !u!64 &929920779
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 929920774}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
+  m_Mesh: {fileID: 4300218, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
 --- !u!1 &930196048
 GameObject:
   m_ObjectHideFlags: 0
@@ -17189,6 +17778,7 @@ GameObject:
   - 33: {fileID: 930196052}
   - 23: {fileID: 930196051}
   - 65: {fileID: 930196050}
+  - 64: {fileID: 930196053}
   m_Layer: 0
   m_Name: 30
   m_TagString: Untagged
@@ -17250,6 +17840,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 110445445}
   m_GameObject: {fileID: 930196048}
   m_Mesh: {fileID: 4300244, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
+--- !u!64 &930196053
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 930196048}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
+  m_Mesh: {fileID: 4300244, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
 --- !u!1 &931293297
 GameObject:
   m_ObjectHideFlags: 0
@@ -17261,6 +17864,7 @@ GameObject:
   - 33: {fileID: 931293301}
   - 23: {fileID: 931293300}
   - 65: {fileID: 931293299}
+  - 64: {fileID: 931293302}
   m_Layer: 0
   m_Name: 31
   m_TagString: Untagged
@@ -17321,6 +17925,19 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 110445445}
   m_GameObject: {fileID: 931293297}
+  m_Mesh: {fileID: 4300242, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
+--- !u!64 &931293302
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 931293297}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
   m_Mesh: {fileID: 4300242, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
 --- !u!1 &931921293
 GameObject:
@@ -18362,6 +18979,7 @@ GameObject:
   - 114: {fileID: 983880426}
   - 65: {fileID: 983880425}
   - 54: {fileID: 983880424}
+  - 65: {fileID: 983880428}
   m_Layer: 0
   m_Name: car objet
   m_TagString: Car
@@ -18391,7 +19009,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 251529480}
   m_GameObject: {fileID: 983880422}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 500
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 0
@@ -18445,6 +19063,18 @@ NavMeshAgent:
   m_BaseOffset: -.300000012
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &983880428
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 983880422}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 3.5999999}
+  m_Center: {x: 0, y: 1.5, z: -1}
 --- !u!1 &990308767
 GameObject:
   m_ObjectHideFlags: 0
@@ -18781,6 +19411,7 @@ GameObject:
   - 114: {fileID: 1024938203}
   - 65: {fileID: 1024938202}
   - 54: {fileID: 1024938201}
+  - 65: {fileID: 1024938205}
   m_Layer: 0
   m_Name: car objet
   m_TagString: Car
@@ -18810,7 +19441,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 251529480}
   m_GameObject: {fileID: 1024938199}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 500
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 0
@@ -18864,6 +19495,18 @@ NavMeshAgent:
   m_BaseOffset: -.300000012
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &1024938205
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1024938199}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 3.5999999}
+  m_Center: {x: 0, y: 1.5, z: -1}
 --- !u!1 &1025401482
 GameObject:
   m_ObjectHideFlags: 0
@@ -18981,6 +19624,7 @@ GameObject:
   - 33: {fileID: 1029502259}
   - 23: {fileID: 1029502258}
   - 65: {fileID: 1029502257}
+  - 64: {fileID: 1029502260}
   m_Layer: 0
   m_Name: 4
   m_TagString: Untagged
@@ -19041,6 +19685,19 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 110445445}
   m_GameObject: {fileID: 1029502255}
+  m_Mesh: {fileID: 4300156, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
+--- !u!64 &1029502260
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1029502255}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
   m_Mesh: {fileID: 4300156, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
 --- !u!1 &1030161957
 GameObject:
@@ -19332,6 +19989,7 @@ GameObject:
   - 114: {fileID: 1055301415}
   - 65: {fileID: 1055301414}
   - 54: {fileID: 1055301413}
+  - 65: {fileID: 1055301417}
   m_Layer: 0
   m_Name: car objet
   m_TagString: Car
@@ -19361,7 +20019,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 251529480}
   m_GameObject: {fileID: 1055301411}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 500
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 0
@@ -19415,6 +20073,18 @@ NavMeshAgent:
   m_BaseOffset: -.300000012
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &1055301417
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1055301411}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 3.5999999}
+  m_Center: {x: 0, y: 1.5, z: -1}
 --- !u!1 &1056998463
 GameObject:
   m_ObjectHideFlags: 0
@@ -19558,6 +20228,7 @@ GameObject:
   - 114: {fileID: 1059911039}
   - 65: {fileID: 1059911038}
   - 54: {fileID: 1059911037}
+  - 65: {fileID: 1059911041}
   m_Layer: 0
   m_Name: car objet
   m_TagString: Car
@@ -19587,7 +20258,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 251529480}
   m_GameObject: {fileID: 1059911035}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 500
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 0
@@ -19641,6 +20312,18 @@ NavMeshAgent:
   m_BaseOffset: -.300000012
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &1059911041
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1059911035}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 3.5999999}
+  m_Center: {x: 0, y: 1.5, z: -1}
 --- !u!1 &1060785239
 GameObject:
   m_ObjectHideFlags: 0
@@ -20397,6 +21080,7 @@ GameObject:
   - 114: {fileID: 1114847645}
   - 65: {fileID: 1114847644}
   - 54: {fileID: 1114847643}
+  - 65: {fileID: 1114847647}
   m_Layer: 0
   m_Name: car objet
   m_TagString: Car
@@ -20426,7 +21110,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 251529480}
   m_GameObject: {fileID: 1114847641}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 500
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 0
@@ -20480,6 +21164,18 @@ NavMeshAgent:
   m_BaseOffset: -.300000012
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &1114847647
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1114847641}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 3.5999999}
+  m_Center: {x: 0, y: 1.5, z: -1}
 --- !u!1 &1116418179
 GameObject:
   m_ObjectHideFlags: 0
@@ -20879,6 +21575,7 @@ GameObject:
   - 114: {fileID: 1146700660}
   - 65: {fileID: 1146700659}
   - 54: {fileID: 1146700658}
+  - 65: {fileID: 1146700662}
   m_Layer: 0
   m_Name: car objet
   m_TagString: Car
@@ -20908,7 +21605,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 251529480}
   m_GameObject: {fileID: 1146700656}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 500
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 0
@@ -20962,6 +21659,18 @@ NavMeshAgent:
   m_BaseOffset: -.300000012
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &1146700662
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1146700656}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 3.5999999}
+  m_Center: {x: 0, y: 1.5, z: -1}
 --- !u!1 &1147425852
 GameObject:
   m_ObjectHideFlags: 0
@@ -21560,6 +22269,7 @@ GameObject:
   - 33: {fileID: 1206947313}
   - 23: {fileID: 1206947312}
   - 65: {fileID: 1206947311}
+  - 64: {fileID: 1206947314}
   m_Layer: 0
   m_Name: 7
   m_TagString: Untagged
@@ -21620,6 +22330,19 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 110445445}
   m_GameObject: {fileID: 1206947309}
+  m_Mesh: {fileID: 4300232, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
+--- !u!64 &1206947314
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1206947309}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
   m_Mesh: {fileID: 4300232, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
 --- !u!1 &1207492392
 GameObject:
@@ -22567,6 +23290,7 @@ GameObject:
   - 114: {fileID: 1288553893}
   - 65: {fileID: 1288553892}
   - 54: {fileID: 1288553891}
+  - 65: {fileID: 1288553895}
   m_Layer: 0
   m_Name: car objet
   m_TagString: Car
@@ -22596,7 +23320,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 251529480}
   m_GameObject: {fileID: 1288553889}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 500
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 0
@@ -22650,6 +23374,18 @@ NavMeshAgent:
   m_BaseOffset: -.300000012
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &1288553895
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1288553889}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 3.5999999}
+  m_Center: {x: 0, y: 1.5, z: -1}
 --- !u!1 &1293626010
 GameObject:
   m_ObjectHideFlags: 0
@@ -23955,9 +24691,10 @@ GameObject:
   - 4: {fileID: 1352638762}
   - 33: {fileID: 1352638764}
   - 23: {fileID: 1352638763}
+  - 64: {fileID: 1352638765}
   m_Layer: 0
   m_Name: Plane_004_MeshPart2
-  m_TagString: Untagged
+  m_TagString: Ground Walk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24002,6 +24739,19 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 110445445}
   m_GameObject: {fileID: 1352638761}
+  m_Mesh: {fileID: 4300006, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
+--- !u!64 &1352638765
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1352638761}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
   m_Mesh: {fileID: 4300006, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
 --- !u!1 &1353042865
 GameObject:
@@ -24412,6 +25162,7 @@ GameObject:
   - 114: {fileID: 1370056753}
   - 65: {fileID: 1370056752}
   - 54: {fileID: 1370056751}
+  - 65: {fileID: 1370056755}
   m_Layer: 0
   m_Name: car objet
   m_TagString: Car
@@ -24441,7 +25192,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 251529480}
   m_GameObject: {fileID: 1370056749}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 500
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 0
@@ -24495,6 +25246,18 @@ NavMeshAgent:
   m_BaseOffset: -.300000012
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &1370056755
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1370056749}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 3.5999999}
+  m_Center: {x: 0, y: 1.5, z: -1}
 --- !u!1 &1372050165
 GameObject:
   m_ObjectHideFlags: 0
@@ -24565,6 +25328,7 @@ GameObject:
   - 114: {fileID: 1372143557}
   - 65: {fileID: 1372143556}
   - 54: {fileID: 1372143555}
+  - 65: {fileID: 1372143559}
   m_Layer: 0
   m_Name: car objet
   m_TagString: Car
@@ -24594,7 +25358,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 251529480}
   m_GameObject: {fileID: 1372143553}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 500
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 0
@@ -24648,6 +25412,18 @@ NavMeshAgent:
   m_BaseOffset: -.300000012
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &1372143559
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1372143553}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 3.5999999}
+  m_Center: {x: 0, y: 1.5, z: -1}
 --- !u!1 &1375614737
 GameObject:
   m_ObjectHideFlags: 0
@@ -24973,6 +25749,7 @@ GameObject:
   - 114: {fileID: 1393541469}
   - 65: {fileID: 1393541468}
   - 54: {fileID: 1393541467}
+  - 65: {fileID: 1393541471}
   m_Layer: 0
   m_Name: car objet
   m_TagString: Car
@@ -25002,7 +25779,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 251529480}
   m_GameObject: {fileID: 1393541465}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 500
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 0
@@ -25056,6 +25833,18 @@ NavMeshAgent:
   m_BaseOffset: -.300000012
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &1393541471
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1393541465}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 3.5999999}
+  m_Center: {x: 0, y: 1.5, z: -1}
 --- !u!1 &1394697386
 GameObject:
   m_ObjectHideFlags: 0
@@ -25121,6 +25910,7 @@ GameObject:
   - 33: {fileID: 1395375297}
   - 23: {fileID: 1395375296}
   - 65: {fileID: 1395375295}
+  - 64: {fileID: 1395375298}
   m_Layer: 0
   m_Name: 15
   m_TagString: Untagged
@@ -25181,6 +25971,19 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 110445445}
   m_GameObject: {fileID: 1395375293}
+  m_Mesh: {fileID: 4300234, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
+--- !u!64 &1395375298
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1395375293}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
   m_Mesh: {fileID: 4300234, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
 --- !u!1 &1399465567
 GameObject:
@@ -25934,6 +26737,7 @@ GameObject:
   - 114: {fileID: 1438267193}
   - 65: {fileID: 1438267192}
   - 54: {fileID: 1438267191}
+  - 65: {fileID: 1438267195}
   m_Layer: 0
   m_Name: car objet
   m_TagString: Car
@@ -25963,7 +26767,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 251529480}
   m_GameObject: {fileID: 1438267189}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 500
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 0
@@ -26017,6 +26821,18 @@ NavMeshAgent:
   m_BaseOffset: -.300000012
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &1438267195
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1438267189}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 3.5999999}
+  m_Center: {x: 0, y: 1.5, z: -1}
 --- !u!1 &1442260235
 GameObject:
   m_ObjectHideFlags: 0
@@ -26156,6 +26972,7 @@ GameObject:
   - 33: {fileID: 1443922076}
   - 23: {fileID: 1443922075}
   - 65: {fileID: 1443922074}
+  - 64: {fileID: 1443922077}
   m_Layer: 0
   m_Name: 23
   m_TagString: Untagged
@@ -26216,6 +27033,19 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 110445445}
   m_GameObject: {fileID: 1443922072}
+  m_Mesh: {fileID: 4300238, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
+--- !u!64 &1443922077
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1443922072}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
   m_Mesh: {fileID: 4300238, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
 --- !u!1 &1446951245
 GameObject:
@@ -26652,6 +27482,7 @@ GameObject:
   - 33: {fileID: 1460668383}
   - 23: {fileID: 1460668382}
   - 65: {fileID: 1460668381}
+  - 64: {fileID: 1460668384}
   m_Layer: 0
   m_Name: 48
   m_TagString: Untagged
@@ -26712,6 +27543,19 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 110445445}
   m_GameObject: {fileID: 1460668379}
+  m_Mesh: {fileID: 4300250, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
+--- !u!64 &1460668384
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1460668379}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
   m_Mesh: {fileID: 4300250, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
 --- !u!1 &1461129785
 GameObject:
@@ -27169,6 +28013,7 @@ GameObject:
   - 33: {fileID: 1491335660}
   - 23: {fileID: 1491335659}
   - 65: {fileID: 1491335658}
+  - 64: {fileID: 1491335661}
   m_Layer: 0
   m_Name: 41
   m_TagString: Untagged
@@ -27230,6 +28075,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 110445445}
   m_GameObject: {fileID: 1491335656}
   m_Mesh: {fileID: 4300260, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
+--- !u!64 &1491335661
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1491335656}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
+  m_Mesh: {fileID: 4300260, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
 --- !u!1 &1491964253
 GameObject:
   m_ObjectHideFlags: 0
@@ -27242,6 +28100,7 @@ GameObject:
   - 114: {fileID: 1491964257}
   - 65: {fileID: 1491964256}
   - 54: {fileID: 1491964255}
+  - 65: {fileID: 1491964259}
   m_Layer: 0
   m_Name: car objet
   m_TagString: Car
@@ -27271,7 +28130,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 251529480}
   m_GameObject: {fileID: 1491964253}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 500
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 0
@@ -27325,6 +28184,18 @@ NavMeshAgent:
   m_BaseOffset: -.300000012
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &1491964259
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1491964253}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 3.5999999}
+  m_Center: {x: 0, y: 1.5, z: -1}
 --- !u!1 &1493153898
 GameObject:
   m_ObjectHideFlags: 0
@@ -27471,6 +28342,7 @@ GameObject:
   - 33: {fileID: 1507443381}
   - 23: {fileID: 1507443380}
   - 65: {fileID: 1507443379}
+  - 64: {fileID: 1507443382}
   m_Layer: 0
   m_Name: 26
   m_TagString: Untagged
@@ -27531,6 +28403,19 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 110445445}
   m_GameObject: {fileID: 1507443377}
+  m_Mesh: {fileID: 4300216, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
+--- !u!64 &1507443382
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1507443377}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
   m_Mesh: {fileID: 4300216, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
 --- !u!1 &1509306909
 GameObject:
@@ -27719,6 +28604,7 @@ GameObject:
   - 33: {fileID: 1535713044}
   - 23: {fileID: 1535713043}
   - 65: {fileID: 1535713042}
+  - 64: {fileID: 1535713045}
   m_Layer: 0
   m_Name: 20
   m_TagString: Untagged
@@ -27779,6 +28665,19 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 110445445}
   m_GameObject: {fileID: 1535713040}
+  m_Mesh: {fileID: 4300224, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
+--- !u!64 &1535713045
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1535713040}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
   m_Mesh: {fileID: 4300224, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
 --- !u!1 &1537292609
 GameObject:
@@ -28027,6 +28926,7 @@ GameObject:
   - 114: {fileID: 1563131080}
   - 65: {fileID: 1563131079}
   - 54: {fileID: 1563131078}
+  - 65: {fileID: 1563131082}
   m_Layer: 0
   m_Name: car objet
   m_TagString: Car
@@ -28056,7 +28956,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 251529480}
   m_GameObject: {fileID: 1563131076}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 500
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 0
@@ -28110,6 +29010,18 @@ NavMeshAgent:
   m_BaseOffset: -.300000012
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &1563131082
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1563131076}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 3.5999999}
+  m_Center: {x: 0, y: 1.5, z: -1}
 --- !u!1 &1563426402
 GameObject:
   m_ObjectHideFlags: 0
@@ -28668,6 +29580,7 @@ GameObject:
   - 114: {fileID: 1600980921}
   - 65: {fileID: 1600980920}
   - 54: {fileID: 1600980919}
+  - 65: {fileID: 1600980923}
   m_Layer: 0
   m_Name: car objet
   m_TagString: Car
@@ -28697,7 +29610,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 251529480}
   m_GameObject: {fileID: 1600980917}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 500
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 0
@@ -28751,6 +29664,18 @@ NavMeshAgent:
   m_BaseOffset: -.300000012
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &1600980923
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1600980917}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 3.5999999}
+  m_Center: {x: 0, y: 1.5, z: -1}
 --- !u!1 &1603445559
 GameObject:
   m_ObjectHideFlags: 0
@@ -29439,6 +30364,7 @@ GameObject:
   - 114: {fileID: 1631624158}
   - 65: {fileID: 1631624157}
   - 54: {fileID: 1631624156}
+  - 65: {fileID: 1631624160}
   m_Layer: 0
   m_Name: car objet
   m_TagString: Car
@@ -29468,7 +30394,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 251529480}
   m_GameObject: {fileID: 1631624154}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 500
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 0
@@ -29522,6 +30448,18 @@ NavMeshAgent:
   m_BaseOffset: -.300000012
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &1631624160
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1631624154}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 3.5999999}
+  m_Center: {x: 0, y: 1.5, z: -1}
 --- !u!1 &1632494617
 GameObject:
   m_ObjectHideFlags: 0
@@ -29886,6 +30824,7 @@ GameObject:
   - 114: {fileID: 1645642525}
   - 65: {fileID: 1645642524}
   - 54: {fileID: 1645642523}
+  - 65: {fileID: 1645642527}
   m_Layer: 0
   m_Name: car objet
   m_TagString: Car
@@ -29915,7 +30854,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 251529480}
   m_GameObject: {fileID: 1645642521}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 500
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 0
@@ -29969,6 +30908,18 @@ NavMeshAgent:
   m_BaseOffset: -.300000012
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &1645642527
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1645642521}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 3.5999999}
+  m_Center: {x: 0, y: 1.5, z: -1}
 --- !u!1 &1648452395
 GameObject:
   m_ObjectHideFlags: 0
@@ -31456,6 +32407,7 @@ GameObject:
   - 33: {fileID: 1726566594}
   - 23: {fileID: 1726566593}
   - 65: {fileID: 1726566592}
+  - 64: {fileID: 1726566595}
   m_Layer: 0
   m_Name: 32
   m_TagString: Untagged
@@ -31516,6 +32468,19 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 110445445}
   m_GameObject: {fileID: 1726566590}
+  m_Mesh: {fileID: 4300240, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
+--- !u!64 &1726566595
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1726566590}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
   m_Mesh: {fileID: 4300240, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
 --- !u!1 &1727011281
 GameObject:
@@ -33156,6 +34121,7 @@ GameObject:
   - 33: {fileID: 1834825654}
   - 23: {fileID: 1834825653}
   - 65: {fileID: 1834825652}
+  - 64: {fileID: 1834825655}
   m_Layer: 0
   m_Name: 47
   m_TagString: Untagged
@@ -33216,6 +34182,19 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 110445445}
   m_GameObject: {fileID: 1834825650}
+  m_Mesh: {fileID: 4300252, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
+--- !u!64 &1834825655
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1834825650}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
   m_Mesh: {fileID: 4300252, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
 --- !u!1 &1842254243
 GameObject:
@@ -33460,6 +34439,7 @@ GameObject:
   - 33: {fileID: 1858974143}
   - 23: {fileID: 1858974142}
   - 65: {fileID: 1858974141}
+  - 64: {fileID: 1858974144}
   m_Layer: 0
   m_Name: 44
   m_TagString: Untagged
@@ -33521,6 +34501,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 110445445}
   m_GameObject: {fileID: 1858974139}
   m_Mesh: {fileID: 4300256, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
+--- !u!64 &1858974144
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1858974139}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
+  m_Mesh: {fileID: 4300256, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
 --- !u!1 &1861890044
 GameObject:
   m_ObjectHideFlags: 0
@@ -33532,6 +34525,7 @@ GameObject:
   - 33: {fileID: 1861890048}
   - 23: {fileID: 1861890047}
   - 65: {fileID: 1861890046}
+  - 64: {fileID: 1861890049}
   m_Layer: 0
   m_Name: 10
   m_TagString: Untagged
@@ -33592,6 +34586,19 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 110445445}
   m_GameObject: {fileID: 1861890044}
+  m_Mesh: {fileID: 4300222, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
+--- !u!64 &1861890049
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1861890044}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
   m_Mesh: {fileID: 4300222, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
 --- !u!1 &1862197505
 GameObject:
@@ -33691,6 +34698,7 @@ GameObject:
   - 33: {fileID: 1866012915}
   - 23: {fileID: 1866012914}
   - 65: {fileID: 1866012913}
+  - 64: {fileID: 1866012916}
   m_Layer: 0
   m_Name: 27
   m_TagString: Untagged
@@ -33751,6 +34759,19 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 110445445}
   m_GameObject: {fileID: 1866012911}
+  m_Mesh: {fileID: 4300214, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
+--- !u!64 &1866012916
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1866012911}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
   m_Mesh: {fileID: 4300214, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
 --- !u!1 &1866933548
 GameObject:
@@ -34796,6 +35817,7 @@ GameObject:
   - 33: {fileID: 1918998970}
   - 23: {fileID: 1918998969}
   - 65: {fileID: 1918998968}
+  - 64: {fileID: 1918998971}
   m_Layer: 0
   m_Name: 36
   m_TagString: Untagged
@@ -34856,6 +35878,19 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 110445445}
   m_GameObject: {fileID: 1918998966}
+  m_Mesh: {fileID: 4300206, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
+--- !u!64 &1918998971
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1918998966}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
   m_Mesh: {fileID: 4300206, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
 --- !u!1 &1919503442
 GameObject:
@@ -35241,6 +36276,7 @@ GameObject:
   - 4: {fileID: 1942552432}
   - 33: {fileID: 1942552434}
   - 23: {fileID: 1942552433}
+  - 64: {fileID: 1942552435}
   m_Layer: 0
   m_Name: sidewalk
   m_TagString: Untagged
@@ -35288,6 +36324,19 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 110445445}
   m_GameObject: {fileID: 1942552431}
+  m_Mesh: {fileID: 4300010, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
+--- !u!64 &1942552435
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1942552431}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
   m_Mesh: {fileID: 4300010, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
 --- !u!1 &1947273281
 GameObject:
@@ -35616,6 +36665,7 @@ GameObject:
   - 114: {fileID: 1969220771}
   - 65: {fileID: 1969220770}
   - 54: {fileID: 1969220769}
+  - 65: {fileID: 1969220773}
   m_Layer: 0
   m_Name: car objet
   m_TagString: Car
@@ -35645,7 +36695,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 251529480}
   m_GameObject: {fileID: 1969220767}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 500
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 0
@@ -35699,6 +36749,18 @@ NavMeshAgent:
   m_BaseOffset: -.300000012
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &1969220773
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1969220767}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 3.5999999}
+  m_Center: {x: 0, y: 1.5, z: -1}
 --- !u!1 &1976057634
 GameObject:
   m_ObjectHideFlags: 0
@@ -36271,6 +37333,7 @@ GameObject:
   - 114: {fileID: 2002515897}
   - 65: {fileID: 2002515896}
   - 54: {fileID: 2002515895}
+  - 65: {fileID: 2002515899}
   m_Layer: 0
   m_Name: car objet
   m_TagString: Car
@@ -36300,7 +37363,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 251529480}
   m_GameObject: {fileID: 2002515893}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 500
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 0
@@ -36354,6 +37417,18 @@ NavMeshAgent:
   m_BaseOffset: -.300000012
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &2002515899
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2002515893}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 3.5999999}
+  m_Center: {x: 0, y: 1.5, z: -1}
 --- !u!1 &2005201226
 GameObject:
   m_ObjectHideFlags: 0
@@ -37628,6 +38703,7 @@ GameObject:
   - 114: {fileID: 2111746474}
   - 65: {fileID: 2111746473}
   - 54: {fileID: 2111746472}
+  - 65: {fileID: 2111746476}
   m_Layer: 0
   m_Name: car objet
   m_TagString: Car
@@ -37657,7 +38733,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 251529480}
   m_GameObject: {fileID: 2111746470}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 500
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 0
@@ -37711,6 +38787,18 @@ NavMeshAgent:
   m_BaseOffset: -.300000012
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &2111746476
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2111746470}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 3.5999999}
+  m_Center: {x: 0, y: 1.5, z: -1}
 --- !u!1 &2113178093
 GameObject:
   m_ObjectHideFlags: 0
@@ -37911,6 +38999,7 @@ GameObject:
   - 33: {fileID: 2120136820}
   - 23: {fileID: 2120136819}
   - 65: {fileID: 2120136818}
+  - 64: {fileID: 2120136821}
   m_Layer: 0
   m_Name: 12
   m_TagString: Untagged
@@ -37971,6 +39060,19 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 110445445}
   m_GameObject: {fileID: 2120136816}
+  m_Mesh: {fileID: 4300226, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
+--- !u!64 &2120136821
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2120136816}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
   m_Mesh: {fileID: 4300226, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
 --- !u!1 &2130148156
 GameObject:
