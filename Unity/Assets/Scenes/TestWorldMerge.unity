@@ -5673,6 +5673,7 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -12420,7 +12421,6 @@ CanvasGroup:
     type: 2}
   m_PrefabInternal: {fileID: 1644875040}
   m_GameObject: {fileID: 660521206}
-  m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
@@ -23035,7 +23035,6 @@ CanvasGroup:
     type: 2}
   m_PrefabInternal: {fileID: 1644875040}
   m_GameObject: {fileID: 1155957496}
-  m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 0
@@ -30773,6 +30772,7 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -33087,6 +33087,10 @@ Prefab:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 22500002, guid: da8f6be522319334ab56df233122a575, type: 2}
+      propertyPath: m_BlocksRaycasts
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: da8f6be522319334ab56df233122a575, type: 2}
   m_RootGameObject: {fileID: 1721636437}
@@ -34267,6 +34271,7 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -35323,6 +35328,7 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -35755,7 +35761,6 @@ CanvasGroup:
     type: 2}
   m_PrefabInternal: {fileID: 1644875040}
   m_GameObject: {fileID: 1797934529}
-  m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
@@ -37883,10 +37888,9 @@ CanvasGroup:
     type: 2}
   m_PrefabInternal: {fileID: 1644875040}
   m_GameObject: {fileID: 1895059770}
-  m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!1 &1896402140
 GameObject:
@@ -39696,7 +39700,6 @@ CanvasGroup:
     type: 2}
   m_PrefabInternal: {fileID: 1644875040}
   m_GameObject: {fileID: 1986386612}
-  m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
