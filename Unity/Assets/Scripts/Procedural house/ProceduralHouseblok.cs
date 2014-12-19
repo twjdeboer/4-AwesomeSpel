@@ -37,8 +37,8 @@ public class ProceduralHouseblok{
 			Vector3 ptemp1 = pos;
 			Vector3 ptemp2 = pos;
 			int rand = (int)Random.Range(5,8);
-			newlefthouse = MonoBehaviour.Instantiate(Resources.Load ("Prefabs/House", typeof(GameObject))) as GameObject;
-			newrighthouse = MonoBehaviour.Instantiate(Resources.Load ("Prefabs/House", typeof(GameObject))) as GameObject;
+			newlefthouse = MonoBehaviour.Instantiate(Resources.Load ("Prefabs/ProceduralHouse/House", typeof(GameObject))) as GameObject;
+			newrighthouse = MonoBehaviour.Instantiate(Resources.Load ("Prefabs/ProceduralHouse/House", typeof(GameObject))) as GameObject;
 			if(rot.eulerAngles.y<179){
 			newlefthouse.transform.tag="Prebuildingl"+addtag;
 			newrighthouse.transform.tag="Prebuildingr"+addtag;
@@ -86,8 +86,8 @@ public class ProceduralHouseblok{
 			int rand = (int)Random.Range(0,Mathf.Floor(scale.z/6f));
 			int rand3 = (int)Random.Range(0,3);
 
-			newlefthouse = MonoBehaviour.Instantiate(Resources.Load ("Prefabs/House", typeof(GameObject))) as GameObject;
-			newrighthouse = MonoBehaviour.Instantiate(Resources.Load ("Prefabs/House", typeof(GameObject))) as GameObject;
+			newlefthouse = MonoBehaviour.Instantiate(Resources.Load ("Prefabs/ProceduralHouse/House", typeof(GameObject))) as GameObject;
+			newrighthouse = MonoBehaviour.Instantiate(Resources.Load ("Prefabs/ProceduralHouse/House", typeof(GameObject))) as GameObject;
 			
 			
 			stemp1.z = scale.z / 2.0f + (float)rand;
