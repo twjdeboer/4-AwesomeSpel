@@ -4,13 +4,12 @@ using System.Collections;
 public class GotoWorld : MonoBehaviour {
 
 	public GameObject world;
-	public string nextscene;
+
 	
 	void Awake(){
 		world = GameObject.Find ("HouseContainer");
-		if (nextscene == null) {
-			nextscene ="Nextscenetest2";	
-		}
+		if (world==null)
+			world = GameObject.Find ("Empty");
 		world.SetActive(false);
 		//DontDestroyOnLoad(players);
 	}
@@ -18,7 +17,7 @@ public class GotoWorld : MonoBehaviour {
 	void World() {
 			world.SetActive(true);
 			
-			Application.LoadLevel(nextscene);
+		Application.LoadLevel("TestWorldMerge");
 	}
 
 

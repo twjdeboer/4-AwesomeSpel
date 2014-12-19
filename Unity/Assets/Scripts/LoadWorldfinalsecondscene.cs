@@ -4,12 +4,14 @@ using System.Collections;
 public class LoadWorldfinalsecondscene : MonoBehaviour {
 
 	public GameObject world;
-	public GameObject players;
+	//public GameObject players;
 
 	void Awake(){
 		world = GameObject.Find ("HouseContainer");
-		players = GameObject.Find ("Playerall");
-		players.SetActive (false);
+		if (world == null)
+			world = GameObject.Find ("Empty");
+		//players = GameObject.Find ("Playerall");
+		//players.SetActive (false);
 		world.SetActive(false);
 		//DontDestroyOnLoad(players);
 	}
@@ -17,9 +19,9 @@ public class LoadWorldfinalsecondscene : MonoBehaviour {
 	void Update () {
 		if (Input.GetKeyDown ("space")) {
 			world.SetActive(true);
-			players.SetActive (true);
+			//players.SetActive (true);
 
-			Application.LoadLevel("Nextscenetest2");
+			Application.LoadLevel("TestWorldMerge");
 		}
 	}
 

@@ -8,12 +8,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/World final2.unity
   - enabled: 1
-    path: Assets/Scenes/Scenetoscentest/Nextscenetest.unity
-  - enabled: 1
     path: Assets/Scenes/Scenetoscentest/test inside2.unity
   - enabled: 1
     path: Assets/Scenes/Scenetoscentest/test inside.unity
   - enabled: 1
-    path: Assets/Scenes/Scenetoscentest/Nextscenetest2.unity
-  - enabled: 1
-    path: Assets/Scenes/Scenetoscentest/Nextscenetest3.unity
+    path: Assets/Scenes/TestWorldMerge.unity
