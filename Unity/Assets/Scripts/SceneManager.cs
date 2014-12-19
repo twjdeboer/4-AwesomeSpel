@@ -5,13 +5,43 @@ public class SceneManager : MonoBehaviour {
 
     private bool gamePaused = false;
     private GameObject pauseMenu;
+    private GameObject startMenu;
+    public string firstPlayScene;
+    public string startScene;
 
 	// Use this for initialization
 	void Start () {
         pauseMenu = GameObject.Find("PauseMenu");
         pauseMenu.GetComponent<CanvasGroup>().alpha = 0;
+        startMenu = GameObject.Find("StartMenu");
+        startMenu.GetComponent<CanvasGroup>().alpha = 0;
+        CheckStartMenu();
 	
 	}
+
+    void CheckStartMenu()
+    {
+        if (Application.loadedLevelName == startScene)
+            ShowStartMenu(true);
+        else
+            ShowStartMenu(false);
+    }
+
+    void ShowStartMenu(bool show)
+    {
+        if(show)
+        {
+            startMenu.GetComponent<CanvasGroup>().alpha = 1;
+            startMenu.GetComponent<CanvasGroup>().interactable = true;
+            startMenu.GetComponent<CanvasGroup>().blocksRaycasts = true;
+        }
+        else
+        {
+            startMenu.GetComponent<CanvasGroup>().alpha = 0;
+            startMenu.GetComponent<CanvasGroup>().interactable = false;
+            startMenu.GetComponent<CanvasGroup>().blocksRaycasts = false;
+        }
+    }
 	
     void SetPause(bool pause)
     {
@@ -61,6 +91,11 @@ public class SceneManager : MonoBehaviour {
                 SetPause(false);
             }
         }
+    }
+    void Play()
+    {
+        ShowStartMenu(false);
+        Application.LoadLevel(firstPlayScene);
     }
 
     void Resume()
