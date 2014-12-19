@@ -262,7 +262,9 @@ public class NPCInteraction : MonoBehaviour {
     void XMLReader(string fileName)
     {
         int listIndex = 0;
-        XmlTextReader reader = new XmlTextReader("Assets\\Resources\\Text\\" + fileName);
+
+		//XmlTextReader reader = new XmlTextReader(Resources.Load("Text/" + fileName));
+		XmlTextReader reader = new XmlTextReader(System.IO.Path.Combine(Application.streamingAssetsPath, fileName));
         while (reader.Read())
         {
             switch (reader.NodeType)

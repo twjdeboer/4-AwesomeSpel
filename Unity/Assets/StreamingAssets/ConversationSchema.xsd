@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://tempuri.org/ConversationSchema.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://tempuri.org/ConversationSchema.xsd"
+    xmlns:mstns="http://tempuri.org/ConversationSchema.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+
+  <xs:element name="conversation">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="NPC" type="xs:string"/>
+        <xs:element name="PLAYER">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="QUESTION" maxOccurs="1" minOccurs="1">
+                <xs:complexType>
+                  <xs:attribute name="TEXT" use="required" type="xs:string"/>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="OPTION" minOccurs="2" maxOccurs="4">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="TEXT" maxOccurs="1" minOccurs="1" type="xs:string"/>
+                    <xs:element name="REACTION" maxOccurs="1" minOccurs="1" type="xs:string"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>  
+  </xs:element>
+</xs:schema>
