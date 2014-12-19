@@ -8,6 +8,8 @@ public class ShowEvidence : MonoBehaviour
 {
     private List<GameObject> evidenceList = new List<GameObject>();
     private int index = 0;
+    private float X;
+    private float Y;
 
     // Use this for initialization
     void Start()
@@ -32,18 +34,24 @@ public class ShowEvidence : MonoBehaviour
         evidenceList = ResourceManager.evidenceList;
     }
 
+    void getScreenSize()
+    {
+        X = Screen.width;
+        Y = Screen.height;
+    }
+
     void FillList()
     {
         if (index < evidenceList.Count)
         {
 
             GameObject textElement = Instantiate(Resources.Load("Prefabs/EvidenceElement")) as GameObject;
-            textElement.name = "EvidenceText " + index;
             textElement.transform.SetParent(transform, false);
+            textElement.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 481 - ((float)index * 108));
+            textElement.name = "EvidenceText " + index;
+  
             Text evidenceName = textElement.transform.Find("EvidenceName").GetComponent<Text>();
             Text evidenceDiscription = textElement.transform.Find("EvidenceDescription").GetComponent<Text>();
-            evidenceName.GetComponent<RectTransform>().anchoredPosition = new Vector2(-250, 160 - (30 * (float)index));
-            evidenceDiscription.GetComponent<RectTransform>().anchoredPosition = new Vector2(150, 160 - (30 * (float)index));
             evidenceName.text = evidenceList[index].GetComponent<EvidenceBehviour>().name;
             evidenceDiscription.text = evidenceList[index].GetComponent<EvidenceBehviour>().description;
             index++;
@@ -53,6 +61,7 @@ public class ShowEvidence : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        getScreenSize();
         ViewList();
         GetEvidence();
         FillList();
