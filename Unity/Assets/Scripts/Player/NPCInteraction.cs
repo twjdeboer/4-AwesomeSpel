@@ -336,7 +336,10 @@ public class NPCInteraction : MonoBehaviour {
             else
             {
                 conversation.SetActive(false);
-                gameObject.GetComponent<Astar>().stopWalking = false;
+                if (gameObject.GetComponent<Astar>() != null)
+                {
+                    gameObject.GetComponent<Astar>().stopWalking = false;
+                }
                 ResourceManager.stopWalking = false;
                 actionList.Clear();
                 Go = false;
