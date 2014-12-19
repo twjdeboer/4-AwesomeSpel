@@ -4,7 +4,8 @@ using System.Collections;
 public class Worldactive : MonoBehaviour {
 	
 	void Start () {
-		ResourceManager.World.SetActive (true);
+		print ("Woldactive delete this script");
+		//ResourceManager.World.SetActive (true);
 	}
 
 }

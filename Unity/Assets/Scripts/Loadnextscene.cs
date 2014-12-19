@@ -9,12 +9,13 @@ public class Loadnextscene : MonoBehaviour {
 	void start(){
 		bool activeworl = false;
 		string nextsc ="test inside";
-		ResourceManager.World.SetActive(!activeworld);
+		print ("Loadnextscene script still in use?");
+		//ResourceManager.World.SetActive(!activeworld);
 	}
 
 
 	void OnTriggerEnter(Collider other) {
-		ResourceManager.World.SetActive(activeworld);
+		//ResourceManager.World.SetActive(activeworld);
 		Application.LoadLevel(nextscene);
 	}
 }

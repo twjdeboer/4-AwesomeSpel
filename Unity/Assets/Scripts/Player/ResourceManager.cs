@@ -28,7 +28,6 @@ public class ResourceManager{
     private static bool _levelLoaded = false;
     public static bool levelLoaded { get { return _levelLoaded; } set { _levelLoaded = value; } }
 
-	public static GameObject World { get; set;}
 
 	public static Vector3 newplayerpos{ get; set; }
 }

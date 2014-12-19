@@ -86,7 +86,7 @@ GameObject:
   - 65: {fileID: 306507542}
   - 23: {fileID: 306507541}
   m_Layer: 0
-  m_Name: test inside
+  m_Name: test inside2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

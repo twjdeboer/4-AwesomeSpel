@@ -2,14 +2,15 @@
 using System.Collections;
 
 public class Nextscenetrue : MonoBehaviour {
-	private GameObject world;
-	private GameObject players;
-	void awake(){
+	public GameObject world;
+	public GameObject players;
+	void Awake(){
 		world = GameObject.Find ("HouseContainer");
-		players = GameObject.Find ("Playerall");
-		world.SetActive(true);
-		players.SetActive (true);
+		players = GameObject.FindGameObjectWithTag ("EditorOnly");//GameObject.Find ("Playerall");
+		//world.SetActive(true);
+		//players.SetActive (true);
 		DontDestroyOnLoad(players);
+		DontDestroyOnLoad (world);
 	}
 
 	void start(){
@@ -19,7 +20,7 @@ public class Nextscenetrue : MonoBehaviour {
 		}
 
 	void scene1(){
-		players.SetActive (false);
+		//players.SetActive (false);
 		//world.SetActive(false);
 		//ResourceManager.playerPosition= (Player.transform.position);
 		//ResourceManager.newplayerpos.Set (-3,0.4f,0);
@@ -28,7 +29,7 @@ public class Nextscenetrue : MonoBehaviour {
 	}
 
 	void scene2(){
-		players.SetActive (false);
+		//players.SetActive (false);
 		//world.SetActive(false);
 		//ResourceManager.playerPosition=(Player.transform.position);
 

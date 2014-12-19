@@ -132,7 +132,7 @@ public class Testblok2 : MonoBehaviour {
 		if(!preHouses& !Housebloks[0] & !Housebloks[1] ){
 			text.text = "Generating done";
 			//loadScene.SetActive(true);
-			ResourceManager.World = GameObject.Find("HouseContainer");
+			//ResourceManager.World = GameObject.Find("HouseContainer");
 
 			GameObject[] destroying = GameObject.FindGameObjectsWithTag("Destroy");
 

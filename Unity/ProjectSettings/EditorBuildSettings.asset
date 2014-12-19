@@ -15,3 +15,5 @@ EditorBuildSettings:
     path: Assets/Resources/Scenes/test inside.unity
   - enabled: 1
     path: Assets/Resources/Scenes/Nextscenetest2.unity
+  - enabled: 1
+    path: Assets/Resources/Scenes/Nextscenetest3.unity

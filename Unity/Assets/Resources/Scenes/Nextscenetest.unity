@@ -17683,7 +17683,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1331260320}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: HouseContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18892,7 +18892,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400036, guid: 1405bbd72320d4d48933e7aa7a6a9ff7, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1405bbd72320d4d48933e7aa7a6a9ff7, type: 3}
@@ -20058,6 +20058,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04c3a5c860fc78547baa05ea5452a9d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  world: {fileID: 0}
+  players: {fileID: 0}
 --- !u!1 &1517747855
 GameObject:
   m_ObjectHideFlags: 0
@@ -21871,7 +21873,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400016, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100026, guid: 567ba8daa260f4643bf30435ac9d9f88, type: 3}
       propertyPath: m_TagString
@@ -22848,7 +22850,6 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -28509,6 +28510,33 @@ Transform:
   - {fileID: 1277511940}
   m_Father: {fileID: 760076566}
   m_RootOrder: 0
+--- !u!1 &2111906362
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2111906363}
+  m_Layer: 0
+  m_Name: Playerall
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2111906363
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2111906362}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -29.8591309, y: -1.52587891e-05, z: 5.9175005}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
 --- !u!1 &2113178093
 GameObject:
   m_ObjectHideFlags: 0
