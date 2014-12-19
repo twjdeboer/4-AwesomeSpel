@@ -62,10 +62,9 @@ app.get("/adduser", function(req, res){
 	var sqlquery = "INSERT INTO user (username, password_h, salt, name, email) " +
 		"VALUES (?,?,?,?,?);";
 
-		console.log(sqlquery);
 	mysqlserver.query(sqlquery, [username, password_h, salt, name, email], function(err, result){
 		if (err) console.log(err);
-		else console.log(result);
+		else //console.log(result);
 	});
 });
 
