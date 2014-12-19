@@ -19,12 +19,10 @@ public class carAgent : MonoBehaviour {
 	
 	// pick a new destination if the destination picked is too close to the position of the agent
 	void Update () {
-		if (agent.remainingDistance < 10){
+		if (agent.remainingDistance < 2){
 			destination = pickDestination();
-
-			print (agent.remainingDistance);
+			agent.SetDestination(destination);
 		}
-
 	}
 
 	// pick new destination (destinations are always on crossroads)
@@ -60,6 +58,11 @@ public class carAgent : MonoBehaviour {
 				double temp = i/8;
 				int y = (int)(Math.Floor(temp+1));
 				int x = (int)(i%8);
+
+				if (x == 0){
+					x = 8;
+					y = y - 1;
+				}
 		
 				// set cost horizontal roads 
 				for (int n = 1; n < 8; n++){
@@ -121,6 +124,5 @@ public class carAgent : MonoBehaviour {
 		}
 		// recalculate the best path to destination on entering crossroad
 		agent.SetDestination (destination);
-		print (destination);
 	}
 }
