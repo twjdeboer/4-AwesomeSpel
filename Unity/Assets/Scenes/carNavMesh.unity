@@ -477,6 +477,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 44919309}
   - 95: {fileID: 44919310}
+  - 114: {fileID: 44919311}
   m_Layer: 0
   m_Name: stratenplan 3
   m_TagString: Untagged
@@ -518,6 +519,18 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &44919311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 44919308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2a5a8bd0d29ed542be0b2c2bc08c128, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  light: {fileID: 400000, guid: 981849e5bfa334b49afab3fffe3c38c6, type: 2}
 --- !u!1 &48192997
 GameObject:
   m_ObjectHideFlags: 0
@@ -13609,7 +13622,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2018826311}
   m_LocalRotation: {x: .707106829, y: 0, z: 0, w: -.707106829}
-  m_LocalPosition: {x: 180, y: 0, z: 150}
+  m_LocalPosition: {x: 280.890015, y: 0, z: 146.100006}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
