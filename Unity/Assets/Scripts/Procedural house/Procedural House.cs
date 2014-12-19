@@ -137,7 +137,7 @@ public class ProceduralHouse{
 		newhouse.transform.position = temp;
 		newhouse.transform.localScale = scale;
 
-		newhouse.renderer.material =(Material)Resources.Load ("Materials/"+"House"+"/"+Random.Range (1, 5), typeof(Material));
+		newhouse.renderer.material =(Material)Resources.Load ("Materials/ProceduralHouse/"+"House"+"/"+Random.Range (1, 5), typeof(Material));
 	}
 	
 	private void MakeRoof(){
@@ -167,7 +167,7 @@ public class ProceduralHouse{
 		int rooftexture = (int)Random.Range (1, 5);
 		GameObject[] roofcolor = GameObject.FindGameObjectsWithTag ("Roof");
 		for (int i=0; i<roofcolor.Length; i++) {
-			roofcolor[i].renderer.material = (Material)Resources.Load ("Materials/"+"Roof"+"/"+rooftexture, typeof(Material));
+			roofcolor[i].renderer.material = (Material)Resources.Load ("Materials/ProceduralHouse/"+"Roof"+"/"+rooftexture, typeof(Material));
 			roofcolor[i].tag="Building2";
 		}
 	}
@@ -191,7 +191,7 @@ public class ProceduralHouse{
 		doorzpos = temp.z;
 		door.transform.position = temp;
 
-		doorWindow.renderer.material =(Material)Resources.Load ("Materials/"+"Door"+"/"+Random.Range (1, 5), typeof(Material));
+		doorWindow.renderer.material =(Material)Resources.Load ("Materials/ProceduralHouse/"+"Door"+"/"+Random.Range (1, 5), typeof(Material));
 		doorWindow.transform.tag = "Building2";
 
 	}
@@ -228,11 +228,11 @@ public class ProceduralHouse{
 		GameObject[] Omlijstingcolor = GameObject.FindGameObjectsWithTag ("Omlijsting");
 		GameObject[] Windowcolor = GameObject.FindGameObjectsWithTag ("Window");
 		for (int i=0; i<Omlijstingcolor.Length; i++) {
-			Omlijstingcolor[i].renderer.material = (Material)Resources.Load ("Materials/"+"Omlijsting"+"/"+omlijsting, typeof(Material));
+			Omlijstingcolor[i].renderer.material = (Material)Resources.Load ("Materials/ProceduralHouse/"+"Omlijsting"+"/"+omlijsting, typeof(Material));
 			Omlijstingcolor[i].tag="Building2";
 		}
 		for (int i=0; i<Windowcolor.Length; i++) {
-			Windowcolor[i].renderer.material = (Material)Resources.Load ("Materials/"+"Windows"+"/"+windowtexture, typeof(Material));
+			Windowcolor[i].renderer.material = (Material)Resources.Load ("Materials/ProceduralHouse/"+"Windows"+"/"+windowtexture, typeof(Material));
 			Windowcolor[i].tag="Building2";
 		}
 	}
