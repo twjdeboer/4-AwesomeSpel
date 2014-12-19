@@ -143,7 +143,7 @@ public class Testblok2 : MonoBehaviour {
 		
 			setactive2 ();
 			print ("Done");
-			text.text = "Loading World";
+			text.text = "Loading World - This coukd take a while";
 			Destroy(GameObject.Find("Worldloader"));
 			Application.LoadLevel(nextscene);
 
