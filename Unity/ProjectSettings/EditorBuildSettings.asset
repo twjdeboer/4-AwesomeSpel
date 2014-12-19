@@ -13,3 +13,5 @@ EditorBuildSettings:
     path: Assets/Scenes/Scenetoscentest/test inside.unity
   - enabled: 1
     path: Assets/Scenes/TestWorldMerge.unity
+  - enabled: 1
+    path: Assets/Scenes/Church.unity
