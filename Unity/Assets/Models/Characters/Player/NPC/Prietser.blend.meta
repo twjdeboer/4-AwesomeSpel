@@ -20,16 +20,19 @@ ModelImporter:
     2300004: Sphere
     2300006: Staf
     2300008: Tabbert
+    2300010: //RootNode
     3300000: Lijf
     3300002: Mijter
     3300004: Sphere
     3300006: Staf
     3300008: Tabbert
+    3300010: //RootNode
     4300000: Mijter
     4300002: Staf
     4300004: Lijf
     4300006: Tabbert
     4300008: Sphere
+    4300010: Geloofsheer
     7400000: Default Take
     9500000: //RootNode
   materials:
