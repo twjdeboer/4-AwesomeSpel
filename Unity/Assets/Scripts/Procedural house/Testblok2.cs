@@ -143,7 +143,7 @@ public class Testblok2 : MonoBehaviour {
 		
 			setactive2 ();
 			print ("Done");
-			text.text = "World visability done";
+			text.text = "Loading World";
 			Destroy(GameObject.Find("Worldloader"));
 			Application.LoadLevel(nextscene);
 
