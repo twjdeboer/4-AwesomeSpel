@@ -204,6 +204,12 @@ public class NPCInteraction : MonoBehaviour {
         }
     }
 
+    void PlayerTalkText(string text)
+    {
+        conversation.gameObject.SetActive(true);
+        nameText.text = GameObject.Find("PlayerModel").GetComponent<Player>().playerName;
+        DisplayWordForWord(text);
+    }
 
     void PlayerTalk(OptionList list)
     {
@@ -225,7 +231,7 @@ public class NPCInteraction : MonoBehaviour {
         if(choiceOfPlayer != 0)
         {
             Active.gameObject.SetActive(false);
-            nameText.text = "Player";
+            nameText.text = GameObject.Find("PlayerModel").GetComponent<Player>().playerName;
             playerText = list[choiceOfPlayer - 1].text;
         }
         if (playerText != null && !NPCAnswer)
@@ -278,6 +284,7 @@ public class NPCInteraction : MonoBehaviour {
                     {
                         while (reader.Read())
                         {
+                            Debug.Log(reader.Name);
                             if (reader.Name.Equals("QUESTION") && reader.IsStartElement())
                             {
                                 string questionText = reader.GetAttribute(0);
@@ -309,8 +316,15 @@ public class NPCInteraction : MonoBehaviour {
                                 options[listIndex - 1].Add(new Option(optionText, reactionText));
                             }
                             else if (reader.Name.Equals("QUESTION") && reader.NodeType.Equals(XmlNodeType.EndElement))
-                            {                           
+                            {
                                 actionList.Add(new Action(2, listIndex));
+                            }
+                            else if (reader.Name.Equals("TALK")&& reader.NodeType.Equals(XmlNodeType.Element))
+                            {                              
+                                actionList.Add(new Action(3, reader.ReadInnerXml()));
+                            }
+                            else if (reader.Name.Equals("PLAYER") && reader.NodeType.Equals(XmlNodeType.EndElement))
+                            {
                                 break;
                             }
                         }
@@ -333,6 +347,10 @@ public class NPCInteraction : MonoBehaviour {
                 else if (actionList[actionIndex].actionNumber == 2)
                 {
                     PlayerTalk(options[actionList[actionIndex].optionListNumber - 1]);
+                }
+                else if (actionList[actionIndex].actionNumber == 3)
+                {
+                    PlayerTalkText(actionList[actionIndex].actionText);
                 }
             }
             else
