@@ -6,6 +6,8 @@ public class NeuralNetwork : MonoBehaviour {
 	public int AantalBewijzen;
 	public int AantalUitkomsten; //twee denk ik
 	public int NumHidden;
+	private double error = 100;
+	private double e = System.Math.E;
 
 
 	// Use this for initialization
@@ -52,7 +54,7 @@ public class NeuralNetwork : MonoBehaviour {
 		{
 			for (int j=0; j<AantalBewijzen+1; j++) 
 			{
-				if (j=AantalBewijzen)
+				if (j==AantalBewijzen)
 				{
 					TestSet[i, j]= Random.Range(0, AantalUitkomsten);
 				}
@@ -67,6 +69,8 @@ public class NeuralNetwork : MonoBehaviour {
 
 
 
+
+
 	}
 	
 	// Update is called once per frame
@@ -74,20 +78,60 @@ public class NeuralNetwork : MonoBehaviour {
 	
 	}
 
+	// alle producten defineren
 	void MatrixProd(double[,] A, double[,] B){
 
-		double[,] result = new double[A.GetLength (0), B.GetLength (1)];
-		for (int i =0;i<A.GetLength(0);i++)
+		if (A.GetLength(1)==B.GetLength(0))
 		{
-			for (int j = 0; j<B.GetLength(1);j++)
+			double[,] result = new double[A.GetLength (0), B.GetLength (1)];
+			for (int i =0;i<A.GetLength(0);i++)
 			{
-				for (int k=0;k<A.GetLength(1);k++)
+				for (int j = 0; j<B.GetLength(1);j++)
 				{
-					result[i,j] += A[i,k]*B[j,k];
+					for (int k=0;k<A.GetLength(1);k++)
+					{
+						result[i,j] += A[i,k]*B[j,k];
+					}
 				}
 			}
+			return result;
 		}
-		return result;
+		return null;
+	}
+
+	void VectorMatrix(double[] A, double[,] B){
+		if (A.GetLength(1)==B.GetLength(0))
+		{
+			int[] result = new int[A.GetLength(1)];
+			for (int i=0; i<B.GetLength(1);i++)
+			{
+				for (int j=0;j<A.GetLength(1);j++)
+				{
+					result[i]+= A[j]*B[j,i];
+				}
+			}
+			return result;
+		}
+		return null;
+	}
+
+	void VectorProd(double[] A, double[] B){
+		if (A.GetLength==B.GetLength)
+		{
+			int result= new int;
+			for (int i =0;i<A.GetLength;i++)
+			{
+				result += A[i]*B[i];
+			}
+			return result;
+
+		}
+		return null;
+	}
+
+	void UpdateWeigths(){
+
+		double[] input = TestSet[i,:]
 	}
 
 }
