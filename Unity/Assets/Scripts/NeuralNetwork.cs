@@ -74,6 +74,21 @@ public class NeuralNetwork : MonoBehaviour {
 	
 	}
 
+	void MatrixProd(double[,] A, double[,] B){
+
+		double[,] result = new double[A.GetLength (0), B.GetLength (1)];
+		for (int i =0;i<A.GetLength(0);i++)
+		{
+			for (int j = 0; j<B.GetLength(1);j++)
+			{
+				for (int k=0;k<A.GetLength(1);k++)
+				{
+					result[i,j] += A[i,k]*B[j,k];
+				}
+			}
+		}
+		return result;
+	}
 
 }
 
