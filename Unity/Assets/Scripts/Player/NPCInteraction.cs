@@ -217,7 +217,6 @@ public class NPCInteraction : MonoBehaviour {
     {
         if(useOption.childActions.Count != 0 && anotherQuestion)
         {
-            Debug.Log(useOption.childActions[0].actionNumber + " " + useOption.childActions[0].optionListNumber);
             actionList.InsertRange(actionIndex + 1, useOption.childActions);
             anotherQuestion = false;
         }
