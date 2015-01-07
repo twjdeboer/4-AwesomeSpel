@@ -44,8 +44,8 @@ public class Player : MonoBehaviour
 				} else {
 						anim.SetFloat ("Speed", 0);
 				}
-        Vector3 speed = (direction *  walkSpeed) ;
-        rigidbody.MovePosition(rigidbody.position + speed * Time.deltaTime);
+        Vector3 speed = (direction *  walkSpeed * Time.deltaTime) ;
+        rigidbody.velocity = speed;
         RotateInWalkDirection(rotateSpeed, direction.x, direction.z);
 
     }
