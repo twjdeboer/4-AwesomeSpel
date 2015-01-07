@@ -502,7 +502,7 @@ Transform:
   - {fileID: 1763048363}
   - {fileID: 1851388913}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
 --- !u!95 &44919310
 Animator:
   serializedVersion: 3
@@ -585,7 +585,7 @@ Transform:
   - {fileID: 1422285213}
   - {fileID: 1975862150}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
 --- !u!1001 &60357922
 Prefab:
   m_ObjectHideFlags: 0
@@ -3349,7 +3349,7 @@ Transform:
   - {fileID: 129302791}
   - {fileID: 1616878672}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 3
 --- !u!95 &462706781
 Animator:
   serializedVersion: 3
@@ -4549,7 +4549,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!1 &566777333
 GameObject:
   m_ObjectHideFlags: 0
