@@ -2,7 +2,6 @@
 using System.Collections;
 
 public class NodeNetwork {
-
     private Vector3 pos;
     private Vector2 numberOfNodes;
     private GameObject[,] network;
@@ -12,23 +11,22 @@ public class NodeNetwork {
      * */
     public NodeNetwork(Vector3 pos, Vector2 numberOfNodes)
     {
-        
         this.pos = pos;
         this.network = new GameObject[(int)numberOfNodes.x, (int)numberOfNodes.y];
         this.numberOfNodes = numberOfNodes;
 
-        float xPos = pos.x - (numberOfNodes.x * 0.5f);
-        float zPos = pos.z - (numberOfNodes.y * 0.5f);
+        float xPos = pos.x - (numberOfNodes.x * 1.5f);
+        float zPos = pos.z - (numberOfNodes.y * 1.5f);
         for (int i = 0; i < (int)numberOfNodes.x; i++)
         {
             
             for (int j = 0; j < (int)numberOfNodes.y; j++)
             {               
                 network[i, j] = node(xPos,zPos, i, j);
-                zPos++;                
+                zPos+=3;                
             }
-            xPos++;
-            zPos = -numberOfNodes.y * 0.5f;
+            xPos+=3;
+			zPos = pos.z - numberOfNodes.y * 1.5f;
 
         }
     }
@@ -38,6 +36,15 @@ public class NodeNetwork {
      * */
     GameObject node(float xPos, float zPos, int i, int j)
     {
+		GameObject primitive = MonoBehaviour.Instantiate(Resources.Load ("Prefabs/Node", typeof(GameObject))) as GameObject;
+		primitive.transform.position = new Vector3(xPos, 0, zPos);
+		primitive.transform.localScale = new Vector3(0.75f, 0.75f, 0.75f);
+		primitive.transform.parent = GameObject.Find("NodeNetwork").transform;
+		primitive.gameObject.name = "Node(" + i + "," + j + ")";
+		primitive.GetComponent<Node>().xPos = i;
+		primitive.GetComponent<Node>().yPos = j;
+		return primitive;
+		/*
         GameObject primitive = GameObject.CreatePrimitive(PrimitiveType.Sphere);
         primitive.transform.position = new Vector3(xPos, 0, zPos);
         primitive.collider.isTrigger = true;
@@ -53,6 +60,7 @@ public class NodeNetwork {
         primitive.GetComponent<Node>().yPos = j;
         primitive.renderer.material = (Material)Resources.Load("Textures/Invisible");
         return primitive;
+        */
     }
 
     /**

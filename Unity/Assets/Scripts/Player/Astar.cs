@@ -171,6 +171,7 @@ public class Astar : MonoBehaviour{
         moveDirection.y = 0;
         Vector3 step = moveDirection.normalized * moveSpeed * Time.deltaTime;
         Quaternion rotation = Quaternion.LookRotation(moveDirection);
+		MonoBehaviour.print (rotation);
         transform.rotation = rotation;
         rigidbody.MovePosition(rigidbody.position + step);
     }

@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     public float walkSpeed;
     public float rotateSpeed;
     public float runSpeed;
+    public string playerName;
 
 	private Animator anim;
     private float intSpeed;

@@ -2,7 +2,7 @@
 <conversation>
   <NPC>Hello! Great day isn't it? How do you feel right now?</NPC>
   <PLAYER>
-    <QUESTION TEXT ="How do you feel?">
+    <QUESTION TEXT ="How do you feel???">
       <OPTION>
         <TEXT>Good.</TEXT>
         <REACTION>That's nice! Sure you're doing some important stuff what makes you feel good?</REACTION>
@@ -27,6 +27,7 @@
         <TEXT>Beat you up</TEXT>
         <REACTION>AHHHHHHH! *Runs away fast *</REACTION>
       </OPTION>
-    </QUESTION>  
+    </QUESTION>
+    <TALK>RUN FOR YOUR LIFEE HAHAHA.</TALK>
   </PLAYER>
 </conversation>
