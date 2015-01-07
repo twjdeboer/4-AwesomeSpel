@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: window__WindowsHouseOld0197_1_S_jpg
-  m_Shader: {fileID: 4, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: 3f79f43103d50a04a9f7b6db3dbf25eb, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -36,7 +36,7 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: .722588658, g: .727941155, b: .724618912, a: .713725507}
+        second: {r: .278431386, g: .278431386, b: .278431386, a: .713725507}
       data:
         first:
           name: _SpecColor
