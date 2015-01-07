@@ -556,7 +556,7 @@ MonoBehaviour:
   walkSpeed: 3
   rotateSpeed: 20
   runSpeed: 0
-  playerName: 
+  playerName: The real AWESOME
 --- !u!136 &28657104
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -15659,6 +15659,10 @@ Prefab:
     - target: {fileID: 101016, guid: 7fc18a12eb9631b4a836ee157d58ffb9, type: 2}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 7fc18a12eb9631b4a836ee157d58ffb9, type: 2}
+      propertyPath: playerName
+      value: The real AWESOME
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7fc18a12eb9631b4a836ee157d58ffb9, type: 2}

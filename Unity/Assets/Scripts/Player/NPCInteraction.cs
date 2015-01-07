@@ -26,6 +26,7 @@ public class NPCInteraction : MonoBehaviour {
     public int choiceOfPlayer;
     public string fileName;
 
+    private bool anotherQuestion = true;
     private bool NPCHasToAnswer = false;
     private bool NPCAnswer = false;
     private int actionIndex = 0;
@@ -128,6 +129,7 @@ public class NPCInteraction : MonoBehaviour {
                 {
                     NPCAnswer = true;
                     Active.SetActive(false);
+                    anotherQuestion = true;
                 }
                 else if (NPCAnswer)
                 {
@@ -211,6 +213,16 @@ public class NPCInteraction : MonoBehaviour {
         DisplayWordForWord(text);
     }
 
+    void AnotherQuestion(Option useOption)
+    {
+        if(useOption.childActions.Count != 0 && anotherQuestion)
+        {
+            Debug.Log(useOption.childActions[0].actionNumber + " " + useOption.childActions[0].optionListNumber);
+            actionList.InsertRange(actionIndex + 1, useOption.childActions);
+            anotherQuestion = false;
+        }
+    }
+
     void PlayerTalk(OptionList list)
     {
         choiceOfPlayer = ResourceManager.choiceOfPlayer;
@@ -243,8 +255,10 @@ public class NPCInteraction : MonoBehaviour {
         if (NPCAnswer)
         {
             NPCHasToAnswer = false;
-            NPCText = list[choiceOfPlayer - 1].reaction;
+            Option useOption = list[choiceOfPlayer - 1];
+            NPCText = useOption.reaction;            
             NPCTalk(NPCText);
+            AnotherQuestion(useOption);
         }
     }
 
@@ -265,10 +279,92 @@ public class NPCInteraction : MonoBehaviour {
         }
     }
 
+
+    void ReadOption(XmlTextReader reader, int optionListNumber, Option parentOption)
+    {
+        string optionText = "";
+        string reactionText = "";
+        Option option = null;
+
+        while(reader.Read())
+        {
+            if (reader.Name.Equals("TEXT"))
+            {
+                optionText = reader.ReadInnerXml();
+            }
+            else if (reader.Name.Equals("REACTION") && reader.IsStartElement())
+            {
+                reactionText = reader.GetAttribute(0);
+                if (reader.ReadToDescendant("SEQUEL"))
+                {
+                    option = new Option(optionText, reactionText);
+                    while (reader.Read())
+                    {
+                        
+                        if (reader.Name.Equals("QUESTION") && reader.IsStartElement())
+                        {
+                            ReadQuestion(reader, option, false, optionListNumber + 1);
+                        }
+                        else if (reader.Name.Equals("NPC") && reader.IsStartElement())
+                        {
+                            option.childActions.Add(new Action(1, reader.ReadInnerXml()));
+                        }
+                        else if (reader.Name.Equals("TALK") && reader.IsStartElement())
+                        {
+                            option.childActions.Add(new Action(3, reader.ReadInnerXml()));
+                        }
+                        else if (reader.Name.Equals("SEQUEL") && reader.NodeType.Equals(XmlNodeType.EndElement))
+                        {
+                            break;
+                        }
+                    }
+                }
+
+
+            }
+
+            else if (reader.Name.Equals("OPTION") && reader.NodeType.Equals(XmlNodeType.EndElement))
+            {
+                if(option == null)
+                {
+                    option = new Option(optionText, reactionText);
+                }
+                options[optionListNumber].Add(option);
+                break;
+            }
+        }
+
+    }
+
+    void ReadQuestion(XmlTextReader reader,Option parentOption, bool firstQuestion, int optionListNumber)
+    {
+        string questionText = reader.GetAttribute(0);
+        options.Add(new OptionList(questionText));
+
+        while (reader.Read())
+        {
+
+            if (reader.Name.Equals("OPTION") && reader.NodeType.Equals(XmlNodeType.Element))
+            {
+                ReadOption(reader, optionListNumber, parentOption);
+            }
+            else if (reader.Name.Equals("QUESTION") && reader.NodeType.Equals(XmlNodeType.EndElement) && firstQuestion)
+            { 
+                actionList.Add(new Action(2, optionListNumber));
+                break;
+            }
+            else if (reader.Name.Equals("QUESTION") && reader.NodeType.Equals(XmlNodeType.EndElement) && !firstQuestion)
+            {
+                parentOption.childActions.Add(new Action(2, optionListNumber));
+                break;
+            }
+
+        }
+        
+    }
+
     void XMLReader(string fileName)
     {
-        int listIndex = 0;
-
 		//XmlTextReader reader = new XmlTextReader(Resources.Load("Text/" + fileName));
 		XmlTextReader reader = new XmlTextReader(System.IO.Path.Combine(Application.streamingAssetsPath, fileName));
         while (reader.Read())
@@ -280,44 +376,14 @@ public class NPCInteraction : MonoBehaviour {
                     {
                         actionList.Add(new Action(1, reader.ReadInnerXml()));
                     }
-                    if (reader.Name.Equals("PLAYER"))
+                    if (reader.Name.Equals("PLAYER") && reader.NodeType.Equals(XmlNodeType.Element))
                     {
+
                         while (reader.Read())
                         {
-                            Debug.Log(reader.Name);
                             if (reader.Name.Equals("QUESTION") && reader.IsStartElement())
                             {
-                                string questionText = reader.GetAttribute(0);
-                                options.Add(new OptionList(questionText));
-                                listIndex++;
-                            }
-                            else if (reader.Name.Equals("OPTION") && reader.NodeType.Equals(XmlNodeType.Element))
-                            {
-                                string optionText = "";
-                                string reactionText = "";
-
-                                while (reader.Read())
-                                {
-                                    if (reader.Name.Equals("TEXT"))
-                                    {
-                                        optionText = reader.ReadInnerXml();
-                                        reader.ReadToNextSibling("REACTION");
-                                        reactionText = reader.ReadInnerXml();
-                                        break;
-                                    }
-                                    else if (reader.Name.Equals("REACTION"))
-                                    {
-                                        reactionText = reader.ReadInnerXml();
-                                        reader.ReadToNextSibling("TEXT");
-                                        optionText = reader.ReadInnerXml();
-                                        break;
-                                    }
-                                }
-                                options[listIndex - 1].Add(new Option(optionText, reactionText));
-                            }
-                            else if (reader.Name.Equals("QUESTION") && reader.NodeType.Equals(XmlNodeType.EndElement))
-                            {
-                                actionList.Add(new Action(2, listIndex));
+                                ReadQuestion(reader, null, true, options.Count);
                             }
                             else if (reader.Name.Equals("TALK")&& reader.NodeType.Equals(XmlNodeType.Element))
                             {                              
@@ -346,7 +412,7 @@ public class NPCInteraction : MonoBehaviour {
                 }
                 else if (actionList[actionIndex].actionNumber == 2)
                 {
-                    PlayerTalk(options[actionList[actionIndex].optionListNumber - 1]);
+                    PlayerTalk(options[actionList[actionIndex].optionListNumber]);
                 }
                 else if (actionList[actionIndex].actionNumber == 3)
                 {
@@ -371,7 +437,7 @@ public class NPCInteraction : MonoBehaviour {
     void FillUI(OptionList list)
     {
         GameObject.Find("Question Text").GetComponent<Text>().text = list.question;
-        for (int i = 1; i < options[actionList[actionIndex].optionListNumber - 1].Count + 1; i++)
+        for (int i = 1; i < options[actionList[actionIndex].optionListNumber].Count + 1; i++)
         {
             GameObject.Find("Option " + i + " Text").GetComponent<Text>().text = list[i - 1].text;
         }
