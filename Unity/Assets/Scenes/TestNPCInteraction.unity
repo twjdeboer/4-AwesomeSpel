@@ -556,7 +556,7 @@ MonoBehaviour:
   walkSpeed: 3
   rotateSpeed: 20
   runSpeed: 0
-  playerName: 
+  playerName: The real AWESOME
 --- !u!136 &28657104
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5365,6 +5365,7 @@ CanvasGroup:
     type: 2}
   m_PrefabInternal: {fileID: 1979301118}
   m_GameObject: {fileID: 374841317}
+  m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
@@ -6775,6 +6776,7 @@ CanvasGroup:
     type: 2}
   m_PrefabInternal: {fileID: 1979301118}
   m_GameObject: {fileID: 461905779}
+  m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
@@ -10051,6 +10053,7 @@ CanvasGroup:
     type: 2}
   m_PrefabInternal: {fileID: 1979301118}
   m_GameObject: {fileID: 825021385}
+  m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 0
@@ -10368,7 +10371,6 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -12805,6 +12807,7 @@ CanvasGroup:
     type: 2}
   m_PrefabInternal: {fileID: 1979301118}
   m_GameObject: {fileID: 1051313348}
+  m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
@@ -15544,7 +15547,6 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -15659,6 +15661,10 @@ Prefab:
     - target: {fileID: 101016, guid: 7fc18a12eb9631b4a836ee157d58ffb9, type: 2}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 7fc18a12eb9631b4a836ee157d58ffb9, type: 2}
+      propertyPath: playerName
+      value: The real AWESOME
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7fc18a12eb9631b4a836ee157d58ffb9, type: 2}
@@ -15960,6 +15966,7 @@ CanvasGroup:
     type: 2}
   m_PrefabInternal: {fileID: 1979301118}
   m_GameObject: {fileID: 1324620999}
+  m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 0
@@ -19780,7 +19787,6 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -20820,7 +20826,6 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
