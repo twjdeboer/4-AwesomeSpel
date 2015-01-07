@@ -1,20 +1,25 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
+using WebRequest;
 
 public class SceneManager : MonoBehaviour {
 
     private bool gamePaused = false;
     private GameObject pauseMenu;
     private GameObject startMenu;
+	private GameObject loginMenu;
     public string firstPlayScene;
     public string startScene;
 
 	// Use this for initialization
 	void Start () {
         pauseMenu = GameObject.Find("PauseMenu");
-        pauseMenu.GetComponent<CanvasGroup>().alpha = 0;
+		setCanvasInactive (pauseMenu);
         startMenu = GameObject.Find("StartMenu");
-        startMenu.GetComponent<CanvasGroup>().alpha = 0;
+		setCanvasInactive (startMenu);
+		loginMenu = GameObject.Find ("Login");
+		setCanvasInactive (loginMenu);
         CheckStartMenu();
 	
 	}
@@ -31,15 +36,11 @@ public class SceneManager : MonoBehaviour {
     {
         if(show)
         {
-            startMenu.GetComponent<CanvasGroup>().alpha = 1;
-            startMenu.GetComponent<CanvasGroup>().interactable = true;
-            startMenu.GetComponent<CanvasGroup>().blocksRaycasts = true;
+			setCanvasActive(startMenu);
         }
         else
         {
-            startMenu.GetComponent<CanvasGroup>().alpha = 0;
-            startMenu.GetComponent<CanvasGroup>().interactable = false;
-            startMenu.GetComponent<CanvasGroup>().blocksRaycasts = false;
+			setCanvasInactive(startMenu);
         }
     }
 	
@@ -60,19 +61,17 @@ public class SceneManager : MonoBehaviour {
         }
     }
 
+
+
     void ToggleMenu(bool toggle)
     {
         if(toggle)
         {
-            pauseMenu.GetComponent<CanvasGroup>().alpha = 1;
-            pauseMenu.GetComponent<CanvasGroup>().interactable = true;
-            pauseMenu.GetComponent<CanvasGroup>().blocksRaycasts = true;
+			setCanvasActive(pauseMenu);
         }
         else
         {
-            pauseMenu.GetComponent<CanvasGroup>().alpha = 0;
-            pauseMenu.GetComponent<CanvasGroup>().interactable = false;
-            pauseMenu.GetComponent<CanvasGroup>().blocksRaycasts = false;
+			setCanvasInactive(pauseMenu);
         }
     }
 
@@ -113,5 +112,32 @@ public class SceneManager : MonoBehaviour {
 	void Update () {
 
         TogglePause();
+	}
+
+	void BackToMain() {
+			setCanvasActive(startMenu);
+			setCanvasInactive(loginMenu);
+		}
+
+	void LoginMenu() {
+		setCanvasInactive(startMenu);
+		setCanvasActive(loginMenu);
+
+	}
+
+	void CheckLogin() {
+			
+		}
+
+	void setCanvasActive(GameObject canvas) {
+		canvas.GetComponent<CanvasGroup>().alpha = 1;
+		canvas.GetComponent<CanvasGroup>().interactable = true;
+		canvas.GetComponent<CanvasGroup>().blocksRaycasts = true;
+	}
+	
+	void setCanvasInactive(GameObject canvas) {
+		canvas.GetComponent<CanvasGroup>().alpha = 0;
+		canvas.GetComponent<CanvasGroup>().interactable = false;
+		canvas.GetComponent<CanvasGroup>().blocksRaycasts = false;
 	}
 }

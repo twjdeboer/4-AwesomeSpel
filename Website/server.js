@@ -55,17 +55,25 @@ app.get("/adduser", function(req, res){
 	var password = query["password"];
 	var name = query["name"];
 	var email = query["email"];
+	if (username != null && name != null && password != null){
+		var salt = crypto.randomBytes(16);
+		var password_h = crypto.createHash('sha256').update(password+salt).digest('base64');
 
-	var salt = crypto.randomBytes(16);
-	var password_h = crypto.createHash('sha256').update(password+salt).digest('base64');
+		var sqlquery = "INSERT INTO user (username, password_h, salt, name, email) " +
+			"VALUES (?,?,?,?,?);";
 
-	var sqlquery = "INSERT INTO user (username, password_h, salt, name, email) " +
-		"VALUES (?,?,?,?,?);";
-
-	mysqlserver.query(sqlquery, [username, password_h, salt, name, email], function(err, result){
-		if (err) console.log(err);
-		else //console.log(result);
-	});
+		mysqlserver.query(sqlquery, [username, password_h, salt, name, email], function(err, result){
+			if (err) {
+				console.log(err);
+				res.end();
+			} else {
+				console.log(result);
+				res.json({msg:"SUCCESS"});
+			}
+		});
+	} else {
+		res.json({msg:"INVALID INPUT"});
+	}
 });
 
 app.get("/validateuser", function(req, res){
@@ -73,17 +81,31 @@ app.get("/validateuser", function(req, res){
 	var query = url_parts.query;
 	var username = query["username"];
 	var password = query["password"];
+	if (username != null && password != null){
+		var getsaltquery = "SELECT salt, password_h FROM user WHERE username = ?";
 
-	var getsaltquery = "SELECT salt FROM user WHERE username = ?";
+		mysqlserver.query(getsaltquery, [username], function(err, result){
+			if (err) {
+				console.log(err);
+				
+			}
+			else {
 
-
-	mysqlserver.query(getsaltquery, [username], function(err, result){
-		if (err) {
-			console.log(err);
-		}
-		else {
-			var salt = result;
-			var password_h = crypto.createHash('sha256').update(password+salt).digest('base64');
-		}
-	});
+				if (result != ""){
+					var salt = result[0]["salt"];
+					var server_password_h = result[0]["password_h"];
+					var password_h = crypto.createHash('sha256').update(password+salt).digest('base64');
+					if (password_h === server_password_h){
+						res.json({msg:"SUCCESS"})
+					} else {
+						res.json({msg:"INVALID PASSWORD"})
+					}
+				} else {
+					res.json({msg:"INVALID USER"})
+				}
+			}
+		});
+	} else {
+		console.log("invalid query")
+	}
 });

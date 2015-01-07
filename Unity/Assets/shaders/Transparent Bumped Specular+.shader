@@ -1,6 +1,6 @@
 // Compiled shader for PC, Mac & Linux Standalone, uncompressed size: 193.6KB
 
-Shader "Transparent/Bumped Specular" {
+Shader "Transparent/Bumped Specular+" {
 Properties {
  _Color ("Main Color", Color) = (1,1,1,1)
  _SpecColor ("Specular Color", Color) = (0.5,0.5,0.5,0)
