@@ -30,4 +30,6 @@ public class ResourceManager{
 
 
 	public static Vector3 newplayerpos{ get; set; }
+
+    public static string playerName { get; set; }
 }
