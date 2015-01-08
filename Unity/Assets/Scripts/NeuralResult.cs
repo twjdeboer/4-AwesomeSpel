@@ -3,31 +3,31 @@ using System.Collections;
 
 public class NeuralResult : MonoBehaviour {
 
-	private double[][] W1 = new double[][]
+	private float[][] W1 = new float[][]
 	{
-		new double[] {-0.93555,0.30249,-0.35401,-0.48818,-0.90505,-0.64421,0.058168,0.32731,-0.61747},
-		new double[] {-0.26276,-0.037327,-0.54831,-0.98497,0.067601,0.67235,-0.066804,0.34365,-0.1671},
-		new double[] {-0.44215,-0.79562,-0.026015,0.77338,-0.50745,-0.56515,-0.12096,-0.54113,-0.75341},
-		new double[] {0.50668,-0.76576,-0.82983,0.89052,-0.40909,0.23417,0.75789,-0.10048,0.52234},
-		new double[] {0.9578,0.88102,-0.15237,-0.23362,0.41094,-0.67571,0.29437,-0.32257,0.48923},
-		new double[] {-0.5846,0.34435,0.3066,-0.81398,-0.71128,-0.20973,-0.76635,0.58472,-0.10486},
-		new double[] {0.4961,0.74166,-0.24019,-0.73863,-0.78046,0.61195,0.92337,0.91377,0.35412},
-		new double[] {0.5701,1.0441,0.54077,-0.33122,0.12607,0.21481,0.31823,-0.15898,0.63071},
-		new double[] {0.069024,0.5729,0.19151,0.22088,-0.64635,0.76019,0.038643,0.953,-0.59414},
-		new double[] {0.84044,0.18934,1.039,0.74667,-0.16563,0.37713,0.5901,0.28053,-0.64654}
+		new float[] {-0.93555f,0.30249f,-0.35401f,-0.48818f,-0.90505f,-0.64421f,0.058168f,0.32731f,-0.61747f},
+		new float[] {-0.26276f,-0.037327f,-0.54831f,-0.98497f,0.067601f,0.67235f,-0.066804f,0.34365f,-0.1671f},
+		new float[] {-0.44215f,-0.79562f,-0.026015f,0.77338f,-0.50745f,-0.56515f,-0.12096f,-0.54113f,-0.75341f},
+		new float[] {0.50668f,-0.76576f,-0.82983f,0.89052f,-0.40909f,0.23417f,0.75789f,-0.10048f,0.52234f},
+		new float[] {0.9578f,0.88102f,-0.15237f,-0.23362f,0.41094f,-0.67571f,0.29437f,-0.32257f,0.48923f},
+		new float[] {-0.5846f,0.34435f,0.3066f,-0.81398f,-0.71128f,-0.20973f,-0.76635f,0.58472f,-0.10486f},
+		new float[] {0.4961f,0.74166f,-0.24019f,-0.73863f,-0.78046f,0.61195f,0.92337f,0.91377f,0.35412f},
+		new float[] {0.5701f,1.0441f,0.54077f,-0.33122f,0.12607f,0.21481f,0.31823f,-0.15898f,0.63071f},
+		new float[] {0.069024f,0.5729f,0.19151f,0.22088f,-0.64635f,0.76019f,0.038643f,0.953f,-0.59414f},
+		new float[] {0.84044f,0.18934f,1.039f,0.74667f,-0.16563f,0.37713f,0.5901f,0.28053f,-0.64654f}
 	};
 
-	private double[][] W2 = new double[][]
+	private float[][] W2 = new float[][]
 	{
-		new double[] {0.78355,-0.18371,-0.22386,0.58024,-0.68041,0.54887,0.68227,-0.89865,-0.65381,0.28919},
-		new double[] {-0.42793,-0.9035,0.03661,0.99022,-0.39727,-0.75846,0.2371,0.63998,-0.34588,1.7474}
+		new float[] {0.78355f,-0.18371f,-0.22386f,0.58024f,-0.68041f,0.54887f,0.68227f,-0.89865f,-0.65381f,0.28919f},
+		new float[] {-0.42793f,-0.9035f,0.03661f,0.99022f,-0.39727f,-0.75846f,0.2371f,0.63998f,-0.34588f,1.7474f}
 	};
 
-	private double[] T1 = new double[] {-0.047772,0.94058,0.63986,-1.0442,0.79251,0.90971,-0.70145,0.87157,-0.42895,0.23156};
+	private float[] T1 = new float[] {-0.047772f,0.94058f,0.63986f,-1.0442f,0.79251f,0.90971f,-0.70145f,0.87157f,-0.42895f,0.23156f};
 
-	private double[] T2 = new double[] {0.25463,1.6389};
+	private float[] T2 = new float[] {0.25463f,1.6389f};
 
-	public double[] foundevidence;
+	public float[] foundevidence;
 
 	// Use this for initialization
 	void Start () {
@@ -39,27 +39,27 @@ public class NeuralResult : MonoBehaviour {
 	
 	}
 
-	int CalcOutput( double[] n){
+	int CalcOutput( float[] n){
 
-		double[] hidden = new double[10];
+		float[] hidden = new float[10];
 		hidden = VectorMatrix(n,W1);
 		hidden = VectorAftrekken(hidden, T1);
 		hidden = VectorSign(hidden);
 
-		double[] result = new double[2];
+		float[] result = new float[2];
 		result = VectorMatrix(hidden, W2);
 		result = VectorAftrekken(result, T2);
 		result = VectorSign(result);
 
-		double maxValue = result.Max();
+		float maxValue = result.Max();
  		int maxIndex = result.ToList().IndexOf(maxValue);
 
  		return maxIndex++;
 	}
 
-	double[] VectorMatrix(double[] m, double[][] n){
+	float[] VectorMatrix(float[] m, float[][] n){
 
-		double[] answer = new double[n[0].Length];
+		float[] answer = new float[n[0].Length];
 
 		for (int i = 0 ; i<n.Length; i++)
 		{
@@ -71,9 +71,9 @@ public class NeuralResult : MonoBehaviour {
 		return answer;
 	}
 
-	double[] VectorAftrekken(double[] n , double[] m){
+	float[] VectorAftrekken(float[] n , float[] m){
 
-		double[] answer = new double[n.Length];
+		float[] answer = new float[n.Length];
 		for (int i=0; i<n.Length; i++) {
 				answer [i] = n [i] - m [i];
 		}
@@ -81,9 +81,9 @@ public class NeuralResult : MonoBehaviour {
 
 	}
 
-	double[] VectorSign(double[] n){
+	float[] VectorSign(float[] n){
 
-		double[] answer = new double[n.Length];
+		float[] answer = new float[n.Length];
 		for (int i = 0; i<n.Length; i++) 
 		{
 				answer [i] = 1 / (1 + Mathf.Exp (-1 * n [i]));
