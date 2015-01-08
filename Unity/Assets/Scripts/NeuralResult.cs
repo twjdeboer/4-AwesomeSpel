@@ -28,44 +28,53 @@ public class NeuralResult : MonoBehaviour {
 	private float[] T2 = new float[] {0.25463f,1.6389f};
 
 	public float[] foundevidence;
+	public int uitkomst;
 
 	// Use this for initialization
 	void Start () {
-	
+		uitkomst = CalcOutput(foundevidence);
+
 	}
 	
-	// Update is called once per frame
-	void Update () {
+	//// Update is called once per frame
+	//void Update () {
 	
-	}
+	//}
 
 	int CalcOutput( float[] n){
 
+		//calc hidden layer
 		float[] hidden = new float[10];
-		hidden = VectorMatrix(n,W1);
+		hidden = VectorMatrix(n, W1);
 		hidden = VectorAftrekken(hidden, T1);
 		hidden = VectorSign(hidden);
 
+		//calc output
 		float[] result = new float[2];
 		result = VectorMatrix(hidden, W2);
 		result = VectorAftrekken(result, T2);
 		result = VectorSign(result);
 
-		float maxValue = result.Max();
- 		int maxIndex = result.ToList().IndexOf(maxValue);
+		//select output
+		int ans = 1;
+		if (result[1]>result[0])
+		{
+			ans++;
+		}
 
- 		return maxIndex++;
+		return ans;
+
 	}
 
 	float[] VectorMatrix(float[] m, float[][] n){
 
-		float[] answer = new float[n[0].Length];
+		float[] answer = new float[n.Length];
 
 		for (int i = 0 ; i<n.Length; i++)
 		{
 			for (int j = 0 ; j<m.Length; j++)
 			{
-				answer[i] += m[j]*n[i,j];
+				answer[i] += m[j]*n[i][j];
 			}
 		}
 		return answer;
