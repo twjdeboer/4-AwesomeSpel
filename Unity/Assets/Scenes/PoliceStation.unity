@@ -5537,8 +5537,8 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 368666dcecb2d0540b14292fd70d9deb, type: 2}
-  - {fileID: 2100000, guid: 2c58e4a4aa0f7a144989e43fdc516fe0, type: 2}
+  - {fileID: 2100000, guid: b1b84775e7886304a83a540989da7c93, type: 2}
+  - {fileID: 2100000, guid: 499c30d699e20a344a1eb02bc7f66e3f, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -5881,6 +5881,7 @@ GameObject:
   - 23: {fileID: 553951287}
   - 64: {fileID: 553951286}
   - 95: {fileID: 553951285}
+  - 114: {fileID: 553951290}
   m_Layer: 0
   m_Name: Laptop
   m_TagString: Untagged
@@ -5961,6 +5962,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
+--- !u!114 &553951290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 553951284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8589090f8a18d4849968686ac1f8b889, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foundevidence:
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  uitkomst: 0
 --- !u!1 &554086525
 GameObject:
   m_ObjectHideFlags: 0
@@ -7499,6 +7522,7 @@ MonoBehaviour:
   walkSpeed: 5
   rotateSpeed: 20
   runSpeed: 1
+  playerName: 
 --- !u!136 &699582879
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -21609,8 +21633,8 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 368666dcecb2d0540b14292fd70d9deb, type: 2}
-  - {fileID: 2100000, guid: 2c58e4a4aa0f7a144989e43fdc516fe0, type: 2}
+  - {fileID: 2100000, guid: b1b84775e7886304a83a540989da7c93, type: 2}
+  - {fileID: 2100000, guid: 499c30d699e20a344a1eb02bc7f66e3f, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0

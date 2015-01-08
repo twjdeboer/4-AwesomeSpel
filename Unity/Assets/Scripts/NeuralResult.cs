@@ -83,8 +83,9 @@ public class NeuralResult : MonoBehaviour {
 	float[] VectorAftrekken(float[] n , float[] m){
 
 		float[] answer = new float[n.Length];
-		for (int i=0; i<n.Length; i++) {
-				answer [i] = n [i] - m [i];
+		for (int i=0; i<n.Length; i++) 
+		{
+			answer [i] = n [i] - m [i];
 		}
 		return answer; 
 
@@ -95,7 +96,7 @@ public class NeuralResult : MonoBehaviour {
 		float[] answer = new float[n.Length];
 		for (int i = 0; i<n.Length; i++) 
 		{
-				answer [i] = 1 / (1 + Mathf.Exp (-1 * n [i]));
+			answer [i] = 1 / (1 + Mathf.Exp (-1 * n [i]));
 		}
 		return answer;
 	}
