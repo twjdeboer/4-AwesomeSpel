@@ -5,11 +5,39 @@
     <QUESTION TEXT ="How do you feel???">
       <OPTION>
         <TEXT>Good.</TEXT>
-        <REACTION>That's nice! Sure you're doing some important stuff what makes you feel good?</REACTION>
+        <REACTION TEXT ="That's nice! Sure you're doing some important stuff what makes you feel good?">
+          <SEQUEL>
+            <TALK>TESTJE</TALK>
+            <NPC>HET WERKT.</NPC>
+            <QUESTION TEXT ="What stuff?">
+              <OPTION>
+                <TEXT>The best.</TEXT>
+                <REACTION TEXT ="That's nice! Sure you're doing some impo feel good?">
+                  <SEQUEL>
+                    <QUESTION TEXT ="YOLOOO">
+                      <OPTION>
+                        <TEXT>deze kiezen</TEXT>
+                        <REACTION TEXT ="MOOI" />
+                      </OPTION>
+                      <OPTION>
+                        <TEXT> niet deze</TEXT>
+                        <REACTION TEXT="BOOOOE"/>
+                      </OPTION>
+                    </QUESTION>
+                    </SEQUEL>
+                  </REACTION>
+                </OPTION>
+                <OPTION>
+                  <TEXT>Bad. </TEXT>
+                  <REACTION TEXT ="I'm sorry. Something important what did go wrong?"></REACTION>
+                </OPTION>
+          </QUESTION>
+          </SEQUEL>
+        </REACTION>
       </OPTION>
       <OPTION>
         <TEXT>Bad. </TEXT>
-        <REACTION>I'm sorry. Something important what did go wrong?</REACTION>
+        <REACTION TEXT ="I'm sorry. Something important what did go wrong?"></REACTION>
       </OPTION>
     </QUESTION>  
   </PLAYER>
@@ -17,15 +45,32 @@
     <QUESTION TEXT ="What did you do?">
       <OPTION>
         <TEXT>Nothing</TEXT>
-        <REACTION>That's boring. Let me do something to cheer our day! *Makes funny faces*</REACTION>
+        <REACTION TEXT="That's boring. Let me do something to cheer our day! *Makes funny faces*">
+          <SEQUEL>
+            <QUESTION TEXT ="VRAAGJE">
+              <OPTION>
+                <TEXT>JOO</TEXT>
+                <REACTION TEXT ="yolooo"/>
+              </OPTION>
+              <OPTION>
+                <TEXT>HELLO</TEXT>
+                <REACTION TEXT="chill"/>
+              </OPTION>
+            </QUESTION>
+          </SEQUEL>
+        </REACTION>
       </OPTION>
       <OPTION>
         <TEXT>Solving Murder Case</TEXT>
-        <REACTION>Aii, I didn't knew something was mudered. I should read the newspaper now! *Leaves to buy a newspaper*</REACTION>
+        <REACTION TEXT="Aii, I didn't knew something was mudered. I should read the newspaper now! *Leaves to buy a newspaper*"></REACTION>
       </OPTION>
       <OPTION>
         <TEXT>Beat you up</TEXT>
-        <REACTION>AHHHHHHH! *Runs away fast *</REACTION>
+        <REACTION TEXT ="AHHHHHHH! *Runs away fast *">
+          <SEQUEL>
+            <TALK>RUN FOR YOUR LIFEE.</TALK>
+          </SEQUEL>
+         </REACTION>
       </OPTION>
     </QUESTION>  
     <TALK>HALLLOOOOOOOOOO.</TALK>

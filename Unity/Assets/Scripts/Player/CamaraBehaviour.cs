@@ -77,7 +77,6 @@ public class CamaraBehaviour : MonoBehaviour {
         if (setOffset)
         {
             this.offset = transform.position - ResourceManager.playerPosition;
-            Debug.Log(transform.position - ResourceManager.playerPosition);
             setOffset = false;
         }
     }
