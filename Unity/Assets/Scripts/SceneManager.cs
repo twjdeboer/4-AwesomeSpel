@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
-using WebRequest;
 
 public class SceneManager : MonoBehaviour {
 
@@ -61,7 +60,9 @@ public class SceneManager : MonoBehaviour {
         }
     }
 
-
+	void CheckLogin(){
+		string username = GameObject.Find("username").GetComponent<InputField>().text;
+	}
 
     void ToggleMenu(bool toggle)
     {
@@ -126,7 +127,8 @@ public class SceneManager : MonoBehaviour {
 	}
 
 	void CheckLogin() {
-			
+		string username = GameObject.Find("username").GetComponent<InputField>().text;
+		string password = GameObject.Find("password").GetComponent<InputField>().text;
 		}
 
 	void setCanvasActive(GameObject canvas) {
