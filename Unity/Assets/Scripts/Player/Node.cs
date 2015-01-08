@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Node : MonoBehaviour{
 
-    public bool accesable = true;
+    public bool accesable = false;
     public int xPos;
     public int yPos;
     public GameObject[] parentNode;
@@ -22,19 +22,11 @@ public class Node : MonoBehaviour{
 
     void OnTriggerEnter(Collider other)
     {
-        if(!other.gameObject.tag.Contains("Walk"))
+        if(other.gameObject.tag.Contains("Walk"))
         {
-            this.accesable = false;
+            this.accesable = true;
 
         }
     }
-
-    void OnTriggerExit(Collider other)
-    {
-        this.accesable = true;
-    }
-
-
-
 
 }

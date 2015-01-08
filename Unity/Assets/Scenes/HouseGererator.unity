@@ -2190,6 +2190,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 701093851}
   - 114: {fileID: 701093852}
+  - 114: {fileID: 701093850}
   m_Layer: 0
   m_Name: Worldloader
   m_TagString: Untagged
@@ -2197,6 +2198,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &701093850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 701093849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2a5a8bd0d29ed542be0b2c2bc08c128, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  light: {fileID: 400000, guid: 981849e5bfa334b49afab3fffe3c38c6, type: 2}
+  HouseContainer: {fileID: 924383302}
 --- !u!4 &701093851
 Transform:
   m_ObjectHideFlags: 0
