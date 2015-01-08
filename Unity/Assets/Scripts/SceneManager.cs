@@ -60,10 +60,6 @@ public class SceneManager : MonoBehaviour {
         }
     }
 
-	void CheckLogin(){
-		string username = GameObject.Find("username").GetComponent<InputField>().text;
-	}
-
     void ToggleMenu(bool toggle)
     {
         if(toggle)
