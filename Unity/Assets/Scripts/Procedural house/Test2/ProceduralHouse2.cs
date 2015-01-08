@@ -19,7 +19,7 @@ public class ProceduralHouse2{
 	private int windowtexture = Random.Range (1, 5);
 	
 	private float xscale;
-	private Vector3 originscale;
+	//private Vector3 originscale;
 	private Vector3 scale;
 	private Vector3 pos;
 	private Quaternion rot;
@@ -31,7 +31,7 @@ public class ProceduralHouse2{
 	
 	private float doorzpos;
 	private float doorypos;
-	private float doorzscale;
+	//private float doorzscale;
 	private float dooryscale;
 	
 	private	int[] xposa;
@@ -50,7 +50,7 @@ public class ProceduralHouse2{
 		staticnumber++;
 		this.House = House;
 		scale = House.transform.localScale;
-		originscale = House.transform.localScale;
+		//originscale = House.transform.localScale;
 		pos = House.transform.position;
 		rot = House.transform.rotation;
 		empty.transform.position = pos;
@@ -151,7 +151,7 @@ public class ProceduralHouse2{
 		GameObject doorRight=GameObject.Find ("/HouseBox"+mynumber+"/Door(Clone)/Right");
 		
 		Vector3 temp = pos;
-		doorzscale = doorWindow.transform.localScale.z;
+		//doorzscale = doorWindow.transform.localScale.z;
 		dooryscale = doorWindow.transform.localScale.y;
 		temp.y += (float)0.5*dooryscale;	//grond niveau
 		temp.x += (float)0.5*scale.x;		//rand blokje

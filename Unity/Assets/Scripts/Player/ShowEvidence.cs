@@ -8,8 +8,8 @@ public class ShowEvidence : MonoBehaviour
 {
     private List<GameObject> evidenceList = new List<GameObject>();
     private int index = 0;
-    private float X;
-    private float Y;
+   // private float X;
+   // private float Y;
 
     // Use this for initialization
     void Start()
@@ -36,8 +36,8 @@ public class ShowEvidence : MonoBehaviour
 
     void getScreenSize()
     {
-        X = Screen.width;
-        Y = Screen.height;
+       // X = Screen.width;
+       // Y = Screen.height;
     }
 
     void FillList()

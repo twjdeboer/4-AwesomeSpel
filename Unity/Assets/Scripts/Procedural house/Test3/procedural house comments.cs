@@ -16,7 +16,7 @@ public class proceduralhousecomments : MonoBehaviour {
 	private int windowtexture = Random.Range (1, 5);
 	
 	private float xscale;
-	private Vector3 originscale;
+	//private Vector3 originscale;
 	private Vector3 scale;
 	private Vector3 pos;
 	private Quaternion rot;
@@ -28,7 +28,7 @@ public class proceduralhousecomments : MonoBehaviour {
 	
 	private float doorzpos;
 	private float doorypos;
-	private float doorzscale;
+	//private float doorzscale;
 	private float dooryscale;
 	
 	private	int[] xposa;
@@ -54,7 +54,7 @@ public class proceduralhousecomments : MonoBehaviour {
 		staticnumber++;
 		this.House = House;
 		scale = House.transform.localScale;
-		originscale = House.transform.localScale;
+		//originscale = House.transform.localScale;
 		
 		pos = House.transform.position;
 		rot = House.transform.rotation;
@@ -153,7 +153,7 @@ public class proceduralhousecomments : MonoBehaviour {
 		GameObject doorWindow=GameObject.Find ("/HouseBox"+mynumber+"/Door(Clone)/Window");
 
 		Vector3 temp = pos;
-		doorzscale = doorWindow.transform.localScale.z;
+		//doorzscale = doorWindow.transform.localScale.z;
 		dooryscale = doorWindow.transform.localScale.y;
 		temp.y += (float)0.5*dooryscale;	//grond niveau
 		temp.x += (float)0.5*scale.x;		//rand blokje
