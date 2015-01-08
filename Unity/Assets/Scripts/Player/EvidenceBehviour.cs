@@ -6,7 +6,7 @@ using System.Collections.Generic;
 public class EvidenceBehviour : MonoBehaviour {
 
     public string description;
-    public string name;
+    public string evidencename;
     public Vector3 rotationIfSelected;
     public Vector3 translateIfSelected;
     public float scaleFactorIfSelected;
@@ -74,7 +74,7 @@ public class EvidenceBehviour : MonoBehaviour {
     {
         evidenceInterface.GetComponent<CanvasGroup>().alpha = 1;
         descriptionText.text = description;
-        evidenceNameText.text = name;
+		evidenceNameText.text = evidencename;
     }
 
     /**
@@ -146,7 +146,7 @@ public class EvidenceBehviour : MonoBehaviour {
         {
             evidenceInterface.GetComponent<CanvasGroup>().alpha = 0;
             GameObject.Find("PickedUpEvidence").GetComponent<PickedUpEvidence>().activated = true;
-            GameObject.Find("PickedUpEvidence").GetComponent<PickedUpEvidence>().text.text = "Picked up " + name ;
+			GameObject.Find("PickedUpEvidence").GetComponent<PickedUpEvidence>().text.text = "Picked up " + evidencename ;
             if (evidenceInterface.GetComponent<CanvasGroup>().alpha == 0)
             {
                 ResourceManager.evidenceList.Add(this.gameObject);

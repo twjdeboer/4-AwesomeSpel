@@ -27,7 +27,7 @@ public class Testblok2 : MonoBehaviour {
 	private bool preHouses;
 	private int loadsize;
 	private int loadprogress;
-	private float Timer=0;
+	//private float Timer=0;
 	private GameObject[] housboxes;
 	private string currentload;
 	private GameObject loader;

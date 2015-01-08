@@ -23,7 +23,7 @@ public class LightningController : MonoBehaviour
 				lightning_point.GetComponent<Light> ().intensity = 0;
 
 				timer = Random.Range (5f, 10f);
-				Debug.Log (timer);
+				//Debug.Log (timer);
 				lightninglength = 0;
 		}
 	
@@ -50,7 +50,7 @@ public class LightningController : MonoBehaviour
 								timer = Random.Range (10F, 15F);
 								elapsedtime = 0;
 								lightninglength = 0;
-								Debug.Log (timer);
+								//Debug.Log (timer);
 								int clipselect = Random.Range (0, 3);
 								switch (clipselect) {
 								case 0:
