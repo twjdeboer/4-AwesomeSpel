@@ -1445,7 +1445,6 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -1462,6 +1461,16 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
 --- !u!223 &510021725
 Canvas:
   m_ObjectHideFlags: 0
@@ -1476,6 +1485,7 @@ Canvas:
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
 --- !u!1 &526621395
@@ -1538,6 +1548,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
+  m_DragThreshold: 5
 --- !u!4 &526621399
 Transform:
   m_ObjectHideFlags: 0
@@ -2179,6 +2190,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 701093851}
   - 114: {fileID: 701093852}
+  - 114: {fileID: 701093850}
   m_Layer: 0
   m_Name: Worldloader
   m_TagString: Untagged
@@ -2186,6 +2198,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &701093850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 701093849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2a5a8bd0d29ed542be0b2c2bc08c128, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  light: {fileID: 400000, guid: 981849e5bfa334b49afab3fffe3c38c6, type: 2}
+  HouseContainer: {fileID: 924383302}
 --- !u!4 &701093851
 Transform:
   m_ObjectHideFlags: 0
@@ -4500,7 +4525,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1267649748}
-  m_HideIfInvisible: 0
 --- !u!224 &1267649751
 RectTransform:
   m_ObjectHideFlags: 0

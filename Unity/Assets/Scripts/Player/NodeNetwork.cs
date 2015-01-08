@@ -36,6 +36,7 @@ public class NodeNetwork {
      * */
     GameObject node(float xPos, float zPos, int i, int j)
     {
+		/*
 		GameObject primitive = MonoBehaviour.Instantiate(Resources.Load ("Prefabs/Node", typeof(GameObject))) as GameObject;
 		primitive.transform.position = new Vector3(xPos, 0, zPos);
 		primitive.transform.localScale = new Vector3(0.75f, 0.75f, 0.75f);
@@ -44,8 +45,8 @@ public class NodeNetwork {
 		primitive.GetComponent<Node>().xPos = i;
 		primitive.GetComponent<Node>().yPos = j;
 		return primitive;
-		/*
-        GameObject primitive = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+		/*/
+        GameObject primitive = GameObject.CreatePrimitive(PrimitiveType.Cube);
         primitive.transform.position = new Vector3(xPos, 0, zPos);
         primitive.collider.isTrigger = true;
         primitive.gameObject.AddComponent("Rigidbody");
@@ -60,7 +61,7 @@ public class NodeNetwork {
         primitive.GetComponent<Node>().yPos = j;
         primitive.renderer.material = (Material)Resources.Load("Textures/Invisible");
         return primitive;
-        */
+
     }
 
     /**
