@@ -81,9 +81,9 @@ public class ProceduralHouseblok2{
 			Vector3 ptemp1 = pos;
 			Vector3 ptemp2 = pos;
 			
-			int rand2 = (int)Random.Range (-scale.z/2f,scale.z/2f);
+			//int rand2 = (int)Random.Range (-scale.z/2f,scale.z/2f);
 			int rand = (int)Random.Range(0,Mathf.Floor(scale.z/6f));
-			int rand3 = (int)Random.Range(0,3);
+			//int rand3 = (int)Random.Range(0,3);
 			//MonoBehaviour.print (rand);
 			//newlefthouse = new GameObject ();
 			//newrighthouse = new GameObject ();

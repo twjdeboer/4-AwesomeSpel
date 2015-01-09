@@ -28,7 +28,7 @@ public class ProceduralHouse{
 	
 	private float doorzpos;
 	private float doorypos;
-	private float doorzscale;
+	//private float doorzscale;
 	private float dooryscale;
 	
 	private	int[] xposa;
@@ -181,7 +181,7 @@ public class ProceduralHouse{
 		GameObject doorWindow=GameObject.Find ("/HouseBox"+mynumber+"/Door(Clone)/Window");
 
 		Vector3 temp = pos;
-		doorzscale = doorWindow.transform.localScale.z;
+		//doorzscale = doorWindow.transform.localScale.z;
 		dooryscale = doorWindow.transform.localScale.y;
 		temp.y += (float)0.5*dooryscale;	//grond niveau
 		temp.x += (float)0.5*scale.x;		//rand blokje

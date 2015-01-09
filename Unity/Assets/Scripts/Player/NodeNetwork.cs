@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class NodeNetwork {
-    private Vector3 pos;
+   // private Vector3 pos;
     private Vector2 numberOfNodes;
     private GameObject[,] network;
  
@@ -11,7 +11,7 @@ public class NodeNetwork {
      * */
     public NodeNetwork(Vector3 pos, Vector2 numberOfNodes)
     {
-        this.pos = pos;
+        //this.pos = pos;
         this.network = new GameObject[(int)numberOfNodes.x, (int)numberOfNodes.y];
         this.numberOfNodes = numberOfNodes;
 

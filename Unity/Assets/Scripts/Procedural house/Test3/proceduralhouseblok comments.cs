@@ -101,9 +101,9 @@ public class proceduralhouseblokcomments {
 			Vector3 ptemp1 = pos;
 			Vector3 ptemp2 = pos;
 			
-			int rand2 = (int)Random.Range (-scale.z/2f,scale.z/2f);
+			//int rand2 = (int)Random.Range (-scale.z/2f,scale.z/2f);
 			int rand = (int)Random.Range(0,Mathf.Floor(scale.z/6f));
-			int rand3 = (int)Random.Range(0,3);
+			//int rand3 = (int)Random.Range(0,3);
 			
 			newlefthouse = MonoBehaviour.Instantiate(Resources.Load ("Prefabs/House", typeof(GameObject))) as GameObject;	
 			newrighthouse = MonoBehaviour.Instantiate(Resources.Load ("Prefabs/House", typeof(GameObject))) as GameObject;
