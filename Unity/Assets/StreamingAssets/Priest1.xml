@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+	This is the version where you don't have sufficient evidence.
+	So in order to keep inner peace you decide to take matters in your own hand...........
+-->
+<conversation>
+	<NPC>Well well well, look who we have here, Johnny Law</NPC>
+	<TALK>Wisemouth. We both know what happened to $victim.name.toString() </TALK>
+	<NPC>Who again?</NPC>
+	<TALK>Quit the act, I know you did it.</TALK>
+	<NPC>But I'm not yet in cuffs. What's holding you back?</NPC>
+	<TALK>I know you did it, I just can't prove it. Yet.</TALK>
+	<NPC>But my friend, you must be mistaking. I'm an honest man of the Lord.</NPC>
+	<TALK>That act won't work on me. But it will on a jury, so without the evidence.......</TALK>
+	<NPC>I will keep on living like I do now.</NPC>
+
+</conversation>

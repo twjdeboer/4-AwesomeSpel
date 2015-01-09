@@ -1,21 +1,53 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-
-
 <conversation>
-  
-    <NPC>Hello!</NPC>
-    <PLAYER>
-      <QUESTION TEXT ="Say hello?">
-        <OPTION>
-          <TEXT>Hello my friend! How you doing?</TEXT>
-          <REACTION TEXT ="Thanks for asking! It's going very well. It is a beatiful isn't is. I have nothing to complain about. Excuse me but I have to leave. Thanks for your kidness."></REACTION>
-        </OPTION>
-        <OPTION>
-          <TEXT>I Have no time for small talk</TEXT>
-          <REACTION TEXT ="Sorry grumpa!"></REACTION>
-        </OPTION>
-      </QUESTION>
-    </PLAYER>
-
-  
+  <NPC>Hello. Have you finally solved the case?</NPC>
+  <PLAYER>
+    <QUESTION TEXT="What is your progress?">
+      <OPTION>
+        <TEXT>No, I still have no idea who did it.</TEXT>
+        <REACTION TEXT="Well, what are you standing here then. Go out and finnd some evidence"></REACTION>
+      </OPTION>
+      <OPTION>
+        <TEXT>I think I got enough evidence to put the killer behind bars for life.</TEXT>
+        <REACTION TEXT="That's good. Well show me what you got.">
+          <SEQUEL>
+            <TALK>Oké, here it is *shows collected evidence* </TALK>
+            <NPC>*looks at evidence* Well, that's quite something</NPC>
+            <TALK>But Chief, will it be enough?</TALK>
+            <NPC>Let's ask the computer *types on laptop* </NPC>
+            <NPC>While we're waiting for the result, have you heard the joke about the restaurant on the moon?</NPC>
+            <PLAYER>
+              <QUESTION TEXT="Do you know the joke?">
+                <OPTION>
+                  <TEXT>No, tell me</TEXT>
+                  <REACTION TEXT="Great food, but it has no atmosphere HAHA">
+                    <SEQUEL>
+                      <TALK>Are you serious? That's so corny.</TALK>
+                    </SEQUEL>
+                  </REACTION>
+                </OPTION>
+                <OPTION>
+                  <TEXT>I don't wanna hear your stupid jokes</TEXT>
+                  <REACTION TEXT="Too bad, it was hilarious">
+                    <SEQUEL>
+                      <TALK>OK then, tell me</TALK>
+                      <NPC>Great food, but it has no atmosphere HAHA</NPC>
+                      <TALK>I knew it would be bad...</TALK>
+                    </SEQUEL>
+                  </REACTION>
+                </OPTION>
+              </QUESTION>
+            </PLAYER>
+            <NPC>You just don't get it. It's a social comment on the expectations of the nouveau-riche.</NPC>
+            <TALK>You know, explaining a joke is like dissecting a frog; you understand it better, but it dies in the proces.</Talk>
+            <NPC>Ah, the computer is finished</NPC>
+            <TALK>Finally, no more jokes from you then. What does it say?</TALK>
+            <NPC>I says you need to go see the priest. If you know what I'm saying.</NPC>
+            <TALK>Yes, I believe I do know what you are saying</TALK>
+          </SEQUEL>
+        </REACTION>
+      </OPTION>        
+    </QUESTION>
+    <TALK>OK, I'll be on my way.</TALK>
+  </PLAYER>
 </conversation>
