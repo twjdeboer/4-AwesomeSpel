@@ -13,8 +13,9 @@ public class LightningController : MonoBehaviour
     public AudioClip lightning1;
     public AudioClip lightning2;
     public AudioClip lightning3;
-    public Vector3 shakeSpeed;
-    public Vector3 amplitude;
+    public float shakeSpeed;
+    public float amplitude;
+    public float dampFactor;
 
 
     // Use this for initialization
@@ -23,6 +24,7 @@ public class LightningController : MonoBehaviour
         useCamera = GameObject.Find("MenuCamera");
         useCamera.GetComponent<CameraShaker>().shakeSpeed = shakeSpeed;
         useCamera.GetComponent<CameraShaker>().amplitude = amplitude;
+        useCamera.GetComponent<CameraShaker>().dampFactor = dampFactor;
         lightning_spot = GameObject.Find("Lightning_spot");
         lightning_point = GameObject.Find("Lightning_point");
 
