@@ -7,11 +7,11 @@
     <QUESTION TEXT ="What took me so long?">
       <OPTION>
         <TEXT>It was hard to find you, I admit it. But now we are here</TEXT>
-        <REACTION>So I see. What led you to me?</REACTION>
+        <REACTION TEXT ="So I see. What led you to me?"></REACTION>
       </OPTION>
       <OPTION>
         <TEXT>You should have known; you can run, but you can't hide from the law.</TEXT>
-        <REACTION>But how did you find me?</REACTION>
+        <REACTION TEXT ="But how did you find me?"></REACTION>
       </OPTION>
     </QUESTION>
   </PLAYER>
@@ -19,11 +19,11 @@
     <QUESTION TEXT ="How did you know it was the priest?">
       <OPTION>
         <TEXT>Your prints were all over the evidence. You had no chance to get away with it!</TEXT>
-        <REACTION>My prints. I should have known better.</REACTION>
+        <REACTION TEXT ="My prints. I should have known better."></REACTION>
       </OPTION>
       <OPTION>
         <TEXT>We have several withnisses that put you on he crimescene with a motive.</TEXT>
-        <REACTION>Why believe them? I'm a man of the Lord!</REACTION>
+        <REACTION TEXT ="Why believe them? I'm a man of the Lord!"></REACTION>
       </OPTION>
     </QUESTION> 
   </PLAYER>
@@ -32,11 +32,11 @@
     <QUESTION TEXT ="What do you think? Make a deal with a killer?">
       <OPTION>
         <TEXT>No way! I'm an honest man. I will never do such a thing!</TEXT>
-        <REACTION>That's to bad. So i guess i have to kill you now.</REACTION>
+        <REACTION TEXT ="That's to bad. So i guess i have to kill you now."></REACTION>
       </OPTION>
       <OPTION>
         <TEXT>Well... No!</TEXT>
-        <REACTION>Well, you leave me no choise. I have to kill you</REACTION>
+        <REACTION TEXT ="Well, you leave me no choise. I have to kill you"></REACTION>
       </OPTION>
     </QUESTION>  
   </PLAYER>
@@ -45,11 +45,11 @@
     <QUESTION TEXT ="Famous last words">
       <OPTION>
         <TEXT>I wouldn't do that if I were you. </TEXT>
-        <REACTION>Why not?</REACTION>
+        <REACTION TEXT ="Why not?"></REACTION>
       </OPTION>
       <OPTION>
         <TEXT>You and what army? You're outnumbered, fool!</TEXT>
-        <REACTION>How do you mean?</REACTION>
+        <REACTION TEXT ="How do you mean?"></REACTION>
       </OPTION>
     </QUESTION>  
   </PLAYER>
@@ -58,11 +58,11 @@
     <QUESTION TEXT ="Witty remark">
       <OPTION>
         <TEXT>If you kill me, you will find out in no-time.</TEXT>
-        <REACTION>Okey, let's be resonable now.</REACTION>
+        <REACTION TEXT ="Okey, let's be resonable now."></REACTION>
       </OPTION>
       <OPTION>
         <TEXT>There is no way you get away now.</TEXT>
-        <REACTION>Okey, wait. Wait. I'm sure we can talk about it.</REACTION>
+        <REACTION TEXT ="Okey, wait. Wait. I'm sure we can talk about it."></REACTION>
       </OPTION>
     </QUESTION>  
   </PLAYER>
