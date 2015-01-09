@@ -166,15 +166,23 @@ public class SceneManager : MonoBehaviour {
 		string username = GameObject.Find("username").GetComponent<InputField>().text;
 	}
 
-	void setCanvasActive(GameObject canvas) {
-		canvas.GetComponent<CanvasGroup>().alpha = 1.0f;
-		canvas.GetComponent<CanvasGroup>().interactable = true;
-		canvas.GetComponent<CanvasGroup>().blocksRaycasts = true;
-	}
-	
-	void setCanvasInactive(GameObject canvas) {
-		canvas.GetComponent<CanvasGroup>().alpha = 0.0f;
-		canvas.GetComponent<CanvasGroup>().interactable = false;
-		canvas.GetComponent<CanvasGroup>().blocksRaycasts = false;
-	}
+    void setCanvasActive(GameObject canvas)
+    {
+        if (canvas != null)
+        {
+            canvas.GetComponent<CanvasGroup>().alpha = 1.0f;
+            canvas.GetComponent<CanvasGroup>().interactable = true;
+            canvas.GetComponent<CanvasGroup>().blocksRaycasts = true;
+        }
+    }
+
+    void setCanvasInactive(GameObject canvas)
+    {
+        if (canvas != null)
+        {
+            canvas.GetComponent<CanvasGroup>().alpha = 0.0f;
+            canvas.GetComponent<CanvasGroup>().interactable = false;
+            canvas.GetComponent<CanvasGroup>().blocksRaycasts = false;
+        }
+    }
 }
