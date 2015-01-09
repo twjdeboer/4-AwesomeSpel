@@ -598,7 +598,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -1820,7 +1820,7 @@ GameObject:
   - 65: {fileID: 71400324}
   m_Layer: 0
   m_Name: Vloer
-  m_TagString: Untagged
+  m_TagString: Ground Walk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4795,11 +4795,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 216929866}
   - 95: {fileID: 216929867}
-  - 54: {fileID: 216929870}
   - 64: {fileID: 216929871}
   m_Layer: 0
   m_Name: PoliceStation
-  m_TagString: Untagged
+  m_TagString: Ground Walk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4835,21 +4834,6 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!54 &216929870
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 216929865}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: .0500000007
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!64 &216929871
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -18835,6 +18819,14 @@ Prefab:
     - target: {fileID: 400012, guid: e51f57f06b1e29046a2ea0334377e101, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e51f57f06b1e29046a2ea0334377e101, type: 3}
+      propertyPath: m_TagString
+      value: Ground Walk
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: e51f57f06b1e29046a2ea0334377e101, type: 3}
+      propertyPath: m_TagString
+      value: Ground Walk
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e51f57f06b1e29046a2ea0334377e101, type: 3}
