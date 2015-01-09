@@ -5,7 +5,7 @@ public class LightningController : MonoBehaviour
 {
     private GameObject lightning_spot;
     private GameObject lightning_point;
-    private GameObject camera;
+    private GameObject useCamera;
     private int lightninglength;
     private double timer;
     private double elapsedtime;
@@ -20,9 +20,9 @@ public class LightningController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        camera = GameObject.Find("MenuCamera");
-        camera.GetComponent<CameraShaker>().shakeSpeed = shakeSpeed;
-        camera.GetComponent<CameraShaker>().amplitude = amplitude;
+        useCamera = GameObject.Find("MenuCamera");
+        useCamera.GetComponent<CameraShaker>().shakeSpeed = shakeSpeed;
+        useCamera.GetComponent<CameraShaker>().amplitude = amplitude;
         lightning_spot = GameObject.Find("Lightning_spot");
         lightning_point = GameObject.Find("Lightning_point");
 
@@ -71,8 +71,8 @@ public class LightningController : MonoBehaviour
 										lightning = lightning3;
 										break;
 								}
-                                camera.GetComponent<CameraShaker>().shakeDuration = lightning.length;
-                                camera.GetComponent<CameraShaker>().shake = true;
+                                useCamera.GetComponent<CameraShaker>().shakeDuration = lightning.length;
+                                useCamera.GetComponent<CameraShaker>().shake = true;
 								audio.PlayOneShot (lightning);
 						}
 				}
