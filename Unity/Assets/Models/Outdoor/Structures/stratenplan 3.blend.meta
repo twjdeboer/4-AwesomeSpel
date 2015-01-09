@@ -136,6 +136,7 @@ ModelImporter:
     100260: 7-horiz_right
     100262: dead_end
     100264: lines
+    100266: path
     400000: Plane
     400002: Plane_001
     400004: Plane_002
@@ -269,6 +270,7 @@ ModelImporter:
     400260: 7-horiz_right
     400262: dead_end
     400264: lines
+    400266: path
     2300000: Plane
     2300002: Plane_001
     2300004: Plane_002
@@ -400,6 +402,7 @@ ModelImporter:
     2300256: 7-horiz_right
     2300258: dead_end
     2300260: lines
+    2300262: path
     3300000: Plane
     3300002: Plane_001
     3300004: Plane_002
@@ -531,6 +534,7 @@ ModelImporter:
     3300256: 7-horiz_right
     3300258: dead_end
     3300260: lines
+    3300262: path
     4300000: Plane_001
     4300002: Plane_004_MeshPart0
     4300004: Plane_004_MeshPart1
@@ -662,6 +666,7 @@ ModelImporter:
     4300256: 44
     4300258: 42
     4300260: 41
+    4300262: path
     6400000: 1-horiz-left
     6400002: 1-horiz-right
     6400004: 1-vert-left
@@ -723,6 +728,7 @@ ModelImporter:
     6400116: Plane_004_MeshPart0
     6400118: Plane_004_MeshPart1
     6400120: Plane_004_MeshPart2
+    6400122: path
     7400000: Default Take
     9500000: //RootNode
   materials:

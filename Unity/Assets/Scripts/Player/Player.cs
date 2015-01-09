@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
 	private Animator anim;
     private float intSpeed;
     private Vector3 direction;
+    private bool isGrounded;
 
     //Methods
 
@@ -34,8 +35,8 @@ public class Player : MonoBehaviour
      **/
     void Walk(float walkSpeed,float rotateSpeed)
     {
-        float moveHorizontal = Input.GetAxisRaw("Horizontal");
-        float moveVertical = Input.GetAxisRaw("Vertical") ;
+        float moveHorizontal = Input.GetAxis("Horizontal");
+        float moveVertical = Input.GetAxis("Vertical") ;
         direction = ResourceManager.cam.TransformDirection(moveHorizontal, 0.0f, moveVertical);
         direction.y = 0;
         direction = direction.normalized;
@@ -44,11 +45,14 @@ public class Player : MonoBehaviour
 				} else {
 						anim.SetFloat ("Speed", 0);
 				}
-        Vector3 speed = (direction *  walkSpeed * Time.deltaTime) ;
-        rigidbody.velocity = speed;
-        RotateInWalkDirection(rotateSpeed, direction.x, direction.z);
-
+        Vector3 speed = (direction *  walkSpeed * Time.deltaTime);
+        if (isGrounded)
+        {
+            rigidbody.MovePosition(rigidbody.position + speed);
+            RotateInWalkDirection(rotateSpeed, direction.x, direction.z);
+        }
     }
+
 
     /**
      * Makes the player sprint when a certain button is pressed.
@@ -73,6 +77,30 @@ public class Player : MonoBehaviour
             float step = rotateSpeed * Time.deltaTime;
             Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0F);
             transform.rotation = Quaternion.LookRotation(newDir);
+        }
+    }
+
+    void OnCollisionEnter(Collision other)
+    {
+        if(other.gameObject.tag.Contains("Ground"))
+        {
+            isGrounded = true;
+        }
+    }
+
+    void OnCollisionStay(Collision other)
+    {
+        if (other.gameObject.tag.Contains("Ground"))
+        {
+            isGrounded = true;
+        }
+    }
+
+    void OnCollisionExit(Collision other)
+    {
+        if (other.gameObject.tag.Contains("Ground"))
+        {
+            isGrounded = false;
         }
     }
 
