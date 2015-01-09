@@ -30714,6 +30714,7 @@ MonoBehaviour:
   walkSpeed: 3
   rotateSpeed: 20
   runSpeed: 0
+  playerName: 
 --- !u!136 &1566468683
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -34357,6 +34358,9 @@ MonoBehaviour:
   lightning1: {fileID: 8300000, guid: 757d55ea85102424b99c938c096545ef, type: 3}
   lightning2: {fileID: 8300000, guid: 33a8b663145cc094d8be9294e8920194, type: 3}
   lightning3: {fileID: 8300000, guid: 73e9b7fd42f4ab64185e538495f0098d, type: 3}
+  shakeSpeed: {x: 0, y: 20, z: 0}
+  amplitude: {x: 1, y: .100000001, z: 0}
+  shakeDuration: 0
 --- !u!82 &1744642468
 AudioSource:
   m_ObjectHideFlags: 0
@@ -43915,6 +43919,7 @@ GameObject:
   - 92: {fileID: 2135084366}
   - 124: {fileID: 2135084365}
   - 81: {fileID: 2135084364}
+  - 114: {fileID: 2135084369}
   m_Layer: 0
   m_Name: MenuCamera
   m_TagString: MainCamera
@@ -43987,6 +43992,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1373902611}
   m_RootOrder: 0
+--- !u!114 &2135084369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2135084363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7501fb11b78e094b944c179fe7fbdb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: {x: 0, y: 0, z: 0}
+  shakeSpeed: {x: 0, y: 0, z: 0}
+  shakeDuration: 0
+  shake: 0
 --- !u!1 &2136872640
 GameObject:
   m_ObjectHideFlags: 0
