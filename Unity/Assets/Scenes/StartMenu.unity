@@ -30081,7 +30081,7 @@ CanvasGroup:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1526839843}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -35358,7 +35358,6 @@ MonoBehaviour:
   lightning3: {fileID: 8300000, guid: 73e9b7fd42f4ab64185e538495f0098d, type: 3}
   shakeSpeed: {x: 0, y: 20, z: 0}
   amplitude: {x: 1, y: .100000001, z: 0}
-  shakeDuration: 0
 --- !u!82 &1744642468
 AudioSource:
   m_ObjectHideFlags: 0
