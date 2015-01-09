@@ -8,6 +8,7 @@ public class SceneManager : MonoBehaviour {
     private GameObject pauseMenu;
     private GameObject startMenu;
 	private GameObject loginMenu;
+	private GameObject createMenu;
     public string firstPlayScene;
     public string startScene;
 
@@ -19,6 +20,8 @@ public class SceneManager : MonoBehaviour {
 		setCanvasInactive (startMenu);
 		loginMenu = GameObject.Find ("Login");
 		setCanvasInactive (loginMenu);
+		createMenu = GameObject.Find ("Create");
+		setCanvasInactive (createMenu);
         CheckStartMenu();
 	
 	}
@@ -122,9 +125,20 @@ public class SceneManager : MonoBehaviour {
 
 	}
 
+	void CreateAccount() {
+		setCanvasInactive(loginMenu);
+		setCanvasActive(createMenu);
+	}
+
+	void BackToLogin() {
+		setCanvasActive(loginMenu);
+		setCanvasInactive(createMenu);
+	}
+
 	void CheckLogin() {
 		string username = GameObject.Find("username").GetComponent<InputField>().text;
 		string password = GameObject.Find("password").GetComponent<InputField>().text;
+		GameObject.Find("errortext").GetComponent<Text>().text = "";
 		string url = "http://drproject.twi.tudelft.nl:8084/validateuser?username=" + username + "&password=" + password;
 		WWW www = new WWW(url);
 		StartCoroutine(GETLogin(www));
@@ -168,13 +182,13 @@ public class SceneManager : MonoBehaviour {
 	}
 
 	void setCanvasActive(GameObject canvas) {
-		canvas.GetComponent<CanvasGroup>().alpha = 1;
+		canvas.GetComponent<CanvasGroup>().alpha = 1.0f;
 		canvas.GetComponent<CanvasGroup>().interactable = true;
 		canvas.GetComponent<CanvasGroup>().blocksRaycasts = true;
 	}
 	
 	void setCanvasInactive(GameObject canvas) {
-		canvas.GetComponent<CanvasGroup>().alpha = 0;
+		canvas.GetComponent<CanvasGroup>().alpha = 0.0f;
 		canvas.GetComponent<CanvasGroup>().interactable = false;
 		canvas.GetComponent<CanvasGroup>().blocksRaycasts = false;
 	}
