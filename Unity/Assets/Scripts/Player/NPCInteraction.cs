@@ -59,6 +59,8 @@ public class NPCInteraction : MonoBehaviour {
     
 	void Start () 
     {
+        GameObject conversationObjects = Instantiate(Resources.Load("Prefabs/ConversationObjects")) as GameObject;
+        conversationObjects.transform.SetParent(GameObject.Find("Interface").transform , false);
         conversation = GameObject.Find("Conversation");
         conversationText = GameObject.Find("Conversation Text").GetComponent<Text>();
         nameText = GameObject.Find("Name Text").GetComponent<Text>();
