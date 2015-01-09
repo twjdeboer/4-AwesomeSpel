@@ -30081,7 +30081,7 @@ CanvasGroup:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1526839843}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -35356,9 +35356,14 @@ MonoBehaviour:
   lightning1: {fileID: 8300000, guid: 757d55ea85102424b99c938c096545ef, type: 3}
   lightning2: {fileID: 8300000, guid: 33a8b663145cc094d8be9294e8920194, type: 3}
   lightning3: {fileID: 8300000, guid: 73e9b7fd42f4ab64185e538495f0098d, type: 3}
+<<<<<<< HEAD
   shakeSpeed: {x: 0, y: 20, z: 0}
   amplitude: {x: 1, y: .100000001, z: 0}
-  shakeDuration: 0
+=======
+  shakeSpeed: 60
+  amplitude: 2
+  dampFactor: 1
+>>>>>>> 87ce85b4710798482d87242a0c918556785263ba
 --- !u!82 &1744642468
 AudioSource:
   m_ObjectHideFlags: 0
@@ -45424,9 +45429,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7501fb11b78e094b944c179fe7fbdb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amplitude: {x: 0, y: 0, z: 0}
-  shakeSpeed: {x: 0, y: 0, z: 0}
+  amplitude: 2
+  shakeSpeed: 60
   shakeDuration: 0
+  dampFactor: 1
   shake: 0
 --- !u!1 &2136872640
 GameObject:

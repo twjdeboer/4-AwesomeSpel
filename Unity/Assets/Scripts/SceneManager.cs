@@ -15,39 +15,23 @@ public class SceneManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         pauseMenu = GameObject.Find("PauseMenu");
-		setCanvasInactive (pauseMenu);
+			if (pauseMenu != null) setCanvasInactive (pauseMenu);
         startMenu = GameObject.Find("StartMenu");
-		setCanvasInactive (startMenu);
+			if (startMenu != null) {
+				if (Application.loadedLevelName == startScene)
+					setCanvasActive(startMenu);
+				else
+					setCanvasInactive(startMenu);		
+			}
 		loginMenu = GameObject.Find ("Login");
-		setCanvasInactive (loginMenu);
+			if (loginMenu != null) setCanvasInactive (loginMenu);
 		createMenu = GameObject.Find ("Create");
-		setCanvasInactive (createMenu);
-        CheckStartMenu();
-	
+			if (pauseMenu != null) setCanvasInactive (createMenu);
+
+
 	}
 
-    void CheckStartMenu()
-    {
-        if (Application.loadedLevelName == startScene)
-            ShowStartMenu(true);
-        else
-            ShowStartMenu(false);
-    }
-
-    void ShowStartMenu(bool show)
-    {
-        if(show)
-        {
-			setCanvasActive(startMenu);
-        }
-        else
-        {
-			setCanvasInactive(startMenu);
-        }
-    }
-	
-    void SetPause(bool pause)
-    {
+	void SetPause(bool pause) {
         if (pause)
         {
             Time.timeScale = 0;
@@ -91,9 +75,9 @@ public class SceneManager : MonoBehaviour {
             }
         }
     }
-    void Play()
-    {
-        ShowStartMenu(false);
+
+    void Play() {
+		setCanvasInactive(startMenu);
         Application.LoadLevel(firstPlayScene);
     }
 
@@ -143,11 +127,8 @@ public class SceneManager : MonoBehaviour {
 		WWW www = new WWW(url);
 		StartCoroutine(GETLogin(www));
 	}
-
-
-
-	IEnumerator GETLogin(WWW www)
-	{
+	
+	IEnumerator GETLogin(WWW www){
 		yield return www;
 		
 		// check for errors
@@ -161,7 +142,7 @@ public class SceneManager : MonoBehaviour {
 				case ("SUCCESS"):
 					string userid = result[1].Split(':')[1];
 					Debug.Log (userid);
-					ShowStartMenu(false);
+					setCanvasInactive(startMenu);
 					Application.LoadLevel(firstPlayScene);
 					break;
 				case ("INVALID USER"):
@@ -179,6 +160,10 @@ public class SceneManager : MonoBehaviour {
 		} else {
 			Debug.Log("WWW Error: "+ www.error);
 		}    
+	}
+
+	void Create(){
+		string username = GameObject.Find("username").GetComponent<InputField>().text;
 	}
 
 	void setCanvasActive(GameObject canvas) {

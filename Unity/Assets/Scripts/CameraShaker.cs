@@ -3,16 +3,17 @@ using System.Collections;
 
 public class CameraShaker : MonoBehaviour {
 
-    private Vector3 intPos;
+    private float intZoom;
     private float t;
-    public Vector3 amplitude;
-    public Vector3 shakeSpeed;
+    public float amplitude;
+    public float shakeSpeed;
     public float shakeDuration;
+    public float dampFactor;
     public bool shake;
 
 	// Use this for initialization
 	void Start () {
-        intPos = transform.position;	
+        intZoom = camera.fieldOfView;
 	}
 	
 	// Update is called once per frame
@@ -20,11 +21,14 @@ public class CameraShaker : MonoBehaviour {
         if (shake && (t < shakeDuration || shakeDuration == 0))
         {
             t += Time.deltaTime;
-            transform.position = intPos + transform.TransformDirection(new Vector3(amplitude.x * Mathf.Sin(shakeSpeed.x * t), amplitude.y * Mathf.Sin(shakeSpeed.y * t), amplitude.z * Mathf.Sin(shakeSpeed.z * t)));
+            camera.fieldOfView = intZoom + amplitude*Mathf.Exp(-dampFactor * t)* Mathf.Sin(shakeSpeed * t);
+            
         }
         else
         {
             t = 0;
+            camera.fieldOfView = intZoom;
+            shake = false;
         }
 	}
 }
