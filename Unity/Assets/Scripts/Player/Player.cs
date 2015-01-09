@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
 	private Animator anim;
     private float intSpeed;
     private Vector3 direction;
+    private bool isGrounded;
 
     //Methods
 
@@ -45,8 +46,11 @@ public class Player : MonoBehaviour
 						anim.SetFloat ("Speed", 0);
 				}
         Vector3 speed = (direction *  walkSpeed * Time.deltaTime);
-        rigidbody.MovePosition(rigidbody.position+speed);
-        RotateInWalkDirection(rotateSpeed, direction.x, direction.z);
+        if (isGrounded)
+        {
+            rigidbody.MovePosition(rigidbody.position + speed);
+            RotateInWalkDirection(rotateSpeed, direction.x, direction.z);
+        }
     }
 
 
@@ -73,6 +77,30 @@ public class Player : MonoBehaviour
             float step = rotateSpeed * Time.deltaTime;
             Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0F);
             transform.rotation = Quaternion.LookRotation(newDir);
+        }
+    }
+
+    void OnCollisionEnter(Collision other)
+    {
+        if(other.gameObject.tag.Contains("Ground"))
+        {
+            isGrounded = true;
+        }
+    }
+
+    void OnCollisionStay(Collision other)
+    {
+        if (other.gameObject.tag.Contains("Ground"))
+        {
+            isGrounded = true;
+        }
+    }
+
+    void OnCollisionExit(Collision other)
+    {
+        if (other.gameObject.tag.Contains("Ground"))
+        {
+            isGrounded = false;
         }
     }
 
