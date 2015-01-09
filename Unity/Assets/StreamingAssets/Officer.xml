@@ -1,21 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-
-
 <conversation>
-  
-    <NPC>Hello!</NPC>
-    <PLAYER>
-      <QUESTION TEXT ="Say hello?">
-        <OPTION>
-          <TEXT>Hello my friend! How you doing?</TEXT>
-          <REACTION TEXT ="Thanks for asking! It's going very well. It is a beatiful isn't is. I have nothing to complain about. Excuse me but I have to leave. Thanks for your kidness."></REACTION>
-        </OPTION>
-        <OPTION>
-          <TEXT>I Have no time for small talk</TEXT>
-          <REACTION TEXT ="Sorry grumpa!"></REACTION>
-        </OPTION>
-      </QUESTION>
-    </PLAYER>
-
-  
+  <NPC>Hello. Have you finally solved the case?</NPC>
+  <PLAYER>
+    <QUESTION TEXT="What is your progress?">
+      <OPTION>
+        <TEXT>No, I still have no idea who did it.</TEXT>
+        <REACTION TEXT="Well, what are you standing here then. Go out and finnd some evidence"></REACTION>
+      </OPTION>
+      <OPTION>
+        <TEXT>I think I got enough evidence to put the killer behind bars for life.</TEXT>
+        <REACTION TEXT="That's good. Well show me what you got.">
+          <SEQUEL>
+            <TALK>Oké, here it is *shows collected evidence* </TALK>
+            <NPC>Well, that's quite something</NPC>
+          </SEQUEL>
+        </REACTION>
+      </OPTION>        
+    </QUESTION>
+  </PLAYER>
 </conversation>
