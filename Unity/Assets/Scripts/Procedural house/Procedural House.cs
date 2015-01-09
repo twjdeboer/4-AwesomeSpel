@@ -12,7 +12,7 @@ public class ProceduralHouse{
 	private GameObject windowWindow;
 
 	private int windownr;
-	private int windowtexture = Random.Range (1, 5);
+	private int windowtexture = Random.Range (1, 8);
 	private int truewindow=0;
 	
 	private float xscale;
@@ -137,7 +137,7 @@ public class ProceduralHouse{
 		newhouse.transform.position = temp;
 		newhouse.transform.localScale = scale;
 
-		newhouse.renderer.material =(Material)Resources.Load ("Materials/ProceduralHouse/"+"House"+"/"+Random.Range (1, 5), typeof(Material));
+		newhouse.renderer.material =(Material)Resources.Load ("Materials/ProceduralHouse/"+"House"+"/"+Random.Range (1, 8), typeof(Material));
 	}
 	
 	private void MakeRoof(){
@@ -164,7 +164,7 @@ public class ProceduralHouse{
 	}
 	
 	private void setrooftexture(){
-		int rooftexture = (int)Random.Range (1, 5);
+		int rooftexture = (int)Random.Range (1, 7);
 		GameObject[] roofcolor = GameObject.FindGameObjectsWithTag ("Roof");
 		for (int i=0; i<roofcolor.Length; i++) {
 			roofcolor[i].renderer.material = (Material)Resources.Load ("Materials/ProceduralHouse/"+"Roof"+"/"+rooftexture, typeof(Material));
@@ -191,7 +191,7 @@ public class ProceduralHouse{
 		doorzpos = temp.z;
 		door.transform.position = temp;
 
-		doorWindow.renderer.material =(Material)Resources.Load ("Materials/ProceduralHouse/"+"Door"+"/"+Random.Range (1, 5), typeof(Material));
+		doorWindow.renderer.material =(Material)Resources.Load ("Materials/ProceduralHouse/"+"Door"+"/"+Random.Range (1, 9), typeof(Material));
 		doorWindow.transform.tag = "Building2";
 
 	}
