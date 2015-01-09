@@ -12,6 +12,7 @@ public class CamaraBehaviour : MonoBehaviour {
     private Collider reset;
     private bool setOffset = true;
 
+
     //Methods
 
     /**

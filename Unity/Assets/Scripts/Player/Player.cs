@@ -34,8 +34,8 @@ public class Player : MonoBehaviour
      **/
     void Walk(float walkSpeed,float rotateSpeed)
     {
-        float moveHorizontal = Input.GetAxisRaw("Horizontal");
-        float moveVertical = Input.GetAxisRaw("Vertical") ;
+        float moveHorizontal = Input.GetAxis("Horizontal");
+        float moveVertical = Input.GetAxis("Vertical") ;
         direction = ResourceManager.cam.TransformDirection(moveHorizontal, 0.0f, moveVertical);
         direction.y = 0;
         direction = direction.normalized;
@@ -44,11 +44,11 @@ public class Player : MonoBehaviour
 				} else {
 						anim.SetFloat ("Speed", 0);
 				}
-        Vector3 speed = (direction *  walkSpeed * Time.deltaTime) ;
-        rigidbody.velocity = speed;
+        Vector3 speed = (direction *  walkSpeed * Time.deltaTime);
+        rigidbody.MovePosition(rigidbody.position+speed);
         RotateInWalkDirection(rotateSpeed, direction.x, direction.z);
-
     }
+
 
     /**
      * Makes the player sprint when a certain button is pressed.
