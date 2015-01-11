@@ -16,6 +16,7 @@ public class NPCInteraction : MonoBehaviour {
     private GameObject threeButtons;
     private GameObject fourButtons;
     private GameObject conversation;
+    private GameObject blockRayCast;
 
     public string NPCName;
     public float timeToWait;
@@ -51,6 +52,7 @@ public class NPCInteraction : MonoBehaviour {
         {
             gameObject.GetComponent<Astar>().stopWalking = true;
         }
+        BlockRayCast();
         ResourceManager.conversationWith = transform;
         ResourceManager.stopWalking = true;
         XMLReader(fileName);
@@ -73,6 +75,14 @@ public class NPCInteraction : MonoBehaviour {
         conversation.SetActive(false);
 	}
 
+    void BlockRayCast()
+    {
+        blockRayCast = Instantiate(Resources.Load("Prefabs/BlockRayCast")) as GameObject;
+        blockRayCast.transform.SetParent(GameObject.Find("TopViewCamera").transform);
+        blockRayCast.transform.localPosition = new Vector3(0, 10, 10);
+        blockRayCast.transform.localScale = new Vector3(100, 100, 1);
+    }
+
     /**
      * Rotates NPC to player if interaction started.
      * */
@@ -91,6 +101,7 @@ public class NPCInteraction : MonoBehaviour {
             }
         }
     }
+
 
     /**
      * Makes appear the text slowly.
@@ -427,6 +438,7 @@ public class NPCInteraction : MonoBehaviour {
                 {
                     gameObject.GetComponent<Astar>().stopWalking = false;
                 }
+                Destroy(blockRayCast);
                 ResourceManager.stopWalking = false;
                 actionList.Clear();
                 Go = false;

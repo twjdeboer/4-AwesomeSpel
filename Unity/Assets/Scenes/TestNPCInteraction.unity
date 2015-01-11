@@ -1388,6 +1388,10 @@ Prefab:
       propertyPath: fileName
       value: PriesterDialoog.xml
       objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: c252d140b493c9248b9824bcf7991727, type: 2}
+      propertyPath: timeToWait
+      value: 1.00000001e-07
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11400000, guid: c252d140b493c9248b9824bcf7991727, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: c252d140b493c9248b9824bcf7991727, type: 2}
