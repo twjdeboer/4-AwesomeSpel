@@ -137,6 +137,9 @@ ModelImporter:
     100262: dead_end
     100264: lines
     100266: path
+    100268: path_001
+    100270: Plane_000
+    100272: Cube
     400000: Plane
     400002: Plane_001
     400004: Plane_002
@@ -271,6 +274,9 @@ ModelImporter:
     400262: dead_end
     400264: lines
     400266: path
+    400268: path_001
+    400270: Plane_000
+    400272: Cube
     2300000: Plane
     2300002: Plane_001
     2300004: Plane_002
@@ -403,6 +409,9 @@ ModelImporter:
     2300258: dead_end
     2300260: lines
     2300262: path
+    2300264: path_001
+    2300266: Plane_000
+    2300268: Cube
     3300000: Plane
     3300002: Plane_001
     3300004: Plane_002
@@ -535,6 +544,9 @@ ModelImporter:
     3300258: dead_end
     3300260: lines
     3300262: path
+    3300264: path_001
+    3300266: Plane_000
+    3300268: Cube
     4300000: Plane_001
     4300002: Plane_004_MeshPart0
     4300004: Plane_004_MeshPart1
@@ -667,6 +679,9 @@ ModelImporter:
     4300258: 42
     4300260: 41
     4300262: path
+    4300264: Plane_000
+    4300266: path_001
+    4300268: Cube
     6400000: 1-horiz-left
     6400002: 1-horiz-right
     6400004: 1-vert-left
@@ -729,6 +744,10 @@ ModelImporter:
     6400118: Plane_004_MeshPart1
     6400120: Plane_004_MeshPart2
     6400122: path
+    6400124: path_001
+    6400126: Plane_000
+    6400128: Plane
+    6400130: Cube
     7400000: Default Take
     9500000: //RootNode
   materials:
