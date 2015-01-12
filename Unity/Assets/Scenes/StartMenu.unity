@@ -2729,7 +2729,7 @@ GameObject:
   - 114: {fileID: 143779433}
   - 114: {fileID: 143779432}
   m_Layer: 5
-  m_Name: Interface
+  m_Name: Interfaceoud12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7081,7 +7081,7 @@ MonoBehaviour:
   m_LineType: 0
   m_HideMobileInput: 0
   m_CharacterValidation: 4
-  m_CharacterLimit: 255
+  m_CharacterLimit: 64
   m_EndEdit:
     m_PersistentCalls:
       m_Calls: []
@@ -7093,7 +7093,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.InputField+OnChangeEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_SelectionColor: {r: .104999997, g: .630999982, b: .885999978, a: .300000012}
-  m_Text: 
+  m_Text: Jsdaw
   m_CaretBlinkRate: 1.70000005
 --- !u!114 &330593218
 MonoBehaviour:
@@ -10681,7 +10681,7 @@ MonoBehaviour:
   m_LineType: 0
   m_HideMobileInput: 0
   m_CharacterValidation: 4
-  m_CharacterLimit: 255
+  m_CharacterLimit: 32
   m_EndEdit:
     m_PersistentCalls:
       m_Calls: []
@@ -10693,7 +10693,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.InputField+OnChangeEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_SelectionColor: {r: .104999997, g: .630999982, b: .885999978, a: .300000012}
-  m_Text: 
+  m_Text: bernard
   m_CaretBlinkRate: 1.70000005
 --- !u!114 &543686545
 MonoBehaviour:
@@ -11873,7 +11873,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.InputField+OnChangeEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_SelectionColor: {r: .104999997, g: .630999982, b: .885999978, a: .300000012}
-  m_Text: 
+  m_Text: qwe
   m_CaretBlinkRate: 1.70000005
 --- !u!114 &608585531
 MonoBehaviour:
@@ -14287,7 +14287,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.InputField+OnChangeEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_SelectionColor: {r: .104999997, g: .630999982, b: .885999978, a: .300000012}
-  m_Text: 
+  m_Text: 1q2w3e
   m_CaretBlinkRate: 1.70000005
 --- !u!114 &728155354
 MonoBehaviour:
@@ -16405,7 +16405,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: Jsdaw
 --- !u!222 &819580761
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -19125,7 +19125,7 @@ MonoBehaviour:
             Culture=neutral, PublicKeyToken=null
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: BackToLogin
+          m_StringArgument: CreateAccount
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -22437,7 +22437,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: '******'
 --- !u!222 &1136683583
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -23388,7 +23388,7 @@ MonoBehaviour:
             Culture=neutral, PublicKeyToken=null
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: CreateAccount
+          m_StringArgument: CreateMenu
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -26883,7 +26883,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: bernard
 --- !u!222 &1344101553
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -33243,7 +33243,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.InputField+OnChangeEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_SelectionColor: {r: .104999997, g: .630999982, b: .885999978, a: .300000012}
-  m_Text: 
+  m_Text: 1q2w3e
   m_CaretBlinkRate: 1.70000005
 --- !u!114 &1665952550
 MonoBehaviour:
@@ -36604,7 +36604,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: qwe
 --- !u!222 &1786567709
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -45182,7 +45182,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: '******'
 --- !u!222 &2121186436
 CanvasRenderer:
   m_ObjectHideFlags: 0

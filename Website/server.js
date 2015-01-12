@@ -102,8 +102,8 @@ app.get("/adduser", function(req, res){
 				console.log(err);
 				res.json({msg:"DUPLICATE USER"});
 			} else {
-				console.log("Succesfully added user " + username)
-				res.json({msg:"SUCCESS"});
+				console.log("Succesfully added user " + username);
+				res.json({msg:"SUCCESS", userid:result.insertId});
 
 				mailer.sendMail({
 				    to: email,
@@ -170,6 +170,28 @@ app.get("/validateuser", function(req, res){
 	//lostpassword
 app.get("/lostpassword", function(req,res){
 
+
+});
+
+	//dumpdatabase
+app.get("/datadump", function(req, res){
+	mysqlserver.query("SELECT * FROM user", function(err, result1){
+		if (err) console.log(err);
+		else{
+			mysqlserver.query("SELECT * FROM statistics", function(err, result2){
+				if (err) console.log(err);
+				else{
+					mysqlserver.query("SELECT * FROM itemdata", function(err, result3){
+						if (err) console.log(err);
+						else{
+							console.log('Someone Requested all SQL data from ip ' + req.connection.remoteAddress);
+							res.json([result1, result2, result3]);
+						}
+					});	
+				}
+			});	
+		}
+	});
 
 });
 

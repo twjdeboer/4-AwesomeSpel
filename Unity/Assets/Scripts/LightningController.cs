@@ -32,7 +32,6 @@ public class LightningController : MonoBehaviour
         lightning_point.GetComponent<Light>().intensity = 0;
 
         timer = Random.Range(5f, 10f);
-        Debug.Log(timer);
         lightninglength = 0;
     }
 
