@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 using System.Text.RegularExpressions;
+using System.IO;
 
 public class SceneManager : MonoBehaviour
 {
@@ -144,7 +145,9 @@ public class SceneManager : MonoBehaviour
 						msg = msg.Substring (1, msg.Length - 2);
 						switch (msg) {
 						case ("SUCCESS"):
-								string userid = result [1].Split (':') [1];
+								int userid = int.Parse( result [1].Split (':') [1]);
+				WriteToSave(@"cloud.save", userid, 0f, 0f, new bool[10]);
+
 								setCanvasInactive (startMenu);
 								Application.LoadLevel (firstPlayScene);
 								break;
@@ -256,14 +259,51 @@ public class SceneManager : MonoBehaviour
 
 		}
 
-		void ReadFromSave (string file)
+		float[] ReadPlayerPos (string filename)
 		{
+				float[] pos = new float[2];	
+
+				if (File.Exists (filename)) {
+
+						string[] sc = File.ReadAllLines (filename);
+						pos [0] = float.Parse( sc[1] );
+						pos [1] = float.Parse( sc[2] );
+
+				} else {
+						Debug.Log ("No Save File found");
+				}
+				return pos;
+		}
+
+		bool[] ReadItemList (string filename)
+		{
+				bool[] items = new bool[10];
+				if (File.Exists (filename)) {
+			
+						string[] content = File.ReadAllLines (filename);
+				
+						for (int i = 0; i<10; i++) {
+								items [i] = bool.Parse( content[i+3]);
+						}
+						
+			
+				} else {
+						Debug.Log ("No Save File found");
+				}
+				return items;
 
 		}
 
-		void WriteToSave (string file)
+		void WriteToSave (string filename, int playerId, float xpos, float ypos, bool[] items)
 		{
-
+				StreamWriter sr = File.CreateText (filename);
+				sr.WriteLine (playerId);
+				sr.WriteLine (xpos);
+				sr.WriteLine (ypos);
+				foreach (bool item in items) {
+						sr.WriteLine (item);	
+				}
+				sr.Close ();
 		}
 
 		void setCanvasActive (GameObject canvas)
