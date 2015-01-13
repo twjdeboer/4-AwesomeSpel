@@ -248,7 +248,7 @@ public class SceneManager : MonoBehaviour
 				yield return www;
 
 				if (www.error == null) {
-
+						string response = www.text;
 				} else {
 						Debug.Log ("WWW Error: " + www.error);
 				}

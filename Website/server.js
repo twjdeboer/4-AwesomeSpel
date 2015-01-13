@@ -195,4 +195,8 @@ app.get("/datadump", function(req, res){
 
 });
 
+
+app.get("/readplaydata", function(req, res){
+	var string = 'SELECT type, ';
+});
 	//pickupitem
