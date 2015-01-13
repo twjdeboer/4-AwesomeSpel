@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<conversation>
+	<NPC>What is the airspeed velocity of an unladen swallow?</NPC>
+	<TALK>An European or an African one?</TALK>
+	<NPC>Ehhh *flies away*</NPC>
+</conversation>
