@@ -16,13 +16,14 @@ public class NodeNetwork {
         this.numberOfNodes = numberOfNodes;
 
         float xPos = pos.x - (numberOfNodes.x * 1.5f);
+        float yPos = pos.y;
         float zPos = pos.z - (numberOfNodes.y * 1.5f);
         for (int i = 0; i < (int)numberOfNodes.x; i++)
         {
             
             for (int j = 0; j < (int)numberOfNodes.y; j++)
             {               
-                network[i, j] = node(xPos,zPos, i, j);
+                network[i, j] = node(xPos,yPos,zPos, i, j);
                 zPos+=3;                
             }
             xPos+=3;
@@ -34,7 +35,7 @@ public class NodeNetwork {
     /**
      * Method for initializing the node.
      * */
-    GameObject node(float xPos, float zPos, int i, int j)
+    GameObject node(float xPos, float yPos, float zPos, int i, int j)
     {
 		/*
 		GameObject primitive = MonoBehaviour.Instantiate(Resources.Load ("Prefabs/Node", typeof(GameObject))) as GameObject;
@@ -47,7 +48,7 @@ public class NodeNetwork {
 		return primitive;
 		/*/
         GameObject primitive = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        primitive.transform.position = new Vector3(xPos, 0, zPos);
+        primitive.transform.position = new Vector3(xPos, yPos, zPos);
         primitive.collider.isTrigger = true;
         primitive.gameObject.AddComponent("Rigidbody");
         primitive.rigidbody.useGravity = false;

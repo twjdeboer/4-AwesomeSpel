@@ -22,6 +22,7 @@ public class Node : MonoBehaviour{
 
     void OnTriggerEnter(Collider other)
     {
+
         if(other.gameObject.tag.Contains("Walk"))
         {
             this.accesable = true;

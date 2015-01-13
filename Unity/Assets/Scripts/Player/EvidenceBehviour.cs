@@ -17,6 +17,7 @@ public class EvidenceBehviour : MonoBehaviour {
     private bool mouseEntered = false;
     private bool mouseClicked = false;
     private bool mouseLeft = false;
+    private bool mouseOver = false;
     private GameObject evidenceInterface;
     private GameObject mouseCollider;
     private Text descriptionText;
@@ -31,7 +32,7 @@ public class EvidenceBehviour : MonoBehaviour {
     /*
      * Checks if mouse over object, if so executes evidence selector.
      * */
-    void IfMouseOver()
+    void IfMouseEnter()
     {
         if (CheckDistanceBetweenPlayerAndObject() && mouseEntered)
         {
@@ -40,12 +41,14 @@ public class EvidenceBehviour : MonoBehaviour {
         }
     }
 
+
+
     /**
      * Sets rotation and position of object if mouse is hovering over the object.
      * */
     void SetStartRotAndPos()
     {
-        if(onGround && !mouseEntered)
+        if(onGround)
         {
             intRotation = transform.rotation;
             intPosition = transform.position;
@@ -60,7 +63,7 @@ public class EvidenceBehviour : MonoBehaviour {
      * */
     void ScaleAndRotate()
     {
-        if (mouseEntered && rotated)
+        if (mouseOver && rotated)
         {   
             rigidbody.isKinematic = true;
             transform.localScale = intScale * scaleFactorIfSelected;
@@ -108,7 +111,7 @@ public class EvidenceBehviour : MonoBehaviour {
      * */
     void IfMouseUpAsButton()
     {
-        if (canBePickedUp && mouseEntered && mouseClicked)
+        if (canBePickedUp && mouseOver && mouseClicked)
         {
             pickedUp = true;
         }
@@ -175,6 +178,7 @@ public class EvidenceBehviour : MonoBehaviour {
         mouseEntered = transform.GetComponentInChildren<MouseCollider>().mouseEntered;
         mouseClicked = gameObject.GetComponentInChildren<MouseCollider>().mouseClicked;
         mouseLeft = gameObject.GetComponentInChildren<MouseCollider>().mouseLeft;
+        mouseOver = gameObject.GetComponentInChildren<MouseCollider>().mouseOver;
     }
 
     void CreateMouseCollider()
@@ -185,7 +189,7 @@ public class EvidenceBehviour : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        IfMouseOver();
+        IfMouseEnter();
         IfMouseUpAsButton();
         CheckMouseCollider();
         MouseLeft();
