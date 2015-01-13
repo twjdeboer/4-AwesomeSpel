@@ -13,7 +13,7 @@ GameObject:
   - 64: {fileID: 6488236}
   m_Layer: 0
   m_Name: window_big
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,7 +31,7 @@ GameObject:
   - 64: {fileID: 6488238}
   m_Layer: 0
   m_Name: church
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64,7 +64,7 @@ GameObject:
   - 64: {fileID: 6488240}
   m_Layer: 0
   m_Name: window_small
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -82,7 +82,7 @@ GameObject:
   - 64: {fileID: 6488242}
   m_Layer: 0
   m_Name: door
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,7 +118,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 188240}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.1000004, y: 0, z: 0}
+  m_LocalPosition: {x: -21.0576706, y: -1.8442421, z: 1.2777915}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 488238}
@@ -276,7 +276,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 1
+  m_Convex: 0
   m_Mesh: {fileID: 4300010, guid: ad2c1f3bfb60752448cb36171d796c81, type: 3}
 --- !u!64 &6488238
 MeshCollider:
@@ -289,7 +289,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 1
+  m_Convex: 0
   m_Mesh: {fileID: 4300012, guid: ad2c1f3bfb60752448cb36171d796c81, type: 3}
 --- !u!64 &6488240
 MeshCollider:
@@ -302,7 +302,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 1
+  m_Convex: 0
   m_Mesh: {fileID: 4300008, guid: ad2c1f3bfb60752448cb36171d796c81, type: 3}
 --- !u!64 &6488242
 MeshCollider:
