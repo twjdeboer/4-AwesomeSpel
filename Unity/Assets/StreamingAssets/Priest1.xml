@@ -13,5 +13,16 @@
 	<NPC>But my friend, you must be mistaking. I'm an honest man of the Lord.</NPC>
 	<TALK>That act won't work on me. But it will on a jury, so without the evidence.......</TALK>
 	<NPC>I will keep on living like I do now.</NPC>
+	<TALK>I guess you leave me no choise....</TALK>
+	<TALK>I can't let you get away with this. *gets very angry*</TALK>
+	<NPC>Okey, now don't lose grip of yourself.</NPC>
+	<TALK>Like you lost grip when you killed that man!</TALK>
+	<NPC>Keep calm. Don't do anything stupid.</NPC>
+	<TALK>Stupid, this makes so much sense to me.</TALK>
+	<TALK>You will never get one happy day in your life again.</TALK>
+	<NPC>Oke, put away your gun now. Can't we talk about it?</NPC>
+	<TALK>You had your chance to talk. Now I have to set the record straight myself</TALK>
+	<NPC>No please no, put your gun away and just let me talk.</NPC>
+	<TALK>Time to meet your Lord *shoots the priest*</TALK>
 
 </conversation>

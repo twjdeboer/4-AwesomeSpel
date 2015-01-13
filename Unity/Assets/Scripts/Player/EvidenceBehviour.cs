@@ -14,13 +14,16 @@ public class EvidenceBehviour : MonoBehaviour {
     public bool canBePickedUp = true;
     public float maxDistance;
 
+    private bool mouseEntered = false;
+    private bool mouseClicked = false;
+    private bool mouseLeft = false;
     private GameObject evidenceInterface;
+    private GameObject mouseCollider;
     private Text descriptionText;
     private Text evidenceNameText;
     private Quaternion intRotation;
     private Vector3 intPosition;
     private Vector3 intScale;
-    private bool mouseEntered = false;
     private bool onGround = false;
     private bool rotated = false;
     private bool pickedUp = false;
@@ -28,12 +31,11 @@ public class EvidenceBehviour : MonoBehaviour {
     /*
      * Checks if mouse over object, if so executes evidence selector.
      * */
-    void OnMouseOver()
+    void IfMouseOver()
     {
-        if (CheckDistanceBetweenPlayerAndObject())
+        if (CheckDistanceBetweenPlayerAndObject() && mouseEntered)
         {
             SetStartRotAndPos();
-            mouseEntered = true;
             ActivateAndFillUI();
         }
     }
@@ -104,10 +106,12 @@ public class EvidenceBehviour : MonoBehaviour {
     /**
      * Check if evidence is picked up.
      * */
-    void OnMouseUpAsButton()
+    void IfMouseUpAsButton()
     {
-        if (canBePickedUp && mouseEntered)
-         pickedUp = true;    
+        if (canBePickedUp && mouseEntered && mouseClicked)
+        {
+            pickedUp = true;
+        }
 
     }
 
@@ -116,15 +120,8 @@ public class EvidenceBehviour : MonoBehaviour {
      * */
     void MouseLeft()
     {
-        float minX = ResourceManager.cam.camera.WorldToScreenPoint(renderer.bounds.min).x * 0.9f;
-        float maxX = ResourceManager.cam.camera.WorldToScreenPoint(renderer.bounds.max).x * 1.1f;
-        float minY = ResourceManager.cam.camera.WorldToScreenPoint(renderer.bounds.min).y * 0.9f;
-        float maxY = ResourceManager.cam.camera.WorldToScreenPoint(renderer.bounds.max).y * 1.1f;
 
-       if(( Input.mousePosition.x < minX ||
-           Input.mousePosition.x > maxX ||
-           Input.mousePosition.y < minY ||
-           Input.mousePosition.y > maxY) && mouseEntered)
+        if(mouseLeft)
        {
            collider.isTrigger = false;
            DeactivateUI();
@@ -133,6 +130,8 @@ public class EvidenceBehviour : MonoBehaviour {
            mouseEntered = false;
            transform.localScale = intScale;
            rotated = false;
+           mouseLeft = false;
+           gameObject.GetComponentInChildren<MouseCollider>().mouseLeft = false;
        }
 
     }
@@ -147,10 +146,11 @@ public class EvidenceBehviour : MonoBehaviour {
             evidenceInterface.GetComponent<CanvasGroup>().alpha = 0;
             GameObject.Find("PickedUpEvidence").GetComponent<PickedUpEvidence>().activated = true;
 			GameObject.Find("PickedUpEvidence").GetComponent<PickedUpEvidence>().text.text = "Picked up " + evidencename ;
+            pickedUp = false;
             if (evidenceInterface.GetComponent<CanvasGroup>().alpha == 0)
             {
-                ResourceManager.evidenceList.Add(this.gameObject);
-                Destroy(gameObject);
+                GameObject.Find("EvidenceList").GetComponent<ShowEvidence>().Add(this.gameObject);
+                gameObject.SetActive(false);
             }
         }
     }
@@ -162,7 +162,7 @@ public class EvidenceBehviour : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+        CreateMouseCollider();
         evidenceInterface = GameObject.Find("Evidence");
         descriptionText = GameObject.Find("Description").GetComponent<Text>();
         evidenceNameText = GameObject.Find("EvidenceName").GetComponent<Text>();
@@ -170,10 +170,24 @@ public class EvidenceBehviour : MonoBehaviour {
         intScale = transform.localScale;
 	}
 	
+    void CheckMouseCollider()
+    {
+        mouseEntered = transform.GetComponentInChildren<MouseCollider>().mouseEntered;
+        mouseClicked = gameObject.GetComponentInChildren<MouseCollider>().mouseClicked;
+        mouseLeft = gameObject.GetComponentInChildren<MouseCollider>().mouseLeft;
+    }
 
+    void CreateMouseCollider()
+    {
+        mouseCollider = Instantiate(Resources.Load("Prefabs/mouseCollider")) as GameObject;
+        mouseCollider.transform.SetParent(transform, false);
+    }
 
 	// Update is called once per frame
 	void Update () {
+        IfMouseOver();
+        IfMouseUpAsButton();
+        CheckMouseCollider();
         MouseLeft();
         ScaleAndRotate();
         PickUpEvidence();
