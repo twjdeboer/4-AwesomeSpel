@@ -9,6 +9,19 @@
 	<NPC>I was here, reading in the library.</NPC>
 	<NPC>I already told everything to you. Why are you really here?</NPC>
 	<TALK>You really don't know. I think you know why I'm here.</TALK>
-
+	<NPC>Can we end this charade and just get to the point?</NPC>
+	<TALK>I know you did it. I know you are the killer.</TALK>
+	<NPC>Me, why do you think so?</NPC>
+	<TALK>The evidence doesn't lie. Your prints are all over it.</TALK>
+	<NPC>What do you mean? What evidence?</NPC>
+	<TALK>I understand you tried to clean up behind yourself, but I still managed to find it.</TALK>
+	<NPC>Your bluffing, I did't leave anything behind.</NPC>
+	<TALK>So you say you did it?</TALK>
+	<NPC>Oh cock</NPC>
+	<TALK>Well, we can do this the easy way or the hard way. Just come with me to the station.</TALK>
+	<NPC>You got me, but he deserved it. He was a terrible man.</NPC>
+	<TALK>Even so, it is not our job to decide who lives and dies.</TALK>
+	<NPC>But... but....</NPC>
+	<TALK>The game is over. I got you and you are going to jail.</TALK>
 
 </conversation>
