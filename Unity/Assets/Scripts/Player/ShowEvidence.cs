@@ -29,15 +29,15 @@ public class ShowEvidence : MonoBehaviour
         }
     }
 
-    void GetEvidence()
-    {
-        evidenceList = ResourceManager.evidenceList;
-    }
-
     void getScreenSize()
     {
        // X = Screen.width;
        // Y = Screen.height;
+    }
+
+    public void Add(GameObject evidence)
+    {
+        evidenceList.Add(evidence);
     }
 
     void FillList()
@@ -63,7 +63,6 @@ public class ShowEvidence : MonoBehaviour
     {
         getScreenSize();
         ViewList();
-        GetEvidence();
         FillList();
     }
 }
