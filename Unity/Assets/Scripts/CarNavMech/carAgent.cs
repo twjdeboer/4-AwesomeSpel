@@ -45,46 +45,49 @@ public class carAgent : MonoBehaviour {
 
 
 	// Set Layercost of all roads correct according to position of agent
-	void OnTriggerEnter(Collider other){
+	void OnCollisionEnter(Collision other){
 
-		for (int i = 1; i < 49; i++){
+		if (other.collider.tag == "Crossroad Ground"){
 
-			String crossing = Convert.ToString (i);
+			for (int i = 1; i < 49; i++){
 
-			if (other.gameObject.name == crossing){
+				String crossing = Convert.ToString (i);
+
+				if (other.gameObject.name == crossing){
 
 
-				// check x and y number of cross road
-				double temp = i/8;
-				int y = (int)(Math.Floor(temp+1));
-				int x = (int)(i%8);
+					// check x and y number of cross road
+					double temp = i/8;
+					int y = (int)(Math.Floor(temp+1));
+					int x = (int)(i%8);
 
-				if (x == 0){
-					x = 8;
-					y = y - 1;
-				}
-		
-				// set cost horizontal roads 
-				for (int n = 1; n < 8; n++){
-					if (n < x){
-						agent.SetLayerCost(n*4, 200);
-						agent.SetLayerCost(n*4 - 1, 1);
+					if (x == 0){
+						x = 8;
+						y = y - 1;
 					}
-					if (n >= x){
-						agent.SetLayerCost(n*4, 1);
-						agent.SetLayerCost(n*4 - 1, 200);
+			
+					// set cost horizontal roads 
+					for (int n = 1; n < 8; n++){
+						if (n < x){
+							agent.SetLayerCost(n*4, 200);
+							agent.SetLayerCost(n*4 - 1, 1);
+						}
+						if (n >= x){
+							agent.SetLayerCost(n*4, 1);
+							agent.SetLayerCost(n*4 - 1, 200);
+						}
 					}
-				}
 
-				// set cost vertical roads
-				for (int n = 1; n < 6; n++){
-					if (n < y){
-						agent.SetLayerCost(n*4 + 2, 200);
-						agent.SetLayerCost(n*4 + 1, 1);
-					}
-					if (n >= y){
-						agent.SetLayerCost(n*4 + 2, 1);
-						agent.SetLayerCost(n*4 + 1, 200);
+					// set cost vertical roads
+					for (int n = 1; n < 6; n++){
+						if (n < y){
+							agent.SetLayerCost(n*4 + 2, 200);
+							agent.SetLayerCost(n*4 + 1, 1);
+						}
+						if (n >= y){
+							agent.SetLayerCost(n*4 + 2, 1);
+							agent.SetLayerCost(n*4 + 1, 200);
+						}
 					}
 				}
 			}
