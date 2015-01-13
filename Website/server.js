@@ -17,14 +17,22 @@ console.log('\n' + "Server listening on port " + port + " on " + ip + '\n');
 
 var mysql = require('mysql');
 //MYSQL CONNECTION
-var mysqlserver = mysql.createConnection(							//create a mysql connection with the following details
-    {
-      host     : 'localhost',
-      user     : 'ewi3620tu4',
-      password : 'DecCiemkup2',
-      database : 'ewi3620tu4',
-    }
-);
+function getMySQLConnection(){
+
+	var mysqlserver = mysql.createConnection(							//create a mysql connection with the following details
+	    {
+	      host     : 'localhost',
+	      user     : 'ewi3620tu4',
+	      password : 'DecCiemkup2',
+	      database : 'ewi3620tu4',
+	    }
+	);
+
+	mysqlserver.connect();
+	return mysqlserver;
+
+}
+
 
 //MAIL PROVIDER
 var mailer = nodemailer.createTransport({
@@ -40,7 +48,7 @@ var mailer = nodemailer.createTransport({
 	//basic commands
 app.get("/readdata", function(req, res) {
 	var querystring = "SELECT * FROM statistics";
-	mysqlserver.connect();
+	mysqlserver = getMySQLConnection();
 	mysqlserver.query(querystring, function(err, result){
 		if (err) console.log(err);
 		res.json(result);
@@ -61,6 +69,7 @@ app.get("/adddata", function(req, res){
 	if (type != null){
 		if (userid != null){	
 			var sqlquery = "INSERT INTO statistics (type, value, userId) VALUES (?,?,?)";
+			mysqlserver = getMySQLConnection();
 			mysqlserver.query(sqlquery, [type, value, userid], function(err,result){
 				if (err) {
 					console.log(err)
@@ -70,6 +79,7 @@ app.get("/adddata", function(req, res){
 					res.json({msg:"SUCCESS"});
 				}
 			});
+			mysqlserver.end();
 		} else {
 			console.log('ERROR WRITING DATA: unknown user');
 			res.json({msg:"UNKNOWN USER"});
@@ -99,6 +109,7 @@ app.get("/adduser", function(req, res){
 		var password_h = crypto.createHash('sha256').update(password+salt).digest('base64');
 		var sqlquery = "INSERT INTO user (username, password_h, salt, name, email) " +
 			"VALUES (?,?,?,?,?);";
+		mysqlserver = getMySQLConnection();
 		mysqlserver.query(sqlquery, [username, password_h, salt, name, email], function(err, result){
 			if (err) {
 				console.log(err);
@@ -121,6 +132,7 @@ app.get("/adduser", function(req, res){
 				});
 			}
 		});
+		mysqlserver.end();
 	} else {
 		res.json({msg:"INVALID INPUT"});
 		console.log("Failed to add user, incomplete user data.")
@@ -135,6 +147,7 @@ app.get("/validateuser", function(req, res){
 	var password = query["password"];
 	if (username != null && password != null){
 		var getsaltquery = "SELECT id, salt, password_h FROM user WHERE username = ?";
+		mysqlserver = getMySQLConnection();
 		mysqlserver.query(getsaltquery, [username], function(err, result){
 			if (err) {
 				console.log(err);
@@ -148,6 +161,7 @@ app.get("/validateuser", function(req, res){
 						var salt = crypto.randomBytes(16);
 						var password_h = crypto.createHash('sha256').update(password+salt).digest('base64');
 						var sqlquery = "UPDATE user SET password_h = ?, salt = ? WHERE username = ?";
+						mysqlserver = getMySQLConnection();
 						mysqlserver.query(sqlquery, [password_h, salt, username], function(err, result){
 							if (err) {
 								console.log(err);
@@ -156,6 +170,7 @@ app.get("/validateuser", function(req, res){
 								res.json({msg:"SUCCESS", userid:id});
 							}
 						});
+						mysqlserver.end();
 					} else {
 						res.json({msg:"INVALID PASSWORD"})
 					}
@@ -164,6 +179,7 @@ app.get("/validateuser", function(req, res){
 				}
 			}
 		});
+		mysqlserver.end();
 	} else {
 		console.log("Invalid query")
 	}
@@ -177,24 +193,29 @@ app.get("/lostpassword", function(req,res){
 
 	//dumpdatabase
 app.get("/datadump", function(req, res){
+	mysqlserver = getMySQLConnection();
 	mysqlserver.query("SELECT * FROM user", function(err, result1){
 		if (err) console.log(err);
 		else{
+			mysqlserver = getMySQLConnection();
 			mysqlserver.query("SELECT * FROM statistics", function(err, result2){
 				if (err) console.log(err);
 				else{
+					mysqlserver = getMySQLConnection();
 					mysqlserver.query("SELECT * FROM itemdata", function(err, result3){
 						if (err) console.log(err);
 						else{
 							console.log('Someone Requested all SQL data from ip ' + req.connection.remoteAddress);
 							res.json([result1, result2, result3]);
 						}
-					});	
+					});
+					mysqlserver.end();	
 				}
-			});	
+			});
+			mysqlserver.end();	
 		}
 	});
-
+	mysqlserver.end();
 });
 
 
