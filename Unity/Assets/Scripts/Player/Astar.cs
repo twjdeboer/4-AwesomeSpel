@@ -171,7 +171,6 @@ public class Astar : MonoBehaviour{
         moveDirection.y = 0;
         Vector3 step = moveDirection.normalized * moveSpeed * Time.deltaTime;
         Quaternion rotation = Quaternion.LookRotation(moveDirection);
-		MonoBehaviour.print (rotation);
         transform.rotation = rotation;
         rigidbody.MovePosition(rigidbody.position + step);
     }
@@ -237,12 +236,14 @@ public class Astar : MonoBehaviour{
         Vector3 pos = new Vector3(xPos, 0, zPos);
         GameObject endNode = nodes.Closest(pos);        
 
-        while (!endNode.GetComponent<Node>().accesable)
+        int i = 0;
+        while (!endNode.GetComponent<Node>().accesable && i < 1000)
         {
             xPos = Random.Range(nodes.NetworkRange().x, nodes.NetworkRange().y);
             zPos = Random.Range(nodes.NetworkRange().z, nodes.NetworkRange().w);
             pos = new Vector3(xPos, 0, zPos);
             endNode = nodes.Closest(pos);
+            i++;
         }
        
         return pos;

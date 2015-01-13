@@ -24,6 +24,19 @@ public class CamaraBehaviour : MonoBehaviour {
         transform.position = ResourceManager.playerPosition + this.offset;
     }
 
+    /**
+ * Sets Opacity for a material.
+ * */
+    void SetAlpha(GameObject go, float alpha)
+    {
+        Material[] materialList = go.renderer.materials;
+        for (int i = 0; i < materialList.Length; i++)
+        {
+            Color color = materialList[i].color;
+            color.a = alpha;
+            materialList[i].color = color;
+        }
+    }
 
     void CheckRay()
     {   
@@ -33,17 +46,17 @@ public class CamaraBehaviour : MonoBehaviour {
             Collider other = rayinfo.collider;
             if (other.gameObject.tag == "Building")
             {
-                Methods.SetAlpha(other.gameObject, 0.5f);
+                SetAlpha(other.gameObject, 0.5f);
                 reset = other;
             }
             else if (other.gameObject.tag == "Building2")
             {
                 reset = other;
-                Methods.SetAlpha(other.gameObject, 0.1f);
+                SetAlpha(other.gameObject, 0.1f);
             }
             else if (other.gameObject.tag.Contains("Transparent"))
             {
-                Methods.SetAlpha(other.gameObject, 0.5f);
+                SetAlpha(other.gameObject, 0.5f);
                 reset = other;
             }
             else
@@ -52,11 +65,11 @@ public class CamaraBehaviour : MonoBehaviour {
                 {
                     other = reset;
                     if (other.gameObject.tag == "Building")
-                        Methods.SetAlpha(other.gameObject, 1);
+                        SetAlpha(other.gameObject, 1);
                     if (other.gameObject.tag == "Building")
-                        Methods.SetAlpha(other.gameObject, 1);
+                        SetAlpha(other.gameObject, 1);
                     if (other.gameObject.tag.Contains("Transparent"))
-                        Methods.SetAlpha(other.gameObject, 1);
+                        SetAlpha(other.gameObject, 1);
                 }
             }
         }

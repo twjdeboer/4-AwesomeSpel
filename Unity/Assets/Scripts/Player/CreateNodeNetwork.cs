@@ -20,7 +20,8 @@ public class CreateNodeNetwork : MonoBehaviour {
     {
         for(int i = 0; i < ResourceManager.numberOfChilds; i++)
         {
-            GameObject.Find("NPCs").transform.GetChild(i).gameObject.GetComponent<Astar>().NPCNumber = i;
+            if (GameObject.Find("NPCs").transform.GetChild(i).gameObject.GetComponent<Astar>() != null)
+                GameObject.Find("NPCs").transform.GetChild(i).gameObject.GetComponent<Astar>().NPCNumber = i;
         }
     }
 
