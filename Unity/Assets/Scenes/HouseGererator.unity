@@ -1163,7 +1163,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 553e51826f0ff0b4784847de4752d628, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 75
+      value: 89
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 553e51826f0ff0b4784847de4752d628, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1195,7 +1195,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 553e51826f0ff0b4784847de4752d628, type: 2}
       propertyPath: m_LocalScale.z
-      value: 138
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 553e51826f0ff0b4784847de4752d628, type: 2}
       propertyPath: m_LocalScale.x
@@ -3242,6 +3242,10 @@ Prefab:
       propertyPath: m_TagString
       value: Huisblok
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 553e51826f0ff0b4784847de4752d628, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 553e51826f0ff0b4784847de4752d628, type: 2}
   m_RootGameObject: {fileID: 1022190729}
@@ -3320,7 +3324,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &951851697
 Renderer:
   m_ObjectHideFlags: 0
@@ -4831,8 +4835,8 @@ Transform:
   m_PrefabInternal: {fileID: 381546267}
   m_GameObject: {fileID: 1268238082}
   m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106829}
-  m_LocalPosition: {x: 75, y: 0, z: 174}
-  m_LocalScale: {x: 36, y: 10, z: 138}
+  m_LocalPosition: {x: 89, y: 0, z: 174}
+  m_LocalScale: {x: 36, y: 10, z: 110}
   m_Children: []
   m_Father: {fileID: 1681569437}
   m_RootOrder: 29
