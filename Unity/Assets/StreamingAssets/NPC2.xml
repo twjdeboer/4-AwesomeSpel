@@ -9,6 +9,6 @@
 		</OPTION>
 		<OPTION>
 			<TEXT>Well, people are never pleased with the weather. </TEXT>
-			<REACTION>That's wheather you like it or not.</REACTION>
+			<REACTION TEXT="That's wheather you like it or not."></REACTION>
 		</OPTION>
 </conversation>
