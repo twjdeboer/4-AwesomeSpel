@@ -25,7 +25,10 @@ public class Node : MonoBehaviour{
         if(other.gameObject.tag.Contains("Walk"))
         {
             this.accesable = true;
-
+        }
+        if(!other.gameObject.tag.Contains("Walk"))
+        {
+            accesable = false;
         }
     }
 
