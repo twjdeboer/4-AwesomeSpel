@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<conversation>
+	<NPC>Did you read the news about the murder?</NPC>
+	<TALK>Yes I did.</TALK>
+	<NPC>They are completely wrong. The butler did it, as always</NPC>
+</conversation>
