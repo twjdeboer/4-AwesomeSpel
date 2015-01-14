@@ -4274,6 +4274,7 @@ GameObject:
   - 136: {fileID: 202830255}
   - 114: {fileID: 202830254}
   - 54: {fileID: 202830253}
+  - 208: {fileID: 202830258}
   - 81: {fileID: 202830257}
   m_Layer: 0
   m_Name: PlayerModel
@@ -4461,6 +4462,18 @@ AudioListener:
   m_PrefabInternal: {fileID: 675858325}
   m_GameObject: {fileID: 202830251}
   m_Enabled: 1
+--- !u!208 &202830258
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 20800000, guid: 7fc18a12eb9631b4a836ee157d58ffb9,
+    type: 2}
+  m_PrefabInternal: {fileID: 675858325}
+  m_GameObject: {fileID: 202830251}
+  m_Enabled: 1
+  m_Radius: .800000012
+  m_Height: 2
+  m_MoveThreshold: 0
+  m_Carve: 0
 --- !u!1 &210061340
 GameObject:
   m_ObjectHideFlags: 0
@@ -16414,7 +16427,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: Jsdaw
 --- !u!222 &819580761
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -22446,7 +22459,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: '******'
 --- !u!222 &1136683583
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -26892,7 +26905,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: bernard
 --- !u!222 &1344101553
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -33741,7 +33754,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16f8ff7dec9668641be4b9bbaa3d56a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstPlayScene: World final2
+  firstPlayScene: HouseGenerator
   startScene: StartMenu
 --- !u!1 &1692792237
 GameObject:
@@ -36614,7 +36627,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: qwe
 --- !u!222 &1786567709
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -36935,7 +36948,7 @@ AudioListener:
     type: 2}
   m_PrefabInternal: {fileID: 675858325}
   m_GameObject: {fileID: 1803895220}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!92 &1803895224
 Behaviour:
   m_ObjectHideFlags: 0
@@ -42351,7 +42364,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400174, guid: 11ad48879a09f2f49b5b9f78687ea63c, type: 2}
       propertyPath: firstPlayScene
-      value: World final2
+      value: HouseGenerator
       objectReference: {fileID: 0}
     - target: {fileID: 22300004, guid: 11ad48879a09f2f49b5b9f78687ea63c, type: 2}
       propertyPath: m_PixelPerfect
@@ -45192,7 +45205,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: '******'
 --- !u!222 &2121186436
 CanvasRenderer:
   m_ObjectHideFlags: 0
