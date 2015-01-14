@@ -167,7 +167,7 @@ public class EvidenceBehviour : MonoBehaviour {
  * */
     void OnCollisionExit(Collision other)
     {
-        onGround = false;
+       onGround = false;
     }
 
     /**
