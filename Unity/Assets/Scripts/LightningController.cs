@@ -31,12 +31,12 @@ public class LightningController : MonoBehaviour
         lightning_spot.GetComponent<Light>().intensity = 0;
         lightning_point.GetComponent<Light>().intensity = 0;
 
-        timer = Random.Range(5f, 10f);
+        timer = Random.Range(2f, 5f);
         lightninglength = 0;
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
 		{
 				elapsedtime += Time.deltaTime;
 		
@@ -56,7 +56,7 @@ public class LightningController : MonoBehaviour
 						//refresh
 						if (lightninglength > 20) {
                          
-								timer = Random.Range (10F, 15F);
+								timer = Random.Range (5F, 10F);
 								elapsedtime = 0;
 								lightninglength = 0;
 								//Debug.Log (timer);

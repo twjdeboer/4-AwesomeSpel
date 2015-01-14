@@ -160,7 +160,6 @@ public class SceneManager : MonoBehaviour
 								while (!hostop) {
 										itemId = response ["items"] [index] ["itemId"];
 										if (itemId == null || index > 20) {
-												print (index);
 												hostop = true;
 										} else {
 												items [int.Parse (itemId)-1] = true;
