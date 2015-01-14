@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 25
@@ -111,18 +111,18 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 1
+    m_Alignment: 7
     m_RichText: 0
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Wat ben je toch een winnaar
+  m_Text: 'You found all the evidence needed to catch the killer and put him behind
+    bars for a long time. As usual the law served justice. The priest is facing court
+    and a lifesentence.
 
 
-    Gewoon de moordenaar pakken
-
-
-    Koning die je bent'
+    After the investigation your chief was really impressed. It may even lead to the
+    promotion you always wanted.'
 --- !u!222 &537880656
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -283,26 +283,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 20
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 1
+    m_Alignment: 7
     m_RichText: 0
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: .699999988
-  m_Text: 'Beetje het reht in eigen hand nemen
+    m_LineSpacing: 1
+  m_Text: 'You haven''t found enough evidence to catch the killer. So you angerly
+    took matters in your own hand. Despite the fact that you feel it was the right
+    thing to do, you were arrested and non-active on the force.
 
 
-    Hoe durf je...
-
-
-    Branden in hel zul je'
+    Maybe your lawyer can make it an accident, but you will never get back on the
+    force. At least you can look at yourself in the mirror, knowing you did the rigth
+    thing.'
 --- !u!222 &1043681332
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -337,7 +338,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   einde: 2
-  time: 5
 --- !u!4 &1741611898
 Transform:
   m_ObjectHideFlags: 0
@@ -527,7 +527,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: b97ecd8d2a68ddb409f6111458241098, type: 2}
+  - {fileID: 2100000, guid: b3fbcb9a0c21e6148b83350e0b1d7afb, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
