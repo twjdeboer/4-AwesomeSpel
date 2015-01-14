@@ -14,7 +14,7 @@ GameObject:
   - 95: {fileID: 9500000}
   - 114: {fileID: 11400000}
   m_Layer: 0
-  m_Name: Gun
+  m_Name: Laptop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,9 +26,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_LocalRotation: {x: 0, y: 0, z: .707106829, w: .707106829}
-  m_LocalPosition: {x: -101.191704, y: -4.85360432, z: -33.8904037}
-  m_LocalScale: {x: .5, y: .5, z: .5}
+  m_LocalRotation: {x: -.707106888, y: 0, z: -0, w: .707106769}
+  m_LocalPosition: {x: -95.1031876, y: -3.53401589, z: -34.8723373}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -44,9 +44,9 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: bed3785749cf31c4e91ef7018331e476, type: 2}
-  - {fileID: 2100000, guid: 026813109ec554c45992cb7eeadebff9, type: 2}
-  - {fileID: 2100000, guid: 295cd8264e805ca40866d6bcaf2ca436, type: 2}
+  - {fileID: 2100000, guid: fa8a54e53e4751e4abc3af07bb8f67f0, type: 2}
+  - {fileID: 2100000, guid: 621d2df8d88dbb642b2ace821045213c, type: 2}
+  - {fileID: 2100000, guid: eb19c5d5d338bdb4ea953662d5762f29, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -60,7 +60,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_Mesh: {fileID: 4300000, guid: 373bcbfa27290a148a9eb3d795e45f52, type: 3}
+  m_Mesh: {fileID: 4300000, guid: fe64f14101c5a2a43bcd3e174783e5fc, type: 3}
 --- !u!64 &6400000
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -73,7 +73,7 @@ MeshCollider:
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
   m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 373bcbfa27290a148a9eb3d795e45f52, type: 3}
+  m_Mesh: {fileID: 4300000, guid: fe64f14101c5a2a43bcd3e174783e5fc, type: 3}
 --- !u!95 &9500000
 Animator:
   serializedVersion: 3
@@ -82,7 +82,7 @@ Animator:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 373bcbfa27290a148a9eb3d795e45f52, type: 3}
+  m_Avatar: {fileID: 9000000, guid: fe64f14101c5a2a43bcd3e174783e5fc, type: 3}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
@@ -100,9 +100,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 934bcb97ee10c984f8c39e979ca908fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  evidenceID: 2
+  evidenceID: 5
   description: 
-  evidencename: gun
+  evidencename: laptop
   rotationIfSelected: {x: 0, y: 0, z: 0}
   translateIfSelected: {x: 0, y: 0, z: 0}
   scaleFactorIfSelected: 0

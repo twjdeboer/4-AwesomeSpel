@@ -1,26 +1,19 @@
 fileFormatVersion: 2
-guid: f91cfaee8694f1949af4c26c304240e6
+guid: 8a1c7c3a42b9f2a46a94dae8c20569e0
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Plane
-    100004: Sphere
     400000: //RootNode
-    400002: Plane
-    400004: Sphere
-    2300000: Plane
-    2300002: Sphere
-    3300000: Plane
-    3300002: Sphere
+    2300000: //RootNode
+    3300000: //RootNode
     4300000: Sphere
-    4300002: Plane
     7400000: Default Take
     9500000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
-    materialSearch: 1
+    materialSearch: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -36,7 +29,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: .100000001
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1

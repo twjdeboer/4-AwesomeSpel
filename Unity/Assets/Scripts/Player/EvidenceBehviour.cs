@@ -2,10 +2,11 @@
 using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using System.IO;
 
 public class EvidenceBehviour : MonoBehaviour {
 
-    public int evidenceID;
+	public int evidenceID;
     public string description;
     public string evidencename;
     public Vector3 rotationIfSelected;
@@ -30,7 +31,69 @@ public class EvidenceBehviour : MonoBehaviour {
     private bool rotated = false;
     private bool pickedUp = false;
 
-    /*
+	private GameObject evidence;
+
+
+	// pick location
+	Vector3 pickRandom(){
+		
+		float[] xCord = {299.11f, 316.22f, 285.15f, 5f, 6f, 1.3f, -2.28f, 38.8f, -15.5f, 7.21f, -83.61f, -114.6f, 262.9f, 253.7f, 253.3f, 298.0f, -95.06f, -40.55f, 86.3f, 46.5f, 283.4f, -2.54f, -1.83f, -0.64f, -106.5f, -114.8f, -97.7f};
+		float[] yCord = {-0.32f, 0.24f, 0.111f, 0.3f, 0.3f, 0.3f, -0.06f, 0.02f, 0.05f, 0.186f, 0.18f, 0.186f, 0.879f, 0.088f, 0.167f, 0.480f, 0.76f, 0.7f, 0.205f, 0.205f, 0.21f, 0.429f, 2.646f, 0.268f, 0.114f, 0.11f, 0.11f};
+		float[] zCord = {116.08f, -63.66f, -87.72f, 7f, 2f, 8.5f, -4.14f, -54.14f, 33.28f, -86.02f, -145.8f, 82.5f, -183.8f, -198.2f, -164.4f, -131.3f, -216.2f, -3.89f, 86f, 153.7f, 83.5f, -0.85f, 9f, 5.47f, -211.5f, -212.4f, -223.8f};
+		
+		System.Random random = new System.Random ();
+		int i = evidenceID;	
+
+		int index = (random.Next(3*i, 2*(i+1)+i));
+
+		float x = (float) xCord.GetValue(index);
+		float y = (float) yCord.GetValue(index);
+		float z = (float) zCord.GetValue(index);
+				
+		Vector3 location = new Vector3 (x, y, z);
+				
+		return location;
+	}
+
+
+	bool[] ReadItemList (string filename)
+	{
+		bool[] items = new bool[10];
+		if (File.Exists (filename)) {
+			
+			string[] content = File.ReadAllLines (filename);
+			
+			for (int i = 0; i<10; i++) {
+				items [i] = bool.Parse( content[i+4]);
+			}
+			
+			
+		} else {
+			Debug.Log ("No Save File found");
+		}
+		return items;
+		
+	}
+
+	void placeEvidence(){
+		if ((bool)ReadItemList ("cloud.save").GetValue (evidenceID) == false)
+			transform.position = pickRandom();
+		
+		else gameObject.SetActive(false);
+	}
+	
+	// Use this for initialization
+	void Start () {
+		CreateMouseCollider();
+		evidenceInterface = GameObject.Find("Evidence");
+		descriptionText = GameObject.Find("Description").GetComponent<Text>();
+		evidenceNameText = GameObject.Find("EvidenceName").GetComponent<Text>();
+		evidenceInterface.GetComponent<CanvasGroup>().alpha = 0;
+		intScale = transform.localScale;
+		placeEvidence ();
+	}
+	
+	/*
      * Checks if mouse over object, if so executes evidence selector.
      * */
     void IfMouseEnter()
@@ -164,16 +227,7 @@ public class EvidenceBehviour : MonoBehaviour {
         return Vector3.Distance(transform.position, ResourceManager.playerPosition) < maxDistance;
     }
 
-	// Use this for initialization
-	void Start () {
-        CreateMouseCollider();
-        evidenceInterface = GameObject.Find("Evidence");
-        descriptionText = GameObject.Find("Description").GetComponent<Text>();
-        evidenceNameText = GameObject.Find("EvidenceName").GetComponent<Text>();
-        evidenceInterface.GetComponent<CanvasGroup>().alpha = 0;
-        intScale = transform.localScale;
-	}
-	
+
     void CheckMouseCollider()
     {
         mouseEntered = transform.GetComponentInChildren<MouseCollider>().mouseEntered;

@@ -772,6 +772,7 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -1697,7 +1698,6 @@ CanvasGroup:
     type: 2}
   m_PrefabInternal: {fileID: 531360897}
   m_GameObject: {fileID: 125114204}
-  m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
@@ -3316,7 +3316,7 @@ AudioListener:
     type: 2}
   m_PrefabInternal: {fileID: 1860630029}
   m_GameObject: {fileID: 215341806}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!92 &215341810
 Behaviour:
   m_ObjectHideFlags: 0
@@ -6075,7 +6075,6 @@ CanvasGroup:
     type: 2}
   m_PrefabInternal: {fileID: 531360897}
   m_GameObject: {fileID: 392356740}
-  m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
@@ -8124,6 +8123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 934bcb97ee10c984f8c39e979ca908fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  evidenceID: 0
   description: What is a jewish chandelier doing in a church.
   evidencename: 
   rotationIfSelected: {x: 0, y: 0, z: 0}
@@ -9299,7 +9299,6 @@ CanvasGroup:
     type: 2}
   m_PrefabInternal: {fileID: 531360897}
   m_GameObject: {fileID: 563063068}
-  m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 0
@@ -9692,6 +9691,8 @@ GameObject:
   - 136: {fileID: 602497949}
   - 114: {fileID: 602497948}
   - 54: {fileID: 602497947}
+  - 208: {fileID: 602497952}
+  - 81: {fileID: 602497951}
   m_Layer: 0
   m_Name: PlayerModel
   m_TagString: Untagged
@@ -9870,6 +9871,26 @@ Animator:
   m_ApplyRootMotion: 0
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!81 &602497951
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 8100000, guid: 7fc18a12eb9631b4a836ee157d58ffb9,
+    type: 2}
+  m_PrefabInternal: {fileID: 1860630029}
+  m_GameObject: {fileID: 602497945}
+  m_Enabled: 1
+--- !u!208 &602497952
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 20800000, guid: 7fc18a12eb9631b4a836ee157d58ffb9,
+    type: 2}
+  m_PrefabInternal: {fileID: 1860630029}
+  m_GameObject: {fileID: 602497945}
+  m_Enabled: 1
+  m_Radius: .800000012
+  m_Height: 2
+  m_MoveThreshold: 0
+  m_Carve: 0
 --- !u!1 &604750241
 GameObject:
   m_ObjectHideFlags: 0
@@ -10363,6 +10384,7 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -10621,6 +10643,7 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -13639,7 +13662,6 @@ CanvasGroup:
     type: 2}
   m_PrefabInternal: {fileID: 531360897}
   m_GameObject: {fileID: 883015652}
-  m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
@@ -22447,6 +22469,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 934bcb97ee10c984f8c39e979ca908fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  evidenceID: 0
   description: Burn out your eyes
   evidencename: 
   rotationIfSelected: {x: 0, y: 0, z: 0}
@@ -26931,6 +26954,7 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -28564,7 +28588,6 @@ CanvasGroup:
     type: 2}
   m_PrefabInternal: {fileID: 531360897}
   m_GameObject: {fileID: 1956727889}
-  m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 0
