@@ -369,6 +369,10 @@ Prefab:
       propertyPath: m_LightmapTilingOffset.w
       value: -.000469207764
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
   m_RootGameObject: {fileID: 1972649405}
@@ -772,7 +776,6 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -920,6 +923,10 @@ Prefab:
       propertyPath: m_LightmapTilingOffset.w
       value: -.000469207764
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
   m_RootGameObject: {fileID: 1999870766}
@@ -1000,6 +1007,10 @@ Prefab:
       propertyPath: m_LightmapTilingOffset.w
       value: .11964798
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
   m_RootGameObject: {fileID: 1619160310}
@@ -1079,6 +1090,10 @@ Prefab:
     - target: {fileID: 2300000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
       propertyPath: m_LightmapTilingOffset.w
       value: .840351105
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
@@ -1213,6 +1228,7 @@ GameObject:
   - 64: {fileID: 92450975}
   - 54: {fileID: 92450974}
   - 114: {fileID: 92450976}
+  - 114: {fileID: 92450977}
   m_Layer: 0
   m_Name: Priest
   m_TagString: Untagged
@@ -1308,7 +1324,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300010, guid: db779796f778cde45a7e2c4516d82cd7, type: 3}
 --- !u!114 &92450976
 MonoBehaviour:
@@ -1327,6 +1343,17 @@ MonoBehaviour:
   stopWalking: 0
   choiceOfPlayer: 0
   fileName: PriesterDialoog.xml
+--- !u!114 &92450977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 92450969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d1841d34681d3d4eb390389dbe4c428, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &94645581
 Prefab:
   m_ObjectHideFlags: 0
@@ -1401,6 +1428,10 @@ Prefab:
     - target: {fileID: 2300000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
       propertyPath: m_LightmapTilingOffset.w
       value: .359882355
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
@@ -1609,7 +1640,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
 --- !u!1 &116195770
 GameObject:
@@ -1711,6 +1742,7 @@ CanvasGroup:
     type: 2}
   m_PrefabInternal: {fileID: 531360897}
   m_GameObject: {fileID: 125114204}
+  m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
@@ -2382,7 +2414,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
 --- !u!1 &177476405
 GameObject:
@@ -2759,6 +2791,10 @@ Prefab:
     - target: {fileID: 2300000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
       propertyPath: m_LightmapTilingOffset.w
       value: .239765167
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
@@ -3155,6 +3191,10 @@ Prefab:
       propertyPath: m_LightmapTilingOffset.w
       value: -.000469207764
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
   m_RootGameObject: {fileID: 1891209288}
@@ -3276,7 +3316,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
 --- !u!1 &215341806
 GameObject:
@@ -3304,8 +3344,8 @@ Transform:
   m_PrefabParentObject: {fileID: 481754, guid: 7fc18a12eb9631b4a836ee157d58ffb9, type: 2}
   m_PrefabInternal: {fileID: 1860630029}
   m_GameObject: {fileID: 215341806}
-  m_LocalRotation: {x: -2.82908825e-08, y: .984807789, z: -.173648193, w: -1.60445566e-07}
-  m_LocalPosition: {x: -.300000012, y: 30.6000004, z: 76.8000031}
+  m_LocalRotation: {x: -7.10650028e-09, y: .999048233, z: -.0436193869, w: -1.62765616e-07}
+  m_LocalPosition: {x: -.300000012, y: 5, z: 15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 956335080}
@@ -3365,8 +3405,8 @@ Camera:
     height: 1
   near clip plane: .300000012
   far clip plane: 1000
-  field of view: 60
-  orthographic: 1
+  field of view: 36.5999985
+  orthographic: 0
   orthographic size: 1
   m_Depth: 0
   m_CullingMask:
@@ -3417,6 +3457,46 @@ Prefab:
     - target: {fileID: 400000, guid: bae2ff93539ac3b4182ecc1bb769489c, type: 2}
       propertyPath: m_RootOrder
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: bae2ff93539ac3b4182ecc1bb769489c, type: 2}
+      propertyPath: scaleFactorIfSelected
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: bae2ff93539ac3b4182ecc1bb769489c, type: 2}
+      propertyPath: translateIfSelected.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: bae2ff93539ac3b4182ecc1bb769489c, type: 2}
+      propertyPath: rotationIfSelected.x
+      value: 270
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: bae2ff93539ac3b4182ecc1bb769489c, type: 2}
+      propertyPath: rotationIfSelected.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: bae2ff93539ac3b4182ecc1bb769489c, type: 2}
+      propertyPath: rotationIfSelected.z
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: bae2ff93539ac3b4182ecc1bb769489c, type: 2}
+      propertyPath: rotationSpeed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: bae2ff93539ac3b4182ecc1bb769489c, type: 2}
+      propertyPath: maxDistance
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: bae2ff93539ac3b4182ecc1bb769489c, type: 2}
+      propertyPath: translateIfSelected.y
+      value: .150000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: bae2ff93539ac3b4182ecc1bb769489c, type: 2}
+      propertyPath: translateIfSelected.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: bae2ff93539ac3b4182ecc1bb769489c, type: 2}
+      propertyPath: description
+      value: this phone might contain crucial contacts of the murderer
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bae2ff93539ac3b4182ecc1bb769489c, type: 2}
@@ -3722,6 +3802,10 @@ Prefab:
       propertyPath: m_LightmapTilingOffset.w
       value: .479999542
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
   m_RootGameObject: {fileID: 174585349}
@@ -3983,7 +4067,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
 --- !u!1 &264159481
 GameObject:
@@ -4046,14 +4130,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidenceID: 7
-  description: 
+  description: this phone might contain crucial contacts of the murderer
   evidencename: phone
-  rotationIfSelected: {x: 0, y: 0, z: 0}
-  translateIfSelected: {x: 0, y: 0, z: 0}
-  scaleFactorIfSelected: 0
-  rotationSpeed: 0
+  rotationIfSelected: {x: 270, y: 0, z: 90}
+  translateIfSelected: {x: 0, y: .150000006, z: 0}
+  scaleFactorIfSelected: 3
+  rotationSpeed: 50
   canBePickedUp: 1
-  maxDistance: 0
+  maxDistance: 6
 --- !u!95 &269013913
 Animator:
   serializedVersion: 3
@@ -4241,6 +4325,10 @@ Prefab:
     - target: {fileID: 2300000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
       propertyPath: m_LightmapTilingOffset.w
       value: .11964798
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
@@ -4489,7 +4577,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
 --- !u!1 &305868528
 GameObject:
@@ -5116,7 +5204,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
 --- !u!1 &314789828
 GameObject:
@@ -5206,7 +5294,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
 --- !u!1 &315043099
 GameObject:
@@ -5370,7 +5458,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
 --- !u!1 &330384668
 GameObject:
@@ -6118,7 +6206,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
 --- !u!1 &383704980
 GameObject:
@@ -6259,6 +6347,7 @@ CanvasGroup:
     type: 2}
   m_PrefabInternal: {fileID: 531360897}
   m_GameObject: {fileID: 392356740}
+  m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
@@ -6623,6 +6712,10 @@ Prefab:
       propertyPath: m_LightmapTilingOffset.w
       value: .239765167
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
   m_RootGameObject: {fileID: 1063850652}
@@ -6743,7 +6836,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
 --- !u!1 &412257586
 GameObject:
@@ -7656,7 +7749,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
 --- !u!1 &476583983
 GameObject:
@@ -9321,6 +9414,10 @@ Prefab:
       propertyPath: m_LightmapTilingOffset.w
       value: .359882355
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
   m_RootGameObject: {fileID: 1283202731}
@@ -9505,6 +9602,7 @@ CanvasGroup:
     type: 2}
   m_PrefabInternal: {fileID: 531360897}
   m_GameObject: {fileID: 563063068}
+  m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 0
@@ -9696,6 +9794,7 @@ CanvasGroup:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 569446501}
+  m_Enabled: 1
   m_Alpha: .699999988
   m_Interactable: 1
   m_BlocksRaycasts: 1
@@ -9925,7 +10024,7 @@ Transform:
   m_GameObject: {fileID: 602497945}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -.739082813, y: 0, z: -1.28666353}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 311586788}
   - {fileID: 1120710022}
@@ -10068,7 +10167,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: .573822021
+  m_Radius: .699999988
   m_Height: 3.07158256
   m_Direction: 1
   m_Center: {x: 0, y: 1.5, z: 0}
@@ -10601,7 +10700,6 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -10860,7 +10958,6 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -10980,6 +11077,10 @@ Prefab:
     - target: {fileID: 2300000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
       propertyPath: m_LightmapTilingOffset.w
       value: .239765167
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
@@ -11602,6 +11703,10 @@ Prefab:
       propertyPath: m_LightmapTilingOffset.w
       value: .359882355
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
   m_RootGameObject: {fileID: 313764595}
@@ -11762,7 +11867,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
 --- !u!1 &736182308
 GameObject:
@@ -12984,6 +13089,10 @@ Prefab:
       propertyPath: m_LightmapTilingOffset.w
       value: .11964798
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
   m_RootGameObject: {fileID: 1561150083}
@@ -13077,7 +13186,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
 --- !u!1 &807967070
 GameObject:
@@ -13882,6 +13991,7 @@ CanvasGroup:
     type: 2}
   m_PrefabInternal: {fileID: 531360897}
   m_GameObject: {fileID: 883015652}
+  m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
@@ -13987,6 +14097,10 @@ Prefab:
     - target: {fileID: 2300000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
       propertyPath: m_LightmapTilingOffset.w
       value: .239765167
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
@@ -14518,6 +14632,10 @@ Prefab:
     - target: {fileID: 2300000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
       propertyPath: m_LightmapTilingOffset.w
       value: .781757355
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
@@ -15331,6 +15449,10 @@ Prefab:
       propertyPath: m_LightmapTilingOffset.w
       value: .11964798
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
   m_RootGameObject: {fileID: 1390841827}
@@ -15497,6 +15619,10 @@ Prefab:
     - target: {fileID: 2300000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
       propertyPath: m_LightmapTilingOffset.w
       value: -.000469207764
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
@@ -15705,7 +15831,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
 --- !u!1 &994811797
 GameObject:
@@ -16052,7 +16178,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
 --- !u!1 &1054292117
 GameObject:
@@ -16224,7 +16350,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
 --- !u!1 &1064863319
 GameObject:
@@ -16749,6 +16875,10 @@ Prefab:
       propertyPath: m_LightmapTilingOffset.w
       value: .720233917
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
   m_RootGameObject: {fileID: 327539584}
@@ -17176,6 +17306,10 @@ Prefab:
       propertyPath: m_LightmapTilingOffset.w
       value: .359882355
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
   m_RootGameObject: {fileID: 255972280}
@@ -17269,7 +17403,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
 --- !u!1 &1128622083
 GameObject:
@@ -17446,6 +17580,10 @@ Prefab:
     - target: {fileID: 2300000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
       propertyPath: m_LightmapTilingOffset.w
       value: .840351105
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
@@ -17831,7 +17969,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
 --- !u!1 &1162797394
 GameObject:
@@ -18175,7 +18313,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
 --- !u!1 &1190168711
 GameObject:
@@ -18350,7 +18488,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
 --- !u!1 &1196779456
 GameObject:
@@ -18721,6 +18859,10 @@ Prefab:
     - target: {fileID: 2300000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
       propertyPath: m_LightmapTilingOffset.w
       value: -.000469207764
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
@@ -19119,6 +19261,10 @@ Prefab:
     - target: {fileID: 2300000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
       propertyPath: m_LightmapTilingOffset.w
       value: .239765167
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
@@ -19664,6 +19810,10 @@ Prefab:
       propertyPath: m_LightmapTilingOffset.w
       value: .11964798
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
   m_RootGameObject: {fileID: 1708052651}
@@ -19757,7 +19907,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
 --- !u!1 &1285225814
 GameObject:
@@ -20007,7 +20157,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
 --- !u!1 &1296196464
 GameObject:
@@ -21183,7 +21333,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
 --- !u!1 &1409575205
 GameObject:
@@ -21518,6 +21668,10 @@ Prefab:
       propertyPath: m_LightmapTilingOffset.w
       value: .359882355
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
   m_RootGameObject: {fileID: 296970840}
@@ -21680,6 +21834,10 @@ Prefab:
     - target: {fileID: 2300000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
       propertyPath: m_LightmapTilingOffset.w
       value: .661640167
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
@@ -22044,6 +22202,10 @@ Prefab:
       propertyPath: m_LightmapTilingOffset.w
       value: .11964798
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
   m_RootGameObject: {fileID: 1487560265}
@@ -22137,7 +22299,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
 --- !u!1001 &1491326458
 Prefab:
@@ -22213,6 +22375,10 @@ Prefab:
     - target: {fileID: 2300000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
       propertyPath: m_LightmapTilingOffset.w
       value: .720233917
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
@@ -23153,6 +23319,10 @@ Prefab:
       propertyPath: m_LightmapTilingOffset.w
       value: .479999542
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
   m_RootGameObject: {fileID: 410178911}
@@ -23372,6 +23542,10 @@ Prefab:
       propertyPath: m_LightmapTilingOffset.w
       value: .60011673
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
   m_RootGameObject: {fileID: 1190064628}
@@ -23577,7 +23751,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
 --- !u!1 &1561720801
 GameObject:
@@ -24107,7 +24281,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
 --- !u!1 &1600307254
 GameObject:
@@ -24336,7 +24510,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
 --- !u!1 &1632627143
 GameObject:
@@ -25336,6 +25510,10 @@ Prefab:
       propertyPath: m_LightmapTilingOffset.w
       value: .60011673
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
   m_RootGameObject: {fileID: 382111787}
@@ -25696,7 +25874,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
 --- !u!1 &1708973544
 GameObject:
@@ -25890,6 +26068,10 @@ Prefab:
     - target: {fileID: 2300000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
       propertyPath: m_LightmapTilingOffset.w
       value: -.000469207764
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
@@ -26584,7 +26766,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
 --- !u!1 &1808974696
 GameObject:
@@ -27109,6 +27291,10 @@ Prefab:
       propertyPath: m_LightmapTilingOffset.w
       value: .239765167
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
   m_RootGameObject: {fileID: 807847459}
@@ -27170,7 +27356,6 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -27403,6 +27588,10 @@ Prefab:
       propertyPath: m_LightmapTilingOffset.w
       value: .60011673
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
   m_RootGameObject: {fileID: 110962297}
@@ -27580,19 +27769,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 481754, guid: 7fc18a12eb9631b4a836ee157d58ffb9, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -2.82908825e-08
+      value: -7.10650028e-09
       objectReference: {fileID: 0}
     - target: {fileID: 481754, guid: 7fc18a12eb9631b4a836ee157d58ffb9, type: 2}
       propertyPath: m_LocalRotation.y
-      value: .984807789
+      value: .999048233
       objectReference: {fileID: 0}
     - target: {fileID: 481754, guid: 7fc18a12eb9631b4a836ee157d58ffb9, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -.173648193
+      value: -.0436193869
       objectReference: {fileID: 0}
     - target: {fileID: 481754, guid: 7fc18a12eb9631b4a836ee157d58ffb9, type: 2}
       propertyPath: m_LocalRotation.w
-      value: -1.60445566e-07
+      value: -1.62765616e-07
       objectReference: {fileID: 0}
     - target: {fileID: 481754, guid: 7fc18a12eb9631b4a836ee157d58ffb9, type: 2}
       propertyPath: m_LocalPosition.x
@@ -27600,11 +27789,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 481754, guid: 7fc18a12eb9631b4a836ee157d58ffb9, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 76.8000031
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 481754, guid: 7fc18a12eb9631b4a836ee157d58ffb9, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 30.6000004
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2082318, guid: 7fc18a12eb9631b4a836ee157d58ffb9, type: 2}
       propertyPath: orthographic size
@@ -27625,6 +27814,30 @@ Prefab:
     - target: {fileID: 181560, guid: 7fc18a12eb9631b4a836ee157d58ffb9, type: 2}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2082318, guid: 7fc18a12eb9631b4a836ee157d58ffb9, type: 2}
+      propertyPath: orthographic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2082318, guid: 7fc18a12eb9631b4a836ee157d58ffb9, type: 2}
+      propertyPath: field of view
+      value: 36.5999985
+      objectReference: {fileID: 0}
+    - target: {fileID: 481756, guid: 7fc18a12eb9631b4a836ee157d58ffb9, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 481756, guid: 7fc18a12eb9631b4a836ee157d58ffb9, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 481756, guid: 7fc18a12eb9631b4a836ee157d58ffb9, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 13682318, guid: 7fc18a12eb9631b4a836ee157d58ffb9, type: 2}
+      propertyPath: m_Radius
+      value: .699999988
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7fc18a12eb9631b4a836ee157d58ffb9, type: 2}
@@ -27973,7 +28186,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
 --- !u!1 &1896932661
 GameObject:
@@ -28409,6 +28622,10 @@ Prefab:
       propertyPath: m_LightmapTilingOffset.w
       value: .479999542
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
   m_RootGameObject: {fileID: 1192741747}
@@ -28812,6 +29029,7 @@ CanvasGroup:
     type: 2}
   m_PrefabInternal: {fileID: 531360897}
   m_GameObject: {fileID: 1956727889}
+  m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 0
@@ -29017,7 +29235,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
 --- !u!1001 &1974729354
 Prefab:
@@ -29332,7 +29550,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
 --- !u!1 &1992318115
 GameObject:
@@ -29570,7 +29788,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
 --- !u!1 &2000788962
 GameObject:
@@ -29717,7 +29935,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
 --- !u!1001 &2003420868
 Prefab:
@@ -30767,7 +30985,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
 --- !u!1 &2102972279
 GameObject:
@@ -30857,7 +31075,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
 --- !u!1 &2111830549
 GameObject:
@@ -31300,6 +31518,10 @@ Prefab:
     - target: {fileID: 2300000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
       propertyPath: m_LightmapTilingOffset.w
       value: .359882355
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}

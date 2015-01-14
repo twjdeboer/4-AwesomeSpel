@@ -41,7 +41,11 @@ public class NeuralResult : MonoBehaviour {
 
 	
 		Setfoundevidence ();
+
 		uitkomst = CalcOutput(foundevidence);
+
+		UpdateSave (); 
+
 
 	}
 	
@@ -50,6 +54,26 @@ public class NeuralResult : MonoBehaviour {
 	
 	//}
 
+	void UpdateSave() {
+		string filename = "cloud.save";
+		string[] nieuw = File.ReadAllLines (filename);
+		
+		nieuw[13] = "True";
+		if (this.uitkomst == 2)
+		{
+			nieuw[14] = "True";
+		} 
+				
+		StreamWriter sr = File.CreateText (filename);
+		for(int i = 0; i<15; i++)
+		{
+			sr.WriteLine(nieuw[i]);
+
+		}
+		sr.Close ();
+	}
+
+
 	void Setfoundevidence(){
 		string filename = "cloud.save";
 		bool[] items = new bool[9];
@@ -57,7 +81,8 @@ public class NeuralResult : MonoBehaviour {
 		
 		string[] content = File.ReadAllLines (filename);
 		
-		for (int i = 0; i<9; i++) {
+		for (int i = 0; i<9; i++) 
+		{
 			if (bool.Parse( content[i+4])){
 				foundevidence[i]=1f;
 			}
