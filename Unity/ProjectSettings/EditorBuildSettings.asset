@@ -12,7 +12,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/World final2.unity
   - enabled: 1
-    path: Assets/Scenes/HouseGererator.unity
+    path: Assets/Scenes/HouseGenerator.unity
   - enabled: 1
     path: Assets/Scenes/TestWorldMerge.unity
   - enabled: 1

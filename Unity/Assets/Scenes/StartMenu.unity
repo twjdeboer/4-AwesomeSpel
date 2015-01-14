@@ -16427,7 +16427,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Jsdaw
+  m_Text: 
 --- !u!222 &819580761
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -22459,7 +22459,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '******'
+  m_Text: 
 --- !u!222 &1136683583
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -26905,7 +26905,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: bernard
+  m_Text: 
 --- !u!222 &1344101553
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -36627,7 +36627,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: qwe
+  m_Text: 
 --- !u!222 &1786567709
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -45205,7 +45205,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '******'
+  m_Text: 
 --- !u!222 &2121186436
 CanvasRenderer:
   m_ObjectHideFlags: 0
