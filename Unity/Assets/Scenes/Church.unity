@@ -3304,8 +3304,8 @@ Transform:
   m_PrefabParentObject: {fileID: 481754, guid: 7fc18a12eb9631b4a836ee157d58ffb9, type: 2}
   m_PrefabInternal: {fileID: 1860630029}
   m_GameObject: {fileID: 215341806}
-  m_LocalRotation: {x: -2.82908825e-08, y: .984807789, z: -.173648193, w: -1.60445566e-07}
-  m_LocalPosition: {x: -.300000012, y: 30.6000004, z: 76.8000031}
+  m_LocalRotation: {x: -7.10650028e-09, y: .999048233, z: -.0436193869, w: -1.62765616e-07}
+  m_LocalPosition: {x: -.300000012, y: 5, z: 15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 956335080}
@@ -3365,8 +3365,8 @@ Camera:
     height: 1
   near clip plane: .300000012
   far clip plane: 1000
-  field of view: 60
-  orthographic: 1
+  field of view: 36.5999985
+  orthographic: 0
   orthographic size: 1
   m_Depth: 0
   m_CullingMask:
@@ -27580,19 +27580,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 481754, guid: 7fc18a12eb9631b4a836ee157d58ffb9, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -2.82908825e-08
+      value: -7.10650028e-09
       objectReference: {fileID: 0}
     - target: {fileID: 481754, guid: 7fc18a12eb9631b4a836ee157d58ffb9, type: 2}
       propertyPath: m_LocalRotation.y
-      value: .984807789
+      value: .999048233
       objectReference: {fileID: 0}
     - target: {fileID: 481754, guid: 7fc18a12eb9631b4a836ee157d58ffb9, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -.173648193
+      value: -.0436193869
       objectReference: {fileID: 0}
     - target: {fileID: 481754, guid: 7fc18a12eb9631b4a836ee157d58ffb9, type: 2}
       propertyPath: m_LocalRotation.w
-      value: -1.60445566e-07
+      value: -1.62765616e-07
       objectReference: {fileID: 0}
     - target: {fileID: 481754, guid: 7fc18a12eb9631b4a836ee157d58ffb9, type: 2}
       propertyPath: m_LocalPosition.x
@@ -27600,11 +27600,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 481754, guid: 7fc18a12eb9631b4a836ee157d58ffb9, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 76.8000031
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 481754, guid: 7fc18a12eb9631b4a836ee157d58ffb9, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 30.6000004
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2082318, guid: 7fc18a12eb9631b4a836ee157d58ffb9, type: 2}
       propertyPath: orthographic size
@@ -27625,6 +27625,14 @@ Prefab:
     - target: {fileID: 181560, guid: 7fc18a12eb9631b4a836ee157d58ffb9, type: 2}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2082318, guid: 7fc18a12eb9631b4a836ee157d58ffb9, type: 2}
+      propertyPath: orthographic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2082318, guid: 7fc18a12eb9631b4a836ee157d58ffb9, type: 2}
+      propertyPath: field of view
+      value: 36.5999985
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7fc18a12eb9631b4a836ee157d58ffb9, type: 2}
