@@ -44,22 +44,18 @@ public class Eindpraatje : MonoBehaviour {
 	void SetEinde(){
 
 		string filename = "cloud.save";
-		bool[] items = new bool[10];
+		
 
 			
 		string[] content = File.ReadAllLines (filename);
 				
-		for (int i = 0; i<10; i++) {
-			items [i] = bool.Parse( content[i+4]);
+		if (content[14] == "True")
+		{
+			einde = 2;
 		}
-				
-				
-		
-
-		if (items [9] == false) {
-				einde = 1;
-		} else {
-				einde = 2;
+		else 
+		{
+			einde = 1;
 		}
 			
 	
