@@ -71,7 +71,6 @@ public class GotoNextScenetrue : MonoBehaviour {
 		WWW www = new WWW(url);
 
 		StartCoroutine (GETWritePlayerPos (www));
-		Debug.Log (url);
 		
 	}
 
