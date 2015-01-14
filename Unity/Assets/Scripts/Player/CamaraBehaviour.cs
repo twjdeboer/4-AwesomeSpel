@@ -40,7 +40,6 @@ public class CamaraBehaviour : MonoBehaviour {
 
     void CheckRay()
     {   
-
         if(Physics.Linecast(transform.position, ResourceManager.playerPosition, out rayinfo))
         {
             Collider other = rayinfo.collider;

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 public class EvidenceBehviour : MonoBehaviour {
 
+    public int evidenceID;
     public string description;
     public string evidencename;
     public Vector3 rotationIfSelected;
