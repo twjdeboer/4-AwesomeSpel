@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/**
+ * Let camera shake using fieldOfView.
+ * */
 public class CameraShaker : MonoBehaviour {
 
     private float intZoom;
@@ -11,18 +14,21 @@ public class CameraShaker : MonoBehaviour {
     public float dampFactor;
     public bool shake;
 
-	// Use this for initialization
+	// Use this for initialization: determine initial zoom for resetting camera if needed.
 	void Start () {
         intZoom = camera.fieldOfView;
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    /**
+     * Let camera shake by adjusting field of view using sinus. To damp vibration, exp is used
+     * */
+    void Shaker()
+    {
         if (shake && (t < shakeDuration || shakeDuration == 0))
         {
             t += Time.deltaTime;
-            camera.fieldOfView = intZoom + amplitude*Mathf.Exp(-dampFactor * t)* Mathf.Sin(shakeSpeed * t);
-            
+            camera.fieldOfView = intZoom + amplitude * Mathf.Exp(-dampFactor * t) * Mathf.Sin(shakeSpeed * t);
+
         }
         else
         {
@@ -30,5 +36,10 @@ public class CameraShaker : MonoBehaviour {
             camera.fieldOfView = intZoom;
             shake = false;
         }
+    }
+	
+	// Update is called once per frame
+	void Update () {
+
 	}
 }
