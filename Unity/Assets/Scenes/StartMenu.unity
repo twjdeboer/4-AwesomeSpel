@@ -4274,6 +4274,7 @@ GameObject:
   - 136: {fileID: 202830255}
   - 114: {fileID: 202830254}
   - 54: {fileID: 202830253}
+  - 81: {fileID: 202830257}
   m_Layer: 0
   m_Name: PlayerModel
   m_TagString: Untagged
@@ -4452,6 +4453,14 @@ Animator:
   m_ApplyRootMotion: 0
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!81 &202830257
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 8100000, guid: 7fc18a12eb9631b4a836ee157d58ffb9,
+    type: 2}
+  m_PrefabInternal: {fileID: 675858325}
+  m_GameObject: {fileID: 202830251}
+  m_Enabled: 1
 --- !u!1 &210061340
 GameObject:
   m_ObjectHideFlags: 0
@@ -16405,7 +16414,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Jsdaw
+  m_Text: 
 --- !u!222 &819580761
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -22437,7 +22446,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '******'
+  m_Text: 
 --- !u!222 &1136683583
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -26883,7 +26892,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: bernard
+  m_Text: 
 --- !u!222 &1344101553
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -35064,8 +35073,8 @@ MonoBehaviour:
   lightning1: {fileID: 8300000, guid: 757d55ea85102424b99c938c096545ef, type: 3}
   lightning2: {fileID: 8300000, guid: 33a8b663145cc094d8be9294e8920194, type: 3}
   lightning3: {fileID: 8300000, guid: 73e9b7fd42f4ab64185e538495f0098d, type: 3}
-  shakeSpeed: 60
-  amplitude: 2
+  shakeSpeed: 40
+  amplitude: 1.5
   dampFactor: 1
 --- !u!82 &1744642468
 AudioSource:
@@ -35514,6 +35523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 934bcb97ee10c984f8c39e979ca908fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  evidenceID: 0
   description: There is a picture of a cat on the screen. Let's take it with us. The
     tech department knows how to handle it.
   evidencename: 
@@ -36604,7 +36614,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: qwe
+  m_Text: 
 --- !u!222 &1786567709
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -45182,7 +45192,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '******'
+  m_Text: 
 --- !u!222 &2121186436
 CanvasRenderer:
   m_ObjectHideFlags: 0
