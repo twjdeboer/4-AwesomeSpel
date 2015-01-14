@@ -123,7 +123,7 @@ public class Testblok2 : MonoBehaviour {
 			}
 		}
 		//Timer += Time.deltaTime;
-		print(loadprogress+" "+loadsize);
+		//print(loadprogress+" "+loadsize);
 		//print (Time.deltaTime);
 		j++;
 		text.text = currentload + ": " + loadprogress + " of "+loadsize;
