@@ -2409,7 +2409,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2a5a8bd0d29ed542be0b2c2bc08c128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  streetlight: {fileID: 0}
+  streetlight: {fileID: 400000, guid: 981849e5bfa334b49afab3fffe3c38c6, type: 2}
   HouseContainer: {fileID: 924383302}
 --- !u!4 &701093851
 Transform:
