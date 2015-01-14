@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Text.RegularExpressions;
 using System.IO;
+using SimpleJSON;
 
 public class SceneManager : MonoBehaviour
 {
@@ -26,7 +27,7 @@ public class SceneManager : MonoBehaviour
 						if (Application.loadedLevelName == startScene)
 								setCanvasActive (startMenu);
 						else
-								setCanvasInactive (startMenu);		
+								setCanvasInactive (startMenu);
 				}
 				loginMenu = GameObject.Find ("Login");
 				if (loginMenu != null)
@@ -42,11 +43,11 @@ public class SceneManager : MonoBehaviour
 		{
 				if (pause) {
 						Time.timeScale = 0;
-						GameObject.Find ("PlayerModel").GetComponent<Animator> ().speed = 0;              
+						GameObject.Find ("PlayerModel").GetComponent<Animator> ().speed = 0;
 						gamePaused = true;
 				} else {
 						Time.timeScale = 1;
-						GameObject.Find ("PlayerModel").GetComponent<Animator> ().speed = 1;   
+						GameObject.Find ("PlayerModel").GetComponent<Animator> ().speed = 1;
 						gamePaused = false;
 
 				}
@@ -110,7 +111,7 @@ public class SceneManager : MonoBehaviour
 				setCanvasActive (loginMenu);
 
 		}
-
+	 	
 		void CreateMenu ()
 		{
 				setCanvasInactive (loginMenu);
@@ -132,21 +133,41 @@ public class SceneManager : MonoBehaviour
 				WWW www = new WWW (url);
 				StartCoroutine (GETLogin (www));
 		}
-	
+
 		IEnumerator GETLogin (WWW www)
 		{
 				yield return www;
-		
+
 				// check for errors
 				if (www.error == null) {
-						string response = www.text;
-						string[] result = response.Substring (1, response.Length - 2).Split (',');
-						string msg = result [0].Split (':') [1];
-						msg = msg.Substring (1, msg.Length - 2);
+						string jsonresponse = www.text;
+
+				
+						JSONNode response = JSON.Parse (jsonresponse);
+	
+						string msg = response ["msg"];
 						switch (msg) {
 						case ("SUCCESS"):
-								int userid = int.Parse( result [1].Split (':') [1]);
-				WriteToSave(@"cloud.save", userid, 0f, 0f, new bool[10]);
+								int userid = int.Parse (response ["userid"]);
+								float xpos = float.Parse (response ["xpos"]);
+								float ypos = float.Parse (response ["ypos"]);
+								float zpos = float.Parse (response ["zpos"]);
+								Vector3 playpos = new Vector3 (xpos, ypos, zpos);
+								bool[] items = new bool[12];
+								bool hostop = false;
+								int index = 0;
+								string itemId;
+								while (!hostop) {
+										itemId = response ["items"] [index] ["itemId"];
+										if (itemId == null || index > 20) {
+												print (index);
+												hostop = true;
+										} else {
+												items [int.Parse (itemId)-1] = true;
+										}
+										index++;
+								}
+								WriteToSave (@"cloud.save", userid, playpos, items);
 
 								setCanvasInactive (startMenu);
 								Application.LoadLevel (firstPlayScene);
@@ -165,7 +186,7 @@ public class SceneManager : MonoBehaviour
 						}
 				} else {
 						Debug.Log ("WWW Error: " + www.error);
-				}    
+				}
 		}
 
 		void CreateAccount ()
@@ -176,11 +197,11 @@ public class SceneManager : MonoBehaviour
 				string passwordR = GameObject.Find ("newpasswordrepeat").GetComponent<InputField> ().text;
 				string name = GameObject.Find ("newname").GetComponent<InputField> ().text;
 				string email = GameObject.Find ("newemail").GetComponent<InputField> ().text;
-				
+
 				bool emailcheck = Regex.IsMatch (email,
-		              @"^(?("")("".+?(?<!\\)""@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))" +
+						@"^(?("")("".+?(?<!\\)""@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))" +
 						@"(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-\w]*[0-9a-z]*\.)+[a-z0-9][\-a-z0-9]{0,22}[a-z0-9]))$",
-		              RegexOptions.IgnoreCase);
+						RegexOptions.IgnoreCase);
 
 				error.GetComponent<Text> ().text = "";
 
@@ -210,7 +231,7 @@ public class SceneManager : MonoBehaviour
 		IEnumerator GETCreate (WWW www)
 		{
 				yield return www;
-		
+
 				// check for errors
 				if (www.error == null) {
 						string response = www.text;
@@ -232,25 +253,6 @@ public class SceneManager : MonoBehaviour
 						}
 				} else {
 						Debug.Log ("WWW Error: " + www.error);
-				}    
-		}
-
-		void LoadGame (int playerId)
-		{
-				string url = "http://drproject.twi.tudelft.nl:8084/readplaydata?id=" + playerId;
-				WWW www = new WWW (url);
-				StartCoroutine (GETSaveGame (www));
-				
-		}
-
-		IEnumerator GETSaveGame (WWW www)
-		{
-				yield return www;
-
-				if (www.error == null) {
-						string response = www.text;
-				} else {
-						Debug.Log ("WWW Error: " + www.error);
 				}
 		}
 
@@ -259,34 +261,18 @@ public class SceneManager : MonoBehaviour
 
 		}
 
-		float[] ReadPlayerPos (string filename)
-		{
-				float[] pos = new float[2];	
-
-				if (File.Exists (filename)) {
-
-						string[] sc = File.ReadAllLines (filename);
-						pos [0] = float.Parse( sc[1] );
-						pos [1] = float.Parse( sc[2] );
-
-				} else {
-						Debug.Log ("No Save File found");
-				}
-				return pos;
-		}
-
 		bool[] ReadItemList (string filename)
 		{
 				bool[] items = new bool[10];
 				if (File.Exists (filename)) {
-			
+
 						string[] content = File.ReadAllLines (filename);
-				
+
 						for (int i = 0; i<10; i++) {
-								items [i] = bool.Parse( content[i+3]);
+								items [i] = bool.Parse (content [i + 4]);
 						}
-						
-			
+
+
 				} else {
 						Debug.Log ("No Save File found");
 				}
@@ -294,14 +280,15 @@ public class SceneManager : MonoBehaviour
 
 		}
 
-		void WriteToSave (string filename, int playerId, float xpos, float ypos, bool[] items)
+		void WriteToSave (string filename, int playerId, Vector3 playPos, bool[] items)
 		{
 				StreamWriter sr = File.CreateText (filename);
 				sr.WriteLine (playerId);
-				sr.WriteLine (xpos);
-				sr.WriteLine (ypos);
+				sr.WriteLine (playPos.x);
+				sr.WriteLine (playPos.y);
+				sr.WriteLine (playPos.z);
 				foreach (bool item in items) {
-						sr.WriteLine (item);	
+						sr.WriteLine (item);
 				}
 				sr.Close ();
 		}

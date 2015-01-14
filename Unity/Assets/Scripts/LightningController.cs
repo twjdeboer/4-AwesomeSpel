@@ -59,7 +59,7 @@ public class LightningController : MonoBehaviour
 								timer = Random.Range (10F, 15F);
 								elapsedtime = 0;
 								lightninglength = 0;
-								Debug.Log (timer);
+								//Debug.Log (timer);
 								int clipselect = Random.Range (0, 3);
 								switch (clipselect) {
 								case 0:

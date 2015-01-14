@@ -81,7 +81,7 @@ public class ProceduralHouse{
 		originscale = House.transform.localScale;
 		windownr = (int)Mathf.Floor((scale.z+scale.y)/1.5f);
 		windownr = 10;
-		MonoBehaviour.print (windownr + " " + scale.z + " " + scale.y);
+		//MonoBehaviour.print (windownr + " " + scale.z + " " + scale.y);
 
 		if(!houseatback)
 			windownr = (int)Mathf.Floor(windownr * 1.5f);

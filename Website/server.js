@@ -33,6 +33,29 @@ function getMySQLConnection(){
 
 }
 
+	//dumpdatabase
+app.get("/datadump", function(req, res){
+	mysqlserver = getMySQLConnection();
+	mysqlserver.query("SELECT * FROM user", function(err, result1){
+		if (err) console.log(err);
+		else{
+			mysqlserver.query("SELECT * FROM statistics", function(err, result2){
+				if (err) console.log(err);
+				else{
+					mysqlserver.query("SELECT * FROM itemdata", function(err, result3){
+						if (err) console.log(err);
+						else{
+							console.log('Someone Requested all SQL data from ip ' + req.connection.remoteAddress);
+							res.json([result1, result2, result3]);
+						}
+					});
+					mysqlserver.end();	
+				}
+			});
+		}
+	});
+});
+
 
 //MAIL PROVIDER
 var mailer = nodemailer.createTransport({
@@ -48,11 +71,7 @@ var mailer = nodemailer.createTransport({
 	//basic commands
 app.get("/readdata", function(req, res) {
 	var querystring = "SELECT * FROM statistics";
-<<<<<<< HEAD
-	mysqlserver.connect();
-=======
 	mysqlserver = getMySQLConnection();
->>>>>>> c9e5f94a202a8144508dc93f2233ad3d5334a6d5
 	mysqlserver.query(querystring, function(err, result){
 		if (err) console.log(err);
 		res.json(result);
@@ -93,10 +112,6 @@ app.get("/adddata", function(req, res){
 		res.json({msg:"UNKNOWN TYPE"});
 	}
 });
-
-
-
-
 
 
 //USER MANAGEMENT
@@ -150,31 +165,39 @@ app.get("/validateuser", function(req, res){
 	var username = query["username"];
 	var password = query["password"];
 	if (username != null && password != null){
-		var getsaltquery = "SELECT id, salt, password_h FROM user WHERE username = ?";
+		var getsaltquery = "SELECT id, salt, password_h, xpos, ypos, zpos FROM user WHERE username = ?";
 		mysqlserver = getMySQLConnection();
-		mysqlserver.query(getsaltquery, [username], function(err, result){
+		mysqlserver.query(getsaltquery, [username], function(err, resultuser){
 			if (err) {
 				console.log(err);
 			} else {
-				if (result != ""){
-					var salt = result[0]["salt"];
-					var server_password_h = result[0]["password_h"];
-					var id = result[0]["id"];
+				if (resultuser != ""){
+					var salt = resultuser[0]["salt"];
+					var server_password_h = resultuser[0]["password_h"];
+					var id = resultuser[0]["id"];
+					var xpos = resultuser[0]["xpos"];
+					var ypos = resultuser[0]["ypos"];
+					var zpos = resultuser[0]["zpos"];
 					var password_h = crypto.createHash('sha256').update(password+salt).digest('base64');
 					if (password_h === server_password_h){
 						var salt = crypto.randomBytes(16);
 						var password_h = crypto.createHash('sha256').update(password+salt).digest('base64');
 						var sqlquery = "UPDATE user SET password_h = ?, salt = ? WHERE username = ?";
-						mysqlserver = getMySQLConnection();
-						mysqlserver.query(sqlquery, [password_h, salt, username], function(err, result){
+						mysqlserver.query(sqlquery, [password_h, salt, username], function(err){
 							if (err) {
 								console.log(err);
 								res.json({msg:"FATAL ERROR COMMUNICATING WITH DATABASE"});
 							} else {
-								res.json({msg:"SUCCESS", userid:id});
+								var sqlquery = "SELECT itemId FROM itemdata WHERE userId = ?";
+								mysqlserver.query(sqlquery, [id], function(err, resultitems){
+									if (err) console.log(err);
+									else {
+										res.json({msg:"SUCCESS", userid:id, xpos:xpos, ypos:ypos, zpos:zpos, items:resultitems});
+									}
+								});
+								mysqlserver.end();
 							}
 						});
-						mysqlserver.end();
 					} else {
 						res.json({msg:"INVALID PASSWORD"})
 					}
@@ -183,7 +206,6 @@ app.get("/validateuser", function(req, res){
 				}
 			}
 		});
-		mysqlserver.end();
 	} else {
 		console.log("Invalid query")
 	}
@@ -191,39 +213,73 @@ app.get("/validateuser", function(req, res){
 
 	//lostpassword
 app.get("/lostpassword", function(req,res){
-
+	res.json({msg:'Dat is vervelend voor je. Jammer joh!'});
 
 });
 
-	//dumpdatabase
-app.get("/datadump", function(req, res){
-	mysqlserver = getMySQLConnection();
-	mysqlserver.query("SELECT * FROM user", function(err, result1){
-		if (err) console.log(err);
-		else{
-			mysqlserver = getMySQLConnection();
-			mysqlserver.query("SELECT * FROM statistics", function(err, result2){
-				if (err) console.log(err);
-				else{
-					mysqlserver = getMySQLConnection();
-					mysqlserver.query("SELECT * FROM itemdata", function(err, result3){
-						if (err) console.log(err);
-						else{
-							console.log('Someone Requested all SQL data from ip ' + req.connection.remoteAddress);
-							res.json([result1, result2, result3]);
-						}
-					});
-					mysqlserver.end();	
-				}
-			});
-			mysqlserver.end();	
-		}
-	});
-	mysqlserver.end();
-});
-
-
-app.get("/readplaydata", function(req, res){
-	var string = 'SELECT type, ';
+app.get("/readitemdata", function(req, res){
+	var url_parts = url.parse(req.url, true);
+	var query = url_parts.query;
+	var userId = query["userId"];
+	if (userId != null){
+		var querystring = 'SELECT itemId FROM itemdata WHERE userId = ?';
+		var mysqlserver = getMySQLConnection();
+		mysqlserver.query(querystring, [userId], function(err, result){
+			if (err) console.log(err);
+			else {
+				res.json(result);				
+			}
+		});
+		mysqlserver.end();
+	}
 });
 	//pickupitem
+
+app.get("/pickupitem", function(req, res){
+	var url_parts = url.parse(req.url, true);
+	var query = url_parts.query;
+	var userId = query["userId"];
+	var itemId = query["itemId"];
+	if (userId != null && itemId != null){
+		var querystring = 'INSERT INTO itemdata (itemId, userId) VALUES (?, ?)';
+		var mysqlserver = getMySQLConnection();
+		mysqlserver.query(querystring, [itemId, userId], function(err, result){
+			if (err) console.log(err);
+		});
+		mysqlserver.end();
+		res.end();
+	}
+});
+
+app.get("/writeplayerpos", function(req, res){
+	var url_parts = url.parse(req.url, true);
+	var query = url_parts.query;
+	var userId = query["userId"];
+	var xpos = query["xpos"];
+	var ypos = query["ypos"];
+	var zpos = query["zpos"];
+	if (userId != null && xpos != null && ypos != null && zpos  != null){
+		var querystring = 'UPDATE user SET xpos = ?, ypos = ?, zpos = ? WHERE id = ?'
+		var mysqlserver = getMySQLConnection();
+		mysqlserver.query(querystring, [xpos, ypos, zpos, userId], function(err, result){
+			if (err) console.log(err);
+		});
+		mysqlserver.end();
+		res.end();
+	}
+});
+
+app.get("/readplaypos", function(req,res){
+	var url_parts = url.parse(req.url, true);
+	var query = url_parts.query;
+	var userId = query["userId"];
+	if (userId != null){
+		var querystring = 'SELECT xpos, ypos, zpos FROM user WHERE id = ?';
+		var mysqlserver = getMySQLConnection();
+		mysqlserver.query(querystring, [userId], function(err, result){
+			if (err) console.log(err);
+			res.json(result);
+		});
+		mysqlserver.end();
+	}
+});
