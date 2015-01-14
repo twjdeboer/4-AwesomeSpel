@@ -8493,6 +8493,8 @@ GameObject:
   - 23: {fileID: 271929867}
   - 95: {fileID: 271929866}
   - 114: {fileID: 271929865}
+  - 54: {fileID: 271929871}
+  - 136: {fileID: 271929870}
   m_Layer: 0
   m_Name: BullitCase
   m_TagString: Untagged
@@ -8515,10 +8517,10 @@ MonoBehaviour:
   evidenceID: 1
   description: 
   evidencename: bullitcase
-  rotationIfSelected: {x: 0, y: 0, z: 0}
+  rotationIfSelected: {x: 20, y: 20, z: 20}
   translateIfSelected: {x: 0, y: 0, z: 0}
-  scaleFactorIfSelected: 0
-  rotationSpeed: 0
+  scaleFactorIfSelected: 4
+  rotationSpeed: 2
   canBePickedUp: 1
   maxDistance: 0
 --- !u!95 &271929866
@@ -8578,6 +8580,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 17
+--- !u!136 &271929870
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 271929864}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: .109999999
+  m_Height: .400000006
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: .164014742}
+--- !u!54 &271929871
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 271929864}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &274128178
 GameObject:
   m_ObjectHideFlags: 0
@@ -32720,6 +32750,26 @@ Prefab:
     - target: {fileID: 400000, guid: f90b1df7943c40c40af7194683f859cd, type: 2}
       propertyPath: m_RootOrder
       value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: f90b1df7943c40c40af7194683f859cd, type: 2}
+      propertyPath: scaleFactorIfSelected
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: f90b1df7943c40c40af7194683f859cd, type: 2}
+      propertyPath: rotationIfSelected.x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: f90b1df7943c40c40af7194683f859cd, type: 2}
+      propertyPath: rotationIfSelected.y
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: f90b1df7943c40c40af7194683f859cd, type: 2}
+      propertyPath: rotationIfSelected.z
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: f90b1df7943c40c40af7194683f859cd, type: 2}
+      propertyPath: rotationSpeed
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f90b1df7943c40c40af7194683f859cd, type: 2}
