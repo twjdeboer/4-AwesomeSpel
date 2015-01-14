@@ -262,23 +262,25 @@ app.get("/writeplayerpos", function(req, res){
 		var querystring = 'UPDATE user SET xpos = ?, ypos = ?, zpos = ? WHERE id = ?'
 		var mysqlserver = getMySQLConnection();
 		mysqlserver.query(querystring, [xpos, ypos, zpos, userId], function(err, result){
-			if (err) console.log(err);
+			if (err) console.log(err); else console.log("Received New Coordinates for player with id: " + userId);
 		});
-		mysqlserver.end();
-		res.end();
+		mysqlserver.end();	
 	}
+	res.end();
 });
 
 app.get("/readplaypos", function(req,res){
 	var url_parts = url.parse(req.url, true);
 	var query = url_parts.query;
 	var userId = query["userId"];
+
 	if (userId != null){
 		var querystring = 'SELECT xpos, ypos, zpos FROM user WHERE id = ?';
 		var mysqlserver = getMySQLConnection();
 		mysqlserver.query(querystring, [userId], function(err, result){
 			if (err) console.log(err);
 			res.json(result);
+
 		});
 		mysqlserver.end();
 	}
