@@ -171,21 +171,14 @@ public class landpost : MonoBehaviour {
 
 	}
 	void Update(){
-		if (latern != null) {
-			print ("Found");
-			latern.transform.parent = Lights.transform;
-			latern = GameObject.Find ("/Street Light(Clone)");
+		for(int i=0;i<10;i++){
+			if (latern != null) {
+				print ("Found");
+				latern.transform.parent = Lights.transform;
+				latern = GameObject.Find ("/Street Light(Clone)");
+			}
 		}
-		if (latern != null) {
-			print ("Found");
-			latern.transform.parent = Lights.transform;
-			latern = GameObject.Find ("/Street Light(Clone)");
-		}
-		if (latern != null) {
-			print ("Found");
-			latern.transform.parent = Lights.transform;
-			latern = GameObject.Find ("/Street Light(Clone)");
-		}
+
 
 	}
 
