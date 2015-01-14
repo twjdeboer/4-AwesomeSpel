@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
-public class CamaraBehaviour : MonoBehaviour {
+public class CamaraBehaviour : MonoBehaviour
+{
 
     //Attributes
 
@@ -9,7 +11,7 @@ public class CamaraBehaviour : MonoBehaviour {
     private GameObject prefab;
     public RaycastHit rayinfo;
     private Ray ray;
-    private Collider reset;
+    private List<Collider> reset  = new List<Collider>();
     private bool setOffset = true;
 
 
@@ -20,8 +22,8 @@ public class CamaraBehaviour : MonoBehaviour {
      * */
     void FollowPlayer()
     {
-        if(!setOffset)
-        transform.position = ResourceManager.playerPosition + this.offset;
+        if (!setOffset)
+            transform.position = ResourceManager.playerPosition + this.offset;
     }
 
     /**
@@ -39,51 +41,63 @@ public class CamaraBehaviour : MonoBehaviour {
     }
 
     void CheckRay()
-    {   
-        if(Physics.Linecast(transform.position, ResourceManager.playerPosition, out rayinfo))
+    {
+        RaycastHit[] RaycastList = Physics.RaycastAll(transform.position, ResourceManager.playerPosition - transform.position);
         {
-            Collider other = rayinfo.collider;
-            if (other.gameObject.tag == "Building")
+            foreach (RaycastHit i in RaycastList)
             {
-                SetAlpha(other.gameObject, 0.5f);
-                reset = other;
-            }
-            else if (other.gameObject.tag == "Building2")
-            {
-                reset = other;
-                SetAlpha(other.gameObject, 0.1f);
-            }
-            else if (other.gameObject.tag.Contains("Transparent"))
-            {
-                SetAlpha(other.gameObject, 0.5f);
-                reset = other;
-            }
-            else
-            {
-                if (reset != null)
+                Collider other = i.collider;
+                if (other.gameObject.tag == "Building")
                 {
-                    other = reset;
-                    if (other.gameObject.tag == "Building")
-                        SetAlpha(other.gameObject, 1);
-                    if (other.gameObject.tag == "Building")
-                        SetAlpha(other.gameObject, 1);
-                    if (other.gameObject.tag.Contains("Transparent"))
-                        SetAlpha(other.gameObject, 1);
+                    SetAlpha(other.gameObject, 0.5f);
+                    reset.Add(other);
+                }
+                else if (other.gameObject.tag == "Building2")
+                {
+                    reset.Add(other);
+                    SetAlpha(other.gameObject, 0.1f);
+                }
+                else if (other.gameObject.tag.Contains("Transparent"))
+                {
+                    SetAlpha(other.gameObject, 0.5f);
+                    reset.Add(other);
                 }
             }
+            ResetFade(RaycastList);
         }
+    }
 
-
+    void ResetFade(RaycastHit[] currentList)
+    {
+        List<Collider> colliderList = new List<Collider>();
+        foreach(RaycastHit i in currentList)
+        {
+            colliderList.Add(i.collider);
+        }
+        List<Collider> removeList = new List<Collider>();
+            foreach (Collider i in reset)
+            {
+                if (!colliderList.Contains(i))
+                {
+                    SetAlpha(i.gameObject, 1);
+                    removeList.Remove(i);
+                }
+            }
+            
+        foreach(Collider i in removeList)
+        {
+            reset.Remove(i);
+        }
+        
     }
 
 
     //Actions
 
-    void Start () {
-
-        reset = null;
+    void Start()
+    {
         ResourceManager.cam = transform;
-	}
+    }
 
     void SetOffset()
     {
@@ -95,9 +109,10 @@ public class CamaraBehaviour : MonoBehaviour {
     }
 
 
-	void FixedUpdate () {
+    void FixedUpdate()
+    {
         CheckRay();
         FollowPlayer();
         SetOffset();
-	}
+    }
 }
