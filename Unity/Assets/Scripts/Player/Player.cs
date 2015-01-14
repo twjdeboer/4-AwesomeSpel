@@ -110,6 +110,7 @@ public class Player : MonoBehaviour
     {
         intSpeed = walkSpeed;
 		anim = GetComponent<Animator>();
+        ResourceManager.playerPosition = transform.position;
     }
 
     void FixedUpdate()

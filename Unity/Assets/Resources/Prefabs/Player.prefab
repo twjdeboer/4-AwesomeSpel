@@ -2024,6 +2024,8 @@ GameObject:
   - 136: {fileID: 13682318}
   - 114: {fileID: 11482316}
   - 54: {fileID: 5482318}
+  - 208: {fileID: 20800000}
+  - 81: {fileID: 8100000}
   m_Layer: 0
   m_Name: PlayerModel
   m_TagString: Untagged
@@ -17119,13 +17121,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!81 &8100000
+AudioListener:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 181560}
+  m_Enabled: 1
 --- !u!81 &8182318
 AudioListener:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 181562}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!92 &9282318
 Behaviour:
   m_ObjectHideFlags: 1
@@ -17644,6 +17653,17 @@ SkinnedMeshRenderer:
     m_Center: {x: -.000436902046, y: -.000165641308, z: 1.42086804}
     m_Extent: {x: 1.25082862, y: .958453357, z: 1.59307301}
   m_DirtyAABB: 0
+--- !u!208 &20800000
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 181560}
+  m_Enabled: 1
+  m_Radius: .800000012
+  m_Height: 2
+  m_MoveThreshold: 0
+  m_Carve: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
