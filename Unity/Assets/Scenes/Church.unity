@@ -201,7 +201,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 0877b678663fee5469ef48e9022ed588, type: 2}
       propertyPath: translateIfSelected.y
-      value: .300000012
+      value: .200000003
       objectReference: {fileID: 0}
     - target: {fileID: 6400000, guid: 0877b678663fee5469ef48e9022ed588, type: 2}
       propertyPath: m_Convex
@@ -1445,6 +1445,7 @@ GameObject:
   - 33: {fileID: 106903123}
   - 23: {fileID: 106903122}
   - 64: {fileID: 106903125}
+  - 65: {fileID: 106903126}
   m_Layer: 0
   m_Name: Cloth
   m_TagString: Untagged
@@ -1505,8 +1506,20 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300006, guid: eeccbfdddfac34b4aa06cb8d6732c2dd, type: 3}
+--- !u!65 &106903126
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 106903121}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3, y: 4, z: 3.4000001}
+  m_Center: {x: 5, y: -1.5, z: 6}
 --- !u!1 &110962297
 GameObject:
   m_ObjectHideFlags: 0
@@ -3316,7 +3329,7 @@ AudioListener:
     type: 2}
   m_PrefabInternal: {fileID: 1860630029}
   m_GameObject: {fileID: 215341806}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!92 &215341810
 Behaviour:
   m_ObjectHideFlags: 0
@@ -6756,7 +6769,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccde8ef6ebdb3214398cd76dbf28b696, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Buttons: {fileID: 0}
+  Buttons: {fileID: 1339614829}
 --- !u!23 &426165951
 Renderer:
   m_ObjectHideFlags: 0
@@ -6804,7 +6817,7 @@ Transform:
   m_GameObject: {fileID: 426165949}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: .658999979, z: 7.89900017}
-  m_LocalScale: {x: 1, y: 1, z: .0500000007}
+  m_LocalScale: {x: 1, y: 1, z: .400000006}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
@@ -8124,14 +8137,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 934bcb97ee10c984f8c39e979ca908fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  evidenceID: 0
   description: What is a jewish chandelier doing in a church.
   evidencename: 
-  rotationIfSelected: {x: 0, y: 0, z: 0}
-  translateIfSelected: {x: 0, y: 0, z: 0}
-  scaleFactorIfSelected: 0
-  rotationSpeed: 0
+  rotationIfSelected: {x: 270, y: 0, z: 0}
+  translateIfSelected: {x: 0, y: .0500000007, z: 0}
+  scaleFactorIfSelected: 2
+  rotationSpeed: 20
   canBePickedUp: 1
-  maxDistance: 0
+  maxDistance: 100
 --- !u!64 &504937042
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8675,7 +8689,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &527671679
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8821,6 +8835,14 @@ Prefab:
     - target: {fileID: 22497448, guid: 9231d2da55c787b42b50c2361065ec3c, type: 2}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 197466, guid: 9231d2da55c787b42b50c2361065ec3c, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 197492, guid: 9231d2da55c787b42b50c2361065ec3c, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9231d2da55c787b42b50c2361065ec3c, type: 2}
@@ -9445,13 +9467,14 @@ GameObject:
   m_Component:
   - 224: {fileID: 569446502}
   - 114: {fileID: 569446503}
+  - 225: {fileID: 569446504}
   m_Layer: 5
   m_Name: Nextscene Indoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &569446502
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9484,6 +9507,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   world: {fileID: 0}
+--- !u!225 &569446504
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 569446501}
+  m_Enabled: 1
+  m_Alpha: .699999988
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &569787989
 GameObject:
   m_ObjectHideFlags: 0
@@ -9692,9 +9726,11 @@ GameObject:
   - 136: {fileID: 602497949}
   - 114: {fileID: 602497948}
   - 54: {fileID: 602497947}
+  - 208: {fileID: 602497952}
+  - 81: {fileID: 602497951}
   m_Layer: 0
   m_Name: PlayerModel
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9838,7 +9874,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 2
   rotateSpeed: 20
-  runSpeed: 2
+  runSpeed: 1
   playerName: Player
 --- !u!136 &602497949
 CapsuleCollider:
@@ -9870,6 +9906,26 @@ Animator:
   m_ApplyRootMotion: 0
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!81 &602497951
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 8100000, guid: 7fc18a12eb9631b4a836ee157d58ffb9,
+    type: 2}
+  m_PrefabInternal: {fileID: 1860630029}
+  m_GameObject: {fileID: 602497945}
+  m_Enabled: 1
+--- !u!208 &602497952
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 20800000, guid: 7fc18a12eb9631b4a836ee157d58ffb9,
+    type: 2}
+  m_PrefabInternal: {fileID: 1860630029}
+  m_GameObject: {fileID: 602497945}
+  m_Enabled: 1
+  m_Radius: .800000012
+  m_Height: 2
+  m_MoveThreshold: 0
+  m_Carve: 0
 --- !u!1 &604750241
 GameObject:
   m_ObjectHideFlags: 0
@@ -12548,6 +12604,10 @@ Prefab:
     - target: {fileID: 400006, guid: eeccbfdddfac34b4aa06cb8d6732c2dd, type: 3}
       propertyPath: m_LocalPosition.y
       value: .00999999978
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: eeccbfdddfac34b4aa06cb8d6732c2dd, type: 3}
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eeccbfdddfac34b4aa06cb8d6732c2dd, type: 3}
@@ -22447,10 +22507,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 934bcb97ee10c984f8c39e979ca908fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  evidenceID: 0
   description: Burn out your eyes
   evidencename: 
   rotationIfSelected: {x: 0, y: 0, z: 0}
-  translateIfSelected: {x: 0, y: .300000012, z: 0}
+  translateIfSelected: {x: 0, y: .200000003, z: 0}
   scaleFactorIfSelected: 3
   rotationSpeed: 20
   canBePickedUp: 1
@@ -27377,6 +27438,14 @@ Prefab:
     - target: {fileID: 481752, guid: 7fc18a12eb9631b4a836ee157d58ffb9, type: 2}
       propertyPath: m_LocalPosition.z
       value: 7.23999977
+      objectReference: {fileID: 0}
+    - target: {fileID: 11482316, guid: 7fc18a12eb9631b4a836ee157d58ffb9, type: 2}
+      propertyPath: runSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 181560, guid: 7fc18a12eb9631b4a836ee157d58ffb9, type: 2}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7fc18a12eb9631b4a836ee157d58ffb9, type: 2}
