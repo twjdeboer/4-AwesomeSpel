@@ -2,6 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 
+/*
+ * Determines the behaviour of the camera.
+ * */
 public class CamaraBehaviour : MonoBehaviour
 {
 
@@ -40,6 +43,9 @@ public class CamaraBehaviour : MonoBehaviour
         }
     }
 
+    /*
+     * Checks if a ray from camera to player collides with a gameObject. IF the case and Game object has tag building, building2 or contains transpraent. The building will fade away.
+     * */
     void CheckRay()
     {
         RaycastHit[] RaycastList = Physics.RaycastAll(transform.position, ResourceManager.playerPosition - transform.position);
@@ -67,6 +73,9 @@ public class CamaraBehaviour : MonoBehaviour
         }
     }
 
+    /*
+     * Checks if building has to unfade.
+     * */
     void ResetFade(RaycastHit[] currentList)
     {
         List<Collider> colliderList = new List<Collider>();
@@ -99,6 +108,9 @@ public class CamaraBehaviour : MonoBehaviour
         ResourceManager.cam = transform;
     }
 
+    /*
+     * Determines the offset of the camera from te player. Allows camera to stay at same place relative to player. Is called in second frame.
+     * */
     void SetOffset()
     {
         if (setOffset)
