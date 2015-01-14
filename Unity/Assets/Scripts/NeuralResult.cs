@@ -53,8 +53,8 @@ public class NeuralResult : MonoBehaviour {
 		string[] content = File.ReadAllLines (Application.dataPath + "/cloud.save");
 				
 						for (int i = 0; i<9; i++) {
-								ans [i] = float.Parse( content[i+3]);
-								if (ans[i] == "False")
+								ans [i] = bool.Parse( content[i+3]);
+								if (ans[i] == false)
 								{
 									res[i] = 0f;
 								}
