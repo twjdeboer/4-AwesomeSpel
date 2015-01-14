@@ -10,14 +10,14 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StartMenu.unity
   - enabled: 1
+    path: Assets/Scenes/World final2.unity
+  - enabled: 1
     path: Assets/Scenes/TestWorldMerge.unity
   - enabled: 1
     path: Assets/Scenes/Church.unity
   - enabled: 1
-    path: Assets/Scenes/World final2.unity
-  - enabled: 0
-    path: Assets/Scenes/Scenetoscentest/test inside2.unity
-  - enabled: 0
-    path: Assets/Scenes/Scenetoscentest/test inside.unity
+    path: Assets/Scenes/HotelRoom.unity
+  - enabled: 1
+    path: Assets/Scenes/PoliceStation.unity
   - enabled: 0
     path: Assets/Scenes/TestNPCInteraction.unity
