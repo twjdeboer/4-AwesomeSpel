@@ -178,9 +178,21 @@ public class EvidenceBehviour : MonoBehaviour {
         if (canBePickedUp && mouseOver && mouseClicked)
         {
             pickedUp = true;
+            //SendGetRequest();
+
         }
 
     }
+
+    void SendGetRequest() {
+        string filename = "cloud.save";
+        string[] content = File.ReadAllLines (filename);
+
+        string url = "http://drproject.twi.tudelft.nl:8084/pickupitem?userId="+ content[0]+ "&itemId="+ evidenceID;
+        WWW www = new WWW(url);
+        
+    }
+
 
     /**
      * Checks if mouse left a certain box.
