@@ -36,7 +36,7 @@ public class NeuralResult : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		foundevidence = ReadSave();
+	
 		uitkomst = CalcOutput(foundevidence);
 
 	}
@@ -46,27 +46,7 @@ public class NeuralResult : MonoBehaviour {
 	
 	//}
 
-	float[] ReadSave(){
 
-		bool[] ans = new bool[9];
-		float[] res = new float[9];
-		string[] content = File.ReadAllLines (Application.dataPath + "/cloud.save");
-				
-						for (int i = 0; i<9; i++) {
-								ans [i] = float.Parse( content[i+3]);
-								if (ans[i] == "False")
-								{
-									res[i] = 0f;
-								}
-								else
-								{
-									res[i] = 1f;
-								}
-							//werkt niet!!!	
-						}
-						return res;
-						
-	}
 
 	int CalcOutput( float[] n){
 
