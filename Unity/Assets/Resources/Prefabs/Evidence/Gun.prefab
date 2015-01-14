@@ -12,7 +12,6 @@ GameObject:
   - 23: {fileID: 2300000}
   - 64: {fileID: 6400000}
   - 95: {fileID: 9500000}
-  - 54: {fileID: 5400000}
   - 114: {fileID: 11400000}
   m_Layer: 0
   m_Name: Gun
@@ -27,9 +26,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_LocalRotation: {x: -.198527277, y: .206500128, z: -.629583538, w: .722197592}
-  m_LocalPosition: {x: 1.13, y: 2.86999989, z: 17}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalRotation: {x: 0, y: 0, z: .707106829, w: .707106829}
+  m_LocalPosition: {x: -101.191704, y: -4.85360432, z: -33.8904037}
+  m_LocalScale: {x: .5, y: .5, z: .5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -62,21 +61,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_Mesh: {fileID: 4300000, guid: 373bcbfa27290a148a9eb3d795e45f52, type: 3}
---- !u!54 &5400000
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: .0500000007
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!64 &6400000
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -88,7 +72,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
-  m_Convex: 1
+  m_Convex: 0
   m_Mesh: {fileID: 4300000, guid: 373bcbfa27290a148a9eb3d795e45f52, type: 3}
 --- !u!95 &9500000
 Animator:
@@ -116,14 +100,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 934bcb97ee10c984f8c39e979ca908fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: 9mm Revolver to shoot your ass.
-  name: Gun123
-  rotationIfSelected: {x: 270, y: 0, z: 0}
-  translateIfSelected: {x: 0, y: 1, z: 0}
-  scaleFactorIfSelected: 1.20000005
-  rotationSpeed: 30
+  evidenceID: 2
+  description: 
+  evidencename: gun
+  rotationIfSelected: {x: 0, y: 0, z: 0}
+  translateIfSelected: {x: 0, y: 0, z: 0}
+  scaleFactorIfSelected: 0
+  rotationSpeed: 0
   canBePickedUp: 1
-  maxDistance: 100
+  maxDistance: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

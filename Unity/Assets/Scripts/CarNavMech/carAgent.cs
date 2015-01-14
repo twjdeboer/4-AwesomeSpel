@@ -11,6 +11,7 @@ public class carAgent : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
 		agent = gameObject.GetComponent<NavMeshAgent> ();
 
 		destination = pickDestination ();

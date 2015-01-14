@@ -1,5 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
+using System.Collections;
+using System.Text.RegularExpressions;
+using System.IO;
 
 public class NeuralResult : MonoBehaviour {
 
@@ -30,8 +34,13 @@ public class NeuralResult : MonoBehaviour {
 	public float[] foundevidence;
 	public int uitkomst;
 
+
+
 	// Use this for initialization
 	void Start () {
+
+	
+		Setfoundevidence ();
 		uitkomst = CalcOutput(foundevidence);
 
 	}
@@ -40,6 +49,26 @@ public class NeuralResult : MonoBehaviour {
 	//void Update () {
 	
 	//}
+
+	void Setfoundevidence(){
+		string filename = "cloud.save";
+		bool[] items = new bool[9];
+		
+		
+		string[] content = File.ReadAllLines (filename);
+		
+		for (int i = 0; i<9; i++) {
+			if (bool.Parse( content[i+4])){
+				foundevidence[i]=1f;
+			}
+			else
+			{
+				foundevidence[i]=0f;
+			}
+		}
+
+
+	}
 
 	int CalcOutput( float[] n){
 
