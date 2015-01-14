@@ -40,10 +40,12 @@ var mailer = nodemailer.createTransport({
 	//basic commands
 app.get("/readdata", function(req, res) {
 	var querystring = "SELECT * FROM statistics";
+	mysqlserver.connect();
 	mysqlserver.query(querystring, function(err, result){
 		if (err) console.log(err);
 		res.json(result);
 	});
+	mysqlserver.end();
 });
 
 	//adddata
