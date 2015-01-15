@@ -161,7 +161,7 @@ public class EvidenceBehviour : MonoBehaviour
 
 		void placeEvidence ()
 		{
-				if ((bool)ReadItemList ("cloud.save").GetValue (evidenceID) == false) {
+				if ((bool)ReadItemList ("cloud.save").GetValue (evidenceID-1) == false) {
 						transform.position = pickRandom ();
 				} else
 						gameObject.SetActive (false);
