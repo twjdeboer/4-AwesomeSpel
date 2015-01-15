@@ -35,7 +35,7 @@ public class NPCInteraction : MonoBehaviour {
     private float intTime;
     private float timer = 0;
     private int index = 0;
-    private string textToDisplay;
+    public string textToDisplay;
     private bool runTime = false;
     private bool Activated = false;
     private bool pauseForNextLine = false;

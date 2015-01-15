@@ -44,7 +44,9 @@ public class ChurchGamePlay : MonoBehaviour {
 
 		NPCInteraction npcinteraction = GetComponent<NPCInteraction> ();
 
-		if (npcinteraction.fileName != "Priest.xml") {
+
+			if (npcinteraction.textToDisplay == "schateiland"){
+			Application.LoadLevel("Einde");
 				}
 
 	}
