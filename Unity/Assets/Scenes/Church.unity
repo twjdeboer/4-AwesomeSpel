@@ -776,6 +776,7 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -1343,6 +1344,7 @@ MonoBehaviour:
   stopWalking: 0
   choiceOfPlayer: 0
   fileName: PriesterDialoog.xml
+  textToDisplay: 
 --- !u!114 &92450977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1742,7 +1744,6 @@ CanvasGroup:
     type: 2}
   m_PrefabInternal: {fileID: 531360897}
   m_GameObject: {fileID: 125114204}
-  m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
@@ -3498,6 +3499,10 @@ Prefab:
       propertyPath: description
       value: this phone might contain crucial contacts of the murderer
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: bae2ff93539ac3b4182ecc1bb769489c, type: 2}
+      propertyPath: evidenceID
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bae2ff93539ac3b4182ecc1bb769489c, type: 2}
   m_RootGameObject: {fileID: 269013911}
@@ -4129,7 +4134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 934bcb97ee10c984f8c39e979ca908fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  evidenceID: 7
+  evidenceID: 8
   description: this phone might contain crucial contacts of the murderer
   evidencename: phone
   rotationIfSelected: {x: 270, y: 0, z: 90}
@@ -6347,7 +6352,6 @@ CanvasGroup:
     type: 2}
   m_PrefabInternal: {fileID: 531360897}
   m_GameObject: {fileID: 392356740}
-  m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
@@ -9602,7 +9606,6 @@ CanvasGroup:
     type: 2}
   m_PrefabInternal: {fileID: 531360897}
   m_GameObject: {fileID: 563063068}
-  m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 0
@@ -9794,7 +9797,6 @@ CanvasGroup:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 569446501}
-  m_Enabled: 1
   m_Alpha: .699999988
   m_Interactable: 1
   m_BlocksRaycasts: 1
@@ -10700,6 +10702,7 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -10958,6 +10961,7 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -13991,7 +13995,6 @@ CanvasGroup:
     type: 2}
   m_PrefabInternal: {fileID: 531360897}
   m_GameObject: {fileID: 883015652}
-  m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
@@ -27356,6 +27359,7 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -29029,7 +29033,6 @@ CanvasGroup:
     type: 2}
   m_PrefabInternal: {fileID: 531360897}
   m_GameObject: {fileID: 1956727889}
-  m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 0

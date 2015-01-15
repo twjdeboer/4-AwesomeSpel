@@ -8538,7 +8538,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 934bcb97ee10c984f8c39e979ca908fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  evidenceID: 1
+  evidenceID: 2
   description: is this the case of the bullet our guy was killed with..???
   evidencename: bulletcase
   rotationIfSelected: {x: 0, y: 0, z: 0}
@@ -32753,6 +32753,10 @@ Prefab:
     - target: {fileID: 11400000, guid: f90b1df7943c40c40af7194683f859cd, type: 2}
       propertyPath: evidencename
       value: bulletcase
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: f90b1df7943c40c40af7194683f859cd, type: 2}
+      propertyPath: evidenceID
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f90b1df7943c40c40af7194683f859cd, type: 2}

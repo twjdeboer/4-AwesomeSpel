@@ -127,7 +127,7 @@ public class EvidenceBehviour : MonoBehaviour
 				};
 		
 				System.Random random = new System.Random ();
-				int i = evidenceID;	
+				int i = evidenceID-1;	
 
 				int index = (random.Next (3 * i, 2 * (i + 1) + i));
 
@@ -161,7 +161,7 @@ public class EvidenceBehviour : MonoBehaviour
 
 		void placeEvidence ()
 		{
-				if ((bool)ReadItemList ("cloud.save").GetValue (evidenceID-1) == false) {
+				if ((bool)ReadItemList ("cloud.save").GetValue (evidenceID -1) == false) {
 						transform.position = pickRandom ();
 				} else
 						gameObject.SetActive (false);
