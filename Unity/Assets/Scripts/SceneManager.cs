@@ -130,11 +130,10 @@ public class SceneManager : MonoBehaviour
 						sr.WriteLine (content [i]);			
 				}
 				sr.Close ();
-		
+		string url = "http://drproject.twi.tudelft.nl:8084/writeplayerpos?userId=" + content [0] + "&xpos=" + xNew + "&ypos=" + yNew + "&zpos=" + zNew;
 				WWW www = new WWW (url);
 		
 				StartCoroutine (GETWritePlayerPos (www));
-				Debug.Log (url);
 		
 		}
 	
