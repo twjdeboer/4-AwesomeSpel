@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
@@ -32,6 +32,7 @@ public class EvidenceBehviour : MonoBehaviour {
     private bool pickedUp = false;
 
 	private GameObject evidence;
+	//public Transform floorcollider;
 
 
 	// pick location
@@ -76,8 +77,9 @@ public class EvidenceBehviour : MonoBehaviour {
 	}
 
 	void placeEvidence(){
-		if ((bool)ReadItemList ("cloud.save").GetValue (evidenceID) == false)
+		if ((bool)ReadItemList ("cloud.save").GetValue (evidenceID) == false){
 			transform.position = pickRandom();
+		}
 		
 		else gameObject.SetActive(false);
 	}
