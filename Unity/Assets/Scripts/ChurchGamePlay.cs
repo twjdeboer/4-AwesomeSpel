@@ -5,11 +5,14 @@ using System.Collections;
 using System.Text.RegularExpressions;
 using System.IO;
 
-public class GesprekSelector : MonoBehaviour {
+public class ChurchGamePlay : MonoBehaviour {
+
+	 
 
 	// Use this for initialization
 	void Start () {
 	
+
 		string filename = "cloud.save";
 		string[] content = File.ReadAllLines (filename);
 		NPCInteraction npcinteraction = GetComponent<NPCInteraction> ();
@@ -38,5 +41,11 @@ public class GesprekSelector : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
+
+		NPCInteraction npcinteraction = GetComponent<NPCInteraction> ();
+
+		if (npcinteraction.fileName != "Priest.xml") {
+				}
+
 	}
 }
