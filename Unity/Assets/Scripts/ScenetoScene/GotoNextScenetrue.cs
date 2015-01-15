@@ -34,6 +34,55 @@ public class GotoNextScenetrue : MonoBehaviour {
 		}
 		return pos;
 	}
+
+	void savePlayerPos(){
+		string filename = "cloud.save";
+
+		GameObject playerModel = GameObject.Find ("PlayerModel");
+
+		Vector3 playPosOld = ReadPlayerPos(filename);
+		Vector3 playPosCur = playerModel.transform.position;
+
+		float xNew = playPosCur.x;
+		float yNew = playPosCur.y;
+		float zNew = playPosCur.z;
+
+		string[] content = new string[16];
+
+		if (File.Exists (filename)) {
+			content = File.ReadAllLines (filename);
+		} else {
+			Debug.Log ("No Save File found");
+		}
+
+
+		StreamWriter sr = File.CreateText (filename);
+		sr.WriteLine (content [0]);
+		sr.WriteLine (xNew);
+		sr.WriteLine (yNew);
+		sr.WriteLine (zNew);
+
+		for (int i = 4; i < content.Length; i++) {
+			sr.WriteLine (content [i]);			
+		}
+		sr.Close ();
+
+		string url = "http://drproject.twi.tudelft.nl:8084/writeplayerpos?userId=" + content [0] + "&xpos=" + xNew + "&ypos=" + yNew + "&zpos=" + zNew;
+		WWW www = new WWW(url);
+
+		StartCoroutine (GETWritePlayerPos (www));
+		
+	}
+
+	IEnumerator GETWritePlayerPos(WWW www){
+		yield return www;
+		if (www.error == null) {
+			string response = www.text;
+			Debug.Log ("SUCCESS" + response);	
+		} else {
+			Debug.Log ("WWW Error: " + www.error);
+				}
+	}
 	
 	void start(){
 		
@@ -43,7 +92,7 @@ public class GotoNextScenetrue : MonoBehaviour {
 
 	void scene0(){
 		//ResourceManager.playerPosition = new Vector3 ();
-
+		savePlayerPos ();
 		Application.LoadLevel (nextscenestring[0]);
 
 	}
@@ -52,35 +101,42 @@ public class GotoNextScenetrue : MonoBehaviour {
 		//ResourceManager.playerPosition=(Player.transform.position);
 
 		//ResourceManager.newplayerpos.Set (-3,0.4f,0);
-
+		savePlayerPos ();
 		Application.LoadLevel (nextscenestring[1]);
 		
 	}
 	void scene2(){
+		savePlayerPos ();
 		Application.LoadLevel (nextscenestring[2]);
 	}
 
 	void scene3(){
+		savePlayerPos ();
 		Application.LoadLevel (nextscenestring[3]);
 	}
 
 	void scene4(){
+		savePlayerPos ();
 		Application.LoadLevel (nextscenestring[4]);
 	}
 
 	void scene5(){
+		savePlayerPos ();
 		Application.LoadLevel (nextscenestring[5]);
 	}
 
 	void scene6(){
+		savePlayerPos ();
 		Application.LoadLevel (nextscenestring[6]);
 	}
 
 	void scene7(){
+		savePlayerPos ();
 		Application.LoadLevel (nextscenestring[7]);
 	}
 
 	void scene8(){
+		savePlayerPos ();
 		Application.LoadLevel (nextscenestring[8]);
 	}
 

@@ -92,6 +92,80 @@ public class SceneManager : MonoBehaviour
 				Application.Quit ();
 		}
 
+		void QuitFromWorld ()
+		{
+				savePlayerPos ();
+				Application.Quit ();
+		}
+
+		void savePlayerPos ()
+		{
+				string filename = "cloud.save";
+		
+				GameObject playerModel = GameObject.Find ("PlayerModel");
+		
+				Vector3 playPosOld = ReadPlayerPos (filename);
+				Vector3 playPosCur = playerModel.transform.position;
+		
+				float xNew = playPosCur.x;
+				float yNew = playPosCur.y;
+				float zNew = playPosCur.z;
+		
+				string[] content = new string[16];
+		
+				if (File.Exists (filename)) {
+						content = File.ReadAllLines (filename);
+				} else {
+						Debug.Log ("No Save File found");
+				}
+		
+		
+				StreamWriter sr = File.CreateText (filename);
+				sr.WriteLine (content [0]);
+				sr.WriteLine (xNew);
+				sr.WriteLine (yNew);
+				sr.WriteLine (zNew);
+		
+				for (int i = 4; i < content.Length; i++) {
+						sr.WriteLine (content [i]);			
+				}
+				sr.Close ();
+		
+				WWW www = new WWW (url);
+		
+				StartCoroutine (GETWritePlayerPos (www));
+				Debug.Log (url);
+		
+		}
+	
+		IEnumerator GETWritePlayerPos (WWW www)
+		{
+				yield return www;
+				if (www.error == null) {
+						string response = www.text;
+						Debug.Log ("SUCCESS" + response);	
+				} else {
+						Debug.Log ("WWW Error: " + www.error);
+				}
+		}
+
+		Vector3 ReadPlayerPos (string filename)
+		{
+				Vector3 pos = new Vector3 ();
+		
+				if (File.Exists (filename)) {
+			
+						string[] sc = File.ReadAllLines (filename);
+						float x = float.Parse (sc [1]);
+						float y = float.Parse (sc [2]);
+						float z = float.Parse (sc [3]);
+						pos = new Vector3 (x, y, z);
+			
+				} else {
+						Debug.Log ("No Save File found");
+				}
+				return pos;
+		}
 		// Update is called once per frame
 		void Update ()
 		{
@@ -162,7 +236,7 @@ public class SceneManager : MonoBehaviour
 										if (itemId == null || index > 20) {
 												hostop = true;
 										} else {
-												items [int.Parse (itemId)-1] = true;
+												items [int.Parse (itemId) - 1] = true;
 										}
 										index++;
 								}
