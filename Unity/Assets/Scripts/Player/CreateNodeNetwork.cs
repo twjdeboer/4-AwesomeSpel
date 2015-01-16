@@ -10,7 +10,6 @@ public class CreateNodeNetwork : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
         nodes = new NodeNetwork(pos, numberOfNodes);      
         ResourceManager.numberOfChilds = GameObject.Find("NPCs").transform.childCount;
         NPCNumbering();

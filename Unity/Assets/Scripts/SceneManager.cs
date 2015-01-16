@@ -333,7 +333,7 @@ public class SceneManager : MonoBehaviour
 
 		}
 
-		bool[] ReadItemList (string filename)
+		public static bool[] ReadItemList (string filename)
 		{
 				bool[] items = new bool[10];
 				if (File.Exists (filename)) {

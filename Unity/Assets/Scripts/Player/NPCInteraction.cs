@@ -88,7 +88,7 @@ public class NPCInteraction : MonoBehaviour {
      * */
     void RotateToPlayer()
     {
-        if (gameObject.GetComponent<Astar>() != null)
+        if (Go && gameObject.GetComponent<Astar>() != null)
         {
             if (!stopWalking)
             {

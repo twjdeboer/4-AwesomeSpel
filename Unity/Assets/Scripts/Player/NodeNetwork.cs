@@ -47,20 +47,20 @@ public class NodeNetwork {
 		primitive.GetComponent<Node>().yPos = j;
 		return primitive;
 		/*/
-        GameObject primitive = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        GameObject primitive = GameObject.Instantiate(Resources.Load("Prefabs/Node")) as GameObject;
         primitive.transform.position = new Vector3(xPos, yPos, zPos);
-        primitive.collider.isTrigger = true;
-        primitive.gameObject.AddComponent("Rigidbody");
-        primitive.rigidbody.useGravity = false;
-        primitive.rigidbody.isKinematic = true;
-        primitive.rigidbody.constraints = RigidbodyConstraints.FreezeAll;
-        primitive.transform.localScale = new Vector3(0.75f, 0.75f, 0.75f);
+        //primitive.collider.isTrigger = true;
+        //primitive.gameObject.AddComponent("Rigidbody");
+        //primitive.rigidbody.useGravity = false;
+        //primitive.rigidbody.isKinematic = true;
+        //primitive.rigidbody.constraints = RigidbodyConstraints.FreezeAll;
+        //primitive.transform.localScale = new Vector3(0.75f, 0.75f, 0.75f);
         primitive.transform.parent = GameObject.Find("NodeNetwork").transform;
         primitive.gameObject.name = "Node(" + i + "," + j + ")";
-        primitive.AddComponent("Node");
+        //primitive.AddComponent("Node");
         primitive.GetComponent<Node>().xPos = i;
         primitive.GetComponent<Node>().yPos = j;
-        primitive.renderer.material = (Material)Resources.Load("Textures/Invisible");
+        //primitive.renderer.material = (Material)Resources.Load("Textures/Invisible");
         return primitive;
 
     }

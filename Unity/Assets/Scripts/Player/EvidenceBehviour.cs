@@ -140,28 +140,10 @@ public class EvidenceBehviour : MonoBehaviour
 				return location;
 		}
 
-		bool[] ReadItemList (string filename)
-		{
-				bool[] items = new bool[10];
-				if (File.Exists (filename)) {
-			
-						string[] content = File.ReadAllLines (filename);
-			
-						for (int i = 0; i<10; i++) {
-								items [i] = bool.Parse (content [i + 4]);
-						}
-			
-			
-				} else {
-						Debug.Log ("No Save File found");
-				}
-				return items;
-		
-		}
 
 		void placeEvidence ()
 		{
-				if ((bool)ReadItemList ("cloud.save").GetValue (evidenceID -1) == false) {
+				if ((bool)SceneManager.ReadItemList ("cloud.save").GetValue (evidenceID -1) == false) {
 						transform.position = pickRandom ();
 				} else
 						gameObject.SetActive (false);

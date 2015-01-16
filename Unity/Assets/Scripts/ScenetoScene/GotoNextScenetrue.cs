@@ -31,6 +31,7 @@ public class GotoNextScenetrue : MonoBehaviour {
 			
 		} else {
 			Debug.Log ("No Save File found");
+            pos = player.transform.position;
 		}
 		return pos;
 	}
