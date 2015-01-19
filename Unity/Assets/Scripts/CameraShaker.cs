@@ -27,8 +27,7 @@ public class CameraShaker : MonoBehaviour {
         if (shake && (t < shakeDuration || shakeDuration == 0))
         {
             t += Time.deltaTime;
-            camera.fieldOfView = intZoom + amplitude * Mathf.Exp(-dampFactor * t) * Mathf.Sin(shakeSpeed * t);
-
+            camera.fieldOfView = intZoom + amplitude * Mathf.Exp(-dampFactor * t) * Mathf.Sin(shakeSpeed * t);           
         }
         else
         {
@@ -40,6 +39,7 @@ public class CameraShaker : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        Shaker();
 
 	}
 }

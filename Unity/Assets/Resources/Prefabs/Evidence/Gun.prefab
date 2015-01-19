@@ -10,9 +10,11 @@ GameObject:
   - 4: {fileID: 400000}
   - 33: {fileID: 3300000}
   - 23: {fileID: 2300000}
-  - 64: {fileID: 6400000}
   - 95: {fileID: 9500000}
   - 114: {fileID: 11400000}
+  - 54: {fileID: 5482378}
+  - 136: {fileID: 13682376}
+  - 136: {fileID: 13682378}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -61,19 +63,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_Mesh: {fileID: 4300000, guid: 373bcbfa27290a148a9eb3d795e45f52, type: 3}
---- !u!64 &6400000
-MeshCollider:
+--- !u!54 &5482378
+Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 373bcbfa27290a148a9eb3d795e45f52, type: 3}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!95 &9500000
 Animator:
   serializedVersion: 3
@@ -100,15 +104,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 934bcb97ee10c984f8c39e979ca908fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  evidenceID: 2
-  description: 
+  evidenceID: 3
+  description: Was the victem shot with this gun?
   evidencename: gun
-  rotationIfSelected: {x: 0, y: 0, z: 0}
-  translateIfSelected: {x: 0, y: 0, z: 0}
-  scaleFactorIfSelected: 0
-  rotationSpeed: 0
+  rotationIfSelected: {x: 0, y: 0, z: 90}
+  translateIfSelected: {x: 0, y: 1, z: 0}
+  scaleFactorIfSelected: 6
+  rotationSpeed: 50
   canBePickedUp: 1
-  maxDistance: 0
+  maxDistance: 100
+--- !u!136 &13682376
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: .150000006
+  m_Height: 1.21886528
+  m_Direction: 1
+  m_Center: {x: 0, y: -.265100837, z: .170000002}
+--- !u!136 &13682378
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: .129999995
+  m_Height: .5
+  m_Direction: 2
+  m_Center: {x: 0, y: .100000001, z: -.159999996}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
