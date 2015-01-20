@@ -1,8 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <conversation>
-	<NPC>Test</NPC>
+	<NPC>Hello officer, how are you?</NPC>
 	<PLAYER>
-		<TALK>Check</TALK>
+		<TALK>I'm fine. Thank you.</TALK>
 	</PLAYER>
+	<NPC>How can I help you?</NPC>
+	<PLAYER>
+		<TALK>Where were you the night Thomas Moore died?</TALK>
+	</PLAYER>
+	<NPC>I was reading in the library upstairs.</NPC>
+	<PLAYER>
+		<TALK>Can someone confirm that?</TALK>
+	</PLAYER>
+	<NPC>Why? Am I under suspicion?</NPC>
+	<PLAYER>
+		<TALK>Just asking. (Looks like he's hiding something)</TALK>
+	</PLAYER>
+	<NPC>If you don't mind, I would like to get on with my business. Goodday sir.</NPC>
+
+
 </conversation>
