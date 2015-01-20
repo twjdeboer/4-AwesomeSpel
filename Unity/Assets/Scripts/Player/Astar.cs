@@ -38,8 +38,17 @@ public class Astar : MonoBehaviour{
         GameObject CurrentNode;
         while (!ReachedEnd(closedList))
         {
-            CurrentNode = LowestCost(openList);
-            ReachableNodes(CurrentNode,previousNode);            
+            if (openList.Count != 0)
+            {
+                CurrentNode = LowestCost(openList);
+                ReachableNodes(CurrentNode, previousNode);
+            }
+            else
+            {
+                List<GameObject> returnThis = new List<GameObject>();
+                returnThis.Add(startNode);
+                return returnThis;
+            }
         }
         return ConstructPath(closedList);
     }
@@ -171,7 +180,7 @@ public class Astar : MonoBehaviour{
         moveDirection.y = 0;
         Vector3 step = moveDirection.normalized * moveSpeed * Time.deltaTime;
         Quaternion rotation = Quaternion.LookRotation(moveDirection);
-        transform.rotation = rotation;
+        rigidbody.rotation = rotation;
         rigidbody.MovePosition(rigidbody.position + step);
     }
 

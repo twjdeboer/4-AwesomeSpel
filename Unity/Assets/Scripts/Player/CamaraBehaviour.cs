@@ -48,28 +48,31 @@ public class CamaraBehaviour : MonoBehaviour
      * */
     void CheckRay()
     {
-        RaycastHit[] RaycastList = Physics.RaycastAll(transform.position, ResourceManager.playerPosition - transform.position);
+        if (!ResourceManager.stopWalking)
         {
-            foreach (RaycastHit i in RaycastList)
+            RaycastHit[] RaycastList = Physics.RaycastAll(transform.position, ResourceManager.playerPosition - transform.position);
             {
-                Collider other = i.collider;
-                if (other.gameObject.tag == "Building")
+                foreach (RaycastHit i in RaycastList)
                 {
-                    SetAlpha(other.gameObject, 0.5f);
-                    reset.Add(other);
+                    Collider other = i.collider;
+                    if (other.gameObject.tag == "Building")
+                    {
+                        SetAlpha(other.gameObject, 0.5f);
+                        reset.Add(other);
+                    }
+                    else if (other.gameObject.tag == "Building2")
+                    {
+                        reset.Add(other);
+                        SetAlpha(other.gameObject, 0.1f);
+                    }
+                    else if (other.gameObject.tag.Contains("Transparent"))
+                    {
+                        SetAlpha(other.gameObject, 0.5f);
+                        reset.Add(other);
+                    }
                 }
-                else if (other.gameObject.tag == "Building2")
-                {
-                    reset.Add(other);
-                    SetAlpha(other.gameObject, 0.1f);
-                }
-                else if (other.gameObject.tag.Contains("Transparent"))
-                {
-                    SetAlpha(other.gameObject, 0.5f);
-                    reset.Add(other);
-                }
+                ResetFade(RaycastList);
             }
-            ResetFade(RaycastList);
         }
     }
 
