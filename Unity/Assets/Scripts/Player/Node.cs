@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Node : MonoBehaviour{
 
-    public bool accesable = false;
+    public bool accesable;
     public int xPos;
     public int yPos;
     public GameObject[] parentNode;
@@ -14,20 +14,21 @@ public class Node : MonoBehaviour{
 
     void Start()
     {
+        accesable = false;
         G = new int[ResourceManager.numberOfChilds];
         H = new int[ResourceManager.numberOfChilds];
         F = new int[ResourceManager.numberOfChilds];
         parentNode = new GameObject[ResourceManager.numberOfChilds];
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerStay(Collider other)
     {
 
         if(other.gameObject.tag.Contains("Walk"))
         {
             this.accesable = true;
         }
-        if(!other.gameObject.tag.Contains("Walk"))
+        else if(!other.gameObject.tag.Contains("Walk"))
         {
             accesable = false;
         }
