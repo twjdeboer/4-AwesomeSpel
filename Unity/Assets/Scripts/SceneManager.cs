@@ -240,7 +240,7 @@ public class SceneManager : MonoBehaviour
 										if (itemId == null || index > 20) {
 												hostop = true;
 										} else {
-												items [int.Parse (itemId) - 1] = true;
+												items [int.Parse (itemId)] = true;
 										}
 										index++;
 								}
