@@ -19,6 +19,7 @@ public class SceneManager : MonoBehaviour
 		// Use this for initialization
 		void Start ()
 		{
+            Time.timeScale = 1;
 				pauseMenu = GameObject.Find ("PauseMenu");
 				if (pauseMenu != null)
 						setCanvasInactive (pauseMenu);
