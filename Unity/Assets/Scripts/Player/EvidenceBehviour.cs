@@ -31,7 +31,7 @@ public class EvidenceBehviour : MonoBehaviour
 		private bool rotated = false;
 		private bool pickedUp = false;
 		private GameObject evidence;
-		//public Transform floorcollider;
+		private Vector3 position;
 
 
 		// pick one out of 3 possible locations for each peace of evidence
@@ -150,6 +150,8 @@ public class EvidenceBehviour : MonoBehaviour
 				} else
 						gameObject.SetActive (false);
 		}
+
+		
 	
 		// Use this for initialization
 		void Start ()
@@ -376,5 +378,6 @@ public class EvidenceBehviour : MonoBehaviour
 				MouseLeft ();
 				ScaleAndRotate ();
 				PickUpEvidence ();
+				
 		}
 }

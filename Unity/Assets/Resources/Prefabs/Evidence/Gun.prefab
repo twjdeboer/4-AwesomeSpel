@@ -13,6 +13,7 @@ GameObject:
   - 95: {fileID: 9500000}
   - 114: {fileID: 11400000}
   - 54: {fileID: 5482378}
+  - 65: {fileID: 6500000}
   - 136: {fileID: 13682376}
   - 136: {fileID: 13682378}
   m_Layer: 0
@@ -29,7 +30,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: .707106829, w: .707106829}
-  m_LocalPosition: {x: -101.191704, y: -4.85360432, z: -33.8904037}
+  m_LocalPosition: {x: 3.33878708, y: -.740428627, z: -7.98056555}
   m_LocalScale: {x: .5, y: .5, z: .5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -78,6 +79,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &6500000
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .200000048, y: 1.21886528, z: .728561401}
+  m_Center: {x: 0, y: -.265100837, z: -.00898060203}
 --- !u!95 &9500000
 Animator:
   serializedVersion: 3
@@ -104,18 +117,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 934bcb97ee10c984f8c39e979ca908fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  evidenceID: 3
+  evidenceID: 2
   description: Was the victem shot with this gun?
   evidencename: gun
-  rotationIfSelected: {x: 0, y: 0, z: 90}
-  translateIfSelected: {x: 0, y: 1, z: 0}
-  scaleFactorIfSelected: 6
+  rotationIfSelected: {x: 90, y: 0, z: 0}
+  translateIfSelected: {x: 0, y: .200000003, z: 0}
+  scaleFactorIfSelected: 4
   rotationSpeed: 50
   canBePickedUp: 1
   maxDistance: 100
 --- !u!136 &13682376
 CapsuleCollider:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
@@ -128,7 +141,7 @@ CapsuleCollider:
   m_Center: {x: 0, y: -.265100837, z: .170000002}
 --- !u!136 &13682378
 CapsuleCollider:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
