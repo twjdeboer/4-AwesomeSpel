@@ -14,6 +14,22 @@ public class ShowEvidence : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        ReadList();
+    }
+
+    void ReadList()
+    {
+        bool[] boolList = SceneManager.ReadItemList("cloud.save");
+        GameObject evidenceObjects = Instantiate(Resources.Load("Prefabs/Evidence/EvidenceObjectList")) as GameObject;
+        evidenceObjects.transform.position = new Vector3(0, -20, 0);
+        Debug.Log(boolList.Length);
+        for(int i = 0; i < boolList.Length - 3; i++)
+        {
+            if(boolList[i])
+            {
+                evidenceList.Add(evidenceObjects.transform.GetChild(i).gameObject);
+            }
+        }
 
     }
 

@@ -12,6 +12,8 @@ GameObject:
   - 23: {fileID: 2300000}
   - 95: {fileID: 9500000}
   - 114: {fileID: 11400000}
+  - 54: {fileID: 5433058}
+  - 135: {fileID: 13533058}
   m_Layer: 0
   m_Name: Paperwrap
   m_TagString: Untagged
@@ -58,6 +60,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_Mesh: {fileID: 4300002, guid: f91cfaee8694f1949af4c26c304240e6, type: 3}
+--- !u!54 &5433058
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!95 &9500000
 Animator:
   serializedVersion: 3
@@ -84,15 +101,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 934bcb97ee10c984f8c39e979ca908fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  evidenceID: 6
-  description: 
+  evidenceID: 7
+  description: Does  this have information or maybe some fingerprints
   evidencename: paper
   rotationIfSelected: {x: 0, y: 0, z: 0}
-  translateIfSelected: {x: 0, y: 0, z: 0}
-  scaleFactorIfSelected: 0
-  rotationSpeed: 0
+  translateIfSelected: {x: 0, y: 2, z: 0}
+  scaleFactorIfSelected: 4
+  rotationSpeed: 50
   canBePickedUp: 1
-  maxDistance: 0
+  maxDistance: 5
+--- !u!135 &13533058
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: .0299999993
+  m_Center: {x: -.00468520261, y: -.0148187019, z: .000353599899}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
