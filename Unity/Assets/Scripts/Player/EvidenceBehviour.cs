@@ -66,9 +66,6 @@ public class EvidenceBehviour : MonoBehaviour
 						-106.5f,
 						-114.8f,
 						-97.7f,
-						2.9966f,
-						-2.58f,
-						1.134f
 				};
 				float[] yCord = {
 						-0.02f,
@@ -92,15 +89,12 @@ public class EvidenceBehviour : MonoBehaviour
 						0.22f,
 						0.22f,
 						0.22f,
-						0.43f,
-						0.1f,
-						0.27f,
+						-5.956f,
+						-6.255f,
+						-6.055f,
 						0.12f,
 						0.12f,
 						0.12f,
-						0.65f,
-						0.65f,
-						0.228f
 				};
 				float[] zCord = {
 						-129.21f,
@@ -130,9 +124,6 @@ public class EvidenceBehviour : MonoBehaviour
 						-216.5f,
 						-212.4f,
 						-223.8f,
-						-2.26f,
-						-2.26f,
-						-4.478f
 				};
 		
 				System.Random random = new System.Random ();
