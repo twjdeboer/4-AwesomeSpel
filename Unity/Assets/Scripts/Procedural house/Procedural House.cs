@@ -48,6 +48,8 @@ public class ProceduralHouse{
 		houseatback = Houseatback;
 		leftorright = Leftorright;
 		empty = new GameObject ("HouseBox"+staticnumber);
+		//empty = MonoBehaviour.Instantiate(Resources.Load ("Prefabs/ProceduralHouse/HouseBox", typeof(GameObject))) as GameObject;
+
 		empty.transform.tag = "";
 		mynumber = staticnumber;
 		staticnumber++;
@@ -73,11 +75,15 @@ public class ProceduralHouse{
 		houseatback = Houseatback;
 		leftorright = Leftorright;
 		empty = new GameObject ("HouseBox"+staticnumber);
+		//empty = MonoBehaviour.Instantiate(Resources.Load ("Prefabs/ProceduralHouse/HouseBox", typeof(GameObject))) as GameObject;
+		//empty.name = "HouseBox" + staticnumber;
 
 		mynumber = staticnumber;
 		staticnumber++;
 		this.House = House;
 		scale = House.transform.localScale;
+
+
 		originscale = House.transform.localScale;
 		windownr = (int)Mathf.Floor((scale.z+scale.y)/1.5f);
 		windownr = 10;
@@ -123,6 +129,7 @@ public class ProceduralHouse{
 		MakeWindows ();
 		House.transform.tag="Untagged";
 		MonoBehaviour.Destroy(House);
+
 		setwindowtexture ();
 		//MonoBehaviour.print (mynumber +" "+truewindow+" "+scale.z+" "+scale.y);
 		
@@ -336,6 +343,14 @@ public class ProceduralHouse{
 
 		House.transform.localScale = new Vector3(x,y,z);
 		scale = new Vector3 (x, y, z);
+
+		/**
+		Vector3 tempp = scale;
+		tempp.y = tempp.y * 1.2f;
+		BoxCollider boxcol = empty.GetComponent<BoxCollider>();
+		boxcol.size = tempp;
+		boxcol.center = new Vector3 (0,tempp.y/2.0f,0);
+		**/
 	}
 
 	

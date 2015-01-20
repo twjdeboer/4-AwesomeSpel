@@ -6,7 +6,6 @@ public class GotoNextScene : MonoBehaviour {
 	public GameObject Buttons;
 
 	void OnTriggerEnter(Collider other) {
-		print ("GotoNextScene Trigger enter");
 		if(other.gameObject.tag=="Player")
 			Buttons.SetActive (true);
 	}
