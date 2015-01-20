@@ -143,7 +143,7 @@ public class EvidenceBehviour : MonoBehaviour
 
 		void placeEvidence ()
 		{
-				if ((bool)SceneManager.ReadItemList ("cloud.save").GetValue (evidenceID -1) == false) {
+				if ((bool)SceneManager.ReadItemList ("cloud.save").GetValue (evidenceID) == false) {
 						transform.position = pickRandom ();
 				} else
 						gameObject.SetActive (false);
@@ -311,7 +311,7 @@ public class EvidenceBehviour : MonoBehaviour
 						Debug.Log ("No Save File found");
 				}
 
-				content [evidenceID + 3] = "True";
+				content [evidenceID + 4] = "True";
 
 				StreamWriter sr = File.CreateText (filename);
 				for (int i = 0; i < content.Length; i++) {
