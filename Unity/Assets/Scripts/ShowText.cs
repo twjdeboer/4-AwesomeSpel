@@ -8,7 +8,6 @@ public class ShowText : MonoBehaviour {
 
     private string[] text;
     public string fileName;
-    public float wait;
     public bool next;
     private int index;
     private bool ended = false;
@@ -34,7 +33,7 @@ public class ShowText : MonoBehaviour {
             {
                 GameObject creditText = Instantiate(Resources.Load("Prefabs/CreditText")) as GameObject;
                 creditText.transform.SetParent(GameObject.Find("AllText").transform, false);
-                creditText.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, -500, 0);
+                creditText.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, -600, 0);
                 creditText.GetComponent<Text>().text = text[index];
                 index++;
                 next = false;

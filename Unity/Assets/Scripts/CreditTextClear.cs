@@ -18,7 +18,7 @@ public class CreditTextClear : MonoBehaviour {
         //        Debug.Log(GetComponent<RectTransform>().anchoredPosition.y);
         if (GetComponent<RectTransform>().anchoredPosition.y > 650)
             Destroy(gameObject);
-        if (GetComponent<RectTransform>().anchoredPosition.y > -400 && send)
+        if (GetComponent<RectTransform>().anchoredPosition.y > -520 && send)
         {
             GameObject.Find("AllText").GetComponent<ShowText>().next = true;
             send = false;
