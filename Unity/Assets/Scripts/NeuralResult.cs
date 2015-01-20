@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Text.RegularExpressions;
 using System.IO;
+using SimpleJSON;
 
 public class NeuralResult : MonoBehaviour {
 
@@ -95,9 +96,9 @@ public class NeuralResult : MonoBehaviour {
 		//update boolean 10
 		if (uitkomst == 2)
 		{
-			string url = "http://drproject.twi.tudelft.nl:8084/pickupitem?userId=" + content [0] + "&itemId=" + 10;
-			WWW www = new WWW (url);
-			StartCoroutine (GETAddEvidence (www));
+			string resulturl = "http://drproject.twi.tudelft.nl:8084/pickupitem?userId=" + content [0] + "&itemId=" + 10;
+			WWW resultget = new WWW (resulturl);
+			StartCoroutine (GETAddEvidence (resultget));
 		}
 
 
