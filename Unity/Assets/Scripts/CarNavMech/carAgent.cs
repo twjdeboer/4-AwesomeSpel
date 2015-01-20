@@ -19,7 +19,7 @@ public class carAgent : MonoBehaviour {
 	}
 	
 	// pick a new destination if the destination picked is too close to the position of the agent
-	void Update () {
+	void FixedUpdate () {
 		if (agent.remainingDistance < 2){
 			destination = pickDestination();
 			agent.SetDestination(destination);
