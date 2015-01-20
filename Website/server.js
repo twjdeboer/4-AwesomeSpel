@@ -244,10 +244,19 @@ app.get("/pickupitem", function(req, res){
 		var querystring = 'INSERT INTO itemdata (itemId, userId) VALUES (?, ?)';
 		var mysqlserver = getMySQLConnection();
 		mysqlserver.query(querystring, [itemId, userId], function(err, result){
-			if (err) console.log(err);
+			if (err) {
+				console.log(err);
+				res.send("Sum ting wong");
+			}
+			else{
+				console.log("Added item with id " + itemId + " to user with id " + userId);
+				res.send("SUCCESS");
+			}
 		});
 		mysqlserver.end();
-		res.end();
+	} else {
+		console.log("Nee flikker op met je item!");
+		res.send("Dafuq you doin\'?");
 	}
 });
 
