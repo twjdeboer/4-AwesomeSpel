@@ -2,7 +2,11 @@
 
 <conversation>
 	<NPC>Hello, have you herad about the word?</NPC>
-	<TALK>No, what is the word?</TALK>
+	<PLAYER>
+		<TALK>No, what is the word?</TALK>
+	</PLAYER>
 	<NPC>A-MA-MA OE-MA-MA-MA BIRD IS THE WORD</NPC>
-	<TALK>Yeah.... Bye</TALK>
+	<PLAYER>
+		<TALK>Yeah.... Bye</TALK>
+	</PLAYER>
 </conversation>
