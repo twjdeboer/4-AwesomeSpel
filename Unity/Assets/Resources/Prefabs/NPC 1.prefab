@@ -235,7 +235,8 @@ MonoBehaviour:
   maxNumberOfLines: 4
   stopWalking: 0
   choiceOfPlayer: 0
-  fileName: Test.xml
+  fileName: NPC2.xml
+  textToDisplay: 
 --- !u!136 &13600000
 CapsuleCollider:
   m_ObjectHideFlags: 1

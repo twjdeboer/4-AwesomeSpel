@@ -22,7 +22,7 @@ public class ShowEvidence : MonoBehaviour
         bool[] boolList = SceneManager.ReadItemList("cloud.save");
         GameObject evidenceObjects = Instantiate(Resources.Load("Prefabs/Evidence/EvidenceObjectList")) as GameObject;
         evidenceObjects.transform.position = new Vector3(0, -20, 0);
-        for(int i = 0; i < boolList.Length - 3; i++)
+        for(int i = 0; i < boolList.Length; i++)
         {
             if(boolList[i])
             {
