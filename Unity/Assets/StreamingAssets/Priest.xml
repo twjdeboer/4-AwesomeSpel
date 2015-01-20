@@ -2,5 +2,7 @@
 
 <conversation>
 	<NPC>Test</NPC>
-	<TALK>Check</TALK>
+	<PLAYER>
+		<TALK>Check</TALK>
+	</PLAYER>
 </conversation>

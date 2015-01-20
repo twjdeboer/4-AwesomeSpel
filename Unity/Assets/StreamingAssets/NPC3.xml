@@ -2,5 +2,7 @@
 
 <conversation>
 	<NPC>Did you know that broken pencils are pointless?</NPC>
-	<TALK>Dude why...</TALK>
+	<PLAYER>
+		<TALK>Dude why...</TALK>
+	</PLAYER>
 </conversation>
