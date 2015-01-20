@@ -28,6 +28,8 @@ public class NPCInteraction : MonoBehaviour {
     public string fileName;
 
     private bool anotherQuestion = true;
+    private string playerTalkName;
+    private Transform target;
     private bool NPCHasToAnswer = false;
     private bool NPCAnswer = false;
     private int actionIndex = 0;
@@ -53,6 +55,8 @@ public class NPCInteraction : MonoBehaviour {
             gameObject.GetComponent<Astar>().stopWalking = true;
         }
         BlockRayCast();
+        target = GameObject.Find("PlayerModel").transform;
+        playerTalkName = GameObject.Find("PlayerModel").GetComponent<Player>().playerName;
         ResourceManager.conversationWith = transform;
         ResourceManager.stopWalking = true;
         XMLReader(fileName);
@@ -92,8 +96,7 @@ public class NPCInteraction : MonoBehaviour {
         {
             if (!stopWalking)
             {
-                float speed = gameObject.GetComponent<Astar>().rotateSpeed;
-                Transform target = GameObject.Find("Player").transform;
+                float speed = gameObject.GetComponent<Astar>().rotateSpeed;                
                 Vector3 targetDir = target.position - transform.position;
                 float step = speed * Time.deltaTime;
                 Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0F);
@@ -222,7 +225,7 @@ public class NPCInteraction : MonoBehaviour {
     void PlayerTalkText(string text)
     {
         conversation.gameObject.SetActive(true);
-        nameText.text = GameObject.Find("PlayerModel").GetComponent<Player>().playerName;
+        nameText.text = playerTalkName;
         DisplayWordForWord(text);
     }
 
@@ -241,7 +244,6 @@ public class NPCInteraction : MonoBehaviour {
         if (choiceOfPlayer == 0)
         {
             ActivateUI(list);
-            FillUI(list);
         }
 
         PlayerAnswer(list);
@@ -255,7 +257,7 @@ public class NPCInteraction : MonoBehaviour {
         if(choiceOfPlayer != 0)
         {
             Active.gameObject.SetActive(false);
-            nameText.text = GameObject.Find("PlayerModel").GetComponent<Player>().playerName;
+            nameText.text = playerTalkName;
             playerText = list[choiceOfPlayer - 1].text;
         }
         if (playerText != null && !NPCAnswer)
@@ -288,6 +290,7 @@ public class NPCInteraction : MonoBehaviour {
             conversation.SetActive(false);
             Active.SetActive(true);
             Activated = true;
+            FillUI(list);
         }
     }
 
