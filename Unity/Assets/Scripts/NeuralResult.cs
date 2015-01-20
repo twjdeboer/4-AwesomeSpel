@@ -119,8 +119,7 @@ public class NeuralResult : MonoBehaviour {
 
 	void Setfoundevidence(){
 		string filename = "cloud.save";
-		bool[] items = new bool[9];
-		
+				
 		
 		string[] content = File.ReadAllLines (filename);
 		

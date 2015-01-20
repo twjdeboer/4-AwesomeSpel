@@ -31,13 +31,13 @@ public class EvidenceBehviour : MonoBehaviour
 		private bool rotated = false;
 		private bool pickedUp = false;
 		private GameObject evidence;
-		//public Transform floorcollider;
+		private Vector3 position;
 
 
-		// pick location
+		// pick one out of 3 possible locations for each peace of evidence
 		Vector3 pickRandom ()
 		{
-		
+				// possible location vectors
 				float[] xCord = {
 						297.23f,
 						316.22f,
@@ -125,9 +125,10 @@ public class EvidenceBehviour : MonoBehaviour
 						-212.4f,
 						-223.8f,
 				};
-		
+				
+				// pick location from vector (first 3 for evidence id 0, second for evidence id 1, etc.)
 				System.Random random = new System.Random ();
-				int i = evidenceID-1;	
+				int i = evidenceID;	
 
 				int index = (random.Next (3 * i, 2 * (i + 1) + i));
 
@@ -140,14 +141,17 @@ public class EvidenceBehviour : MonoBehaviour
 				return location;
 		}
 
-
+		// only place evidence in scene if it is not already picked up in the saved game.
 		void placeEvidence ()
 		{
-				if ((bool)SceneManager.ReadItemList ("cloud.save").GetValue (evidenceID -1) == false) {
+				if ((bool)SceneManager.ReadItemList ("cloud.save").GetValue (evidenceID) == false) {
 						transform.position = pickRandom ();
+						position = transform.position;
 				} else
 						gameObject.SetActive (false);
 		}
+
+		
 	
 		// Use this for initialization
 		void Start ()
@@ -311,7 +315,7 @@ public class EvidenceBehviour : MonoBehaviour
 						Debug.Log ("No Save File found");
 				}
 
-				content [evidenceID + 3] = "True";
+				content [evidenceID + 4] = "True";
 
 				StreamWriter sr = File.CreateText (filename);
 				for (int i = 0; i < content.Length; i++) {
@@ -374,5 +378,6 @@ public class EvidenceBehviour : MonoBehaviour
 				MouseLeft ();
 				ScaleAndRotate ();
 				PickUpEvidence ();
+				
 		}
 }
