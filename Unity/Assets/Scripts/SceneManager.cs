@@ -349,7 +349,7 @@ public class SceneManager : MonoBehaviour
 
 		void CreateSaveOffline ()
 		{
-				Vector3 playPos = new Vector3 (-185f, 0.2f, -40f);
+				Vector3 playPos = new Vector3 (-185f, 0.2f, -35f);
 				bool[] items = new bool[12];
 				WriteToSave ("cloud.save", 0, playPos, items);
 		}
