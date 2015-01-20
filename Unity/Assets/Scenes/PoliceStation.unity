@@ -625,7 +625,6 @@ CanvasGroup:
     type: 2}
   m_PrefabInternal: {fileID: 515909967}
   m_GameObject: {fileID: 14071726}
-  m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
@@ -892,6 +891,7 @@ MonoBehaviour:
   stopWalking: 0
   choiceOfPlayer: 0
   fileName: Officer.xml
+  textToDisplay: 
 --- !u!1 &17290189
 GameObject:
   m_ObjectHideFlags: 0
@@ -2436,6 +2436,7 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -4302,7 +4303,6 @@ CanvasGroup:
     type: 2}
   m_PrefabInternal: {fileID: 515909967}
   m_GameObject: {fileID: 219041417}
-  m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 0
@@ -8154,15 +8154,43 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 481754, guid: 7fc18a12eb9631b4a836ee157d58ffb9, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 25.6000004
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 481754, guid: 7fc18a12eb9631b4a836ee157d58ffb9, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 25.7999992
+      value: -3.5
       objectReference: {fileID: 0}
     - target: {fileID: 181560, guid: 7fc18a12eb9631b4a836ee157d58ffb9, type: 2}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 481754, guid: 7fc18a12eb9631b4a836ee157d58ffb9, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 481754, guid: 7fc18a12eb9631b4a836ee157d58ffb9, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -1.90666394e-09
+      objectReference: {fileID: 0}
+    - target: {fileID: 481754, guid: 7fc18a12eb9631b4a836ee157d58ffb9, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: .999048233
+      objectReference: {fileID: 0}
+    - target: {fileID: 481754, guid: 7fc18a12eb9631b4a836ee157d58ffb9, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -.0436193869
+      objectReference: {fileID: 0}
+    - target: {fileID: 481754, guid: 7fc18a12eb9631b4a836ee157d58ffb9, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: -4.3669786e-08
+      objectReference: {fileID: 0}
+    - target: {fileID: 2082318, guid: 7fc18a12eb9631b4a836ee157d58ffb9, type: 2}
+      propertyPath: orthographic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2082318, guid: 7fc18a12eb9631b4a836ee157d58ffb9, type: 2}
+      propertyPath: field of view
+      value: 41.7000008
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7fc18a12eb9631b4a836ee157d58ffb9, type: 2}
@@ -9056,7 +9084,6 @@ CanvasGroup:
     type: 2}
   m_PrefabInternal: {fileID: 515909967}
   m_GameObject: {fileID: 457632230}
-  m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 0
@@ -11374,8 +11401,8 @@ Transform:
   m_PrefabParentObject: {fileID: 481754, guid: 7fc18a12eb9631b4a836ee157d58ffb9, type: 2}
   m_PrefabInternal: {fileID: 424226605}
   m_GameObject: {fileID: 577373217}
-  m_LocalRotation: {x: .14644663, y: -.853553414, z: .353553444, w: .353553414}
-  m_LocalPosition: {x: 25.7999992, y: 39.2999992, z: 25.6000004}
+  m_LocalRotation: {x: -1.90666394e-09, y: .999048233, z: -.0436193869, w: -4.3669786e-08}
+  m_LocalPosition: {x: -3.5, y: 6, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 769202945}
@@ -11435,8 +11462,8 @@ Camera:
     height: 1
   near clip plane: .300000012
   far clip plane: 1000
-  field of view: 60
-  orthographic: 1
+  field of view: 41.7000008
+  orthographic: 0
   orthographic size: 4
   m_Depth: 0
   m_CullingMask:
@@ -21256,6 +21283,7 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -21526,6 +21554,7 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -22009,7 +22038,6 @@ CanvasGroup:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1154041066}
-  m_Enabled: 1
   m_Alpha: .699999988
   m_Interactable: 1
   m_BlocksRaycasts: 1
@@ -23594,7 +23622,6 @@ CanvasGroup:
     type: 2}
   m_PrefabInternal: {fileID: 515909967}
   m_GameObject: {fileID: 1222859344}
-  m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
@@ -28876,7 +28903,6 @@ CanvasGroup:
     type: 2}
   m_PrefabInternal: {fileID: 515909967}
   m_GameObject: {fileID: 1539615633}
-  m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
@@ -29769,6 +29795,7 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
