@@ -130,7 +130,7 @@ public class SceneManager : MonoBehaviour
 						sr.WriteLine (content [i]);			
 				}
 				sr.Close ();
-		string url = "http://drproject.twi.tudelft.nl:8084/writeplayerpos?userId=" + content [0] + "&xpos=" + xNew + "&ypos=" + yNew + "&zpos=" + zNew;
+				string url = "http://drproject.twi.tudelft.nl:8084/writeplayerpos?userId=" + content [0] + "&xpos=" + xNew + "&ypos=" + yNew + "&zpos=" + zNew;
 				WWW www = new WWW (url);
 		
 				StartCoroutine (GETWritePlayerPos (www));
@@ -197,6 +197,11 @@ public class SceneManager : MonoBehaviour
 				setCanvasInactive (createMenu);
 		}
 
+		void Credits ()
+		{
+				Application.LoadLevel ("Credits");
+		}
+
 		void CheckLogin ()
 		{
 				string username = GameObject.Find ("username").GetComponent<InputField> ().text;
@@ -235,7 +240,7 @@ public class SceneManager : MonoBehaviour
 										if (itemId == null || index > 20) {
 												hostop = true;
 										} else {
-												items [int.Parse (itemId) - 1] = true;
+												items [int.Parse (itemId)] = true;
 										}
 										index++;
 								}
@@ -312,7 +317,6 @@ public class SceneManager : MonoBehaviour
 						msg = msg.Substring (1, msg.Length - 2);
 						switch (msg) {
 						case ("SUCCESS"):
-								string userid = result [1].Split (':') [1];
 								setCanvasInactive (startMenu);
 								Application.LoadLevel (firstPlayScene);
 								break;
@@ -330,7 +334,24 @@ public class SceneManager : MonoBehaviour
 
 		void LoadGameOffline ()
 		{
+				string filename = "cloud.save";
+				if (File.Exists (filename)) {
+						string[] content = File.ReadAllLines (filename);
+						if (content [0] != "0") {
+								CreateSaveOffline ();
+						}
+				} else {
+						CreateSaveOffline ();
+				}
+				setCanvasInactive (startMenu);
+				Application.LoadLevel (firstPlayScene);
+		}
 
+		void CreateSaveOffline ()
+		{
+				Vector3 playPos = new Vector3 (-185f, 0.2f, -35f);
+				bool[] items = new bool[12];
+				WriteToSave ("cloud.save", 0, playPos, items);
 		}
 
 		public static bool[] ReadItemList (string filename)

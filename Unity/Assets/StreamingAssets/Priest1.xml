@@ -5,25 +5,47 @@
 -->
 <conversation>
 	<NPC>Well well well, look who we have here, Johnny Law</NPC>
-	<TALK>Wisemouth. We both know what happened to $victim.name.toString() </TALK>
+	<PLAYER>
+		<TALK>Wisemouth. We both know what happened to Thomas Moore </TALK>
+	</PLAYER>
 	<NPC>Who again?</NPC>
-	<TALK>Quit the act, I know you did it.</TALK>
+	<PLAYER>
+		<TALK>Quit the act, I know you did it.</TALK>
+	</PLAYER>
 	<NPC>But I'm not yet in cuffs. What's holding you back?</NPC>
-	<TALK>I know you did it, I just can't prove it. Yet.</TALK>
+	<PLAYER>
+		<TALK>I know you did it, I just can't prove it. Yet.</TALK>
+	</PLAYER>
 	<NPC>But my friend, you must be mistaking. I'm an honest man of the Lord.</NPC>
-	<TALK>That act won't work on me. But it will on a jury, so without the evidence.......</TALK>
+	<PLAYER>
+		<TALK>That act won't work on me. But it will on a jury, so without the evidence.......</TALK>
+	</PLAYER>
 	<NPC>I will keep on living like I do now.</NPC>
-	<TALK>I guess you leave me no choise....</TALK>
-	<TALK>I can't let you get away with this. *gets very angry*</TALK>
+	<PLAYER>
+		<TALK>I guess you leave me no choise....</TALK>
+	</PLAYER>
+	<PLAYER>
+		<TALK>I can't let you get away with this. *gets very angry*</TALK>
+	</PLAYER>
 	<NPC>Okey, now don't lose grip of yourself.</NPC>
-	<TALK>Like you lost grip when you killed that man!</TALK>
+	<PLAYER>
+		<TALK>Like you lost grip when you killed that man!</TALK>
+	</PLAYER>
 	<NPC>Keep calm. Don't do anything stupid.</NPC>
-	<TALK>Stupid, this makes so much sense to me.</TALK>
-	<TALK>You will never get one happy day in your life again.</TALK>
+	<PLAYER>
+		<TALK>Stupid, this makes so much sense to me.</TALK>
+	</PLAYER>
+	<PLAYER>
+		<TALK>You will never get one happy day in your life again.</TALK>
+	</PLAYER>
 	<NPC>Oke, put away your gun now. Can't we talk about it?</NPC>
-	<TALK>You had your chance to talk. Now I have to set the record straight myself</TALK>
+	<PLAYER>
+		<TALK>You had your chance to talk. Now I have to set the record straight myself</TALK>
+	</PLAYER>
 	<NPC>No please no, put your gun away and just let me talk.</NPC>
-	<TALK>Time to meet your Lord *shoots the priest*</TALK>
+	<PLAYER>
+		<TALK>Time to meet your Lord *shoots the priest*</TALK>
+	</PLAYER>
 	<NPC>schateiland</NPC>
 
 </conversation>

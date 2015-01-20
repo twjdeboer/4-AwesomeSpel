@@ -5,24 +5,42 @@
 
 <conversation>
 	<NPC>Hello officer, what can I do for you?</NPC>
-	<TALK>You can start by telling me where you where the night **** died</TALK>
+	<PLAYER>
+		<TALK>You can start by telling me where you where the night Thomas Moore died</TALK>
+	</PLAYER>
 	<NPC>I was here, reading in the library.</NPC>
 	<NPC>I already told everything to you. Why are you really here?</NPC>
-	<TALK>You really don't know. I think you know why I'm here.</TALK>
+	<PLAYER>
+		<TALK>You really don't know. I think you know why I'm here.</TALK>
+	</PLAYER>
 	<NPC>Can we end this charade and just get to the point?</NPC>
-	<TALK>I know you did it. I know you are the killer.</TALK>
+	<PLAYER>
+		<TALK>I know you did it. I know you are the killer.</TALK>
+	</PLAYER>
 	<NPC>Me, why do you think so?</NPC>
-	<TALK>The evidence doesn't lie. Your prints are all over it.</TALK>
+	<PLAYER>
+		<TALK>The evidence doesn't lie. Your prints are all over it.</TALK>
+	</PLAYER>
 	<NPC>What do you mean? What evidence?</NPC>
-	<TALK>I understand you tried to clean up behind yourself, but I still managed to find it.</TALK>
+	<PLAYER>
+		<TALK>I understand you tried to clean up behind yourself, but I still managed to find it.</TALK>
+	</PLAYER>
 	<NPC>Your bluffing, I did't leave anything behind.</NPC>
-	<TALK>So you say you did it?</TALK>
+	<PLAYER>
+		<TALK>So you say you did it?</TALK>
+	</PLAYER>
 	<NPC>Oh cock</NPC>
-	<TALK>Well, we can do this the easy way or the hard way. Just come with me to the station.</TALK>
+	<PLAYER>
+		<TALK>Well, we can do this the easy way or the hard way. Just come with me to the station.</TALK>
+	</PLAYER>
 	<NPC>You got me, but he deserved it. He was a terrible man.</NPC>
-	<TALK>Even so, it is not our job to decide who lives and dies.</TALK>
+	<PLAYER>
+		<TALK>Even so, it is not our job to decide who lives and dies.</TALK>
+	</PLAYER>
 	<NPC>But... but....</NPC>
-	<TALK>The game is over. I got you and you are going to jail.</TALK>
+	<PLAYER>
+		<TALK>The game is over. I got you and you are going to jail.</TALK>
+	</PLAYER>
 	<NPC>schateiland</NPC>
 
 </conversation>

@@ -11,9 +11,13 @@
         <TEXT>I think I got enough evidence to put the killer behind bars for life.</TEXT>
         <REACTION TEXT="That's good. Well show me what you got.">
           <SEQUEL>
-            <TALK>Oké, here it is *shows collected evidence* </TALK>
+            <PLAYER>
+              <TALK>Oké, here it is *shows collected evidence* </TALK>
+            </PLAYER>
             <NPC>*looks at evidence* Well, that's quite something</NPC>
-            <TALK>But Chief, will it be enough?</TALK>
+            <PLAYER>
+              <TALK>But Chief, will it be enough?</TALK>
+            </PLAYER>
             <NPC>Let's ask the computer *types on laptop* </NPC>
             <NPC>While we're waiting for the result, have you heard the joke about the restaurant on the moon?</NPC>
             <PLAYER>
@@ -22,7 +26,9 @@
                   <TEXT>No, tell me</TEXT>
                   <REACTION TEXT="Great food, but it has no atmosphere HAHA">
                     <SEQUEL>
-                      <TALK>Are you serious? That's so corny.</TALK>
+                      <PLAYER>
+                        <TALK>Are you serious? That's so corny.</TALK>
+                      </PLAYER>
                     </SEQUEL>
                   </REACTION>
                 </OPTION>
@@ -30,16 +36,20 @@
                   <TEXT>I don't wanna hear your stupid jokes</TEXT>
                   <REACTION TEXT="Too bad, it was hilarious">
                     <SEQUEL>
-                      <TALK>OK then, tell me</TALK>
+                      <PLAYER>
+                        <TALK>OK then, tell me</TALK>
+                      </PLAYER>
                       <NPC>Great food, but it has no atmosphere HAHA</NPC>
-                      <TALK>I knew it would be bad...</TALK>
+                      <PLAYER>
+                        <TALK>I knew it would be bad...</TALK>
+                      </PLAYER>
                     </SEQUEL>
                   </REACTION>
                 </OPTION>
               </QUESTION>
             </PLAYER>
             <NPC>You just don't get it. It's a social comment on the expectations of the nouveau-riche.</NPC>
-            <TALK>You know, explaining a joke is like dissecting a frog; you understand it better, but it dies in the proces.</TAlk>
+            <TALK>You know, explaining a joke is like dissecting a frog; you understand it better, but it dies in the proces.</TALK>
             <NPC>Ah, the computer is finished</NPC>
             <TALK>Finally, no more jokes from you then. What does it say?</TALK>
             <NPC>I says you need to go see the priest. If you know what I'm saying.</NPC>

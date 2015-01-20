@@ -17,14 +17,20 @@
 				<TEXT>Have you seen anything suspicious lately?</TEXT>
 				<REACTION TEXT="Well, now you mention it. I have seen a strange thing lately.">
 					<SEQUEL>
-						<TALK>What did you see sir?</TALK>
+						<PLAYER>
+							<TALK>What did you see sir?</TALK>
+						</PLAYER>
 						<NPC>I saw a man running very hard. But maybe he was just catching a train.</NPC>
-						<TALK>Can you describe this man?</TALK>
+						<PLAYER>
+							<TALK>Can you describe this man?</TALK>
+						</PLAYER>
 						<NPC>He was about 12 bananas tall and he wore a suit.</NPC>
 					</SEQUEL>
 				</REACTION>
 			</OPTION>
 		</QUESTION>
 	</PLAYER>
-	<TALK>Thank you for your time mister.</TALK>
+	<PLAYER>
+		<TALK>Thank you for your time mister.</TALK>
+	</PLAYER>
 </conversation>

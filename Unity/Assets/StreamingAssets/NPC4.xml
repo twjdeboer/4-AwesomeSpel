@@ -2,6 +2,8 @@
 
 <conversation>
 	<NPC>Did you read the news about the murder?</NPC>
-	<TALK>Yes I did.</TALK>
+	<PLAYER>
+		<TALK>Yes I did.</TALK>
+	</PLAYER>
 	<NPC>They are completely wrong. The butler did it, as always</NPC>
 </conversation>
