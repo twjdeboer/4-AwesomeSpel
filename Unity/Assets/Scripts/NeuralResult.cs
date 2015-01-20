@@ -46,6 +46,8 @@ public class NeuralResult : MonoBehaviour {
 
 		UpdateSave (); 
 
+		UpdateServer ();
+
 
 	}
 	
@@ -71,6 +73,46 @@ public class NeuralResult : MonoBehaviour {
 
 		}
 		sr.Close ();
+	}
+
+	void UpdateServer () {
+
+		string[] content = new string[15];
+		
+		string filename = "cloud.save";
+		
+		if (File.Exists (filename)) {
+			content = File.ReadAllLines (filename);
+		} else {
+			Debug.Log ("No Save File found");
+		}
+
+		//update boolean 9
+		string url = "http://drproject.twi.tudelft.nl:8084/pickupitem?userId=" + content [0] + "&itemId=" + 9;
+		WWW www = new WWW (url);
+		StartCoroutine (GETAddEvidence (www));
+
+		//update boolean 10
+		if (uitkomst == 2)
+		{
+			string url = "http://drproject.twi.tudelft.nl:8084/pickupitem?userId=" + content [0] + "&itemId=" + 10;
+			WWW www = new WWW (url);
+			StartCoroutine (GETAddEvidence (www));
+		}
+
+
+
+
+	}
+
+	IEnumerator GETAddEvidence(WWW www){
+		yield return www;
+
+		if (www.error == null) {
+			Debug.Log ("SUCCESS");
+				} else {
+			Debug.Log ("WWW Error:" + www.error	);
+		}
 	}
 
 
