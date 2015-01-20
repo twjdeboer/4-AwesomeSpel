@@ -15,7 +15,7 @@ public class Camchange : MonoBehaviour {
 			//c2.enabled = false;
 		} else {
 			//c1.enabled = false;
-			c1.rect = new Rect(0.7f,0.7f,1,1);
+			//c1.rect = new Rect(0.7f,0.7f,1,1);
 		}
 
 	}
