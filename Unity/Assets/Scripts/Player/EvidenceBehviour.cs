@@ -31,7 +31,6 @@ public class EvidenceBehviour : MonoBehaviour
 		private bool rotated = false;
 		private bool pickedUp = false;
 		private GameObject evidence;
-		//public Transform floorcollider;
 
 
 		// pick one out of 3 possible locations for each peace of evidence
@@ -74,7 +73,7 @@ public class EvidenceBehviour : MonoBehaviour
 						0.4f,
 						0.4f,
 						0.4f,
-						-0.07f,
+						0.0f,
 						0.03f,
 						0.06f,
 						0.19f,
@@ -150,7 +149,8 @@ public class EvidenceBehviour : MonoBehaviour
 				} else
 						gameObject.SetActive (false);
 		}
-	
+
+		
 		// Use this for initialization
 		void Start ()
 		{
@@ -161,9 +161,12 @@ public class EvidenceBehviour : MonoBehaviour
 				evidenceInterface.GetComponent<CanvasGroup> ().alpha = 0;
 				intScale = transform.localScale;
 				placeEvidence ();
-		}
+
+				intRotation = transform.rotation;
+				intPosition = transform.position;
+	}
 	
-		/*
+	/*
      * Checks if mouse over object, if so executes evidence selector.
      * */
 		void IfMouseEnter ()
@@ -182,8 +185,6 @@ public class EvidenceBehviour : MonoBehaviour
 		void SetStartRotAndPos ()
 		{
 				if (onGround) {
-						intRotation = transform.rotation;
-						intPosition = transform.position;
 						transform.rotation = Quaternion.Euler (rotationIfSelected);
 						transform.position = intPosition + translateIfSelected;
 						rotated = true;
@@ -244,20 +245,9 @@ public class EvidenceBehviour : MonoBehaviour
 		{
 				if (canBePickedUp && mouseOver && mouseClicked) {
 						pickedUp = true;
-						//SendGetRequest();
 
 				}
 
-		}
-
-		void SendGetRequest ()
-		{
-				string filename = "cloud.save";
-				string[] content = File.ReadAllLines (filename);
-
-				string url = "http://drproject.twi.tudelft.nl:8084/pickupitem?userId=" + content [0] + "&itemId=" + evidenceID;
-				WWW www = new WWW (url);
-        
 		}
 
 
