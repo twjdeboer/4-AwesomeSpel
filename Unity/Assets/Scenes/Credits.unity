@@ -367,3 +367,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fileName: Credits.txt
   wait: 1
+  next: 0

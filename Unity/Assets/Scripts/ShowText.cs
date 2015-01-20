@@ -9,12 +9,13 @@ public class ShowText : MonoBehaviour {
     private string[] text;
     public string fileName;
     public float wait;
+    public bool next;
     private int index;
-    private float t;
     private bool ended = false;
 	// Use this for initialization
 	void Start () {
         text = ReadFile(fileName);
+        next = true;
 	}
 
     string[] ReadFile(string fileName)
@@ -27,8 +28,7 @@ public class ShowText : MonoBehaviour {
 	
     void viewText()
     {
-        t += Time.deltaTime;
-        if (t > wait && !ended)
+        if (next && !ended)
         {
             if (index < text.Length)
             {
@@ -37,7 +37,7 @@ public class ShowText : MonoBehaviour {
                 creditText.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, -500, 0);
                 creditText.GetComponent<Text>().text = text[index];
                 index++;
-                t = 0;
+                next = false;
             }
             else
             {

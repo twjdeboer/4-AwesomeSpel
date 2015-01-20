@@ -1,12 +1,7 @@
-Dit
-Is
-Een
-Test
-Hoe werkt het met langere zinnen?
-Prima toch
-Dat
-is harstikke 
-mooi 
-dsfjksdhfskd
-daf
-d
+CREDITS
+
+LEAD ARTIST:		LUUK DE NIET
+WORLD DESIGNER:		RENSE WISSE
+PRODUCER:       		JESPER SPILLENAAR BILGEN
+GAME DESIGNER:  		THOMAS DE BOER
+LEAD PROGRAMMER: 	BOYD VERDOORN
