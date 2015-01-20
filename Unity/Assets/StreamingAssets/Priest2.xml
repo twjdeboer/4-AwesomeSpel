@@ -5,7 +5,7 @@
 
 <conversation>
 	<NPC>Hello officer, what can I do for you?</NPC>
-	<PLAYER><TALK>You can start by telling me where you where the night **** died</TALK></PLAYER>
+	<PLAYER><TALK>You can start by telling me where you where the night Thomas Moore died</TALK></PLAYER>
 	<NPC>I was here, reading in the library.</NPC>
 	<NPC>I already told everything to you. Why are you really here?</NPC>
 	<PLAYER><TALK>You really don't know. I think you know why I'm here.</TALK></PLAYER>

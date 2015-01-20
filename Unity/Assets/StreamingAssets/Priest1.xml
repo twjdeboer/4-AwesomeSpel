@@ -5,7 +5,7 @@
 -->
 <conversation>
 	<NPC>Well well well, look who we have here, Johnny Law</NPC>
-	<PLAYER><TALK>Wisemouth. We both know what happened to $victim.name.toString() </TALK></PLAYER>
+	<PLAYER><TALK>Wisemouth. We both know what happened to Thomas Moore </TALK></PLAYER>
 	<NPC>Who again?</NPC>
 	<PLAYER><TALK>Quit the act, I know you did it.</TALK></PLAYER>
 	<NPC>But I'm not yet in cuffs. What's holding you back?</NPC>
