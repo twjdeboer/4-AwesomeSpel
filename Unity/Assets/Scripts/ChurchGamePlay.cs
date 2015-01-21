@@ -45,7 +45,7 @@ public class ChurchGamePlay : MonoBehaviour {
 		NPCInteraction npcinteraction = GetComponent<NPCInteraction> ();
 
 
-			if (npcinteraction.textToDisplay == "schateiland"){
+			if (npcinteraction.textToDisplay == "Oh no"){
 			Application.LoadLevel("Einde");
 				}
 
