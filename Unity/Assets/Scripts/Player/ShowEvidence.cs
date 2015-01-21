@@ -83,7 +83,6 @@ public class ShowEvidence : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        getScreenSize();
         ViewList();
         FillList();
     }
