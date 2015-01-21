@@ -3,14 +3,14 @@ using System.Collections;
 using System.IO;
 
 public class GotoNextScenetrue : MonoBehaviour {
-	public GameObject players;
+
 	private GameObject player;
 	public int available_scenes=9;
 	public string[] nextscenestring;
 
+
 	void Awake(){
-			players = GameObject.FindGameObjectWithTag ("Player");//GameObject.Find ("Playerall");
-				//test inside /test inside2;
+
 		player = GameObject.Find ("Player");
 
 		Vector3 playerpos = ReadPlayerPos ("cloud.save");
@@ -85,12 +85,12 @@ public class GotoNextScenetrue : MonoBehaviour {
 				}
 	}
 	
-	void start(){
-		
-		//Player.transform.position += ResourceManager.newplayerpos;
-		//Cameraplayer.transform.position += ResourceManager.newplayerpos;
-		}
 
+	/*
+	 * goto scene  nextscenestring
+	 * function will be run from button and goes to the scene of the string
+	 * 
+	 */
 	void scene0(){
 		//ResourceManager.playerPosition = new Vector3 ();
 		savePlayerPos ();
@@ -99,10 +99,7 @@ public class GotoNextScenetrue : MonoBehaviour {
 	}
 
 	void scene1(){
-		//ResourceManager.playerPosition=(Player.transform.position);
-
-		//ResourceManager.newplayerpos.Set (-3,0.4f,0);
-		savePlayerPos ();
+				savePlayerPos ();
 		Application.LoadLevel (nextscenestring[1]);
 		
 	}

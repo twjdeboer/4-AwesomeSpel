@@ -39,10 +39,20 @@ public class ProceduralHouse{
 	private bool houseatback;
 	private string leftorright;
 
+	/**
+	 * empty constructor
+	 * 
+	 */
 	public ProceduralHouse(){
 
 	}
 
+	/**
+	 * constructor 2 
+	 * saves gameobject variabeles for use
+	 * creates empty new gameobject
+	 * creates random variabeles
+	 */
 	public ProceduralHouse(GameObject House,bool Houseatback,string Leftorright){
 
 		houseatback = Houseatback;
@@ -70,6 +80,10 @@ public class ProceduralHouse{
 		omlijsting = Random.Range (1, 5);
 	}
 
+
+	/**
+	 * same as constructor above here
+	 */
 	public void UpdateInternal(GameObject House,bool Houseatback,string Leftorright){
 		
 		houseatback = Houseatback;
@@ -102,18 +116,29 @@ public class ProceduralHouse{
 
 	}
 	
-	
+	/**
+	 * builds house with random depth and random height.
+	 * sent to methods
+	 */
 	public void BuildrandomHouse(){
 		randomDim ();
 		BuildHouse();
 		Changepos ();
 	}
-
+	/**
+	 * build house with dimentions of cube
+	 * sent to methods
+	 */
 	public void BuildHouse(){
 		Build ();
 		empty.transform.rotation = rot;
 	}
 
+
+	/**
+	 * build house directing to methods
+	 * 
+	 */
 	private void Build(){	//.............................................................................
 		
 		//maakt blokje huis aan
@@ -135,7 +160,10 @@ public class ProceduralHouse{
 		
 		
 	}
-	
+
+	/**
+	 * build primairy house cube and gives dimentions and texture
+	 */
 	private void MakeBlok(){
 		Vector3 temp = pos;
 		newhouse = MonoBehaviour.Instantiate(Resources.Load ("Prefabs/ProceduralHouse/House2", typeof(GameObject))) as GameObject;
@@ -146,7 +174,12 @@ public class ProceduralHouse{
 
 		newhouse.renderer.material =(Material)Resources.Load ("Materials/ProceduralHouse/"+"House"+"/"+Random.Range (1, 8), typeof(Material));
 	}
-	
+
+	/**
+	 * builds roof with random kind of roof
+	 * and random texture
+	 * 
+	 */
 	private void MakeRoof(){
 		int roofnr = Random.Range (1, 3);	//nummer of roofs
 		Vector3 temp = pos;
@@ -169,7 +202,10 @@ public class ProceduralHouse{
 	
 		setrooftexture ();
 	}
-	
+
+	/**
+	 * sets random texture for roof.
+	 */
 	private void setrooftexture(){
 		int rooftexture = (int)Random.Range (1, 7);
 		GameObject[] roofcolor = GameObject.FindGameObjectsWithTag ("Roof");
@@ -180,7 +216,10 @@ public class ProceduralHouse{
 	}
 	
 	
-	
+	/**
+	 *builds door with random texture and random border
+	 * 
+	 */
 	public void MakeDoor(){
 		door = MonoBehaviour.Instantiate(Resources.Load ("Prefabs/ProceduralHouse/Door", typeof(GameObject))) as GameObject;
 		door.transform.parent = empty.transform;
@@ -192,18 +231,21 @@ public class ProceduralHouse{
 		dooryscale = doorWindow.transform.localScale.y;
 		temp.y += (float)0.5*dooryscale;	//grond niveau
 		temp.x += (float)0.5*scale.x;		//rand blokje
-		
-		temp.z += (float)Random.Range ((float)-0.40 * scale.z, (float)0.40 * scale.z);
+		float zzscale = (float)Random.Range ((float)-0.40 * scale.z, (float)0.40 * scale.z);
+		temp.z += zzscale;
 		doorypos = temp.y;
 		doorzpos = temp.z;
 		door.transform.position = temp;
-
+		setwalkway (zzscale);
 		doorWindow.renderer.material =(Material)Resources.Load ("Materials/ProceduralHouse/"+"Door"+"/"+Random.Range (1, 9), typeof(Material));
 		doorWindow.transform.tag = "Building2";
 
 	}
 	
-	
+	/**
+	 * builds windows with random amount size is set because otherwise it looks weird
+	 * creates window checks if position in valid(no other window colliding)
+	 */
 	private void MakeWindows(){
 		
 		//window = new GameObject[windownr];
@@ -230,7 +272,12 @@ public class ProceduralHouse{
 		}
 		
 	}
-	
+
+	/**
+	 * 
+	 * sets window texture random and border random
+	 * 
+	 */
 	private void setwindowtexture(){
 		GameObject[] Omlijstingcolor = GameObject.FindGameObjectsWithTag ("Omlijsting");
 		GameObject[] Windowcolor = GameObject.FindGameObjectsWithTag ("Window");
@@ -244,7 +291,10 @@ public class ProceduralHouse{
 		}
 	}
 	
-	
+	/**
+	 * sets window position on house and validates(checks if not colliding with other window)
+	 * 
+	 */
 	private bool windowsetter(int i){
 		int a=0;
 		while (a==0) {
@@ -305,7 +355,12 @@ public class ProceduralHouse{
 		}
 		return validplace;
 	}
-	
+
+
+	/**
+	 * 
+	 * sets side windows if house is at side of houseblok
+	 */
 	private Vector3 sidewindow (Vector3 temp,int b,out bool build,out bool validplace,out int a){
 		validplace=true;
 		build = false;
@@ -331,7 +386,10 @@ public class ProceduralHouse{
 	
 	
 	
-	
+	/**
+	 * gives house random depth and random height.
+	 * 
+	 */
 	private void randomDim(){
 		int n = (int)Mathf.Floor(originscale.x/3);
 		xscale=(float)Random.Range (3,n);
@@ -353,7 +411,33 @@ public class ProceduralHouse{
 		**/
 	}
 
-	
+	/**
+	 * 
+	 * creates walkway from door to street
+	 * 
+	 */
+	private void setwalkway(float zzscale){
+		GameObject walkway = MonoBehaviour.Instantiate (Resources.Load ("Prefabs/ProceduralHouse/walkway", typeof(GameObject))) as GameObject;
+
+		walkway.transform.parent = empty.transform;
+
+		Vector3 scale2 = walkway.transform.localScale;
+		Vector3 temp2 = pos;
+
+		scale2.x = xscale;
+
+		temp2.y = 0;	//grond niveau
+		temp2.x += (float)0.5*scale.x+xscale/2f;		//rand blokje
+		
+		temp2.z += zzscale;
+		walkway.transform.localScale = scale2;
+		walkway.transform.position = temp2;
+	}
+
+
+	/**
+	 * changes position of house to be aligned with otherhouses
+	 */
 	private void Changepos(){
 
 		int rotater = 1;

@@ -31,12 +31,12 @@ public class Testblok2 : MonoBehaviour {
 	private string currentload;
 	private GameObject loader;
 	
-	void Awake()
-	{
-		//loadScene = GameObject.Find("Loaded");
-		//loadScene.SetActive(false);
-	}
-	
+
+	/*
+	 *sets housecontainer inactive
+	 *creates 
+	 * 
+	 */
 	void Start() {
 		HouseContainer.SetActive (false);
 		newHouse = new ProceduralHouse();
@@ -65,6 +65,13 @@ public class Testblok2 : MonoBehaviour {
 		}
 		
 	}
+
+	/**
+	 * exist out of 4 parts
+	 * part 1 and 2 are sent to function create prebuilding to create smaller cubes from housebloks
+	 * part 3 creates houses from small cubes
+	 * part 4 runs when all houses are created and forwards to next scene.
+	 */
 	void FixedUpdate(){
 		
 		if(Housebloks[0]){
@@ -112,8 +119,7 @@ public class Testblok2 : MonoBehaviour {
 				if(preHouses){
 					j=0;
 					Houses = GameObject.FindGameObjectsWithTag (searchtag[n]);
-					//print (Houses.Length+" Houses.length");
-					//newHouse = new ProceduralHouse[Houses.Length];
+
 				}
 				
 			}
@@ -122,16 +128,12 @@ public class Testblok2 : MonoBehaviour {
 				loadprogress++;
 			}
 		}
-		//Timer += Time.deltaTime;
-		//print(loadprogress+" "+loadsize);
-		//print (Time.deltaTime);
+
 		j++;
 		text.text = currentload + ": " + loadprogress + " of "+loadsize;
-		//print (!preHouses+"  "+!Housebloks[0]+"  "+!Housebloks[1]);
+
 		if(!preHouses& !Housebloks[0] & !Housebloks[1] ){
 			text.text = "Generating done";
-			//loadScene.SetActive(true);
-			//ResourceManager.World = GameObject.Find("HouseContainer");
 
 			GameObject[] destroying = GameObject.FindGameObjectsWithTag("Destroy");
 
@@ -156,7 +158,12 @@ public class Testblok2 : MonoBehaviour {
 
 
 
-	
+	/**
+	 * creates smaller cubes from houseblok
+	 * input settag, what kind of house it is
+	 * 		 back, if houuse behind the house
+	 * 		 j , iteration 
+	 */
 	public void createPrebuilding(string settag,bool back,int j){
 		createGrassfloor(j);
 		
@@ -183,14 +190,23 @@ public class Testblok2 : MonoBehaviour {
 			}	
 		}
 	}
-	
+
+	/**
+	 * creates house where houses[i] is current cube
+	 * input - back, true if house behind the house
+	 * 		 - leftright, string l or r if it is a end house at left or right
+	 * 		 - i , iteration
+	 */
 	public void createHouses(bool back,string leftright,int i){
 		
 		newHouse.UpdateInternal(Houses[i],back,leftright);
 		newHouse.BuildrandomHouse();
 		newHouse.empty.transform.parent =HouseContainer.transform;
 	}
-	
+
+	/**
+	 *creates grassfloor for houseblok j with scale from houseblok
+	 */
 	public void createGrassfloor(int j){
 		GrassFloor[j] = MonoBehaviour.Instantiate(Resources.Load ("Prefabs/ProceduralHouse/GrassFloor", typeof(GameObject))) as GameObject;
 		GrassFloor[j].transform.position=Houseblok[j].transform.position;
@@ -201,6 +217,10 @@ public class Testblok2 : MonoBehaviour {
 		GrassFloor[j].transform.rotation=Houseblok[j].transform.rotation;
 		GrassFloor[j].transform.parent = HouseContainer.transform;
 	}
+
+	/**
+	 * calculates amount of houses
+	 */
 	private void getloadsize(){
 		loadsize= GameObject.FindGameObjectsWithTag ("Prebuilding").Length + GameObject.FindGameObjectsWithTag ("Prebuildingl").Length
 			+GameObject.FindGameObjectsWithTag ("Prebuildingr").Length+GameObject.FindGameObjectsWithTag ("Prebuildingback").Length+
@@ -208,17 +228,27 @@ public class Testblok2 : MonoBehaviour {
 		//print (loadsize+" Loadsize2");
 		loadprogress = 0;
 	}
-	
+
+	/**
+	 *creates 3 array used later for indicators
+	 *
+	 */
 	public void createarray(){
 		boolean=new bool[]{false,true,false,false,true,true};
 		searchtag=new string[]{"Prebuilding","Prebuildingback","Prebuildingr","Prebuildingl","Prebuildinglback","Prebuildingrback"};
 		leftrightstring=new string[]{" "," ","r","l","l","r"};
 	}
 
+	/*
+	 *set housecontainer active
+	 */
 	public void setactive2(){
 		HouseContainer.SetActive (true);
 	}
 
+	/*
+	 *not used 
+	 */
 	public void setactive(){
 		housboxes = GameObject.FindGameObjectsWithTag("Setactive");
 		print(housboxes.Length);
