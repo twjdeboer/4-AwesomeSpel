@@ -8,7 +8,7 @@ using System.IO;
 public class Eindpraatje : MonoBehaviour {
 
 	public int einde;
-	private double time = 5;
+	private double time = 10;
 
 
 	// Use this for initialization
@@ -35,9 +35,10 @@ public class Eindpraatje : MonoBehaviour {
 				time -= Time.deltaTime;
 
 
-				if (time < 0.0) {
+				if (time < 0.0 || Input.GetKeyUp(KeyCode.Escape)) {
 			Application.LoadLevel("StartMenu");
 				}
+		          
 		}
 
 
@@ -61,5 +62,7 @@ public class Eindpraatje : MonoBehaviour {
 	
 
 	}
+
+
 }
 
