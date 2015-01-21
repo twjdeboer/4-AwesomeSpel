@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/*
+ *Represent a network of nodes.
+ */
 public class NodeNetwork {
-   // private Vector3 pos;
+
     private Vector2 numberOfNodes;
     private GameObject[,] network;
  
@@ -11,7 +14,6 @@ public class NodeNetwork {
      * */
     public NodeNetwork(Vector3 pos, Vector2 numberOfNodes)
     {
-        //this.pos = pos;
         this.network = new GameObject[(int)numberOfNodes.x, (int)numberOfNodes.y];
         this.numberOfNodes = numberOfNodes;
 
@@ -37,32 +39,14 @@ public class NodeNetwork {
      * */
     GameObject node(float xPos, float yPos, float zPos, int i, int j)
     {
-		/*
-		GameObject primitive = MonoBehaviour.Instantiate(Resources.Load ("Prefabs/Node", typeof(GameObject))) as GameObject;
-		primitive.transform.position = new Vector3(xPos, 0, zPos);
-		primitive.transform.localScale = new Vector3(0.75f, 0.75f, 0.75f);
-		primitive.transform.parent = GameObject.Find("NodeNetwork").transform;
-		primitive.gameObject.name = "Node(" + i + "," + j + ")";
-		primitive.GetComponent<Node>().xPos = i;
-		primitive.GetComponent<Node>().yPos = j;
-		return primitive;
-		/*/
+
         GameObject primitive = GameObject.Instantiate(Resources.Load("Prefabs/Node")) as GameObject;
         primitive.transform.position = new Vector3(xPos, yPos, zPos);
-        //primitive.collider.isTrigger = true;
-        //primitive.gameObject.AddComponent("Rigidbody");
-        //primitive.rigidbody.useGravity = false;
-        //primitive.rigidbody.isKinematic = true;
-        //primitive.rigidbody.constraints = RigidbodyConstraints.FreezeAll;
-        //primitive.transform.localScale = new Vector3(0.75f, 0.75f, 0.75f);
         primitive.transform.parent = GameObject.Find("NodeNetwork").transform;
         primitive.gameObject.name = "Node(" + i + "," + j + ")";
-        //primitive.AddComponent("Node");
         primitive.GetComponent<Node>().xPos = i;
         primitive.GetComponent<Node>().yPos = j;
-        //primitive.renderer.material = (Material)Resources.Load("Textures/Invisible");
         return primitive;
-
     }
 
     /**

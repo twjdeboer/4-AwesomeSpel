@@ -4,6 +4,9 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using System.IO;
 
+/*
+ * Component which determines the behaviour of the evidence.
+ * */
 public class EvidenceBehviour : MonoBehaviour
 {
 
@@ -290,7 +293,9 @@ public class EvidenceBehviour : MonoBehaviour
 				}
 
 		}
-
+    /*
+     * Writes a save file to remember which pieces of evidences are picked up
+     * */
 		void updateSave ()
 		{
 				string[] content = new string[16];
@@ -312,6 +317,9 @@ public class EvidenceBehviour : MonoBehaviour
 				sr.Close ();
 		}
 
+    /*
+     * Writes the picked up pieces of evidence to the server.
+     * */
 		void updateServer ()
 		{
 		string[] content = new string[15];
@@ -327,7 +335,9 @@ public class EvidenceBehviour : MonoBehaviour
 		WWW www = new WWW (url);
 		StartCoroutine (GETAddEvidence (www));
 		}
-
+    /*
+     * Makes a get request to the server to get the list of picked up evidence
+     * */
 	IEnumerator GETAddEvidence(WWW www){
 		yield return www;
 
@@ -338,11 +348,17 @@ public class EvidenceBehviour : MonoBehaviour
 		}
 	}
 
+    /*
+     * Checks if the player  is close enough to an object to pick it up
+     * */
 		bool CheckDistanceBetweenPlayerAndObject ()
 		{
 				return Vector3.Distance (transform.position, ResourceManager.playerPosition) < maxDistance;
 		}
 
+    /*
+     * Checks if mouse is hovering over the evidence using the Class mouseCollider.
+     * */
 		void CheckMouseCollider ()
 		{
 				mouseEntered = transform.GetComponentInChildren<MouseCollider> ().mouseEntered;
@@ -351,6 +367,9 @@ public class EvidenceBehviour : MonoBehaviour
 				mouseOver = gameObject.GetComponentInChildren<MouseCollider> ().mouseOver;
 		}
 
+    /*
+     * Create a 2D collider using the Class MouseCollider.
+     * */
 		void CreateMouseCollider ()
 		{
 				mouseCollider = Instantiate (Resources.Load ("Prefabs/mouseCollider")) as GameObject;

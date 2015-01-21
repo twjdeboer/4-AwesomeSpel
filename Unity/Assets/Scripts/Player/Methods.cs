@@ -2,6 +2,10 @@
 using System.Collections;
 using System.Collections.Generic;
 
+
+/*
+ * Class where methods for different purposes can be stored
+ * */
 public static class Methods {
 
 
@@ -17,6 +21,9 @@ public static class Methods {
 
    }
 
+    /**
+     * Creates a string out a list
+     * */
     public static string MakeStringOutArray(List<string> stringArray)
     {
         string res = "";

@@ -2,6 +2,9 @@
 using System.Collections;
 using UnityEngine.UI;
 
+/*
+ * Let text pop up if a piece of evidence is picked up
+ * */
 public class PickedUpEvidence : MonoBehaviour {
 
     public Text text;
@@ -10,12 +13,15 @@ public class PickedUpEvidence : MonoBehaviour {
     private float timer = 0;
 
 
-	// Use this for initialization
+	// Use this for initialization. Attach interface element to evidence
 	void Start () {
 
         text = GameObject.Find("PickedUpEvidence").GetComponent<Text>();
 	}
 	
+    /*
+     * Let text pop up and disappear
+     * */
     void Behaviour()
     {
         if (activated && timer < timeDisplayed)
