@@ -4222,7 +4222,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &258374332
 Transform:
   m_ObjectHideFlags: 0
@@ -4837,9 +4837,12 @@ GameObject:
   - 4: {fileID: 343607056}
   - 33: {fileID: 343607055}
   - 23: {fileID: 343607054}
-  - 64: {fileID: 343607053}
   - 95: {fileID: 343607052}
   - 114: {fileID: 343607051}
+  - 54: {fileID: 343607059}
+  - 65: {fileID: 343607058}
+  - 136: {fileID: 343607057}
+  - 136: {fileID: 343607053}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -4860,14 +4863,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidenceID: 2
-  description: 
+  description: Was the victem shot with this gun?
   evidencename: gun
-  rotationIfSelected: {x: 0, y: 0, z: 0}
-  translateIfSelected: {x: 0, y: 0, z: 0}
-  scaleFactorIfSelected: 0
-  rotationSpeed: 0
+  rotationIfSelected: {x: 90, y: 0, z: 0}
+  translateIfSelected: {x: 0, y: .200000003, z: 0}
+  scaleFactorIfSelected: 4
+  rotationSpeed: 50
   canBePickedUp: 1
-  maxDistance: 0
+  maxDistance: 100
 --- !u!95 &343607052
 Animator:
   serializedVersion: 3
@@ -4884,20 +4887,20 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!64 &343607053
-MeshCollider:
+--- !u!136 &343607053
+CapsuleCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 1bdfac3c84f12fe4da5451cd4b509201,
+  m_PrefabParentObject: {fileID: 13682378, guid: 1bdfac3c84f12fe4da5451cd4b509201,
     type: 2}
   m_PrefabInternal: {fileID: 1414641075}
   m_GameObject: {fileID: 343607050}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 373bcbfa27290a148a9eb3d795e45f52, type: 3}
+  m_Radius: .129999995
+  m_Height: .5
+  m_Direction: 2
+  m_Center: {x: 0, y: .100000001, z: -.159999996}
 --- !u!23 &343607054
 Renderer:
   m_ObjectHideFlags: 0
@@ -4941,6 +4944,49 @@ Transform:
   m_Children: []
   m_Father: {fileID: 258374332}
   m_RootOrder: 1
+--- !u!136 &343607057
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 13682376, guid: 1bdfac3c84f12fe4da5451cd4b509201,
+    type: 2}
+  m_PrefabInternal: {fileID: 1414641075}
+  m_GameObject: {fileID: 343607050}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: .150000006
+  m_Height: 1.21886528
+  m_Direction: 1
+  m_Center: {x: 0, y: -.265100837, z: .170000002}
+--- !u!65 &343607058
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6500000, guid: 1bdfac3c84f12fe4da5451cd4b509201,
+    type: 2}
+  m_PrefabInternal: {fileID: 1414641075}
+  m_GameObject: {fileID: 343607050}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .200000048, y: 1.21886528, z: .728561401}
+  m_Center: {x: 0, y: -.265100837, z: -.00898060203}
+--- !u!54 &343607059
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5482378, guid: 1bdfac3c84f12fe4da5451cd4b509201,
+    type: 2}
+  m_PrefabInternal: {fileID: 1414641075}
+  m_GameObject: {fileID: 343607050}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &348285851
 GameObject:
   m_ObjectHideFlags: 0
@@ -7773,6 +7819,8 @@ GameObject:
   - 23: {fileID: 545651866}
   - 95: {fileID: 545651865}
   - 114: {fileID: 545651864}
+  - 54: {fileID: 545651870}
+  - 136: {fileID: 545651869}
   m_Layer: 0
   m_Name: Hammer
   m_TagString: Untagged
@@ -7793,14 +7841,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidenceID: 3
-  description: 
+  description: did his head have a hole the size of this hammer?
   evidencename: hammer
   rotationIfSelected: {x: 0, y: 0, z: 0}
-  translateIfSelected: {x: 0, y: 0, z: 0}
-  scaleFactorIfSelected: 0
-  rotationSpeed: 0
+  translateIfSelected: {x: 0, y: 1, z: 0}
+  scaleFactorIfSelected: 4
+  rotationSpeed: 50
   canBePickedUp: 1
-  maxDistance: 0
+  maxDistance: 5
 --- !u!95 &545651865
 Animator:
   serializedVersion: 3
@@ -7859,6 +7907,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 258374332}
   m_RootOrder: 5
+--- !u!136 &545651869
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 13698830, guid: 96e5e4a2ddb7c134ea8b3e6e799011c5,
+    type: 2}
+  m_PrefabInternal: {fileID: 772907147}
+  m_GameObject: {fileID: 545651863}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: .100000001
+  m_Height: .800000012
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &545651870
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5498830, guid: 96e5e4a2ddb7c134ea8b3e6e799011c5,
+    type: 2}
+  m_PrefabInternal: {fileID: 772907147}
+  m_GameObject: {fileID: 545651863}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &554653414
 GameObject:
   m_ObjectHideFlags: 0
@@ -8245,7 +8323,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d8bb5c5a744728439db5ed341c1c0c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  players: {fileID: 0}
   available_scenes: 9
   nextscenestring:
   - Church
@@ -8441,6 +8518,8 @@ GameObject:
   - 23: {fileID: 610361545}
   - 95: {fileID: 610361544}
   - 114: {fileID: 610361543}
+  - 54: {fileID: 610361549}
+  - 136: {fileID: 610361548}
   m_Layer: 0
   m_Name: BaseballBatt
   m_TagString: Untagged
@@ -8461,14 +8540,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidenceID: 0
-  description: 
+  description: maybe someone got hit with with this bat
   evidencename: baseballbat
   rotationIfSelected: {x: 0, y: 0, z: 0}
-  translateIfSelected: {x: 0, y: 0, z: 0}
-  scaleFactorIfSelected: 0
-  rotationSpeed: 0
+  translateIfSelected: {x: 0, y: 1, z: 0}
+  scaleFactorIfSelected: 3
+  rotationSpeed: 50
   canBePickedUp: 1
-  maxDistance: 0
+  maxDistance: 5
 --- !u!95 &610361544
 Animator:
   serializedVersion: 3
@@ -8526,6 +8605,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 258374332}
   m_RootOrder: 0
+--- !u!136 &610361548
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 13685156, guid: 586f871aa9056ee469ce1c03f57a195c,
+    type: 2}
+  m_PrefabInternal: {fileID: 466972046}
+  m_GameObject: {fileID: 610361542}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: .100000001
+  m_Height: 1.5
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: -.0900000036}
+--- !u!54 &610361549
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5485156, guid: 586f871aa9056ee469ce1c03f57a195c,
+    type: 2}
+  m_PrefabInternal: {fileID: 466972046}
+  m_GameObject: {fileID: 610361542}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &613022035
 GameObject:
   m_ObjectHideFlags: 0
@@ -9752,6 +9861,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22497448, guid: 9231d2da55c787b42b50c2361065ec3c, type: 2}
       propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 197446, guid: 9231d2da55c787b42b50c2361065ec3c, type: 2}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -12967,9 +13080,10 @@ GameObject:
   - 4: {fileID: 1043920944}
   - 33: {fileID: 1043920943}
   - 23: {fileID: 1043920942}
-  - 64: {fileID: 1043920941}
   - 95: {fileID: 1043920940}
   - 114: {fileID: 1043920939}
+  - 54: {fileID: 1043920945}
+  - 65: {fileID: 1043920941}
   m_Layer: 0
   m_Name: Laptop
   m_TagString: Untagged
@@ -12990,14 +13104,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidenceID: 5
-  description: 
+  description: this could contain some interesting files..!
   evidencename: laptop
-  rotationIfSelected: {x: 0, y: 0, z: 0}
-  translateIfSelected: {x: 0, y: 0, z: 0}
-  scaleFactorIfSelected: 0
-  rotationSpeed: 0
+  rotationIfSelected: {x: 270, y: 0, z: 0}
+  translateIfSelected: {x: 0, y: 1, z: 0}
+  scaleFactorIfSelected: 3
+  rotationSpeed: 50
   canBePickedUp: 1
-  maxDistance: 0
+  maxDistance: 5
 --- !u!95 &1043920940
 Animator:
   serializedVersion: 3
@@ -13014,10 +13128,10 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!64 &1043920941
-MeshCollider:
+--- !u!65 &1043920941
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 2d974911537babf41943d7013699d26a,
+  m_PrefabParentObject: {fileID: 6594256, guid: 2d974911537babf41943d7013699d26a,
     type: 2}
   m_PrefabInternal: {fileID: 729134351}
   m_GameObject: {fileID: 1043920938}
@@ -13025,9 +13139,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: fe64f14101c5a2a43bcd3e174783e5fc, type: 3}
+  m_Size: {x: .710155725, y: .66383189, z: .465453535}
+  m_Center: {x: .0301002413, y: -1.49011647e-08, z: .182726502}
 --- !u!23 &1043920942
 Renderer:
   m_ObjectHideFlags: 0
@@ -13071,6 +13184,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 258374332}
   m_RootOrder: 6
+--- !u!54 &1043920945
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5494256, guid: 2d974911537babf41943d7013699d26a,
+    type: 2}
+  m_PrefabInternal: {fileID: 729134351}
+  m_GameObject: {fileID: 1043920938}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1051734450
 GameObject:
   m_ObjectHideFlags: 0
@@ -14382,6 +14511,8 @@ GameObject:
   - 23: {fileID: 1136973332}
   - 95: {fileID: 1136973331}
   - 114: {fileID: 1136973330}
+  - 54: {fileID: 1136973336}
+  - 136: {fileID: 1136973335}
   m_Layer: 0
   m_Name: Knife
   m_TagString: Untagged
@@ -14402,14 +14533,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidenceID: 4
-  description: 
+  description: it looks like you could stab someone with this
   evidencename: knife
   rotationIfSelected: {x: 0, y: 0, z: 0}
-  translateIfSelected: {x: 0, y: 0, z: 0}
-  scaleFactorIfSelected: 0
-  rotationSpeed: 0
+  translateIfSelected: {x: 0, y: 1, z: 0}
+  scaleFactorIfSelected: 4
+  rotationSpeed: 50
   canBePickedUp: 1
-  maxDistance: 0
+  maxDistance: 5
 --- !u!95 &1136973331
 Animator:
   serializedVersion: 3
@@ -14468,6 +14599,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 258374332}
   m_RootOrder: 3
+--- !u!136 &1136973335
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 13680830, guid: 91b89c1481d47c546954828a0cf6cd30,
+    type: 2}
+  m_PrefabInternal: {fileID: 2052945660}
+  m_GameObject: {fileID: 1136973329}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: .100000001
+  m_Height: .949999988
+  m_Direction: 0
+  m_Center: {x: .0626645982, y: 0, z: .000855993479}
+--- !u!54 &1136973336
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5480830, guid: 91b89c1481d47c546954828a0cf6cd30,
+    type: 2}
+  m_PrefabInternal: {fileID: 2052945660}
+  m_GameObject: {fileID: 1136973329}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1146127688
 GameObject:
   m_ObjectHideFlags: 0
@@ -19444,6 +19605,114 @@ Prefab:
       propertyPath: MinDistance
       value: .100000001
       objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: a36f76999b8cedd4aa908d0099505b37, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: a36f76999b8cedd4aa908d0099505b37, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100022, guid: a36f76999b8cedd4aa908d0099505b37, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100042, guid: a36f76999b8cedd4aa908d0099505b37, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100062, guid: a36f76999b8cedd4aa908d0099505b37, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100066, guid: a36f76999b8cedd4aa908d0099505b37, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100084, guid: a36f76999b8cedd4aa908d0099505b37, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100092, guid: a36f76999b8cedd4aa908d0099505b37, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100096, guid: a36f76999b8cedd4aa908d0099505b37, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100120, guid: a36f76999b8cedd4aa908d0099505b37, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100146, guid: a36f76999b8cedd4aa908d0099505b37, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100186, guid: a36f76999b8cedd4aa908d0099505b37, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100196, guid: a36f76999b8cedd4aa908d0099505b37, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100216, guid: a36f76999b8cedd4aa908d0099505b37, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100222, guid: a36f76999b8cedd4aa908d0099505b37, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100230, guid: a36f76999b8cedd4aa908d0099505b37, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100238, guid: a36f76999b8cedd4aa908d0099505b37, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100240, guid: a36f76999b8cedd4aa908d0099505b37, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100250, guid: a36f76999b8cedd4aa908d0099505b37, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100252, guid: a36f76999b8cedd4aa908d0099505b37, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100270, guid: a36f76999b8cedd4aa908d0099505b37, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100282, guid: a36f76999b8cedd4aa908d0099505b37, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100288, guid: a36f76999b8cedd4aa908d0099505b37, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100318, guid: a36f76999b8cedd4aa908d0099505b37, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100328, guid: a36f76999b8cedd4aa908d0099505b37, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100332, guid: a36f76999b8cedd4aa908d0099505b37, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100336, guid: a36f76999b8cedd4aa908d0099505b37, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a36f76999b8cedd4aa908d0099505b37, type: 2}
   m_RootGameObject: {fileID: 48192997}
@@ -22668,7 +22937,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1753173217
 RectTransform:
   m_ObjectHideFlags: 0
@@ -24540,6 +24809,8 @@ GameObject:
   - 23: {fileID: 1916271539}
   - 95: {fileID: 1916271538}
   - 114: {fileID: 1916271537}
+  - 54: {fileID: 1916271543}
+  - 135: {fileID: 1916271542}
   m_Layer: 0
   m_Name: Paperwrap
   m_TagString: Untagged
@@ -24560,14 +24831,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidenceID: 6
-  description: 
+  description: Does  this have information or maybe some fingerprints
   evidencename: paper
   rotationIfSelected: {x: 0, y: 0, z: 0}
-  translateIfSelected: {x: 0, y: 0, z: 0}
-  scaleFactorIfSelected: 0
-  rotationSpeed: 0
+  translateIfSelected: {x: 0, y: 2, z: 0}
+  scaleFactorIfSelected: 4
+  rotationSpeed: 50
   canBePickedUp: 1
-  maxDistance: 0
+  maxDistance: 5
 --- !u!95 &1916271538
 Animator:
   serializedVersion: 3
@@ -24625,6 +24896,35 @@ Transform:
   m_Children: []
   m_Father: {fileID: 258374332}
   m_RootOrder: 2
+--- !u!135 &1916271542
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 13533058, guid: 17c58a81dfe45ba439854ce0b05e85d1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1500222660}
+  m_GameObject: {fileID: 1916271536}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: .0299999993
+  m_Center: {x: -.00468520261, y: -.0148187019, z: .000353599899}
+--- !u!54 &1916271543
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5433058, guid: 17c58a81dfe45ba439854ce0b05e85d1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1500222660}
+  m_GameObject: {fileID: 1916271536}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1921733124
 GameObject:
   m_ObjectHideFlags: 0
@@ -27319,9 +27619,10 @@ GameObject:
   - 4: {fileID: 2111422507}
   - 33: {fileID: 2111422506}
   - 23: {fileID: 2111422505}
-  - 64: {fileID: 2111422504}
   - 95: {fileID: 2111422503}
   - 114: {fileID: 2111422502}
+  - 136: {fileID: 2111422508}
+  - 54: {fileID: 2111422504}
   m_Layer: 0
   m_Name: SigaretteButt
   m_TagString: Untagged
@@ -27342,14 +27643,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidenceID: 8
-  description: 
+  description: fingerprints???
   evidencename: cigaret
   rotationIfSelected: {x: 0, y: 0, z: 0}
-  translateIfSelected: {x: 0, y: 0, z: 0}
-  scaleFactorIfSelected: 0
-  rotationSpeed: 0
+  translateIfSelected: {x: 0, y: 1, z: 0}
+  scaleFactorIfSelected: 5
+  rotationSpeed: 50
   canBePickedUp: 1
-  maxDistance: 0
+  maxDistance: 5
 --- !u!95 &2111422503
 Animator:
   serializedVersion: 3
@@ -27366,20 +27667,22 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!64 &2111422504
-MeshCollider:
+--- !u!54 &2111422504
+Rigidbody:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 2bb6151110d412e40a5c1689c3f4804d,
+  m_PrefabParentObject: {fileID: 5413798, guid: 2bb6151110d412e40a5c1689c3f4804d,
     type: 2}
   m_PrefabInternal: {fileID: 2089183662}
   m_GameObject: {fileID: 2111422501}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: dfff46ce288a2164fa7d578bd26eb00b, type: 3}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!23 &2111422505
 Renderer:
   m_ObjectHideFlags: 0
@@ -27424,6 +27727,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 258374332}
   m_RootOrder: 4
+--- !u!136 &2111422508
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 13613798, guid: 2bb6151110d412e40a5c1689c3f4804d,
+    type: 2}
+  m_PrefabInternal: {fileID: 2089183662}
+  m_GameObject: {fileID: 2111422501}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: .0799999982
+  m_Height: .349999994
+  m_Direction: 2
+  m_Center: {x: -.000399999321, y: .00999999978, z: .0361698233}
 --- !u!1 &2119705150
 GameObject:
   m_ObjectHideFlags: 0
