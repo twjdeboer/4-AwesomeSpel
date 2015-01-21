@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-using System.Collections;
 using System.Text.RegularExpressions;
 using System.IO;
 using SimpleJSON;
@@ -53,9 +52,9 @@ public class ChurchGamePlay : MonoBehaviour {
 				string filename = "cloud.save";
 				string[] content = File.ReadAllLines (filename);
 				// reset the evidence on the server
-				string resulturl = "http://drproject.twi.tudelft.nl:8084/resetSave?userId=" + content [0];
-				WWW resultget = new WWW (resulturl);
-				StartCoroutine (GETAddEvidence (resultget));
+				string reseturl = "http://drproject.twi.tudelft.nl:8084/resetSave?userId=" + content [0];
+				WWW resetget = new WWW (reseturl);
+				StartCoroutine (GETResetEvidence (resetget));
 
 
 				Application.LoadLevel("Einde");
@@ -64,7 +63,7 @@ public class ChurchGamePlay : MonoBehaviour {
 	}
 
 	// method for sending a get request
-	IEnumerator GETAddEvidence(WWW www){
+	IEnumerator GETResetEvidence(WWW www){
 		yield return www;
 
 		if (www.error == null) {
