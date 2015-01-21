@@ -15,10 +15,13 @@ public class SceneManager : MonoBehaviour
 		private GameObject createMenu;
 		public string firstPlayScene;
 		public string startScene;
+		private string backToStart;
 
 		// Use this for initialization
 		void Start ()
 		{
+		backToStart = "startMenu";
+			
             Time.timeScale = 1;
 				pauseMenu = GameObject.Find ("PauseMenu");
 				if (pauseMenu != null)
@@ -88,15 +91,19 @@ public class SceneManager : MonoBehaviour
 				ToggleMenu (false);
 		}
 
+		void Exit (){
+			Application.Quit ();
+		}
+
 		void Quit ()
 		{
-				Application.Quit ();
+			Application.LoadLevel (backToStart);
 		}
 
 		void QuitFromWorld ()
 		{
 				savePlayerPos ();
-				Application.Quit ();
+				Quit ();
 		}
 
 		void savePlayerPos ()
