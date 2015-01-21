@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <conversation>
-	<NPC>Hello, have you herad about the word?</NPC>
+	<NPC>Hello, have you heard about the word?</NPC>
 	<PLAYER>
 		<TALK>No, what is the word?</TALK>
 	</PLAYER>
