@@ -20,7 +20,7 @@ public class carAgent : MonoBehaviour {
 	
 	// pick a new destination if the destination picked is closer than 2 units to the position of the agent
 	void FixedUpdate () {
-		if (agent.remainingDistance < 2){
+		if (agent.remainingDistance < 1){
 			destination = pickDestination();
 			agent.SetDestination(destination);
 		}
@@ -96,34 +96,34 @@ public class carAgent : MonoBehaviour {
 	}
 
 
-	// set layercost high on road where the car was coming from so it will not turn around
+	//set layercost high on road where the car was coming from so it will not turn around
 	void OnCollisionExit(Collision CollisionInfo){
 
 		for (int i = 1; i < 8; i++){
 			if (CollisionInfo.transform.name == i + "-horiz-left"){
-				agent.SetLayerCost (i*4, 500);
-				agent.SetLayerCost (i*4 - 1, 2000);
+				agent.SetLayerCost (i*4, 2000);
+				agent.SetLayerCost (i*4 - 1, 8000);
 			}
 		}
 
 		for (int i = 1; i < 8; i++){
 			if (CollisionInfo.transform.name == i + "-horiz-right"){
-				agent.SetLayerCost (i*4, 2000);
-				agent.SetLayerCost (i*4 - 1, 500);
+				agent.SetLayerCost (i*4, 8000);
+				agent.SetLayerCost (i*4 - 1, 2000);
 			}
 		}
 
 		for (int i = 1; i < 6; i++){
 			if (CollisionInfo.transform.name == i + "-vert-left"){
-				agent.SetLayerCost (i*4 + 2, 500);
-				agent.SetLayerCost (i*4 + 1, 2000);
+				agent.SetLayerCost (i*4 + 2, 2000);
+				agent.SetLayerCost (i*4 + 1, 8000);
 			}
 		}
 
 		for (int i = 1; i < 6; i++){
 			if (CollisionInfo.transform.name == i + "-vert-right"){
-				agent.SetLayerCost (i*4 + 2, 2000);
-				agent.SetLayerCost (i*4 + 1, 500);
+				agent.SetLayerCost (i*4 + 2, 8000);
+				agent.SetLayerCost (i*4 + 1, 2000);
 			}
 		}
 		// recalculate the best path to destination on entering crossroad
