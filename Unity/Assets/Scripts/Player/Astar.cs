@@ -180,6 +180,14 @@ public class Astar : MonoBehaviour{
         moveDirection.y = 0;
         Vector3 step = moveDirection.normalized * moveSpeed * Time.deltaTime;
         Quaternion rotation = Quaternion.LookRotation(moveDirection);
+        if (!rigidbody.velocity.Equals(Vector3.zero))
+        {
+            transform.GetChild(0).GetComponent<Animator>().SetFloat("Speed", 1);
+        }
+        else
+        {
+            transform.GetChild(0).GetComponent<Animator>().SetFloat("Speed", 0);
+        }
         rigidbody.rotation = rotation;
         rigidbody.MovePosition(rigidbody.position + step);
     }
@@ -231,6 +239,11 @@ public class Astar : MonoBehaviour{
                 closedList.Clear();
                 nodes.ClearCosts(NPCNumber);
             }
+        }
+
+        if(gameObject.GetComponent<Astar>().stopWalking)
+        {
+            transform.GetChild(0).GetComponent<Animator>().SetFloat("Speed", 0);
         }
         
     }
