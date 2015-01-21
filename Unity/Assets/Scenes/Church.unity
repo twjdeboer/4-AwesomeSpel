@@ -301,6 +301,10 @@ Prefab:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
   m_RootGameObject: {fileID: 1972649405}
@@ -855,6 +859,10 @@ Prefab:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
   m_RootGameObject: {fileID: 1999870766}
@@ -939,6 +947,10 @@ Prefab:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
   m_RootGameObject: {fileID: 1619160310}
@@ -1022,6 +1034,10 @@ Prefab:
     - target: {fileID: 6400000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
       propertyPath: m_Convex
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
@@ -1362,6 +1378,10 @@ Prefab:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
   m_RootGameObject: {fileID: 476400653}
@@ -1482,7 +1502,7 @@ GameObject:
   - 95: {fileID: 110962299}
   m_Layer: 0
   m_Name: ChurchBench
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2256,7 +2276,7 @@ GameObject:
   - 95: {fileID: 174585351}
   m_Layer: 0
   m_Name: ChurchBench
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2712,6 +2732,10 @@ Prefab:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
   m_RootGameObject: {fileID: 986563320}
@@ -3111,6 +3135,10 @@ Prefab:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
   m_RootGameObject: {fileID: 1891209288}
@@ -3158,7 +3186,7 @@ GameObject:
   - 95: {fileID: 211893297}
   m_Layer: 0
   m_Name: ChurchBench
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -3638,6 +3666,10 @@ Prefab:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
   m_RootGameObject: {fileID: 174585349}
@@ -3825,7 +3857,7 @@ GameObject:
   - 95: {fileID: 255972281}
   m_Layer: 0
   m_Name: ChurchBench
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -4035,6 +4067,10 @@ Prefab:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
   m_RootGameObject: {fileID: 1598525120}
@@ -4208,7 +4244,7 @@ GameObject:
   - 95: {fileID: 296970841}
   m_Layer: 0
   m_Name: ChurchBench
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -4835,7 +4871,7 @@ GameObject:
   - 95: {fileID: 313764597}
   m_Layer: 0
   m_Name: ChurchBench
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -4925,7 +4961,7 @@ GameObject:
   - 95: {fileID: 314789830}
   m_Layer: 0
   m_Name: ChurchBench
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -5089,7 +5125,7 @@ GameObject:
   - 95: {fileID: 327539585}
   m_Layer: 0
   m_Name: ChurchBench
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -5837,7 +5873,7 @@ GameObject:
   - 95: {fileID: 382111789}
   m_Layer: 0
   m_Name: ChurchBench
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -6421,6 +6457,10 @@ Prefab:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
   m_RootGameObject: {fileID: 1063850652}
@@ -6467,7 +6507,7 @@ GameObject:
   - 95: {fileID: 410178913}
   m_Layer: 0
   m_Name: ChurchBench
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -7392,7 +7432,7 @@ GameObject:
   - 95: {fileID: 476400655}
   m_Layer: 0
   m_Name: ChurchBench
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -9114,6 +9154,10 @@ Prefab:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
   m_RootGameObject: {fileID: 1283202731}
@@ -10778,6 +10822,10 @@ Prefab:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
   m_RootGameObject: {fileID: 733369394}
@@ -11403,6 +11451,10 @@ Prefab:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
   m_RootGameObject: {fileID: 313764595}
@@ -11489,7 +11541,7 @@ GameObject:
   - 95: {fileID: 733369396}
   m_Layer: 0
   m_Name: ChurchBench
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -12789,6 +12841,10 @@ Prefab:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
   m_RootGameObject: {fileID: 1561150083}
@@ -12808,7 +12864,7 @@ GameObject:
   - 95: {fileID: 807847461}
   m_Layer: 0
   m_Name: ChurchBench
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -13798,6 +13854,10 @@ Prefab:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
   m_RootGameObject: {fileID: 1050048328}
@@ -14332,6 +14392,10 @@ Prefab:
     - target: {fileID: 6400000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
       propertyPath: m_Convex
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
@@ -15149,6 +15213,10 @@ Prefab:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
   m_RootGameObject: {fileID: 1390841827}
@@ -15320,6 +15388,10 @@ Prefab:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
   m_RootGameObject: {fileID: 1807642333}
@@ -15453,7 +15525,7 @@ GameObject:
   - 95: {fileID: 986563322}
   m_Layer: 0
   m_Name: ChurchBench
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -15800,7 +15872,7 @@ GameObject:
   - 95: {fileID: 1050048330}
   m_Layer: 0
   m_Name: ChurchBench
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -15972,7 +16044,7 @@ GameObject:
   - 95: {fileID: 1063850654}
   m_Layer: 0
   m_Name: ChurchBench
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -16575,6 +16647,10 @@ Prefab:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
   m_RootGameObject: {fileID: 327539584}
@@ -17006,6 +17082,10 @@ Prefab:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
   m_RootGameObject: {fileID: 255972280}
@@ -17025,7 +17105,7 @@ GameObject:
   - 95: {fileID: 1126952260}
   m_Layer: 0
   m_Name: ChurchBench
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -17280,6 +17360,10 @@ Prefab:
     - target: {fileID: 6400000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
       propertyPath: m_Convex
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
@@ -17591,7 +17675,7 @@ GameObject:
   - 95: {fileID: 1161440476}
   m_Layer: 0
   m_Name: ChurchBench
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -17935,7 +18019,7 @@ GameObject:
   - 95: {fileID: 1190064630}
   m_Layer: 0
   m_Name: ChurchBench
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -18110,7 +18194,7 @@ GameObject:
   - 95: {fileID: 1192741749}
   m_Layer: 0
   m_Name: ChurchBench
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -18560,6 +18644,10 @@ Prefab:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
   m_RootGameObject: {fileID: 1989002576}
@@ -18961,6 +19049,10 @@ Prefab:
     - target: {fileID: 6400000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
       propertyPath: m_Convex
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
@@ -19510,6 +19602,10 @@ Prefab:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
   m_RootGameObject: {fileID: 1708052651}
@@ -19529,7 +19625,7 @@ GameObject:
   - 95: {fileID: 1283202733}
   m_Layer: 0
   m_Name: ChurchBench
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -19779,7 +19875,7 @@ GameObject:
   - 95: {fileID: 1292891864}
   m_Layer: 0
   m_Name: ChurchBench
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -20955,7 +21051,7 @@ GameObject:
   - 95: {fileID: 1390841829}
   m_Layer: 0
   m_Name: ChurchBench
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -21368,6 +21464,10 @@ Prefab:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
   m_RootGameObject: {fileID: 296970840}
@@ -21534,6 +21634,10 @@ Prefab:
     - target: {fileID: 6400000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
       propertyPath: m_Convex
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
@@ -21902,6 +22006,10 @@ Prefab:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
   m_RootGameObject: {fileID: 1487560265}
@@ -21921,7 +22029,7 @@ GameObject:
   - 95: {fileID: 1487560267}
   m_Layer: 0
   m_Name: ChurchBench
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -22075,6 +22183,10 @@ Prefab:
     - target: {fileID: 6400000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
       propertyPath: m_Convex
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
@@ -22904,6 +23016,10 @@ Prefab:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
   m_RootGameObject: {fileID: 410178911}
@@ -23127,6 +23243,10 @@ Prefab:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
   m_RootGameObject: {fileID: 1190064628}
@@ -23258,7 +23378,7 @@ GameObject:
   - 95: {fileID: 1561150085}
   m_Layer: 0
   m_Name: ChurchBench
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -23788,7 +23908,7 @@ GameObject:
   - 95: {fileID: 1598525122}
   m_Layer: 0
   m_Name: ChurchBench
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -24017,7 +24137,7 @@ GameObject:
   - 95: {fileID: 1619160312}
   m_Layer: 0
   m_Name: ChurchBench
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -25095,6 +25215,10 @@ Prefab:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
   m_RootGameObject: {fileID: 382111787}
@@ -25381,7 +25505,7 @@ GameObject:
   - 95: {fileID: 1708052653}
   m_Layer: 0
   m_Name: ChurchBench
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -25653,6 +25777,10 @@ Prefab:
     - target: {fileID: 6400000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
       propertyPath: m_Convex
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
@@ -26273,7 +26401,7 @@ GameObject:
   - 95: {fileID: 1807642335}
   m_Layer: 0
   m_Name: ChurchBench
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -26876,6 +27004,10 @@ Prefab:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
   m_RootGameObject: {fileID: 807847459}
@@ -27172,6 +27304,10 @@ Prefab:
     - target: {fileID: 6400000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
       propertyPath: m_Convex
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
@@ -27693,7 +27829,7 @@ GameObject:
   - 95: {fileID: 1891209290}
   m_Layer: 0
   m_Name: ChurchBench
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -28206,6 +28342,10 @@ Prefab:
     - target: {fileID: 6400000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
       propertyPath: m_Convex
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
@@ -28742,7 +28882,7 @@ GameObject:
   - 95: {fileID: 1972649407}
   m_Layer: 0
   m_Name: ChurchBench
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -28917,6 +29057,10 @@ Prefab:
       propertyPath: m_TagString
       value: Ground Walk
       objectReference: {fileID: 0}
+    - target: {fileID: 6400002, guid: 6084f038583bd294e85681fdfc4c16eb, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2300006, guid: 6084f038583bd294e85681fdfc4c16eb, type: 3}
     - {fileID: 6400000, guid: 6084f038583bd294e85681fdfc4c16eb, type: 3}
@@ -29057,7 +29201,7 @@ GameObject:
   - 95: {fileID: 1989002578}
   m_Layer: 0
   m_Name: ChurchBench
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -29295,7 +29439,7 @@ GameObject:
   - 95: {fileID: 1999870768}
   m_Layer: 0
   m_Name: ChurchBench
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -29442,7 +29586,7 @@ GameObject:
   - 95: {fileID: 2003059494}
   m_Layer: 0
   m_Name: ChurchBench
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -30492,7 +30636,7 @@ GameObject:
   - 95: {fileID: 2095046612}
   m_Layer: 0
   m_Name: ChurchBench
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -30582,7 +30726,7 @@ GameObject:
   - 95: {fileID: 2102972281}
   m_Layer: 0
   m_Name: ChurchBench
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -31103,6 +31247,10 @@ Prefab:
     - target: {fileID: 6400000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
       propertyPath: m_Convex
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb14830f7c57c2b4d8d0fab249065f35, type: 3}

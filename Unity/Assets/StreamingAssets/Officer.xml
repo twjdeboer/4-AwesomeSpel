@@ -5,7 +5,7 @@
     <QUESTION TEXT="What is your progress?">
       <OPTION>
         <TEXT>No, I still have no idea who did it.</TEXT>
-        <REACTION TEXT="Well, what are you standing here then. Go out and finnd some evidence"></REACTION>
+        <REACTION TEXT="Well, what are you standing here then. Go out and find some evidence"></REACTION>
       </OPTION>
       <OPTION>
         <TEXT>I think I got enough evidence to put the killer behind bars for life.</TEXT>
