@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<conversation>
+	<NPC>If you think you have enough evidence, you should see the police officer.</NPC>
+	<PLAYER>
+		<TALK>Indeed, he is in the police station located north.</TALK>
+	</PLAYER>
+	<NPC>They say the police officer has a bad sense of humor.</NPC>
+	<PLAYER>
+		<TALK>Well, it can't be worse then the joke about the two electrons on a bench.</TALK>
+	</PLAYER>
+
+</conversation>

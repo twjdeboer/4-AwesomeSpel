@@ -42,7 +42,8 @@ public class SceneManager : MonoBehaviour
 
 
 		}
-
+		
+	// function to set pause boolean
 		void SetPause (bool pause)
 		{
 				if (pause) {
@@ -57,6 +58,7 @@ public class SceneManager : MonoBehaviour
 				}
 		}
 
+		// show pause menu if boolean toggle is true
 		void ToggleMenu (bool toggle)
 		{
 				if (toggle) {
@@ -66,6 +68,7 @@ public class SceneManager : MonoBehaviour
 				}
 		}
 
+		// pause on escape and call pause menu
 		void TogglePause ()
 		{
 				if (Input.GetKeyUp (KeyCode.Escape)) {
@@ -78,34 +81,40 @@ public class SceneManager : MonoBehaviour
 						}
 				}
 		}
-
+		
+		// go to the first play scene and deactivate startMenu
 		void Play ()
 		{
 				setCanvasInactive (startMenu);
 				Application.LoadLevel (firstPlayScene);
 		}
 
+		// resume the game
 		void Resume ()
 		{
 				SetPause (false);
 				ToggleMenu (false);
 		}
 
+		//quit the game when pressing quit in the main menu
 		void Exit (){
 			Application.Quit ();
 		}
 
+		// go back to the main menu from the pause menu
 		void Quit ()
 		{
 			Application.LoadLevel (backToStart);
 		}
 
+		// go back from the main menu from the pause menu in the outside world, saving your player position
 		void QuitFromWorld ()
 		{
 				savePlayerPos ();
 				Quit ();
 		}
 
+		// save player position in cloud.save
 		void savePlayerPos ()
 		{
 				string filename = "cloud.save";
@@ -144,7 +153,8 @@ public class SceneManager : MonoBehaviour
 				StartCoroutine (GETWritePlayerPos (www));
 		
 		}
-	
+
+		// sends a get request to write the playerposition to the server
 		IEnumerator GETWritePlayerPos (WWW www)
 		{
 				yield return www;
@@ -156,6 +166,7 @@ public class SceneManager : MonoBehaviour
 				}
 		}
 
+		// read player position from file and return the position
 		Vector3 ReadPlayerPos (string filename)
 		{
 				Vector3 pos = new Vector3 ();
@@ -179,13 +190,15 @@ public class SceneManager : MonoBehaviour
 
 				TogglePause ();
 		}
-
+		
+		// set startMenu active and loginMenu inactive
 		void BackToMain ()
 		{
 				setCanvasActive (startMenu);
 				setCanvasInactive (loginMenu);
 		}
-
+		
+		// Set startMenu inactive and loginMunu active
 		void LoginMenu ()
 		{
 				setCanvasInactive (startMenu);
@@ -193,23 +206,27 @@ public class SceneManager : MonoBehaviour
 
 		}
 	 	
+		// set loginMenu inactive and creatMenu active
 		void CreateMenu ()
 		{
 				setCanvasInactive (loginMenu);
 				setCanvasActive (createMenu);
 		}
 
+		//  set loginMenu active and createMenu inactive
 		void BackToLogin ()
 		{
 				setCanvasActive (loginMenu);
 				setCanvasInactive (createMenu);
 		}
 
+		// load the credits scene
 		void Credits ()
 		{
 				Application.LoadLevel ("Credits");
 		}
 
+		// check the login details
 		void CheckLogin ()
 		{
 				string username = GameObject.Find ("username").GetComponent<InputField> ().text;
@@ -220,6 +237,7 @@ public class SceneManager : MonoBehaviour
 				StartCoroutine (GETLogin (www));
 		}
 
+		// send a get request to check the login details on the server
 		IEnumerator GETLogin (WWW www)
 		{
 				yield return www;
@@ -274,6 +292,7 @@ public class SceneManager : MonoBehaviour
 				}
 		}
 
+		//  create an account with username and password
 		void CreateAccount ()
 		{
 				GameObject error = GameObject.Find ("errortextcreate");
@@ -313,6 +332,7 @@ public class SceneManager : MonoBehaviour
 
 		}
 
+		// send the getrequest to the server and check the username and password
 		IEnumerator GETCreate (WWW www)
 		{
 				yield return www;
@@ -340,6 +360,7 @@ public class SceneManager : MonoBehaviour
 				}
 		}
 
+		// create an offline game with a local save file
 		void LoadGameOffline ()
 		{
 				string filename = "cloud.save";
@@ -355,6 +376,7 @@ public class SceneManager : MonoBehaviour
 				Application.LoadLevel (firstPlayScene);
 		}
 
+		// save player statistics to the local cloud.save file
 		void CreateSaveOffline ()
 		{
 				Vector3 playPos = new Vector3 (-185f, 0.2f, -35f);
@@ -362,6 +384,8 @@ public class SceneManager : MonoBehaviour
 				WriteToSave ("cloud.save", 0, playPos, items);
 		}
 
+
+		// read booleans from cloud to save file to check player statistics
 		public static bool[] ReadItemList (string filename)
 		{
 				bool[] items = new bool[10];
@@ -381,6 +405,7 @@ public class SceneManager : MonoBehaviour
 
 		}
 
+		// write player statistics to file
 		void WriteToSave (string filename, int playerId, Vector3 playPos, bool[] items)
 		{
 				StreamWriter sr = File.CreateText (filename);
@@ -394,6 +419,7 @@ public class SceneManager : MonoBehaviour
 				sr.Close ();
 		}
 
+		// set canvas active and make interactable
 		void setCanvasActive (GameObject canvas)
 		{
 				if (canvas != null) {
@@ -403,6 +429,7 @@ public class SceneManager : MonoBehaviour
 				}
 		}
 
+		// set canvas inactive and make not interactible
 		void setCanvasInactive (GameObject canvas)
 		{
 				if (canvas != null) {

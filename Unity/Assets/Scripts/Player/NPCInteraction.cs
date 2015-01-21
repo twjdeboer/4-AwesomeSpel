@@ -22,14 +22,14 @@ public class NPCInteraction : MonoBehaviour {
     private GameObject blockRayCast;
 
     public string NPCName;
-    public float timeToWait;
-    public int maxNumberOfLines;
     public bool stopWalking = false;
     public List<OptionList> options = new List<OptionList>();
     public List<Action> actionList = new List<Action>();
     public int choiceOfPlayer;
     public string fileName;
 
+    private int maxNumberOfLines;
+    private float timeToWait;
     private bool anotherQuestion = true;
     private string playerTalkName;
     private Transform target;
@@ -71,6 +71,8 @@ public class NPCInteraction : MonoBehaviour {
      * */
 	void Start () 
     {
+        maxNumberOfLines = 4;
+        timeToWait = 1e-07f;
         GameObject conversationObjects = Instantiate(Resources.Load("Prefabs/ConversationObjects")) as GameObject;
         conversationObjects.transform.SetParent(GameObject.Find("Interface").transform , false);
         conversation = GameObject.Find("Conversation");
