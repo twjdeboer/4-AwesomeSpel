@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//not used
 public class LoadWorldfinalsecondscene : MonoBehaviour {
 
 	public GameObject world;

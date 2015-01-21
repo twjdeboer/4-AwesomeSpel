@@ -12,7 +12,12 @@ public class ProceduralHouseblok{
 	private bool rotation;
 	private bool blockback;
 	
-	
+
+	/**
+	 * constructor
+	 * gets gameobjects variabeles
+	 * 
+	 */
 	public ProceduralHouseblok(GameObject Houseblok){
 		this.houseblok = Houseblok;
 		scale = houseblok.transform.localScale;
@@ -24,7 +29,13 @@ public class ProceduralHouseblok{
 			rotation = false;
 		}		
 	}
-	
+
+
+	/**
+	 * runs first first time a houseblok devides
+	 * in order to put the left and right end houses.
+	 * devides in 3 parts left middle and right.
+	 */
 	public bool devidefirst(bool back){	
 		bool create = false;
 		string addtag = "";
@@ -73,7 +84,12 @@ public class ProceduralHouseblok{
 		}
 		return create;
 	}
-	
+
+	/**
+	 * runs second time a houseblok devides
+	 * searches for cubes with width>12 and devides them with random width
+	 * returns false if smaller then 12
+	 */
 	public bool devide(string settag){
 		bool create = false;
 		if(scale.z>12){
