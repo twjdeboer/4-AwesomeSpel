@@ -52,7 +52,7 @@ public class ChurchGamePlay : MonoBehaviour {
 
 				string filename = "cloud.save";
 				string[] content = File.ReadAllLines (filename);
-
+				// reset the evidence on the server
 				string resulturl = "http://drproject.twi.tudelft.nl:8084/resetSave?userId=" + content [0];
 				WWW resultget = new WWW (resulturl);
 				StartCoroutine (GETAddEvidence (resultget));
