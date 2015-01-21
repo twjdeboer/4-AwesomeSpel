@@ -625,6 +625,7 @@ CanvasGroup:
     type: 2}
   m_PrefabInternal: {fileID: 515909967}
   m_GameObject: {fileID: 14071726}
+  m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
@@ -2436,7 +2437,6 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -4303,6 +4303,7 @@ CanvasGroup:
     type: 2}
   m_PrefabInternal: {fileID: 515909967}
   m_GameObject: {fileID: 219041417}
+  m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 0
@@ -5600,6 +5601,7 @@ GameObject:
   - 65: {fileID: 302469480}
   - 23: {fileID: 302469479}
   - 114: {fileID: 302469478}
+  - 114: {fileID: 302469483}
   m_Layer: 0
   m_Name: Exit
   m_TagString: Untagged
@@ -5670,6 +5672,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 10
+--- !u!114 &302469483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 302469477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e43b8ee20ec341448b5cccb56332d72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &305968563
 GameObject:
   m_ObjectHideFlags: 0
@@ -9088,6 +9101,7 @@ CanvasGroup:
     type: 2}
   m_PrefabInternal: {fileID: 515909967}
   m_GameObject: {fileID: 457632230}
+  m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 0
@@ -21287,7 +21301,6 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -21558,7 +21571,6 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -22042,6 +22054,7 @@ CanvasGroup:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1154041066}
+  m_Enabled: 1
   m_Alpha: .699999988
   m_Interactable: 1
   m_BlocksRaycasts: 1
@@ -23626,6 +23639,7 @@ CanvasGroup:
     type: 2}
   m_PrefabInternal: {fileID: 515909967}
   m_GameObject: {fileID: 1222859344}
+  m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
@@ -28907,6 +28921,7 @@ CanvasGroup:
     type: 2}
   m_PrefabInternal: {fileID: 515909967}
   m_GameObject: {fileID: 1539615633}
+  m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
@@ -29799,7 +29814,6 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
