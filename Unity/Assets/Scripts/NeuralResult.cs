@@ -61,20 +61,32 @@ public class NeuralResult : MonoBehaviour {
 		NPCInteraction npcinteraction = GetComponent<NPCInteraction> ();
 
 
-			if (npcinteraction.textToDisplay == "schateiland"){
+			if (npcinteraction.textToDisplay == "Well, hurry!"){
 			
 			string url = "http://drproject.twi.tudelft.nl:8084/pickupitem?userId=" + content [0] + "&itemId=" + 9;
 			WWW www = new WWW (url);
 			StartCoroutine (GETAddEvidence (www));
 
-				}
+			string filename = "cloud.save";
+			string[] nieuw = File.ReadAllLines (filename);
+		
+			nieuw[13] = "True";
+			StreamWriter sr = File.CreateText (filename);
+			for(int i = 0; i<15; i++)
+			{
+				sr.WriteLine(nieuw[i]);
+
+			}
+			sr.Close ();
+
+			}
 	}
 
 	void UpdateSave() {
 		string filename = "cloud.save";
 		string[] nieuw = File.ReadAllLines (filename);
 		
-		nieuw[13] = "True";
+		
 		if (this.uitkomst == 2)
 		{
 			nieuw[14] = "True";
