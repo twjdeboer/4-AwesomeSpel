@@ -8,6 +8,8 @@ using SimpleJSON;
 
 public class NeuralResult : MonoBehaviour {
 
+	//defining all the weigths and tresholds
+
 	private float[][] W1 = new float[][]
 	{
 		new float[] {-0.93555f,0.30249f,-0.35401f,-0.48818f,-0.90505f,-0.64421f,0.058168f,0.32731f,-0.61747f},
@@ -60,7 +62,7 @@ public class NeuralResult : MonoBehaviour {
 	
 		NPCInteraction npcinteraction = GetComponent<NPCInteraction> ();
 
-
+			//checks if you want to confront the priest of look for more evidence
 			if (npcinteraction.textToDisplay == "Well, hurry!"){
 			
 			string url = "http://drproject.twi.tudelft.nl:8084/pickupitem?userId=" + content [0] + "&itemId=" + 9;
@@ -82,6 +84,7 @@ public class NeuralResult : MonoBehaviour {
 			}
 	}
 
+	// update the local save file with the result of the neural network
 	void UpdateSave() {
 		string filename = "cloud.save";
 		string[] nieuw = File.ReadAllLines (filename);
@@ -101,6 +104,7 @@ public class NeuralResult : MonoBehaviour {
 		sr.Close ();
 	}
 
+	// update server with the result of the  neural network
 	void UpdateServer () {
 
 		string[] content = new string[15];
@@ -129,6 +133,7 @@ public class NeuralResult : MonoBehaviour {
 
 	}
 
+	// method for sending a get request
 	IEnumerator GETAddEvidence(WWW www){
 		yield return www;
 
@@ -139,7 +144,7 @@ public class NeuralResult : MonoBehaviour {
 		}
 	}
 
-
+	// read the local save file 
 	void Setfoundevidence(){
 		string filename = "cloud.save";
 				
@@ -160,6 +165,7 @@ public class NeuralResult : MonoBehaviour {
 
 	}
 
+	// calculate the output of the network
 	int CalcOutput( float[] n){
 
 		//calc hidden layer
@@ -185,6 +191,7 @@ public class NeuralResult : MonoBehaviour {
 
 	}
 
+	// method for the vector-matrix product
 	float[] VectorMatrix(float[] m, float[][] n){
 
 		float[] answer = new float[n.Length];
@@ -199,6 +206,7 @@ public class NeuralResult : MonoBehaviour {
 		return answer;
 	}
 
+	// method for a vector substraction
 	float[] VectorAftrekken(float[] n , float[] m){
 
 		float[] answer = new float[n.Length];
@@ -210,6 +218,7 @@ public class NeuralResult : MonoBehaviour {
 
 	}
 
+	// method for the ectivation function of the neuron
 	float[] VectorSign(float[] n){
 
 		float[] answer = new float[n.Length];

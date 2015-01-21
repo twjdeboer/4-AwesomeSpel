@@ -17,6 +17,8 @@ public class ChurchGamePlay : MonoBehaviour {
 		string[] content = File.ReadAllLines (filename);
 		NPCInteraction npcinteraction = GetComponent<NPCInteraction> ();
 
+
+		// set the right conversation with the priest
 		if (content [13] == "False") 
 		{
 			npcinteraction.fileName = "Priest.xml";
@@ -38,7 +40,7 @@ public class ChurchGamePlay : MonoBehaviour {
 		
 		
 	
-	// Update is called once per frame
+	// Check if the conversation is ended
 	void Update () {
 	
 
