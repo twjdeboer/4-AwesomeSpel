@@ -54,6 +54,7 @@
             <TALK>Finally, no more jokes from you then. What does it say?</TALK>
             <NPC>I says you need to go see the priest. If you know what I'm saying.</NPC>
             <TALK>Yes, I believe I do know what you are saying</TALK>
+            <NPC>schateiland</NPC>
           </SEQUEL>
         </REACTION>
       </OPTION>        

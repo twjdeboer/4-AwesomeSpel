@@ -34,7 +34,7 @@ public class NeuralResult : MonoBehaviour {
 
 	public float[] foundevidence;
 	public int uitkomst;
-
+	public string[] content;
 
 
 	// Use this for initialization
@@ -49,13 +49,26 @@ public class NeuralResult : MonoBehaviour {
 
 		UpdateServer ();
 
+		string filename = "cloud.save";
+		content = File.ReadAllLines (filename);
+
 
 	}
 	
-	//// Update is called once per frame
-	//void Update () {
+	// Update is called once per frame
+	void Update () {
 	
-	//}
+		NPCInteraction npcinteraction = GetComponent<NPCInteraction> ();
+
+
+			if (npcinteraction.textToDisplay == "schateiland"){
+			
+			string url = "http://drproject.twi.tudelft.nl:8084/pickupitem?userId=" + content [0] + "&itemId=" + 9;
+			WWW www = new WWW (url);
+			StartCoroutine (GETAddEvidence (www));
+
+				}
+	}
 
 	void UpdateSave() {
 		string filename = "cloud.save";
@@ -88,10 +101,8 @@ public class NeuralResult : MonoBehaviour {
 			Debug.Log ("No Save File found");
 		}
 
-		//update boolean 9
-		string url = "http://drproject.twi.tudelft.nl:8084/pickupitem?userId=" + content [0] + "&itemId=" + 9;
-		WWW www = new WWW (url);
-		StartCoroutine (GETAddEvidence (www));
+		
+		
 
 		//update boolean 10
 		if (uitkomst == 2)
