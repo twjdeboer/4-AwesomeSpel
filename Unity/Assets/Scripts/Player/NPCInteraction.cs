@@ -7,6 +7,9 @@ using System.Xml;
 using System.Text;
 using System.IO;
 
+/**
+ * Component which allows the player to interact with NPC
+ * */
 public class NPCInteraction : MonoBehaviour {
 
     private Text conversationText;
@@ -46,7 +49,7 @@ public class NPCInteraction : MonoBehaviour {
     private bool Go = false;
 
     /**
-     * Start conversation if clicked on NPC
+     * Start conversation if clicked on NPC.
      * */
     void OnMouseUp()
     {
@@ -63,6 +66,9 @@ public class NPCInteraction : MonoBehaviour {
         Go = true;
     }
     
+    /*
+     * Initializes interface 
+     * */
 	void Start () 
     {
         GameObject conversationObjects = Instantiate(Resources.Load("Prefabs/ConversationObjects")) as GameObject;
@@ -79,6 +85,9 @@ public class NPCInteraction : MonoBehaviour {
         conversation.SetActive(false);
 	}
 
+    /*
+     * Creates an object which blocks raycasting for the mouse. So it is not possible to click on a other NPC when talking to this NPC.
+     * */
     void BlockRayCast()
     {
         blockRayCast = Instantiate(Resources.Load("Prefabs/BlockRayCast")) as GameObject;
@@ -162,6 +171,9 @@ public class NPCInteraction : MonoBehaviour {
             
     }
 
+    /*
+     * Uses interface to let NPC talk
+     * */
     void NPCTalk(string text)
     {
         conversation.gameObject.SetActive(true);
@@ -222,6 +234,9 @@ public class NPCInteraction : MonoBehaviour {
         }
     }
 
+    /*
+     * Uses interface to let player talk
+     * */
     void PlayerTalkText(string text)
     {
         conversation.gameObject.SetActive(true);
@@ -229,6 +244,9 @@ public class NPCInteraction : MonoBehaviour {
         DisplayWordForWord(text);
     }
 
+    /*
+     * Adds an action to the list if necessary. This is used when another question is asked after a reaction of the player
+     * */
     void AnotherQuestion(Option useOption)
     {
         if(useOption.childActions.Count != 0 && anotherQuestion)
@@ -238,6 +256,9 @@ public class NPCInteraction : MonoBehaviour {
         }
     }
 
+    /*
+     * Enables the player to choose an answer
+     * */
     void PlayerTalk(OptionList list)
     {
         choiceOfPlayer = ResourceManager.choiceOfPlayer;
@@ -250,6 +271,9 @@ public class NPCInteraction : MonoBehaviour {
 
     }
 
+    /*
+     * Controls what happends after player choose a answer
+     * */
     void PlayerAnswer(OptionList list)
     {
         string playerText = null;
@@ -276,6 +300,9 @@ public class NPCInteraction : MonoBehaviour {
         }
     }
 
+    /*
+     * Activates option menu for the player
+     * */
     void ActivateUI(OptionList list)
     {
         if (!Activated)
@@ -294,7 +321,9 @@ public class NPCInteraction : MonoBehaviour {
         }
     }
 
-
+    /*
+     * Read an option out a XML file
+     * */
     void ReadOption(XmlTextReader reader, int optionListNumber, Option parentOption)
     {
         string optionText = "";
@@ -351,6 +380,9 @@ public class NPCInteraction : MonoBehaviour {
 
     }
 
+    /*
+     * Read a Question out a xml file
+     * */
     void ReadQuestion(XmlTextReader reader,Option parentOption, bool firstQuestion, int optionListNumber)
     {
         string questionText = reader.GetAttribute(0);
@@ -378,9 +410,11 @@ public class NPCInteraction : MonoBehaviour {
         
     }
 
+    /*
+     * Reads the content of the conversation out the XML file
+     * */
     void XMLReader(string fileName)
     {
-		//XmlTextReader reader = new XmlTextReader(Resources.Load("Text/" + fileName));
 		XmlTextReader reader = new XmlTextReader(System.IO.Path.Combine(Application.streamingAssetsPath, fileName));
         while (reader.Read())
         {
@@ -415,6 +449,9 @@ public class NPCInteraction : MonoBehaviour {
         }
     }
 
+    /*
+     * Determines what action is made in the conversation
+     * */
     void Action()
     {
         if (Go)
@@ -450,6 +487,10 @@ public class NPCInteraction : MonoBehaviour {
             }
         }
     }
+
+    /*
+     * Fills the option menu with text
+     * */
     void FillUI(OptionList list)
     {
         GameObject.Find("Question Text").GetComponent<Text>().text = list.question;

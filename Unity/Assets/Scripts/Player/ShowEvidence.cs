@@ -3,13 +3,13 @@ using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
 
-
+/*
+ * Component which shows the inventory
+ * */
 public class ShowEvidence : MonoBehaviour
 {
     private List<GameObject> evidenceList = new List<GameObject>();
     private int index = 0;
-   // private float X;
-   // private float Y;
 
     // Use this for initialization
     void Start()
@@ -17,6 +17,9 @@ public class ShowEvidence : MonoBehaviour
         ReadList();
     }
 
+    /*
+     * Gets the inventory out of the savefile
+     * */
     void ReadList()
     {
         bool[] boolList = SceneManager.ReadItemList("cloud.save");
@@ -32,6 +35,10 @@ public class ShowEvidence : MonoBehaviour
 
     }
 
+    /*
+     * makes it able to view inventory
+     * 
+     **/
     void ViewList()
     {
         if (Input.GetKey(KeyCode.E))
@@ -44,17 +51,17 @@ public class ShowEvidence : MonoBehaviour
         }
     }
 
-    void getScreenSize()
-    {
-       // X = Screen.width;
-       // Y = Screen.height;
-    }
-
+    /*
+     * Adds a piece of evidence to the inventory
+     * */
     public void Add(GameObject evidence)
     {
         evidenceList.Add(evidence);
     }
 
+    /*
+     * Fill the list with the pieces of evidence.
+     * */
     void FillList()
     {
         if (index < evidenceList.Count)
@@ -76,7 +83,6 @@ public class ShowEvidence : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        getScreenSize();
         ViewList();
         FillList();
     }

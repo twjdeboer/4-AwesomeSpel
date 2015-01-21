@@ -68,6 +68,9 @@ public class Player : MonoBehaviour
             this.walkSpeed = this.intSpeed;
     }
 
+    /*
+     * Rotates the player to NPC if a conversation is started
+     * */
     void RotateToNPC()
     {
         if (ResourceManager.stopWalking)
@@ -76,10 +79,13 @@ public class Player : MonoBehaviour
             Vector3 targetDir = target.position - transform.position;
             float step = rotateSpeed * Time.deltaTime;
             Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0F);
-            transform.rotation = Quaternion.LookRotation(newDir);
+            rigidbody.rotation = Quaternion.LookRotation(newDir);
         }
     }
 
+    /*
+     * checks if player is on the ground
+     * */
     void OnCollisionEnter(Collision other)
     {
         if(other.gameObject.tag.Contains("Ground"))
@@ -88,6 +94,9 @@ public class Player : MonoBehaviour
         }
     }
 
+    /*
+ * checks if player is on the ground
+ * */
     void OnCollisionStay(Collision other)
     {
         if (other.gameObject.tag.Contains("Ground"))
@@ -96,6 +105,9 @@ public class Player : MonoBehaviour
         }
     }
 
+    /*
+ * checks if player is on the ground
+ * */
     void OnCollisionExit(Collision other)
     {
         if (other.gameObject.tag.Contains("Ground"))

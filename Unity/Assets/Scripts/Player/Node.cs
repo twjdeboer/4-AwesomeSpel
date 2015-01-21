@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/*
+ * Class represents a node used in the A* pathfinding algoritihm. The node keeps track of the cost for each NPC.
+ * */
 public class Node : MonoBehaviour{
 
     public bool accesable = true;
@@ -12,7 +15,7 @@ public class Node : MonoBehaviour{
     public int[] F;
  
 
-
+    //Initializes node
     void Start()
     {
         accesable = true;
@@ -22,6 +25,7 @@ public class Node : MonoBehaviour{
         parentNode = new GameObject[ResourceManager.numberOfChilds];
     }
 
+    //Checks if node is accessible
     void OnTriggerStay(Collider other)
     {
         if(!other.gameObject.tag.Contains("Walk"))
@@ -30,6 +34,7 @@ public class Node : MonoBehaviour{
         }
     }
 
+    //Checks if node is accessible
     void OnTriggerExit(Collider other)
     {
         accesable = true;
