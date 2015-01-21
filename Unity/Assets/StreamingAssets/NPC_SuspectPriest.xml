@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<conversation>
+	<NPC>You are investigating the murder, aren´t you?</NPC>
+	<PLAYER>
+		<TALK>Yes, do you know anything about that?</TALK>
+	</PLAYER>
+	<NPC>Word on the street is, the priest knows more than he tells...</NPC>
+	<PLAYER>
+		<TALK>Oke, I'll look into</TALK>
+	</PLAYER>
+
+</conversation>
