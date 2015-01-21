@@ -2,6 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 
+/*
+ * Stores variables used in the scene
+ * */
 public class ResourceManager{
 
     public static Vector3 playerPosition { get; set; }

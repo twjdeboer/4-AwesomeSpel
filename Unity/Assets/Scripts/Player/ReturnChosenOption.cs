@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/*
+ * Class returns chosen answer
+ * */
 public class ReturnChosenOption : MonoBehaviour {
 
     void OptionOne()
