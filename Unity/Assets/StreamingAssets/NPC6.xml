@@ -3,7 +3,7 @@
 <conversation>
 	<NPC>What is the airspeed velocity of an unladen swallow?</NPC>
 	<PLAYER>
-		<TALK>An European or an African swallow?</TALK>
+		<TALK>A European or an African swallow?</TALK>
 	</PLAYER>
 	<NPC>Ehhh *flies away*</NPC>
 </conversation>

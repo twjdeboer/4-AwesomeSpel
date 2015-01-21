@@ -5,7 +5,7 @@
 	<PLAYER>
 		<TALK>Hello sir, can I ask you something?</TALK>
 	</PLAYER>
-	<NPC>Surely, you seem like a nice bloke.</NPC>
+	<NPC>Sure, you seem like a nice bloke.</NPC>
 	<PLAYER>
 		<QUESTION TEXT="What to ask this man?">
 			<OPTION>
@@ -33,7 +33,7 @@
 			</OPTION>
 			<OPTION>
 				<TEXT>Where do birds go when it rains?</TEXT>
-				<REACTION TEXT="I have never taught of that. But I think they hide too"></REACTION>
+				<REACTION TEXT="I have never thought of that. But I think they hide too"></REACTION>
 			</OPTION>
 		</QUESTION>
 	</PLAYER>

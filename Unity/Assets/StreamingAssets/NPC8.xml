@@ -6,7 +6,7 @@
 		<QUESTION TEXT="Any questions?">
 			<OPTION>
 				<TEXT>Why is the sky not violet if it's blue because of Rayleigh scattering?</TEXT>
-				<REACTION TEXT="Well, that is really a good question."></REACTION>
+				<REACTION TEXT="Well, that really is a good question."></REACTION>
 			</OPTION>
 			<OPTION>
 				<TEXT>If God can do everything, can he create a boulder he can't lift?</TEXT>

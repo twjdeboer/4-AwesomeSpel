@@ -22,7 +22,7 @@
         <REACTION TEXT ="My prints. I should have known better."></REACTION>
       </OPTION>
       <OPTION>
-        <TEXT>We have several withnisses that put you on he crimescene with a motive.</TEXT>
+        <TEXT>We have several witnisses that put you on the crimescene with a motive.</TEXT>
         <REACTION TEXT ="Why believe them? I'm a man of the Lord!"></REACTION>
       </OPTION>
     </QUESTION> 
@@ -58,7 +58,7 @@
     <QUESTION TEXT ="Witty remark">
       <OPTION>
         <TEXT>If you kill me, you will find out in no-time.</TEXT>
-        <REACTION TEXT ="Okey, let's be resonable now."></REACTION>
+        <REACTION TEXT ="Okey, let's be reasonable now."></REACTION>
       </OPTION>
       <OPTION>
         <TEXT>There is no way you get away now.</TEXT>

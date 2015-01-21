@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <conversation>
   <NPC>Hello. Have you finally solved the case?</NPC>
   <PLAYER>
@@ -12,7 +12,7 @@
         <REACTION TEXT="That's good. Well show me what you got.">
           <SEQUEL>
             <PLAYER>
-              <TALK>Oké, here it is *shows collected evidence* </TALK>
+              <TALK>Ok�, here it is *shows collected evidence* </TALK>
             </PLAYER>
             <NPC>*looks at evidence* Well, that's quite something</NPC>
             <PLAYER>
@@ -52,7 +52,7 @@
             <TALK>You know, explaining a joke is like dissecting a frog; you understand it better, but it dies in the proces.</TALK>
             <NPC>Ah, the computer is finished</NPC>
             <TALK>Finally, no more jokes from you then. What does it say?</TALK>
-            <NPC>I says you need to go see the priest. If you know what I'm saying.</NPC>
+            <NPC>It says you need to go see the priest. If you know what I'm saying.</NPC>
             <TALK>Yes, I believe I do know what you are saying</TALK>
             <NPC>Well, hurry!</NPC>
           </SEQUEL>
