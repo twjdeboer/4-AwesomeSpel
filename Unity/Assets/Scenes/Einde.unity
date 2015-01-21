@@ -298,11 +298,11 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'You haven''t found enough evidence to catch the killer. So you angerly
     took matters in your own hand. Despite the fact that you feel it was the right
-    thing to do, you were arrested and non-active on the force.
+    thing to do, you were arrested and put on non-active.
 
 
     Maybe your lawyer can make it an accident, but you will never get back on the
-    force. At least you can look at yourself in the mirror, knowing you did the rigth
+    force. At least you can look at yourself in the mirror, knowing you did the right
     thing.'
 --- !u!222 &1043681332
 CanvasRenderer:

@@ -9,7 +9,7 @@ public class carAgent : MonoBehaviour {
 	private NavMeshAgent agent;
 	private NavMeshPath path;
 
-	// Use this for initialization
+	// give every car a destination
 	void Start () {
 
 		agent = gameObject.GetComponent<NavMeshAgent> ();
@@ -18,7 +18,7 @@ public class carAgent : MonoBehaviour {
 		agent.SetDestination (destination);
 	}
 	
-	// pick a new destination if the destination picked is too close to the position of the agent
+	// pick a new destination if the destination picked is closer than 2 units to the position of the agent
 	void FixedUpdate () {
 		if (agent.remainingDistance < 2){
 			destination = pickDestination();
@@ -26,7 +26,7 @@ public class carAgent : MonoBehaviour {
 		}
 	}
 
-	// pick new destination (destinations are always on crossroads)
+	// pick new random destination from the list of destinations (destinations are always on crossroads)
 	Vector3 pickDestination(){
 		int[] xCord = {285, 240, 150, 0, -180, -225, 180, 150, 0, -120, -180, 285, 240, 180, -120, -180, -225, 240, 180, 90, 0, -120, -180, 240, 90, 0, -180, 240, 0};
 		int[] zCord = {150, 150, 150, 150, 150, 150, 90, 90, 90, 90, -0, 0, 0, 0, 0, 0, 0, -90, -90, -90, -90, -90, -90, -150, -150, -150, -150, -195, -195};
@@ -45,7 +45,7 @@ public class carAgent : MonoBehaviour {
 	}
 
 
-	// Set Layercost of all roads correct according to position of agent
+	// When hitting a crossroad, set Layercost of all roads correct according to the position of the agent
 	void OnCollisionEnter(Collision other){
 
 		if (other.collider.tag == "Crossroad Ground"){
@@ -57,7 +57,7 @@ public class carAgent : MonoBehaviour {
 				if (other.gameObject.name == crossing){
 
 
-					// check x and y number of cross road
+					// check x and y index of cross road
 					double temp = i/8;
 					int y = (int)(Math.Floor(temp+1));
 					int x = (int)(i%8);

@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-using System.Collections;
 using System.Text.RegularExpressions;
 using System.IO;
 using SimpleJSON;

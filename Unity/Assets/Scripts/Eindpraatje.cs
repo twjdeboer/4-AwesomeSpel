@@ -1,14 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-using System.Collections;
 using System.Text.RegularExpressions;
 using System.IO;
 
 public class Eindpraatje : MonoBehaviour {
 
 	public int einde;
-	private double time = 5;
+	private double time = 10;
 
 
 	// Use this for initialization
@@ -34,13 +33,14 @@ public class Eindpraatje : MonoBehaviour {
 	
 				time -= Time.deltaTime;
 
-
-				if (time < 0.0) {
+				// when to exit the scene
+				if (time < 0.0 || Input.GetKeyUp(KeyCode.Escape)) {
 			Application.LoadLevel("StartMenu");
 				}
+		          
 		}
 
-
+		//reading the result of the ANN
 	void SetEinde(){
 
 		string filename = "cloud.save";
@@ -61,5 +61,7 @@ public class Eindpraatje : MonoBehaviour {
 	
 
 	}
+
+
 }
 
