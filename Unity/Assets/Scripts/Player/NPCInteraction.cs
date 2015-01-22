@@ -53,17 +53,20 @@ public class NPCInteraction : MonoBehaviour {
      * */
     void OnMouseUp()
     {
-        if (gameObject.GetComponent<Astar>() != null)
+        if (!ResourceManager.stopWalking)
         {
-            gameObject.GetComponent<Astar>().stopWalking = true;
+            if (gameObject.GetComponent<Astar>() != null)
+            {
+                gameObject.GetComponent<Astar>().stopWalking = true;
+            }
+            BlockRayCast();
+            target = GameObject.Find("PlayerModel").transform;
+            playerTalkName = GameObject.Find("PlayerModel").GetComponent<Player>().playerName;
+            ResourceManager.conversationWith = transform;
+            ResourceManager.stopWalking = true;
+            XMLReader(fileName);
+            Go = true;
         }
-        BlockRayCast();
-        target = GameObject.Find("PlayerModel").transform;
-        playerTalkName = GameObject.Find("PlayerModel").GetComponent<Player>().playerName;
-        ResourceManager.conversationWith = transform;
-        ResourceManager.stopWalking = true;
-        XMLReader(fileName);
-        Go = true;
     }
     
     /*
