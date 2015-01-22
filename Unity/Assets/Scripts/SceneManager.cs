@@ -104,7 +104,7 @@ public class SceneManager : MonoBehaviour
 		// go back to the main menu from the pause menu
 		void Quit ()
 		{
-			Application.LoadLevel (backToStart);
+			Application.Quit();
 		}
 
 		// go back from the main menu from the pause menu in the outside world, saving your player position
