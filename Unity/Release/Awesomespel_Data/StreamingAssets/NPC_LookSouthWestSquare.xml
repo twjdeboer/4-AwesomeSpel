@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<conversation>
+	<PLAYER>
+		<TALK>Do you know anything about the recent murder?</TALK>
+	</PLAYER>
+	<NPC>Not really no, but I saw some strange thing lying a the south-west square.</NPC>
+	<PLAYER>
+		<TALK>Thank you. All the little details count. And sometimes the smallest details matter the most.</TALK>
+	</PLAYER>
+
+</conversation>

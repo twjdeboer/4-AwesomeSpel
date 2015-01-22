@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<conversation>
+  
+    <NPC>Hello!</NPC>
+    <PLAYER>
+      <QUESTION TEXT ="Say hello?">
+        <OPTION>
+          <TEXT>Hello my friend! How you doing?</TEXT>
+          <REACTION TEXT ="Thanks for asking! It's going very well. It is a beautiful day isn't is. I have nothing to complain about. Excuse me but I have to leave. Thanks for your kindness."/>
+        </OPTION>
+        <OPTION>
+          <TEXT>I Have no time for small talk</TEXT>
+          <REACTION TEXT ="Sorry grumpa!"/>
+        </OPTION>
+      </QUESTION>
+    </PLAYER>
+
+  
+</conversation>

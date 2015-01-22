@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<conversation>
+  <NPC>So, you finally found me. Took you a long time.</NPC>
+  <PLAYER>
+    <QUESTION TEXT ="What took me so long?">
+      <OPTION>
+        <TEXT>It was hard to find you, I admit it. But now we are here</TEXT>
+        <REACTION TEXT ="So I see. What led you to me?"></REACTION>
+      </OPTION>
+      <OPTION>
+        <TEXT>You should have known; you can run, but you can't hide from the law.</TEXT>
+        <REACTION TEXT ="But how did you find me?"></REACTION>
+      </OPTION>
+    </QUESTION>
+  </PLAYER>
+  <PLAYER>
+    <QUESTION TEXT ="How did you know it was the priest?">
+      <OPTION>
+        <TEXT>Your prints were all over the evidence. You had no chance to get away with it!</TEXT>
+        <REACTION TEXT ="My prints. I should have known better."></REACTION>
+      </OPTION>
+      <OPTION>
+        <TEXT>We have several witnisses that put you on the crimescene with a motive.</TEXT>
+        <REACTION TEXT ="Why believe them? I'm a man of the Lord!"></REACTION>
+      </OPTION>
+    </QUESTION> 
+  </PLAYER>
+  <NPC>Can't we cut a deal? I can make you a rich man iff you look the other way...........</NPC>
+  <PLAYER>
+    <QUESTION TEXT ="What do you think? Make a deal with a killer?">
+      <OPTION>
+        <TEXT>No way! I'm an honest man. I will never do such a thing!</TEXT>
+        <REACTION TEXT ="That's to bad. So i guess i have to kill you now."></REACTION>
+      </OPTION>
+      <OPTION>
+        <TEXT>Well... No!</TEXT>
+        <REACTION TEXT ="Well, you leave me no choise. I have to kill you"></REACTION>
+      </OPTION>
+    </QUESTION>  
+  </PLAYER>
+  <NPC>Any last words before I whoop your ass with my crosier?</NPC>
+  <PLAYER>
+    <QUESTION TEXT ="Famous last words">
+      <OPTION>
+        <TEXT>I wouldn't do that if I were you. </TEXT>
+        <REACTION TEXT ="Why not?"></REACTION>
+      </OPTION>
+      <OPTION>
+        <TEXT>You and what army? You're outnumbered, fool!</TEXT>
+        <REACTION TEXT ="How do you mean?"></REACTION>
+      </OPTION>
+    </QUESTION>  
+  </PLAYER>
+  <NPC>What have you done? Set up an ambush? What? WHAT?</NPC>
+  <PLAYER>
+    <QUESTION TEXT ="Witty remark">
+      <OPTION>
+        <TEXT>If you kill me, you will find out in no-time.</TEXT>
+        <REACTION TEXT ="Okey, let's be reasonable now."></REACTION>
+      </OPTION>
+      <OPTION>
+        <TEXT>There is no way you get away now.</TEXT>
+        <REACTION TEXT ="Okey, wait. Wait. I'm sure we can talk about it."></REACTION>
+      </OPTION>
+    </QUESTION>  
+  </PLAYER>
+  <NPC>I give up. I surrender. I will take my chances in court</NPC>
+</conversation>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<conversation>
+	<NPC>Hello, have you heard about the word?</NPC>
+	<PLAYER>
+		<TALK>No, what is the word?</TALK>
+	</PLAYER>
+	<NPC>A-MA-MA OE-MA-MA-MA BIRD IS THE WORD</NPC>
+	<PLAYER>
+		<TALK>Yeah.... Bye</TALK>
+	</PLAYER>
+</conversation>

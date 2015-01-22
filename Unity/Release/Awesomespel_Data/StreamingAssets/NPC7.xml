@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<conversation>
+	<NPC>Hello sir.</NPC>
+	<PLAYER>
+		<QUESTION TEXT="Any questions for this man?">
+			<OPTION>
+				<TEXT>Have you heard about the recent murder?</TEXT>
+				<REACTION TEXT="Yes, as a matter of fact I have.">
+					<SEQUEL>
+						<TALK>Can you tell me something that might help the investigation</TALK>
+						<NPC>I'm sorry, but I only know what I read in the papers</NPC>
+					</SEQUEL>
+				</REACTION>
+			</OPTION>
+			<OPTION>
+				<TEXT>What is your view on recent politics?</TEXT>
+				<REACTION TEXT="It doesn't matter who you vote for. Those criminals get paid way too much for stealing our money."></REACTION>
+			</OPTION>
+		</QUESTION>
+	</PLAYER>
+	<TALK>Well, that wasn't very helpful.</TALK>
+
+</conversation>

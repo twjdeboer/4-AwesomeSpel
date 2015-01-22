@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<conversation>
+	<NPC>Hello, nice weather ain't it?</NPC>
+  <PLAYER>
+    <QUESTION TEXT="Do you like the weather?">
+      <OPTION>
+        <TEXT>It's nice, but a little bit to windy.</TEXT>
+        <REACTION TEXT="Sorry, those must be the beans"></REACTION>
+      </OPTION>
+      <OPTION>
+        <TEXT>Well, people are never pleased with the weather. </TEXT>
+        <REACTION TEXT="That's wheather you like it or not."></REACTION>
+      </OPTION>
+    </QUESTION>
+  </PLAYER>
+</conversation>
