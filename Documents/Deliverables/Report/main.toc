@@ -1,0 +1,26 @@
+\contentsline {section}{\numberline {1}Introduction}{4}
+\contentsline {subsection}{\numberline {1.1}How and Why?}{4}
+\contentsline {subsection}{\numberline {1.2}Inspiration}{4}
+\contentsline {section}{\numberline {2}Target Audience}{4}
+\contentsline {section}{\numberline {3}Platform \& Controls}{5}
+\contentsline {section}{\numberline {4}Story, Characters and setting of the game}{5}
+\contentsline {subsection}{\numberline {4.1}Setting}{5}
+\contentsline {subsection}{\numberline {4.2}Story and Main Characters}{6}
+\contentsline {section}{\numberline {5}Components}{7}
+\contentsline {subsection}{\numberline {5.1}Procedural City, Rense}{7}
+\contentsline {subsection}{\numberline {5.2}Navmesh, Jesper}{8}
+\contentsline {subsection}{\numberline {5.3}A*, Boyd}{8}
+\contentsline {subsection}{\numberline {5.4}NPC Interaction, Boyd}{9}
+\contentsline {subsection}{\numberline {5.5}Neural Network, Luuk}{9}
+\contentsline {subsection}{\numberline {5.6}Blender Rigging, Luuk}{9}
+\contentsline {subsection}{\numberline {5.7}Web \& Database, Thomas}{10}
+\contentsline {subsubsection}{\numberline {5.7.1}The MySQL Database}{11}
+\contentsline {subsubsection}{\numberline {5.7.2}Client Side}{11}
+\contentsline {subsubsection}{\numberline {5.7.3}Server Side}{11}
+\contentsline {section}{\numberline {6}Code Quality}{12}
+\contentsline {section}{\numberline {7}Art}{13}
+\contentsline {subsection}{\numberline {7.1}Models}{13}
+\contentsline {subsection}{\numberline {7.2}Textures}{14}
+\contentsline {subsection}{\numberline {7.3}Sound and Music}{14}
+\contentsline {section}{\numberline {8}Process and Teamwork}{15}
+\contentsline {section}{\numberline {9}Concluding}{16}

@@ -294,3 +294,20 @@ app.get("/readplaypos", function(req,res){
 		mysqlserver.end();
 	}
 });
+
+app.get("/resetSave", function(req,res){
+	var url_parts = url.parse(req.url, true);
+	var query = url_parts.query;
+	var userId = query["userId"];
+
+	if (userId != null){
+		var querystring = 'DELETE FROM itemdata WHERE userId = ?';
+		var mysqlserver = getMySQLConnection();
+		mysqlserver.query(querystring, [userId], function(err, result){
+			if (err) console.log(err);
+			res.json(result);
+
+		});
+		mysqlserver.end();
+	}
+});

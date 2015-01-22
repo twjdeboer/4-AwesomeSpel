@@ -4,9 +4,12 @@
 \usepackage{sectsty}
 
 
-\title{Game Design Document}
+\title{Final Report}
 \author{Group 4: Pico Bello B.V.}
-\date{27-11-2014}
+\date{22-01-2015}
+\setcounter{tocdepth}{2}
+
+
 
 
 \begin{document}
@@ -37,9 +40,11 @@
 	\begin{figure}[ht!]
 		\centering
 		\includegraphics[width=100mm]{images/Team.jpg}
-		\caption{From left to right: Boyd, Rense, Thomas (on iPad), Jesper and Luuk}
+		\caption{From left to right: Boyd, Rense, Thomas (on laptop), Jesper and Luuk}
 		\end{figure}
 
+	\newpage
+		\tableofcontents
 	\newpage
 
 \section{Introduction}
@@ -91,7 +96,7 @@
 \section{Components}
 
 \subsection{Procedural City, Rense}
-In our game the city is generated procedurally every time you start up the game. But because the streets and landmarks are pre-set only all the houses are generated procedurally. In the city there are some large cubes which will become houses. The way it works is one script is dedicated to building smaller cubes from big cubes. And gives them a tag what kind of house it is(left, right end and middle, both for if there is a house behind it or not). \\
+In our game the city is generated procedurally every time you start up the game. But because the streets and landmarks are pre-set only all the houses are generated procedurally. In the city there are some large cubes which will become houses. The way it works is one script is dedicated to building smaller cubes from big cubes and gives them a tag what kind of house it is(left, right end and middle, both for if there is a house behind it or not). \\
 
 	\begin{figure}[ht!]
 		\centering
@@ -126,7 +131,7 @@ The NPC chooses a random accessible node to walk to. Then the algorithm calculat
 The hardest part was making the node network  suitable for multiple NPCs. This was disregarded in the initial script. To solve this problem, the node keeps record of the costs for all NPCs in arrays.  The code had to be rewritten to accept this arrays.
 
 \subsection{NPC Interaction, Boyd}
-Our game needed a way to interact with NPCs. If clicked on a NPC with a mouse, an interface (new Unity UI) is activated. Then a script reads out an XML-file to determine the content of conversation. It is possible for NPC to ask a question where the player has to respond to. It depends on the answer of the player how the conversation continues. \\
+Our game needed a way to interact with NPCs. If clicked on an NPC with a mouse, an interface (new Unity UI) is activated. Then a script reads out an XML-file to determine the content of conversation. It is possible for NPCs to ask a question the player has to respond to. It depends on the answer of the player how the conversation continues. \\
 
 	\begin{figure}[ht!]
 		\centering
@@ -150,7 +155,7 @@ Our character walks through the scenes with a walking animation. This character 
 		\includegraphics[width=70mm]{images/Rigging.png}
 	\end{figure}
 
-\subsection{Web \& Database}
+\subsection{Web \& Database, Thomas}
 Awesome Spel uses a Web Server for some of its online features. The features mainly enable the player to keep track of their progress online, although offline play is possible. The following features come together to create our online save game platform:
 \begin{itemize}
 \item A secure user management system
@@ -164,21 +169,43 @@ These features are implemented through the use of three individual modules:
 \item Client Side Saved Game Management and Update calls
 \item Server Side JavaScript to connect the two together.
 \end{enumerate}
-\subsubsection{The MySQL Database, Thomas}
+\subsubsection{The MySQL Database}
 Our database uses modern, secure techniques of storing data. When an user is created, they are assigned an unique ID used to identify their actions and entries in the database. They receive an e-mail to Welcome them to the game and to give some general information. For secure storage of their passwords a pseudorandom 16-byte salt is generated that is then added to the password before hashing it with the Secure SHA256 hashing technique. Furthermore, every time the user logs in a new salt is generated and the password is rehashed to prevent the usage of rainbow tables even more. We use prepared statements to communicate with the database, to reduce the risk of SQL injection attacks. The database uses Indexes to make sure certain combinations of factors are always unique, for instance allowing the same player to only have any given item once. This further prevents any mishaps down the line.
 \subsubsection{Client Side}
 The client keeps track of a Saved Game file for storing the current player location and the items that are picked up. This Saved Game is also relayed to the server. When a player logs in the most recent data is acquired from the server. This is then written to the saved game, to allow local access and reduce the amount of requests the server has to process. Whenever the player enters a landmark or quits the game, their in-game location is send to the server. The same thing happens when a piece of evidence is picked up. The client side also allows players to create an account. The entered data are checked for formatting, such as e-mail addresses being valid and passwords matching client side. After that initial check the data, if valid, is relayed to the server where additional checks are run.
 \subsubsection{Server Side}
 The server uses JavaScript running on the Node.JS platform. We use the Express plugin to communicate with the client, although no static or dynamic content is actually served. We only transfer raw game data to and from the client. The server is built to keep running, which means we check our input and return errors is something is wrong, to both the client and the server logs. This can range anywhere from usernames already existing or passwords being incorrect, to incomplete or incorrect data being entered. Our system is the only system that provides a degree of security, as the permissions were set to enable ‘anyone’ to read data in the folders on the server by default, by the system administrator. We changed this to deny read access and protect our source code and the passwords inside it.
-\subsubsection{Room for improvement}
-There is certainly room for improvement in this area. As far as security is concerned, the username and password are currently being send over using the plain HTTP protocol, however using HTTPS will greatly reduce the risk of data being compromised. It would also be better to use the hashing function several times, to make it even harder to pre-compute hash values. That being said, our system is secure enough for the purpose of a small player base and a server that will not be up indefinitely. We don’t expect to attract malicious individuals.
 
 \newpage
 \section{Code Quality}
 Because multiple group members worked on the same scripts at different times, it was important to keep code clean organized and readable. This was done by separating code in functions as much as possible and leaving short comments as to what these functions were for. This made it possible for us to add to and change each other’s code. However, it did result in some problems. Sometimes code was dependent on other code, certain tags or other elements, which every now and then led into braking someone’s code by changing or adding something yourself. Luckily these errors were always easily fixed by looking over the code in question together.
 
-\section{Art}
 
+\newpage
+\section{Art}
+\subsection{Models}
+We made all the models in our game ourselves. Luuk worked on the evidence, the police station and the player model. This player model was replaced by a downloaded one at the last moment, because the rigging was not working properly. The downloaded player model is the only external model. Jesper made the landmarks, which were procedurally generated once and then stored, and world scene, with roads and the small parks. The rest of the buildings were procedurally generated by Rense, from unity. Thomas worked on the Church, the Hotel Room and the furniture in them. He also made the tree model.
+
+	\begin{figure}[ht!]
+		\centering
+		\includegraphics[width=60mm]{images/Churchoutside.png}
+	\end{figure}
+
+	\begin{figure}[ht!]
+		\centering
+		\includegraphics[width=90mm]{images/Church.png}
+	\end{figure}
+
+
+
+\subsection{Textures}
+All the textures were downloaded externally from copyright free sources. All sources were credited within the game. Some textures were made seamless by us in Photoshop.
+
+\subsection{Sound and Music}
+The sounds were obtained from right free sources. They were edited to match the ambience better and sometimes to make them seamless by Thomas. The music was performed.
+
+
+\newpage
 \section{Process and Teamwork}
 At the start of the process SCRUM was used extensively. Creating issues, assigning team members and setting a deadline cost a lot of time and therefor it was used less near the end of the process. It was also hard to decide when a component was finished. Most components were adapted many times up until the very end. As an addition to SCRUM we did always go over the issues that needed to be done at the beginning of every group session in a small discussion so everyone knew what to do that day. This also gave us a very regular update on how far we were in the process and if certain issues were harder than expected.\\
 
@@ -187,7 +214,7 @@ Working together as a team went great. We tried to always get together at the pr
 All in all the most important thing is that we did not have any issues working together. Everyone worked to his full potential and there was no weak link. This created a relaxed but driven atmosphere in the group.
 
 
-
+\newpage
 \section{Concluding}
 At the start we had many ideas to make this a great game. Looking back on it, we were a little bit too ambitious which means the result is not exactly as we had in mind. Because it was important to create challenging components in the game, we had to cut down on some of the gameplay aspects. This means that it is not as an exciting game as we were going for. In retrospect we should have probably chosen a game with an easier game design, giving us more time to focus on the gameplay and the juiciness. We were very happy with the teamwork. The one thing that we would improve for a next game is improving our knowledge of all the programs before starting to build the game. This would save us from redoing the same thing over and over again. (But I guess that is part of the job)
 In conclusion we are very happy with the end result. All the components are there. We just needed a little more time to make it into a juicy exciting game.
