@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-
-<conversation>
-	<NPC>What is the airspeed velocity of an unladen swallow?</NPC>
-	<PLAYER>
-		<TALK>A European or an African swallow?</TALK>
-	</PLAYER>
-	<NPC>Ehhh *flies away*</NPC>
-</conversation>
